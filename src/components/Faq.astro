@@ -1,0 +1,54 @@
+---
+const faqs = [
+  {
+    question: "¿Cómo recibo el journal?",
+    answer: "Inmediatamente después de tu compra recibes el link de descarga. Es un PDF digital que puedes abrir en cualquier dispositivo.",
+  },
+  {
+    question: "¿Funciona en celular, tablet y computadora?",
+    answer: "Sí. Puedes usarlo en cualquier dispositivo que abra PDFs: iPad, tablet Android, celular, laptop. También puedes imprimirlo si prefieres escribir a mano.",
+  },
+  {
+    question: "¿Y si no me gusta?",
+    answer: "Tienes 15 días de garantía a través de Hotmart. Si no es lo que esperabas, te devolvemos tu dinero completo. Sin preguntas, sin complicaciones.",
+  },
+  {
+    question: "¿Es un producto oficial de BTS?",
+    answer: "No. Es un proyecto fan-made, creado de forma independiente desde el cariño y la experiencia compartida entre ARMYs. No está afiliado a HYBE, BigHit o BTS.",
+  },
+  {
+    question: "¿Necesito saber algo de journaling para empezar?",
+    answer: "Para nada. Cada ejercicio tiene preguntas guiadas que te acompañan paso a paso. Solo necesitas ganas de escribir lo que sientes.",
+  },
+];
+---
+
+<section class="bg-white-glow section-padding">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center mb-8">
+      <p class="section-intro">
+        preguntas frecuentes
+      </p>
+
+      <h2 class="section-title text-text-deep">
+        Todo lo que necesitas saber.
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="card-feature group">
+          <summary class="font-body font-bold text-text-deep text-base md:text-lg cursor-pointer list-none flex items-center justify-between">
+            {faq.question}
+            <svg class="w-5 h-5 text-purple-vibrant shrink-0 ml-4 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <p class="font-body text-text-muted text-sm md:text-base leading-relaxed mt-3 pt-3 border-t border-soft-lilac/40">
+            {faq.answer}
+          </p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

@@ -21,21 +21,21 @@ const testimonials = [
 ];
 ---
 
-<section class="bg-lavender-mist py-16 md:py-24 px-5">
+<section class="bg-lavender-mist section-padding">
   <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-12">
+    <div class="text-center mb-8">
       <p class="section-intro">
         lo que dicen quienes ya escribieron
       </p>
 
       <h2 class="section-title text-text-deep">
-        Historias reales de ARMYs que empezaron a escribir.
+        Esto pasa cuando empiezas a escribir.
       </h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
       {testimonials.map((t) => (
-        <div class="bg-white-glow rounded-2xl p-6 border-l-4 border-purple-heart shadow-sm flex flex-col justify-between">
+        <div class="card-testimonial">
           <!-- Quote icon -->
           <div>
             <svg class="w-7 h-7 text-purple-heart/25 mb-3" fill="currentColor" viewBox="0 0 24 24">
@@ -55,9 +55,5 @@ const testimonials = [
       ))}
     </div>
 
-    <!-- Trust note -->
-    <p class="text-center font-body text-xs text-text-muted mt-8">
-      Este proyecto es <strong class="text-text-deep">fan-made, independiente y no oficial</strong>. Creado desde el respeto, el cuidado y la experiencia compartida entre ARMYs.
-    </p>
   </div>
 </section>

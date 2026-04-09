@@ -1,106 +1,213 @@
 ---
+const pages = [
+  { src: '/journal/page-01.webp', alt: 'Portada — Love Yourself Journal para ARMYS' },
+  { src: '/journal/page-contenido.webp', alt: 'Tabla de contenido — 7 capítulos, 165 páginas' },
+  { src: '/journal/page-02.webp', alt: 'Página Sé Tú — espacio de reflexión' },
+  { src: '/journal/page-03.webp', alt: 'Autorretratos de BTS — BTS Festa 2020' },
+  { src: '/journal/page-04.webp', alt: 'Mi autorretrato — espacio para crear' },
+  { src: '/journal/page-05.webp', alt: 'Mi nombre — ejercicio de identidad' },
+  { src: '/journal/page-06.webp', alt: 'Las 20 cosas sobre mi Bias — ejercicio interactivo' },
+  { src: '/journal/page-07.webp', alt: 'Las 20 cosas random sobre mí — autoconocimiento' },
+  { src: '/journal/page-08.webp', alt: 'Todas las chicas que hay en mí — identidad' },
+  { src: '/journal/page-09.webp', alt: 'Capítulo 02 Love Yourself — identidad individual' },
+  { src: '/journal/page-10.webp', alt: 'Mi Wishlist Vital — sueños y metas' },
+];
 ---
 
-<section class="relative gradient-hero py-16 md:py-24 px-5 overflow-hidden">
+<section class="relative gradient-hero section-padding overflow-hidden">
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-purple-heart/15 blur-[80px] pointer-events-none"></div>
 
-  <div class="relative z-10 max-w-5xl mx-auto">
+  <div class="relative z-10 max-w-4xl mx-auto">
     <!-- Header -->
-    <div class="text-center mb-12">
+    <div class="text-center mb-8">
       <p class="section-intro">
         mira por dentro
       </p>
       <h2 class="section-title text-white-glow max-w-2xl mx-auto">
         Preguntas que abren conversaciones contigo misma.
       </h2>
-      <p class="section-desc text-soft-lilac/90 max-w-xl mx-auto">
-        Preguntas que no buscan una solución inmediata, sino <strong class="text-white-glow">un espacio para detenerte, escucharte y mirarte con más honestidad</strong>.
+      <p class="section-desc text-soft-lilac max-w-xl mx-auto">
+        Desliza para hojear las primeras páginas del journal. <strong class="text-white-glow">Toca una página para verla en grande</strong>.
       </p>
     </div>
 
-    <!-- Interior pages grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 max-w-4xl mx-auto mb-12">
-      <!-- Page 1: Exercise prompt -->
-      <div class="bg-white-glow rounded-2xl shadow-xl overflow-hidden">
-        <img
-          src="/images/pagina-ejercicio.png"
-          alt="Ejemplo de ejercicio del journal — preguntas de introspección guiada"
-          class="w-full aspect-[3/4] object-cover"
-          loading="lazy"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-        />
-        <div class="hidden aspect-[3/4] flex-col justify-between p-6 md:p-7">
-          <div>
-            <p class="font-accent text-purple-vibrant text-xs mb-3">capítulo 2 — emociones</p>
-            <p class="font-heading italic text-lg md:text-xl text-text-deep leading-snug">
-              "¿Qué emoción llevas cargando hace tiempo <strong>sin nombrar</strong>?"
-            </p>
+    <!-- Swiper carousel -->
+    <div class="swiper journal-swiper select-none" id="journal-preview">
+      <div class="swiper-wrapper">
+        {pages.map((page, i) => (
+          <div class="swiper-slide flex justify-center">
+            <img
+              src={page.src}
+              alt={page.alt}
+              class="journal-page-img"
+              loading="lazy"
+              draggable="false"
+              oncontextmenu="return false"
+              data-index={i}
+            />
           </div>
-          <div class="border-t border-soft-lilac pt-4 mt-4 space-y-2">
-            <div class="h-2 bg-soft-lilac/40 rounded w-full"></div>
-            <div class="h-2 bg-soft-lilac/40 rounded w-3/4"></div>
-            <div class="h-2 bg-soft-lilac/40 rounded w-5/6"></div>
-          </div>
-        </div>
+        ))}
       </div>
 
-      <!-- Page 2: Letter prompt -->
-      <div class="bg-white-glow rounded-2xl shadow-xl overflow-hidden hidden md:block">
-        <img
-          src="/images/pagina-carta.png"
-          alt="Ejemplo de ejercicio — escribe una carta a tu versión que necesitaba un abrazo"
-          class="w-full aspect-[3/4] object-cover"
-          loading="lazy"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-        />
-        <div class="hidden aspect-[3/4] flex-col justify-between p-6 md:p-7">
-          <div>
-            <p class="font-accent text-purple-vibrant text-xs mb-3">capítulo 6 — celebración</p>
-            <p class="font-heading italic text-lg md:text-xl text-text-deep leading-snug">
-              "Escribe una carta a la versión de ti que más necesitaba <strong>un abrazo</strong>."
-            </p>
-          </div>
-          <div class="border-t border-soft-lilac pt-4 mt-4 space-y-2">
-            <div class="h-2 bg-soft-lilac/40 rounded w-full"></div>
-            <div class="h-2 bg-soft-lilac/40 rounded w-2/3"></div>
-            <div class="h-2 bg-soft-lilac/40 rounded w-4/5"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Page 3: Spotify prompt -->
-      <div class="bg-white-glow rounded-2xl shadow-xl overflow-hidden hidden md:block">
-        <img
-          src="/images/pagina-spotify.png"
-          alt="Ejemplo de ejercicio con canción de BTS — Spring Day con link a Spotify"
-          class="w-full aspect-[3/4] object-cover"
-          loading="lazy"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-        />
-        <div class="hidden aspect-[3/4] flex-col justify-between p-6 md:p-7">
-          <div>
-            <p class="font-accent text-purple-vibrant text-xs mb-3">playlist — Spring Day</p>
-            <svg class="w-7 h-7 text-purple-heart mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
-            <p class="font-heading italic text-lg md:text-xl text-text-deep leading-snug">
-              "Pon esta canción. Cierra los ojos. Y escribe <strong>lo primero que sientas</strong>."
-            </p>
-          </div>
-          <div class="border-t border-soft-lilac pt-4 mt-4">
-            <p class="font-accent text-purple-heart/60 text-xs">Con link a Spotify o código QR</p>
-          </div>
-        </div>
-      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
     </div>
 
-    <!-- Person using iPad -->
-    <div class="max-w-md mx-auto">
-      <img
-        src="/images/persona-ipad.png"
-        alt="Persona usando el Love Yourself Journal en su iPad"
-        class="w-full rounded-2xl shadow-lg"
-        loading="lazy"
-        onerror="this.parentElement.style.display='none'"
-      />
-    </div>
+    <p class="text-center font-body text-sm text-soft-lilac/60 mt-4">
+      {pages.length} páginas de preview &middot; Desliza para explorar
+    </p>
+  </div>
+
+  <!-- Modal lightbox -->
+  <div
+    id="page-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out"
+  >
+    <button
+      id="modal-close"
+      class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white-glow/20 flex items-center justify-center text-white-glow hover:bg-white-glow/40 transition-colors cursor-pointer z-10"
+      aria-label="Cerrar"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <img
+      id="modal-img"
+      src=""
+      alt=""
+      class="max-w-full max-h-[90vh] rounded-lg shadow-2xl select-none"
+      draggable="false"
+      oncontextmenu="return false"
+    />
   </div>
 </section>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+
+  function initSwiper() {
+    const swiper = new Swiper('#journal-preview', {
+      modules: [Navigation, Pagination],
+      slidesPerView: 1,
+      spaceBetween: 20,
+      centeredSlides: true,
+      grabCursor: true,
+      loop: false,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 1.4,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 1.6,
+          spaceBetween: 40,
+        },
+      },
+    });
+
+    // Modal lightbox
+    const modal = document.getElementById('page-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalClose = document.getElementById('modal-close');
+
+    // Open modal on image click
+    document.querySelectorAll('.journal-page-img').forEach((img) => {
+      img.style.pointerEvents = 'auto';
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (modal && modalImg) {
+          modalImg.src = img.src;
+          modalImg.alt = img.alt;
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    function closeModal() {
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    }
+
+    modalClose?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSwiper);
+  } else {
+    initSwiper();
+  }
+</script>
+
+<style>
+  .journal-page-img {
+    width: auto;
+    max-width: 100%;
+    max-height: 75vh;
+    border-radius: 0.75rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba(199, 125, 255, 0.15);
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .journal-swiper .swiper-button-prev,
+  .journal-swiper .swiper-button-next {
+    color: rgba(253, 251, 255, 0.8);
+    background: rgba(91, 44, 142, 0.5);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+  }
+  .journal-swiper .swiper-button-prev:after,
+  .journal-swiper .swiper-button-next:after {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .journal-swiper .swiper-button-prev:hover,
+  .journal-swiper .swiper-button-next:hover {
+    background: rgba(91, 44, 142, 0.8);
+    color: #FDFBFF;
+  }
+
+  .journal-swiper .swiper-pagination-bullet {
+    background: rgba(224, 208, 240, 0.5);
+    opacity: 1;
+  }
+  .journal-swiper .swiper-pagination-bullet-active {
+    background: #C77DFF;
+  }
+
+  .journal-swiper .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+  .journal-swiper .swiper-slide-active {
+    opacity: 1;
+  }
+</style>

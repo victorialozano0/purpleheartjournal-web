@@ -1,5 +1,4 @@
 ---
-const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || '#';
 ---
 
 <section class="relative min-h-screen flex items-center gradient-hero overflow-hidden px-5 py-16 md:py-0">
@@ -11,7 +10,7 @@ const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || '#';
   <div class="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
     <!-- Text column -->
     <div class="text-center md:text-left order-2 md:order-1">
-      <p class="font-accent text-xl md:text-2xl text-purple-heart mb-4 animate-fade-up">
+      <p class="font-accent text-xl md:text-2xl text-white-glow/80 mb-4 animate-fade-up">
         para ti, que sientes demasiado
       </p>
 
@@ -20,57 +19,32 @@ const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || '#';
       </h1>
 
       <p class="font-body text-base md:text-lg text-soft-lilac/90 max-w-lg mx-auto md:mx-0 mb-8 leading-relaxed animate-fade-up" style="animation-delay: 0.2s">
-        Un <strong class="text-white-glow">journal digital guiado</strong> que te acompaña con música de BTS en un viaje de <strong class="text-white-glow">autoconocimiento, reflexión y amor propio</strong>.
+        165 páginas para detenerte, escucharte y escribir lo que siempre quisiste decir. Con <strong class="text-white-glow">preguntas que importan</strong> y <strong class="text-white-glow">música que entiende</strong>.
       </p>
 
-      <!-- CTA -->
+      <!-- CTA suave — scroll, no venta -->
       <div class="animate-fade-up" style="animation-delay: 0.3s">
-        <!-- Price anchor -->
-        <div class="mb-4">
-          <span class="font-body text-base text-soft-lilac/50 line-through">$24.90</span>
-          <span class="font-body text-2xl md:text-3xl font-bold text-white-glow ml-2">$9.90</span>
-          <span class="font-accent text-sm text-purple-heart ml-2">Lanzamiento</span>
-        </div>
         <a
-          href={hotmartUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block gradient-cta text-white-glow font-body font-bold text-base md:text-lg px-8 py-4 rounded-2xl glow-purple hover:glow-purple-lg hover:-translate-y-0.5 transition-all duration-300 cursor-pointer animate-pulse-glow"
+          href="#solucion"
+          class="btn-primary-lg"
         >
-          Quiero mi journal
+          Descubre el journal 💜
         </a>
-        <p class="font-body text-xs text-soft-lilac/50 mt-3">
-          Descarga inmediata &middot; PDF digital &middot; 165 páginas
+        <p class="font-body text-sm text-soft-lilac/70 mt-4">
+          Un espacio para escribir, sentir y sanar.
         </p>
       </div>
     </div>
 
     <!-- Image column: iPad with cover -->
     <div class="order-1 md:order-2 flex justify-center animate-fade-up" style="animation-delay: 0.15s">
-      <div class="relative w-[280px] md:w-[360px]">
-        <!-- iPad frame -->
-        <div class="bg-gray-800 rounded-[2rem] p-3 shadow-2xl">
-          <div class="bg-white-glow rounded-[1.5rem] overflow-hidden aspect-[3/4]">
-            <!-- Replace src with your actual cover image -->
-            <img
-              src="/images/ipad-cover.png"
-              alt="Love Yourself Journal para ARMY — portada del journal digital en iPad"
-              class="w-full h-full object-cover"
-              loading="eager"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-            />
-            <!-- Fallback if image missing -->
-            <div class="hidden w-full h-full bg-gradient-to-b from-purple-vibrant to-purple-heart items-center justify-center p-8 text-center">
-              <div>
-                <p class="font-accent text-white-glow text-sm mb-2">Purple Heart presenta</p>
-                <p class="font-heading italic text-3xl text-white-glow leading-tight mb-3">Love Yourself Journal</p>
-                <p class="font-body text-white-glow/80 text-sm">para ARMYS</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Glow behind iPad -->
-        <div class="absolute -inset-4 bg-purple-heart/20 rounded-full blur-[60px] -z-10"></div>
+      <div class="relative w-[300px] md:w-[420px]">
+        <img
+          src="/images/ipad-cover.png"
+          alt="Love Yourself Journal para ARMY — portada del journal digital en iPad"
+          class="img-float"
+          loading="eager"
+        />
       </div>
     </div>
   </div>
