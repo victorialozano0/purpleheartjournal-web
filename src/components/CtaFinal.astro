@@ -1,0 +1,54 @@
+---
+const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || '#';
+---
+
+<section class="relative gradient-hero py-20 md:py-28 px-5 overflow-hidden">
+  <!-- Background glow -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-purple-heart/20 blur-[100px]"></div>
+  </div>
+
+  <div class="relative z-10 max-w-2xl mx-auto text-center">
+    <p class="section-intro mb-5">
+      no necesitas saber qué escribir
+    </p>
+
+    <h2 class="section-title text-white-glow mb-5">
+      Solo necesitas empezar.
+    </h2>
+
+    <p class="font-body text-base md:text-lg text-soft-lilac/90 max-w-lg mx-auto mb-4 leading-relaxed">
+      Tu journal te espera. Con las <strong class="text-white-glow">preguntas correctas</strong>, la <strong class="text-white-glow">música que te entiende</strong>, y un espacio que es solo tuyo.
+    </p>
+
+    <p class="font-heading italic text-base text-soft-lilac/70 mb-8">
+      "El amor propio no es un concepto, es un camino que se recorre con pausas, dudas y momentos de verdad."
+    </p>
+
+    <!-- Main CTA -->
+    <a
+      href={hotmartUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-block gradient-cta text-white-glow font-body font-bold text-lg px-12 py-5 rounded-2xl glow-purple hover:glow-purple-lg hover:-translate-y-0.5 transition-all duration-300 cursor-pointer animate-pulse-glow"
+    >
+      Empieza a escribir hoy
+    </a>
+
+    <p class="font-body text-xs text-soft-lilac/50 mt-4">
+      Descarga inmediata &middot; PDF digital &middot; 165 páginas &middot; 7 capítulos
+    </p>
+
+    <!-- Signature -->
+    <div class="mt-12">
+      <img
+        src="/images/firma-purple-heart.png"
+        alt="Firma de Purple Heart"
+        class="h-10 md:h-12 mx-auto opacity-70"
+        loading="lazy"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+      />
+      <p class="hidden font-accent text-xl text-purple-heart/60">Purple Heart</p>
+    </div>
+  </div>
+</section>

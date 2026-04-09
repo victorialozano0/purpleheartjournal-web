@@ -1,0 +1,78 @@
+---
+const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || '#';
+---
+
+<section class="relative min-h-screen flex items-center gradient-hero overflow-hidden px-5 py-16 md:py-0">
+  <!-- Background glow -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-purple-heart/20 blur-[100px]"></div>
+  </div>
+
+  <div class="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+    <!-- Text column -->
+    <div class="text-center md:text-left order-2 md:order-1">
+      <p class="font-accent text-xl md:text-2xl text-purple-heart mb-4 animate-fade-up">
+        para ti, que sientes demasiado
+      </p>
+
+      <h1 class="font-heading italic text-4xl md:text-5xl lg:text-6xl text-white-glow leading-[1.15] mb-5 animate-fade-up" style="animation-delay: 0.1s">
+        A veces solo necesitas una página en blanco y la canción correcta.
+      </h1>
+
+      <p class="font-body text-base md:text-lg text-soft-lilac/90 max-w-lg mx-auto md:mx-0 mb-8 leading-relaxed animate-fade-up" style="animation-delay: 0.2s">
+        Un <strong class="text-white-glow">journal digital guiado</strong> que te acompaña con música de BTS en un viaje de <strong class="text-white-glow">autoconocimiento, reflexión y amor propio</strong>.
+      </p>
+
+      <!-- CTA -->
+      <div class="animate-fade-up" style="animation-delay: 0.3s">
+        <a
+          href={hotmartUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block gradient-cta text-white-glow font-body font-bold text-base md:text-lg px-8 py-4 rounded-2xl glow-purple hover:glow-purple-lg hover:-translate-y-0.5 transition-all duration-300 cursor-pointer animate-pulse-glow"
+        >
+          Quiero mi journal
+        </a>
+        <p class="font-body text-xs text-soft-lilac/50 mt-3">
+          Descarga inmediata &middot; PDF digital &middot; 165 páginas
+        </p>
+      </div>
+    </div>
+
+    <!-- Image column: iPad with cover -->
+    <div class="order-1 md:order-2 flex justify-center animate-fade-up" style="animation-delay: 0.15s">
+      <div class="relative w-[280px] md:w-[360px]">
+        <!-- iPad frame -->
+        <div class="bg-gray-800 rounded-[2rem] p-3 shadow-2xl">
+          <div class="bg-white-glow rounded-[1.5rem] overflow-hidden aspect-[3/4]">
+            <!-- Replace src with your actual cover image -->
+            <img
+              src="/images/ipad-cover.png"
+              alt="Love Yourself Journal para ARMY — portada del journal digital en iPad"
+              class="w-full h-full object-cover"
+              loading="eager"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+            />
+            <!-- Fallback if image missing -->
+            <div class="hidden w-full h-full bg-gradient-to-b from-purple-vibrant to-purple-heart items-center justify-center p-8 text-center">
+              <div>
+                <p class="font-accent text-white-glow text-sm mb-2">Purple Heart presenta</p>
+                <p class="font-heading italic text-3xl text-white-glow leading-tight mb-3">Love Yourself Journal</p>
+                <p class="font-body text-white-glow/80 text-sm">para ARMYS</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Glow behind iPad -->
+        <div class="absolute -inset-4 bg-purple-heart/20 rounded-full blur-[60px] -z-10"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-5 h-5 text-soft-lilac/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>

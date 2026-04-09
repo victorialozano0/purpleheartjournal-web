@@ -1,0 +1,63 @@
+---
+const testimonials = [
+  {
+    text: "Empecé a escribir y no pude parar. Es como si las preguntas supieran exactamente lo que necesitaba soltar.",
+    name: "Andrea",
+    detail: "ARMY desde 2018",
+    highlight: "no pude parar",
+  },
+  {
+    text: "Puse Spring Day y abrí el capítulo de emociones. Lloré, escribí, y me sentí más liviana. Es como tener una conversación contigo misma que siempre necesitaste.",
+    name: "Camila",
+    detail: "Colombia",
+    highlight: "me sentí más liviana",
+  },
+  {
+    text: "No es un journal común. Las preguntas te hacen detenerte de verdad. Y la música le da otra dimensión a todo.",
+    name: "Valentina",
+    detail: "México",
+    highlight: "te hacen detenerte de verdad",
+  },
+];
+---
+
+<section class="bg-lavender-mist py-16 md:py-24 px-5">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="section-intro">
+        lo que dicen quienes ya escribieron
+      </p>
+
+      <h2 class="section-title text-text-deep">
+        Historias reales de ARMYs que empezaron a escribir.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {testimonials.map((t) => (
+        <div class="bg-white-glow rounded-2xl p-6 border-l-4 border-purple-heart shadow-sm flex flex-col justify-between">
+          <!-- Quote icon -->
+          <div>
+            <svg class="w-7 h-7 text-purple-heart/25 mb-3" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zm-14.017 0v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H0z"/>
+            </svg>
+            <p class="font-body text-text-deep text-sm md:text-base leading-relaxed">
+              {t.text}
+            </p>
+          </div>
+
+          <!-- Author -->
+          <div class="border-t border-soft-lilac/60 pt-3 mt-5">
+            <p class="font-body font-bold text-text-deep text-sm">{t.name}</p>
+            <p class="font-body text-text-muted text-xs">{t.detail}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Trust note -->
+    <p class="text-center font-body text-xs text-text-muted mt-8">
+      Este proyecto es <strong class="text-text-deep">fan-made, independiente y no oficial</strong>. Creado desde el respeto, el cuidado y la experiencia compartida entre ARMYs.
+    </p>
+  </div>
+</section>

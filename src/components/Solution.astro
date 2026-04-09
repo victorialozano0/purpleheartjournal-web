@@ -1,0 +1,121 @@
+---
+const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || '#';
+---
+
+<section class="bg-lavender-mist py-16 md:py-24 px-5">
+  <div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-12 md:mb-16">
+      <p class="section-intro">
+        por eso creé esto
+      </p>
+
+      <h2 class="section-title text-text-deep max-w-3xl mx-auto">
+        Un espacio donde escribes lo que sientes y te acompañas con música.
+      </h2>
+
+      <p class="section-desc max-w-2xl mx-auto">
+        Love Yourself Journal no es un cuaderno vacío, no es un producto motivacional, no es merchandising. Es un <strong class="text-text-deep">recorrido personal estructurado</strong>, pensado para acompañarte en un proceso de <strong class="text-text-deep">introspección consciente</strong>.
+      </p>
+    </div>
+
+    <!-- Two columns: features + image -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <!-- Feature cards -->
+      <div class="space-y-4">
+        <div class="bg-white-glow/80 border border-soft-lilac rounded-xl p-5 hover:border-purple-heart/50 hover:shadow-md transition-all duration-300">
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-lg bg-purple-heart/10 flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-purple-vibrant" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-body font-bold text-text-deep text-base mb-1">85+ ejercicios guiados</h3>
+              <p class="font-body text-text-muted text-sm leading-relaxed">Preguntas diseñadas para que <strong class="text-text-deep">conectes con lo que sientes</strong>, sin forzar nada.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white-glow/80 border border-soft-lilac rounded-xl p-5 hover:border-purple-heart/50 hover:shadow-md transition-all duration-300">
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-lg bg-purple-heart/10 flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-purple-vibrant" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-body font-bold text-text-deep text-base mb-1">35 canciones de BTS</h3>
+              <p class="font-body text-text-muted text-sm leading-relaxed">Playlist en Spotify seleccionada como <strong class="text-text-deep">herramienta de sensibilización</strong> para profundizar la escritura.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white-glow/80 border border-soft-lilac rounded-xl p-5 hover:border-purple-heart/50 hover:shadow-md transition-all duration-300">
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-lg bg-purple-heart/10 flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-purple-vibrant" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-body font-bold text-text-deep text-base mb-1">Sin reglas, sin presión</h3>
+              <p class="font-body text-text-muted text-sm leading-relaxed">Escribes <strong class="text-text-deep">a tu ritmo</strong>. Puedes recorrerlo en orden o entrar en la sección que más resuene contigo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white-glow/80 border border-soft-lilac rounded-xl p-5 hover:border-purple-heart/50 hover:shadow-md transition-all duration-300">
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-lg bg-purple-heart/10 flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-purple-vibrant" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-body font-bold text-text-deep text-base mb-1">7 capítulos, 165 páginas</h3>
+              <p class="font-body text-text-muted text-sm leading-relaxed">Un viaje completo: de <strong class="text-text-deep">conocerte a quererte</strong>. Cada capítulo es una etapa del proceso.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- iPad with content page -->
+      <div class="flex justify-center">
+        <div class="relative w-[280px] md:w-[340px]">
+          <div class="bg-gray-800 rounded-[2rem] p-3 shadow-2xl">
+            <div class="bg-white-glow rounded-[1.5rem] overflow-hidden aspect-[3/4]">
+              <img
+                src="/images/ipad-contenido.png"
+                alt="Tabla de contenido del Love Yourself Journal — 7 capítulos de autoconocimiento"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              />
+              <!-- Fallback -->
+              <div class="hidden w-full h-full bg-white-glow items-center justify-center p-6">
+                <div class="text-center">
+                  <p class="font-accent text-purple-vibrant text-lg mb-4">Contenido</p>
+                  <div class="text-left space-y-2 text-sm font-body text-text-muted">
+                    <p>01. Empieza aquí</p>
+                    <p>02. "Love Yourself"</p>
+                    <p>03. "You Never Walk Alone"</p>
+                    <p>04. Tu biograma musical</p>
+                    <p>05. Soy parte de ARMY</p>
+                    <p>06. La celebración de quien soy</p>
+                    <p>07. Fandom Art Space</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -inset-4 bg-purple-heart/15 rounded-full blur-[50px] -z-10"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini CTA -->
+    <div class="text-center mt-12">
+      <a
+        href={hotmartUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block font-body font-semibold text-purple-vibrant border-2 border-purple-heart/40 px-8 py-3 rounded-xl hover:bg-purple-heart/10 transition-all duration-300 cursor-pointer"
+      >
+        Quiero conocer el journal
+      </a>
+    </div>
+  </div>
+</section>
