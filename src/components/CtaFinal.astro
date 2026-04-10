@@ -1,5 +1,5 @@
 ---
-const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || '#';
+const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || 'https://pay.hotmart.com/P104306248S';
 ---
 
 <section class="relative gradient-hero section-padding overflow-hidden">
@@ -44,14 +44,25 @@ const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || '#';
       Quiero empezar mi journal 💜
     </a>
 
-    <p class="font-body text-sm text-soft-lilac/80 mt-5">
-      Descarga inmediata &middot; PDF digital &middot; 165 páginas &middot; 7 capítulos
-    </p>
+    <!-- Hotmart trust badge -->
+    <div class="mt-5 flex flex-col items-center gap-2">
+      <div class="flex items-center gap-2 bg-white-glow/15 border border-soft-lilac/30 rounded-full px-5 py-2.5">
+        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <p class="font-body text-sm text-white-glow/95">
+          Compra segura con <strong class="text-white-glow">Hotmart</strong> — la plataforma #1 de productos digitales
+        </p>
+      </div>
+      <p class="font-body text-xs text-soft-lilac/70">
+        Descarga inmediata &middot; PDF digital &middot; 165 páginas &middot; 7 capítulos
+      </p>
+    </div>
 
     <!-- Garantía -->
-    <div class="mt-8 bg-white-glow/10 border border-soft-lilac/20 rounded-xl px-6 py-4 max-w-sm mx-auto">
+    <div class="mt-6 bg-white-glow/10 border border-soft-lilac/20 rounded-xl px-6 py-4 max-w-sm mx-auto">
       <p class="font-body text-sm text-white-glow/90">
-        <strong>Garantía de 15 días.</strong> Si no es lo que esperabas, te devolvemos tu dinero. Sin preguntas.
+        <strong>Garantía Hotmart de 15 días.</strong> Si no es lo que esperabas, Hotmart te devuelve tu dinero. Sin preguntas.
       </p>
     </div>
 
