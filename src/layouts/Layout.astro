@@ -43,6 +43,41 @@ import '../styles/global.css';
 
     <title>{title}</title>
 
+    <!-- Plausible Analytics (privacy-friendly, no cookies) -->
+    {import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN && (
+      <script
+        defer
+        data-domain={import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN}
+        src="https://plausible.io/js/script.outbound-links.js"
+      />
+    )}
+
+    <!-- Google Analytics (optional, for deeper data) -->
+    {import.meta.env.PUBLIC_GA_MEASUREMENT_ID && (
+      <>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_MEASUREMENT_ID}`}
+        />
+        <script
+          set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${import.meta.env.PUBLIC_GA_MEASUREMENT_ID}');`}
+        />
+      </>
+    )}
+
+    <!-- Sentry Error Monitoring -->
+    {import.meta.env.PUBLIC_SENTRY_DSN_WEB && (
+      <script
+        src="https://browser.sentry-cdn.com/8.53.0/bundle.min.js"
+        crossorigin="anonymous"
+      />
+    )}
+    {import.meta.env.PUBLIC_SENTRY_DSN_WEB && (
+      <script
+        set:html={`Sentry.init({dsn:'${import.meta.env.PUBLIC_SENTRY_DSN_WEB}',tracesSampleRate:0.1});`}
+      />
+    )}
+
   </head>
   <body class="overflow-x-hidden">
     <slot />
