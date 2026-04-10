@@ -27,10 +27,10 @@ const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || 'https://pay.hotmart.co
       <span class="block font-body not-italic text-sm text-soft-lilac/70 mt-2">— Kim Namjoon</span>
     </p>
 
-    <!-- Price anchor -->
+    <!-- Price anchor (currency swaps via JS based on timezone) -->
     <div class="mb-8">
-      <span class="font-body text-lg text-soft-lilac/70 line-through">$24.90</span>
-      <span class="font-body text-4xl md:text-5xl font-bold text-white-glow ml-3">$9.90</span>
+      <span id="price-old" class="font-body text-lg text-soft-lilac/70 line-through">$24.90</span>
+      <span id="price-main" class="font-body text-4xl md:text-5xl font-bold text-white-glow ml-3">$9.90</span>
       <p class="font-accent text-lg text-white-glow/80 mt-2">Precio especial de lanzamiento</p>
     </div>
 
@@ -79,3 +79,15 @@ const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || 'https://pay.hotmart.co
     </div>
   </div>
 </section>
+
+<script>
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const isSpain = tz === 'Europe/Madrid' || tz === 'Atlantic/Canary';
+
+  if (isSpain) {
+    const oldEl = document.getElementById('price-old');
+    const mainEl = document.getElementById('price-main');
+    if (oldEl) oldEl.textContent = '€22.90';
+    if (mainEl) mainEl.textContent = '€8.90';
+  }
+</script>
