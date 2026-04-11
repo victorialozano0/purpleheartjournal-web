@@ -1,0 +1,94 @@
+---
+// Instagram OAuth Callback
+// Receives the auth code from Facebook Login and redirects to the local Content Manager
+// which handles the token exchange server-side.
+
+const code = Astro.url.searchParams.get('code')
+const state = Astro.url.searchParams.get('state')
+const error = Astro.url.searchParams.get('error')
+const errorDescription = Astro.url.searchParams.get('error_description') || Astro.url.searchParams.get('error_reason')
+
+// Redirect to local Content Manager with the auth code
+const localCallback = code
+  ? `http://localhost:5173/api/instagram/callback?code=${code}&state=${state || ''}`
+  : null
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conectando Instagram — Purple Heart Journal</title>
+    {localCallback && <meta http-equiv="refresh" content={`2;url=${localCallback}`} />}
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #F3EAFA;
+        font-family: 'DM Sans', Arial, sans-serif;
+        color: #1A0A2E;
+      }
+      .card {
+        background: white;
+        border-radius: 16px;
+        padding: 48px 40px;
+        text-align: center;
+        max-width: 420px;
+        box-shadow: 0 4px 24px rgba(91, 44, 142, 0.1);
+      }
+      .icon { font-size: 48px; margin-bottom: 16px; }
+      h1 { font-size: 20px; color: #5B2C8E; margin: 0 0 12px; }
+      p { font-size: 14px; color: #6B5B7B; line-height: 1.6; margin: 0 0 24px; }
+      .spinner {
+        width: 32px; height: 32px;
+        border: 3px solid #E0D0F0;
+        border-top-color: #C77DFF;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        margin: 0 auto 16px;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      a {
+        display: inline-block;
+        background: #C77DFF;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      a:hover { background: #9B4DCA; }
+      .error { color: #dc2626; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      {error ? (
+        <>
+          <div class="icon">&#10060;</div>
+          <h1>Error al conectar Instagram</h1>
+          <p class="error">{errorDescription || error}</p>
+          <a href="http://localhost:5173/wizard">Volver al Content Manager</a>
+        </>
+      ) : code ? (
+        <>
+          <div class="spinner"></div>
+          <h1>Instagram conectado</h1>
+          <p>Redirigiendo al Content Manager...</p>
+          <a href={localCallback}>Click aqui si no redirige automaticamente</a>
+        </>
+      ) : (
+        <>
+          <div class="icon">&#10067;</div>
+          <h1>Callback sin codigo</h1>
+          <p>No se recibio un codigo de autorizacion de Instagram.</p>
+          <a href="http://localhost:5173/wizard">Volver al Content Manager</a>
+        </>
+      )}
+    </div>
+  </body>
+</html>
