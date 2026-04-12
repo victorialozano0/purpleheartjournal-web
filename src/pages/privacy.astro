@@ -5,100 +5,291 @@ import Layout from '../layouts/Layout.astro'
 <Layout title="Política de Privacidad — Purple Heart Journal">
   <div class="max-w-3xl mx-auto px-6 py-16 text-purple-900">
     <h1 class="text-3xl font-bold text-purple-800 mb-2">Política de Privacidad</h1>
-    <p class="text-sm text-purple-400 mb-8">Última actualización: 11 de abril de 2026</p>
+    <p class="text-sm text-purple-400 mb-8">Última actualización: 12 de abril de 2026</p>
 
-    <div class="space-y-6 text-sm leading-relaxed text-purple-700">
+    <div class="space-y-8 text-sm leading-relaxed text-purple-700">
+
+      <!-- 1. Responsable -->
       <section>
-        <h2 class="text-lg font-semibold text-purple-800 mb-2">1. Quiénes somos</h2>
+        <h2 class="text-lg font-semibold text-purple-800 mb-2">1. Responsable del tratamiento</h2>
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-purple-100">
+            <tr><td class="py-1.5 font-semibold text-purple-800 w-40">Responsable</td><td>Victoria Lozano</td></tr>
+            <tr><td class="py-1.5 font-semibold text-purple-800">Marca</td><td>Purple Heart Journal</td></tr>
+            <tr><td class="py-1.5 font-semibold text-purple-800">Sitio web</td><td><a href="https://loveyourselfjournal.me" class="text-purple-600 underline">loveyourselfjournal.me</a></td></tr>
+            <tr><td class="py-1.5 font-semibold text-purple-800">Email de contacto</td><td><a href="mailto:hola@loveyourselfjournal.me" class="text-purple-600 underline">hola@loveyourselfjournal.me</a></td></tr>
+            <tr><td class="py-1.5 font-semibold text-purple-800">Actividad</td><td>Venta de productos digitales de desarrollo personal</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 2. Datos que recopilamos -->
+      <section>
+        <h2 class="text-lg font-semibold text-purple-800 mb-2">2. Datos personales que recopilamos</h2>
+
+        <h3 class="font-semibold text-purple-800 mt-4 mb-1">Suscriptores de contenido gratuito (lead magnet)</h3>
+        <p>Cuando solicitas contenido gratuito a través de nuestros formularios (por ejemplo, en <a href="/escribe-conmigo" class="text-purple-600 underline">/escribe-conmigo</a> o mediante palabras clave en Instagram):</p>
+        <ul class="list-disc pl-6 mt-1.5 space-y-1">
+          <li><strong>Nombre</strong> — para personalizar la comunicación contigo</li>
+          <li><strong>Correo electrónico</strong> — para enviarte el contenido gratuito que solicitaste</li>
+          <li><strong>Origen de la suscripción</strong> — para saber desde dónde llegaste (formulario web, Instagram, etc.)</li>
+        </ul>
+
+        <h3 class="font-semibold text-purple-800 mt-4 mb-1">Compradores del journal</h3>
+        <p>Cuando compras el Purple Heart Journal a través de Hotmart:</p>
+        <ul class="list-disc pl-6 mt-1.5 space-y-1">
+          <li><strong>Nombre y correo electrónico</strong> — para entregarte el producto y enviarte la secuencia de bienvenida</li>
+          <li><strong>Datos de pago</strong> — procesados directamente por Hotmart; nosotros no almacenamos datos bancarios ni de tarjeta</li>
+        </ul>
+
+        <h3 class="font-semibold text-purple-800 mt-4 mb-1">Visitantes del sitio web</h3>
+        <ul class="list-disc pl-6 mt-1.5 space-y-1">
+          <li><strong>Datos de navegación anónimos</strong> — páginas visitadas, país, fuente de tráfico, dispositivo (vía Google Analytics). No recopilamos datos que te identifiquen personalmente.</li>
+        </ul>
+
+        <h3 class="font-semibold text-purple-800 mt-4 mb-1">Seguidores en redes sociales</h3>
+        <p>Si interactúas con nuestras cuentas de TikTok (@purpleheart.journal) o Instagram, esas plataformas tienen sus propias políticas de privacidad. Nosotros no almacenamos datos de tus interacciones en redes sociales.</p>
+      </section>
+
+      <!-- 3. Finalidades -->
+      <section>
+        <h2 class="text-lg font-semibold text-purple-800 mb-2">3. Para qué usamos tus datos</h2>
+
+        <table class="w-full text-sm mt-2">
+          <thead>
+            <tr class="border-b border-purple-200">
+              <th class="py-2 text-left font-semibold text-purple-800">Finalidad</th>
+              <th class="py-2 text-left font-semibold text-purple-800">Datos utilizados</th>
+              <th class="py-2 text-left font-semibold text-purple-800">Base legal</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-purple-50">
+            <tr>
+              <td class="py-2">Enviarte el contenido gratuito que solicitaste (PDF)</td>
+              <td class="py-2">Nombre, email</td>
+              <td class="py-2">Consentimiento (Art. 6.1.a GDPR)</td>
+            </tr>
+            <tr>
+              <td class="py-2">Enviarte emails con contenido de journaling y desarrollo personal (solo si marcaste la casilla de consentimiento)</td>
+              <td class="py-2">Nombre, email</td>
+              <td class="py-2">Consentimiento (Art. 6.1.a GDPR)</td>
+            </tr>
+            <tr>
+              <td class="py-2">Entregarte el producto digital comprado</td>
+              <td class="py-2">Nombre, email, datos de transacción</td>
+              <td class="py-2">Ejecución de contrato (Art. 6.1.b GDPR)</td>
+            </tr>
+            <tr>
+              <td class="py-2">Enviarte la secuencia de bienvenida post-compra (3 emails en 7 días)</td>
+              <td class="py-2">Nombre, email</td>
+              <td class="py-2">Ejecución de contrato (Art. 6.1.b GDPR)</td>
+            </tr>
+            <tr>
+              <td class="py-2">Analizar visitas al sitio web de forma anónima</td>
+              <td class="py-2">Datos de navegación anónimos</td>
+              <td class="py-2">Interés legítimo (Art. 6.1.f GDPR)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="mt-4 bg-purple-50 border border-purple-100 rounded-lg p-4">
+          <p class="font-semibold text-purple-800 mb-1">Lo que nunca hacemos:</p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>No vendemos, alquilamos ni compartimos tus datos con terceros para fines de marketing</li>
+            <li>No usamos tus datos para publicidad personalizada o retargeting</li>
+            <li>No tomamos decisiones automatizadas que te afecten (profiling)</li>
+            <li>No enviamos emails comerciales si no has dado tu consentimiento explícito</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4. Consentimiento -->
+      <section>
+        <h2 class="text-lg font-semibold text-purple-800 mb-2">4. Consentimiento</h2>
         <p>
-          Purple Heart Journal ("nosotros", "nuestro") es un producto digital creado por Victoria Lozano.
-          Nuestro sitio web es <a href="https://loveyourselfjournal.me" class="text-purple-600 underline">loveyourselfjournal.me</a>
-          y nuestra cuenta en TikTok es <a href="https://www.tiktok.com/@purpleheart.journal" class="text-purple-600 underline">@purpleheart.journal</a>.
+          Al completar cualquiera de nuestros formularios, nos das tu consentimiento para procesar los datos con la finalidad indicada en el momento de la recogida.
+        </p>
+        <ul class="list-disc pl-6 mt-2 space-y-1">
+          <li>El envío del contenido gratuito (PDF) solo requiere tu nombre y email.</li>
+          <li>La suscripción a nuestra lista de emails con contenido adicional es <strong>opcional y voluntaria</strong> — se activa únicamente si marcas la casilla correspondiente.</li>
+          <li>Puedes retirar tu consentimiento en cualquier momento haciendo clic en el enlace "darse de baja" al pie de cualquier email, o escribiéndonos a <a href="mailto:hola@loveyourselfjournal.me" class="text-purple-600 underline">hola@loveyourselfjournal.me</a>.</li>
+        </ul>
+      </section>
+
+      <!-- 5. Destinatarios -->
+      <section>
+        <h2 class="text-lg font-semibold text-purple-800 mb-2">5. Destinatarios (encargados del tratamiento)</h2>
+        <p>Tus datos solo se comparten con los servicios estrictamente necesarios para cumplir las finalidades descritas:</p>
+
+        <table class="w-full text-sm mt-3">
+          <thead>
+            <tr class="border-b border-purple-200">
+              <th class="py-2 text-left font-semibold text-purple-800">Servicio</th>
+              <th class="py-2 text-left font-semibold text-purple-800">Proveedor</th>
+              <th class="py-2 text-left font-semibold text-purple-800">Finalidad</th>
+              <th class="py-2 text-left font-semibold text-purple-800">Ubicación</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-purple-50">
+            <tr>
+              <td class="py-2">Email marketing</td>
+              <td class="py-2"><a href="https://www.brevo.com/legal/privacypolicy/" class="text-purple-600 underline">Brevo (Sendinblue)</a></td>
+              <td class="py-2">Envío de emails transaccionales y de contenido</td>
+              <td class="py-2">UE</td>
+            </tr>
+            <tr>
+              <td class="py-2">Procesamiento de formulario</td>
+              <td class="py-2"><a href="https://www.cloudflare.com/privacypolicy/" class="text-purple-600 underline">Cloudflare Workers</a></td>
+              <td class="py-2">Recepción de datos del formulario y envío a Brevo</td>
+              <td class="py-2">Global (edge network)</td>
+            </tr>
+            <tr>
+              <td class="py-2">Plataforma de venta</td>
+              <td class="py-2"><a href="https://www.hotmart.com/legal/privacy" class="text-purple-600 underline">Hotmart</a></td>
+              <td class="py-2">Procesamiento de pagos y entrega del journal digital</td>
+              <td class="py-2">UE / Internacional</td>
+            </tr>
+            <tr>
+              <td class="py-2">Analítica web</td>
+              <td class="py-2"><a href="https://policies.google.com/privacy" class="text-purple-600 underline">Google Analytics</a></td>
+              <td class="py-2">Métricas anónimas de visitas al sitio web</td>
+              <td class="py-2">EE.UU. (DPF)</td>
+            </tr>
+            <tr>
+              <td class="py-2">CDN y seguridad</td>
+              <td class="py-2"><a href="https://www.cloudflare.com/privacypolicy/" class="text-purple-600 underline">Cloudflare</a></td>
+              <td class="py-2">Distribución de contenido, DNS y protección del sitio</td>
+              <td class="py-2">Global (edge network)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="mt-3">
+          Estos proveedores actúan como encargados del tratamiento bajo acuerdos que garantizan la protección de tus datos.
+          Los proveedores ubicados fuera del Espacio Económico Europeo cumplen con las cláusulas contractuales tipo de la Comisión Europea
+          o están adheridos al EU-US Data Privacy Framework.
         </p>
       </section>
 
+      <!-- 6. Conservación -->
       <section>
-        <h2 class="text-lg font-semibold text-purple-800 mb-2">2. Qué datos recopilamos</h2>
-        <p>Recopilamos información mínima y solo cuando es necesario:</p>
-        <ul class="list-disc pl-6 mt-2 space-y-1">
-          <li><strong>Datos de compra:</strong> nombre, email y datos de transacción procesados por Hotmart (nuestra plataforma de venta). No almacenamos datos de pago directamente.</li>
-          <li><strong>Email post-compra:</strong> tu nombre y email para enviarte el journal y una secuencia de 3 emails de bienvenida vía Brevo.</li>
-          <li><strong>Analytics:</strong> usamos Google Analytics para medir visitas al sitio web (páginas visitadas, país, fuente de tráfico). No recopila información que te identifique directamente.</li>
-          <li><strong>Redes sociales:</strong> si interactúas con nuestras cuentas de TikTok o Instagram, esas plataformas tienen sus propias políticas de privacidad.</li>
-          <li><strong>Facebook Login:</strong> nuestra app interna usa Facebook Login para conectar con Instagram y publicar contenido. Esto solo aplica al administrador de la cuenta, no a compradores del journal.</li>
-        </ul>
+        <h2 class="text-lg font-semibold text-purple-800 mb-2">6. Conservación de datos</h2>
+        <table class="w-full text-sm mt-2">
+          <thead>
+            <tr class="border-b border-purple-200">
+              <th class="py-2 text-left font-semibold text-purple-800">Tipo de dato</th>
+              <th class="py-2 text-left font-semibold text-purple-800">Periodo de conservación</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-purple-50">
+            <tr>
+              <td class="py-2">Suscriptores (contenido gratuito)</td>
+              <td class="py-2">Mientras mantengas la suscripción activa. Si te das de baja, tus datos se eliminan en un máximo de 30 días.</td>
+            </tr>
+            <tr>
+              <td class="py-2">Compradores</td>
+              <td class="py-2">Datos de transacción conservados durante el periodo exigido por la legislación fiscal aplicable.</td>
+            </tr>
+            <tr>
+              <td class="py-2">Analítica web</td>
+              <td class="py-2">Google Analytics retiene datos anonimizados por 14 meses.</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
 
+      <!-- 7. Cookies -->
       <section>
-        <h2 class="text-lg font-semibold text-purple-800 mb-2">3. Cómo usamos tus datos</h2>
-        <ul class="list-disc pl-6 space-y-1">
-          <li>Enviarte el producto digital que compraste</li>
-          <li>Enviarte emails de onboarding (3 emails en 7 días, puedes darte de baja en cualquier momento)</li>
-          <li>Mejorar nuestro contenido y experiencia de usuario</li>
-        </ul>
-        <p class="mt-2">No vendemos, compartimos ni transferimos tus datos personales a terceros para fines de marketing.</p>
-      </section>
-
-      <section>
-        <h2 class="text-lg font-semibold text-purple-800 mb-2">4. Servicios de terceros</h2>
-        <p>Utilizamos los siguientes servicios que pueden procesar datos en tu nombre:</p>
-        <ul class="list-disc pl-6 mt-2 space-y-1">
-          <li><strong>Hotmart:</strong> procesamiento de pagos y entrega del producto digital</li>
-          <li><strong>Brevo:</strong> envío de emails transaccionales</li>
-          <li><strong>Cloudflare:</strong> CDN, DNS y seguridad del sitio web</li>
-          <li><strong>Google Analytics:</strong> métricas de visitas al sitio web (páginas visitadas, país, fuente de tráfico)</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2 class="text-lg font-semibold text-purple-800 mb-2">5. Cookies</h2>
+        <h2 class="text-lg font-semibold text-purple-800 mb-2">7. Cookies</h2>
         <p>
-          Nuestro sitio web utiliza Google Analytics, que usa cookies para medir el tráfico.
+          Nuestro sitio web utiliza Google Analytics, que emplea cookies para medir el tráfico de forma anónima.
           Estas cookies no recopilan información que permita identificarte directamente.
-          Puedes desactivar las cookies desde la configuración de tu navegador.
+          Puedes desactivar las cookies desde la configuración de tu navegador en cualquier momento.
         </p>
       </section>
 
+      <!-- 8. Derechos -->
       <section>
-        <h2 class="text-lg font-semibold text-purple-800 mb-2">6. Tus derechos</h2>
-        <p>Tienes derecho a:</p>
+        <h2 class="text-lg font-semibold text-purple-800 mb-2">8. Tus derechos</h2>
+        <p>De acuerdo con el Reglamento General de Protección de Datos (GDPR), tienes derecho a:</p>
         <ul class="list-disc pl-6 mt-2 space-y-1">
-          <li>Acceder a los datos que tenemos sobre ti</li>
-          <li>Solicitar la corrección o eliminación de tus datos</li>
-          <li>Darte de baja de los emails en cualquier momento</li>
-          <li>Solicitar la eliminación completa de tu información</li>
+          <li><strong>Acceso</strong> — solicitar una copia de los datos que tenemos sobre ti</li>
+          <li><strong>Rectificación</strong> — corregir datos inexactos o incompletos</li>
+          <li><strong>Supresión ("derecho al olvido")</strong> — solicitar que eliminemos tus datos</li>
+          <li><strong>Limitación</strong> — restringir el procesamiento de tus datos</li>
+          <li><strong>Portabilidad</strong> — recibir tus datos en un formato estructurado y legible por máquina</li>
+          <li><strong>Oposición</strong> — oponerte al tratamiento de tus datos en determinadas circunstancias</li>
+          <li><strong>Retirar consentimiento</strong> — en cualquier momento, sin que afecte la licitud del tratamiento previo</li>
         </ul>
-        <p class="mt-2">Para ejercer cualquiera de estos derechos, escríbenos a <a href="mailto:hola@loveyourselfjournal.me" class="text-purple-600 underline">hola@loveyourselfjournal.me</a>.</p>
-      </section>
-
-      <section>
-        <h2 class="text-lg font-semibold text-purple-800 mb-2">7. Eliminación de datos</h2>
-        <p>
-          Si deseas que eliminemos todos tus datos, envía un email a
+        <p class="mt-3">
+          Para ejercer cualquiera de estos derechos, escríbenos a
           <a href="mailto:hola@loveyourselfjournal.me" class="text-purple-600 underline">hola@loveyourselfjournal.me</a>
-          con el asunto "Eliminar mis datos". Procesaremos tu solicitud en un máximo de 30 días.
+          con el asunto "Derechos de privacidad". Responderemos en un plazo máximo de 30 días.
+        </p>
+        <p class="mt-2">
+          Si consideras que no hemos atendido correctamente tus derechos, puedes presentar una reclamación ante la
+          autoridad de protección de datos de tu país (en España: <a href="https://www.aepd.es" class="text-purple-600 underline">AEPD</a>).
         </p>
       </section>
 
+      <!-- 9. Eliminación -->
       <section>
-        <h2 class="text-lg font-semibold text-purple-800 mb-2">8. Cambios a esta política</h2>
+        <h2 class="text-lg font-semibold text-purple-800 mb-2">9. Eliminación de datos</h2>
         <p>
-          Podemos actualizar esta política ocasionalmente. Publicaremos cualquier cambio en esta página
-          con la fecha de actualización. Te recomendamos revisarla periódicamente.
+          Si deseas que eliminemos todos tus datos personales, puedes:
+        </p>
+        <ul class="list-disc pl-6 mt-2 space-y-1">
+          <li>Enviar un email a <a href="mailto:hola@loveyourselfjournal.me" class="text-purple-600 underline">hola@loveyourselfjournal.me</a> con el asunto "Eliminar mis datos"</li>
+          <li>Visitar nuestra página de <a href="/datadeletion" class="text-purple-600 underline">eliminación de datos</a></li>
+        </ul>
+        <p class="mt-2">Procesaremos tu solicitud en un plazo máximo de 30 días y te confirmaremos la eliminación por email.</p>
+      </section>
+
+      <!-- 10. Menores -->
+      <section>
+        <h2 class="text-lg font-semibold text-purple-800 mb-2">10. Menores de edad</h2>
+        <p>
+          Este sitio web y nuestros productos no están dirigidos a menores de 16 años. No recopilamos intencionadamente datos de menores de edad.
+          Si eres menor de 16 años, necesitas el consentimiento de tu padre, madre o tutor legal para usar nuestros servicios o proporcionarnos datos personales.
         </p>
       </section>
 
+      <!-- 11. Seguridad -->
       <section>
-        <h2 class="text-lg font-semibold text-purple-800 mb-2">9. Contacto</h2>
+        <h2 class="text-lg font-semibold text-purple-800 mb-2">11. Medidas de seguridad</h2>
         <p>
-          Si tienes preguntas sobre esta política de privacidad, contáctanos en
-          <a href="mailto:hola@loveyourselfjournal.me" class="text-purple-600 underline">hola@loveyourselfjournal.me</a>.
+          Aplicamos medidas técnicas y organizativas para proteger tus datos personales contra el acceso no autorizado, pérdida o alteración:
+        </p>
+        <ul class="list-disc pl-6 mt-2 space-y-1">
+          <li>Certificado SSL (HTTPS) en todo el sitio web</li>
+          <li>Datos transmitidos cifrados entre tu navegador y nuestros servidores</li>
+          <li>Acceso restringido a datos personales solo al personal autorizado</li>
+          <li>Proveedores de servicios con acuerdos de protección de datos vigentes</li>
+        </ul>
+      </section>
+
+      <!-- 12. Cambios -->
+      <section>
+        <h2 class="text-lg font-semibold text-purple-800 mb-2">12. Cambios a esta política</h2>
+        <p>
+          Podemos actualizar esta política de privacidad cuando sea necesario. Publicaremos cualquier cambio en esta página con la fecha de actualización.
+          Si los cambios afectan significativamente cómo usamos tus datos, te notificaremos por email con al menos 10 días de antelación.
         </p>
       </section>
+
+      <!-- 13. Contacto -->
+      <section>
+        <h2 class="text-lg font-semibold text-purple-800 mb-2">13. Contacto</h2>
+        <p>
+          Si tienes preguntas, dudas o solicitudes sobre esta política de privacidad o el tratamiento de tus datos personales,
+          contáctanos en <a href="mailto:hola@loveyourselfjournal.me" class="text-purple-600 underline">hola@loveyourselfjournal.me</a>.
+        </p>
+      </section>
+
     </div>
 
     <div class="mt-12 pt-8 border-t border-purple-100 text-center">
-      <a href="/" class="text-sm text-purple-500 hover:text-purple-700">← Volver al inicio</a>
+      <a href="/" class="text-sm text-purple-500 hover:text-purple-700">&larr; Volver al inicio</a>
     </div>
   </div>
 </Layout>

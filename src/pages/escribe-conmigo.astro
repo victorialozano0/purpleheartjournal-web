@@ -1,0 +1,231 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+const leadCaptureUrl = import.meta.env.PUBLIC_LEAD_CAPTURE_URL ?? 'https://lead-capture.loveyourselfjournal.me';
+---
+
+<Layout
+  title="Escribe conmigo — 6 páginas del journal, gratis 💜 | Purple Heart Journal"
+  description="Descarga gratis las primeras 6 páginas del Purple Heart Journal. Un regalo para ARMY que siente demasiado y no sabe cómo escribirlo."
+>
+  <main class="min-h-screen gradient-hero flex flex-col">
+
+    <!-- Ambient glow -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-purple-heart/15 blur-[120px]"></div>
+      <div class="absolute bottom-0 right-0 w-[300px] h-[300px] rounded-full bg-purple-vibrant/10 blur-[80px]"></div>
+    </div>
+
+    <div class="relative z-10 flex-1 flex flex-col items-center justify-center px-5 py-16 md:py-20">
+      <div class="w-full max-w-lg mx-auto">
+
+        <!-- Eyebrow -->
+        <p class="font-accent text-2xl md:text-3xl text-white-glow/80 text-center mb-4 animate-fade-up">
+          un regalo para ti, de parte de ARMY 💜
+        </p>
+
+        <!-- Headline -->
+        <h1 class="font-heading italic text-4xl md:text-5xl lg:text-6xl text-white-glow text-center leading-[1.15] mb-6 animate-fade-up" style="animation-delay: 0.1s">
+          Hay canciones que no puedes escuchar sin llorar.<br />
+          <span class="text-white-glow/70 italic">Este journal sabe exactamente cómo te sientes.</span>
+        </h1>
+
+        <!-- Body copy -->
+        <p class="font-body text-lg md:text-xl text-white-glow/85 text-center leading-relaxed mb-3 animate-fade-up" style="animation-delay: 0.2s">
+          Te regalo las primeras <strong class="text-white-glow font-bold">6 páginas</strong> — el capítulo donde finalmente encuentras palabras para lo que BTS siempre supo que sentías.
+        </p>
+        <p class="font-accent text-xl md:text-2xl text-white-glow/60 text-center mb-10 animate-fade-up" style="animation-delay: 0.25s">
+          Gratis. Para ARMY que siente demasiado y escribe poco.
+        </p>
+
+        <!-- Form card -->
+        <div
+          class="bg-purple-deep/65 backdrop-blur-md border border-white-glow/20 rounded-2xl p-7 md:p-9 animate-fade-up shadow-[0_8px_40px_rgba(0,0,0,0.35)]"
+          style="animation-delay: 0.3s"
+        >
+          <form
+            id="lead-form"
+            novalidate
+            class="flex flex-col gap-5"
+            data-url={leadCaptureUrl}
+          >
+            <!-- Name -->
+            <div class="flex flex-col gap-1.5">
+              <label for="nombre" class="font-body text-sm font-semibold text-white-glow/80 tracking-wide">
+                ¿Cómo te llamas?
+              </label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Tu nombre"
+                autocomplete="given-name"
+                required
+                minlength="2"
+                class="
+                  w-full rounded-xl px-4 py-3.5
+                  bg-white-glow/10 border border-white-glow/30
+                  font-body text-base text-white-glow placeholder:text-white-glow/35
+                  focus:outline-none focus:border-purple-heart focus:bg-white-glow/15
+                  transition-all duration-200
+                "
+              />
+              <span id="nombre-error" class="text-xs text-red-300 hidden">Escribe tu nombre para continuar.</span>
+            </div>
+
+            <!-- Email -->
+            <div class="flex flex-col gap-1.5">
+              <label for="email" class="font-body text-sm font-semibold text-white-glow/80 tracking-wide">
+                ¿A qué email te lo mando?
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="tu@email.com"
+                autocomplete="email"
+                required
+                class="
+                  w-full rounded-xl px-4 py-3.5
+                  bg-white-glow/10 border border-white-glow/30
+                  font-body text-base text-white-glow placeholder:text-white-glow/35
+                  focus:outline-none focus:border-purple-heart focus:bg-white-glow/15
+                  transition-all duration-200
+                "
+              />
+              <span id="email-error" class="text-xs text-red-300 hidden">Escribe un email válido para recibir el PDF.</span>
+            </div>
+
+            <!-- Consent checkbox (optional - GDPR) -->
+            <div class="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="consent-emails"
+                name="consent-emails"
+                class="mt-1 w-4 h-4 rounded border-white-glow/30 bg-white-glow/10 text-purple-heart accent-purple-heart cursor-pointer shrink-0"
+              />
+              <label for="consent-emails" class="font-body text-xs text-white-glow/60 leading-relaxed cursor-pointer">
+                Quiero recibir emails con contenido de journaling, prompts y desarrollo personal.
+                <span class="text-white-glow/40">(Opcional — puedes darte de baja en cualquier momento)</span>
+              </label>
+            </div>
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              id="submit-btn"
+              class="btn-primary-lg w-full text-center mt-1"
+            >
+              <span id="btn-text">Quiero mis 6 páginas 💜</span>
+              <span id="btn-loading" class="hidden">Enviando…</span>
+            </button>
+
+            <!-- Privacy note -->
+            <p class="font-body text-xs text-white-glow/45 text-center leading-relaxed">
+              Al enviar, aceptas nuestra <a href="/privacy" class="underline text-white-glow/60 hover:text-purple-heart transition-colors">política de privacidad</a>.
+              <br />Tu email es seguro aquí. Nada de spam.
+            </p>
+          </form>
+
+          <!-- Success state (hidden by default) -->
+          <div id="success-state" class="hidden text-center py-4">
+            <p class="font-accent text-2xl text-purple-heart mb-3">¡Ya está en camino! 💜</p>
+            <p class="font-body text-base text-white-glow/80 leading-relaxed">
+              Revisa tu bandeja de entrada<br />
+              (y el spam — a veces también necesita amor).
+            </p>
+            <p class="font-accent text-lg text-white-glow/60 mt-4">
+              Abre una página en blanco mientras esperas.
+            </p>
+          </div>
+
+          <!-- Error state (hidden by default) -->
+          <div id="error-state" class="hidden mt-4 bg-red-900/30 border border-red-500/30 rounded-xl p-4 text-center">
+            <p class="font-body text-sm text-red-200">
+              Algo salió mal. Intenta de nuevo o escríbenos a
+              <a href="mailto:hola@loveyourselfjournal.me" class="underline text-purple-heart">hola@loveyourselfjournal.me</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Trust note -->
+        <p class="font-body text-xs text-soft-lilac/40 text-center mt-5 animate-fade-up" style="animation-delay: 0.4s">
+          Hecho por una ARMY, para ARMYs. No afiliado a HYBE ni BTS.
+        </p>
+
+      </div>
+    </div>
+
+    <Footer />
+  </main>
+</Layout>
+
+<script>
+  const form = document.getElementById('lead-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const btnText = document.getElementById('btn-text') as HTMLSpanElement;
+  const btnLoading = document.getElementById('btn-loading') as HTMLSpanElement;
+  const successState = document.getElementById('success-state') as HTMLDivElement;
+  const errorState = document.getElementById('error-state') as HTMLDivElement;
+  const nombreInput = document.getElementById('nombre') as HTMLInputElement;
+  const emailInput = document.getElementById('email') as HTMLInputElement;
+  const nombreError = document.getElementById('nombre-error') as HTMLSpanElement;
+  const emailError = document.getElementById('email-error') as HTMLSpanElement;
+  const consentEmails = document.getElementById('consent-emails') as HTMLInputElement;
+
+  function validateField(input: HTMLInputElement, errorEl: HTMLSpanElement): boolean {
+    if (!input.validity.valid) {
+      errorEl.classList.remove('hidden');
+      input.classList.add('border-red-400');
+      return false;
+    }
+    errorEl.classList.add('hidden');
+    input.classList.remove('border-red-400');
+    return true;
+  }
+
+  nombreInput.addEventListener('input', () => validateField(nombreInput, nombreError));
+  emailInput.addEventListener('input', () => validateField(emailInput, emailError));
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const validNombre = validateField(nombreInput, nombreError);
+    const validEmail = validateField(emailInput, emailError);
+    if (!validNombre || !validEmail) return;
+
+    const url = (form.dataset.url ?? '').trim();
+
+    // Loading state
+    submitBtn.disabled = true;
+    btnText.classList.add('hidden');
+    btnLoading.classList.remove('hidden');
+    errorState.classList.add('hidden');
+
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre: nombreInput.value.trim(),
+          email: emailInput.value.trim().toLowerCase(),
+          source: 'escribe-conmigo',
+          consentEmails: consentEmails.checked,
+        }),
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      // Show success
+      form.classList.add('hidden');
+      successState.classList.remove('hidden');
+    } catch {
+      // Restore form, show error
+      submitBtn.disabled = false;
+      btnText.classList.remove('hidden');
+      btnLoading.classList.add('hidden');
+      errorState.classList.remove('hidden');
+    }
+  });
+</script>
