@@ -40,6 +40,7 @@ const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || 'https://pay.hotmart.co
       target="_blank"
       rel="noopener noreferrer"
       class="btn-primary-lg"
+      onclick="gtag && gtag('event', 'click_cta_pagar', { button_location: 'cta_final' })"
     >
       Quiero empezar mi journal 💜
     </a>
