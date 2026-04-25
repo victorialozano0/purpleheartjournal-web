@@ -8,12 +8,12 @@ const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 
-const albumOrder = [
-  'ARIRANG (2026)',
-  'BE (2020)',
-  'You Never Walk Alone (2017)',
-  'Love Yourself: Tear (2018)',
-];
+const ERA_SHORT: Record<string, string> = {
+  'ARIRANG (2026)':         'ARIRANG 2026',
+  'BE (2020)':              'BE 2020',
+  'You Never Walk Alone (2017)': 'YNWA 2017',
+  'Love Yourself: Tear (2018)': 'LY: Tear 2018',
+};
 ---
 
 <Layout
@@ -47,45 +47,58 @@ const albumOrder = [
     <span class="divider-line"></span>
   </div>
 
-  <!-- Tracklist: layout tipo setlist / contracubierta de álbum -->
-  <main class="tracklist-wrap">
+  <!-- Bento Grid -->
+  <main class="bento-wrap">
+    <div class="bento-grid">
+      {posts.map((post, i) => {
+        const isWide  = i % 5 === 0;
+        const isDark  = isWide;
+        const isARI   = post.data.album.includes('ARIRANG');
+        const era     = ERA_SHORT[post.data.album] ?? post.data.album.replace(/ \(\d{4}\)$/, '');
+        const quote   = post.data.quote ?? '';
+        const lines   = quote ? quote.split(' / ') : [];
 
-    <!-- Era headers con entradas como tracklist -->
-    {albumOrder.map(album => {
-      const albumPosts = posts.filter(p => p.data.album === album);
-      if (!albumPosts.length) return null;
-      const albumName = album.replace(/ \(\d{4}\)$/, '');
-      const albumYear = album.match(/\((\d+)\)/)?.[1] ?? '';
-      return (
-        <section class="era-section">
-          <div class="era-header">
-            <span class="era-year">{albumYear}</span>
-            <h2 class="era-name">{albumName}</h2>
-            <span class="era-count">{albumPosts.length} entrada{albumPosts.length !== 1 ? 's' : ''}</span>
-          </div>
-          <div class="tracklist">
-            {albumPosts.map((post, i) => (
-              <a href={`/blog/${post.id}`} class="track-item">
-                <span class="track-num">{String(i + 1).padStart(2, '0')}</span>
-                <div class="track-body">
-                  <div class="track-top">
-                    <span class="track-song">{post.data.song}</span>
-                    {post.data.quote && (
-                      <span class="track-quote">
-                        "{post.data.quote.split(' / ')[0]}"
-                      </span>
-                    )}
-                  </div>
-                  <p class="track-excerpt">{post.data.excerpt}</p>
+        return (
+          <a
+            href={`/blog/${post.id}`}
+            class={`bento-card ${isDark ? 'card-dark' : 'card-light'} ${isARI ? 'era-ari' : 'era-cl'}`}
+          >
+            <span class={`era-pill ${isARI ? 'pill-ari' : 'pill-cl'}`}>{era}</span>
+
+            {isDark ? (
+              /* ── Wide / dark card: lírica hero ── */
+              <>
+                <div class="quote-zone">
+                  <span class="big-quote" aria-hidden="true">"</span>
+                  <p class="lyric-hero">
+                    {lines.length > 0
+                      ? lines.map((l, li) => (<>{l}{li < lines.length - 1 && <br />}</>))
+                      : post.data.excerpt.slice(0, 90)}
+                  </p>
                 </div>
-                <span class="track-arrow" aria-hidden="true">→</span>
-              </a>
-            ))}
-          </div>
-        </section>
-      );
-    })}
-
+                <div class="dark-footer">
+                  <div>
+                    <p class="dark-song">{post.data.song}</p>
+                    <p class="dark-excerpt">{post.data.excerpt}</p>
+                  </div>
+                  <span class="dark-cta">Leer <span class="arrow">→</span></span>
+                </div>
+              </>
+            ) : (
+              /* ── Small / light card: canción hero ── */
+              <>
+                <h2 class="song-hero">{post.data.song}</h2>
+                {lines[0] && (
+                  <p class="light-lyric">"{lines[0]}"</p>
+                )}
+                <p class="light-excerpt">{post.data.excerpt}</p>
+                <span class="light-cta">Leer <span class="arrow">→</span></span>
+              </>
+            )}
+          </a>
+        );
+      })}
+    </div>
   </main>
 
   <!-- CTA -->
@@ -226,194 +239,285 @@ const albumOrder = [
     flex-shrink: 0;
   }
 
-  /* ── Tracklist wrap ── */
-  .tracklist-wrap {
-    background: #FDFBFF;
-    padding: 3rem 1.5rem 5rem;
+  /* ── Bento wrap ── */
+  .bento-wrap {
+    background: #F3EAFA;
+    padding: 2.5rem 1.25rem 5rem;
   }
 
   @media (min-width: 768px) {
-    .tracklist-wrap { padding: 3.5rem 2.5rem 6rem; }
+    .bento-wrap { padding: 3rem 2rem 6rem; }
   }
 
-  /* ── Era section ── */
-  .era-section {
-    max-width: 60rem;
-    margin: 0 auto 4rem;
+  /* ── Bento grid ── */
+  .bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+    max-width: 72rem;
+    margin: 0 auto;
   }
 
-  .era-section:last-child { margin-bottom: 0; }
-
-  .era-header {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    padding-bottom: 1rem;
-    margin-bottom: 0;
-    border-bottom: 2px solid var(--color-text-deep);
+  @media (min-width: 560px) {
+    .bento-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    /* Every 5th card (wide) spans 2 cols */
+    .bento-card:nth-child(5n+1) {
+      grid-column: span 2;
+    }
   }
 
-  .era-year {
-    font-family: var(--font-body);
-    font-size: 0.625rem;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-purple-heart);
-    flex-shrink: 0;
+  @media (min-width: 900px) {
+    .bento-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .bento-card:nth-child(5n+1) {
+      grid-column: span 2;
+    }
   }
 
-  .era-name {
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-size: clamp(1.5rem, 3vw, 2.25rem);
-    font-weight: 600;
-    line-height: 1;
-    color: var(--color-text-deep);
-    flex: 1;
-  }
-
-  .era-count {
-    font-family: var(--font-body);
-    font-size: 0.625rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(107, 91, 123, 0.35);
-    flex-shrink: 0;
-  }
-
-  /* ── Tracklist ── */
-  .tracklist {
+  /* ── Base card ── */
+  .bento-card {
+    position: relative;
     display: flex;
     flex-direction: column;
-  }
-
-  /* ── Track item ── */
-  .track-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-    padding: 1.375rem 0.5rem 1.375rem 0;
-    border-bottom: 1px solid rgba(224, 208, 240, 0.55);
+    border-radius: 1.25rem;
+    padding: 1.625rem 1.5rem 1.375rem;
     text-decoration: none;
+    overflow: hidden;
     cursor: pointer;
-    position: relative;
-    transition: background 0.2s ease, padding-left 0.22s ease;
-    border-radius: 0 0.5rem 0.5rem 0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    min-height: 220px;
   }
 
-  .track-item::before {
+  .bento-card:hover {
+    transform: translateY(-4px);
+  }
+
+  /* ── Dark card (wide, every 5th) ── */
+  .card-dark {
+    background: linear-gradient(140deg, #1A0A2E 0%, #3B1066 60%, #6B2FA0 100%);
+    box-shadow: 0 4px 24px rgba(26, 10, 46, 0.3);
+    min-height: 280px;
+  }
+
+  .card-dark::before {
     content: '';
     position: absolute;
-    left: -1.5rem;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: var(--color-purple-heart);
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    border-radius: 0 2px 2px 0;
+    bottom: -15%;
+    right: -5%;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(199,125,255,0.18) 0%, transparent 70%);
+    pointer-events: none;
   }
 
-  @media (min-width: 768px) {
-    .track-item:hover {
-      padding-left: 1rem;
-      background: rgba(199, 125, 255, 0.04);
-    }
-    .track-item:hover::before { opacity: 1; }
+  .card-dark:hover {
+    box-shadow: 0 12px 48px rgba(107, 47, 160, 0.5);
   }
 
-  /* Número de track */
-  .track-num {
+  /* ── Light card ── */
+  .card-light {
+    background: #FDFBFF;
+    border: 1px solid var(--color-soft-lilac);
+    box-shadow: 0 2px 8px rgba(107, 91, 123, 0.06);
+  }
+
+  .card-light.era-ari {
+    border-top: 3px solid #C77DFF;
+  }
+
+  .card-light.era-cl {
+    border-top: 3px solid #9B4DCA;
+  }
+
+  .card-light:hover {
+    box-shadow: 0 10px 36px rgba(199, 125, 255, 0.18);
+    border-color: rgba(199, 125, 255, 0.4);
+  }
+
+  /* ── Era pill ── */
+  .era-pill {
+    display: inline-block;
     font-family: var(--font-body);
-    font-size: 0.6875rem;
-    font-weight: 700;
-    color: rgba(107, 91, 123, 0.3);
-    letter-spacing: 0.06em;
-    min-width: 1.75rem;
+    font-size: 0.5rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    align-self: flex-start;
+    margin-bottom: 1.125rem;
     flex-shrink: 0;
-    padding-top: 0.5rem;
-    transition: color 0.2s ease;
+  }
+
+  .pill-ari {
+    background: rgba(199, 125, 255, 0.18);
+    color: #C77DFF;
+    border: 1px solid rgba(199, 125, 255, 0.35);
+  }
+
+  .pill-cl {
+    background: rgba(155, 77, 202, 0.1);
+    color: #9B4DCA;
+    border: 1px solid rgba(155, 77, 202, 0.25);
+  }
+
+  .card-dark .pill-ari,
+  .card-dark .pill-cl {
+    background: rgba(199, 125, 255, 0.15);
+    color: rgba(199, 125, 255, 0.9);
+    border-color: rgba(199, 125, 255, 0.3);
+  }
+
+  /* ── Dark card: quote zone ── */
+  .quote-zone {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .big-quote {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    line-height: 0.45;
+    color: rgba(199, 125, 255, 0.25);
+    margin-bottom: 0.5rem;
     user-select: none;
   }
 
-  .track-item:hover .track-num { color: var(--color-purple-heart); }
-
-  /* Cuerpo del track */
-  .track-body {
-    flex: 1;
-    min-width: 0;
+  .lyric-hero {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    line-height: 1.45;
+    color: #FDFBFF;
+    letter-spacing: -0.01em;
   }
 
-  .track-top {
+  /* ── Dark card: footer zone ── */
+  .dark-footer {
     display: flex;
-    align-items: baseline;
+    align-items: flex-end;
     justify-content: space-between;
     gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.25rem;
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 1;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(199, 125, 255, 0.15);
   }
 
-  /* Nombre de la canción — protagonista */
-  .track-song {
+  .dark-song {
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: clamp(1.625rem, 3.5vw, 2.375rem);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #C77DFF;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+  }
+
+  .dark-excerpt {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: rgba(224, 208, 240, 0.5);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: 36rem;
+  }
+
+  .dark-cta {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: rgba(199, 125, 255, 0.6);
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: color 0.2s ease;
+  }
+
+  .card-dark:hover .dark-cta {
+    color: #C77DFF;
+  }
+
+  /* ── Light card: song hero ── */
+  .song-hero {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     line-height: 1.1;
     color: var(--color-text-deep);
+    margin-bottom: 0.625rem;
     transition: color 0.2s ease;
-    flex-shrink: 0;
   }
 
-  .track-item:hover .track-song { color: var(--color-purple-vibrant); }
+  .card-light:hover .song-hero {
+    color: var(--color-purple-vibrant);
+  }
 
-  /* Primera línea de la lírica — derecha */
-  .track-quote {
+  /* ── Light card: lyric line ── */
+  .light-lyric {
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: 0.8125rem;
-    color: rgba(107, 91, 123, 0.4);
-    text-align: right;
-    line-height: 1.4;
-    flex-shrink: 1;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: rgba(107, 91, 123, 0.5);
+    margin-bottom: 0.75rem;
     transition: color 0.2s ease;
-    max-width: 18rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
-  .track-item:hover .track-quote { color: rgba(155, 77, 202, 0.55); }
+  .card-light:hover .light-lyric {
+    color: rgba(155, 77, 202, 0.65);
+  }
 
-  /* Excerpt: oculto, aparece en hover */
-  .track-excerpt {
+  /* ── Light card: excerpt ── */
+  .light-excerpt {
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     line-height: 1.65;
     color: var(--color-text-muted);
-    max-height: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.32s ease, opacity 0.25s ease;
+    flex: 1;
   }
 
-  .track-item:hover .track-excerpt {
-    max-height: 6rem;
-    opacity: 1;
-  }
-
-  /* Flecha de navegación */
-  .track-arrow {
+  /* ── Light card: cta ── */
+  .light-cta {
+    display: inline-block;
     font-family: var(--font-body);
-    font-size: 1rem;
-    color: rgba(107, 91, 123, 0.2);
-    flex-shrink: 0;
-    transition: color 0.2s, transform 0.22s;
-    align-self: center;
-    padding-left: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(107, 91, 123, 0.4);
+    margin-top: 1rem;
+    transition: color 0.2s ease;
+    align-self: flex-end;
   }
 
-  .track-item:hover .track-arrow {
-    color: var(--color-purple-heart);
-    transform: translateX(5px);
+  .card-light:hover .light-cta {
+    color: var(--color-purple-vibrant);
+  }
+
+  /* ── Arrow ── */
+  .arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .bento-card:hover .arrow {
+    transform: translateX(4px);
   }
 
   /* ── CTA ── */
