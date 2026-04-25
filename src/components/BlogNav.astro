@@ -2,7 +2,10 @@
 ---
 <nav class="blog-nav">
   <div class="blog-nav-inner">
-    <a href="/" class="nav-logo">Purple Heart Journal</a>
+    <a href="/" class="nav-logo">
+      <img src="/images/army-girl.png" alt="Purple Heart Journal" class="nav-avatar" />
+      <span class="nav-logo-text">Purple Heart Journal</span>
+    </a>
     <div class="nav-links">
       <a href="/blog" class="nav-link">Blog</a>
       <a
@@ -37,16 +40,29 @@
   }
 
   .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .nav-logo:hover { opacity: 0.85; }
+
+  .nav-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid rgba(199,125,255,0.4);
+    flex-shrink: 0;
+  }
+
+  .nav-logo-text {
     font-family: var(--font-heading);
     font-style: italic;
     font-size: 1.125rem;
     color: var(--color-white-glow);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .nav-logo:hover {
-    color: var(--color-purple-heart);
   }
 
   .nav-links {
