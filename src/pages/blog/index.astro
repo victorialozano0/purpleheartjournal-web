@@ -197,16 +197,26 @@ const COLORS = ['lavender', 'light', 'dark', 'vibrant', 'midlav'] as const;
   /* ══ Featured card ══ */
   .g-card-featured {
     grid-column: 1 / -1;
-    background: linear-gradient(150deg, #0D051E 0%, #2A0A5E 50%, #6B2FA0 100%);
-    min-height: 280px;
+    background: linear-gradient(150deg, #0D051E 0%, #2A0A5E 45%, #6B2FA0 100%);
+    min-height: 300px;
     transform: none !important;
     margin-top: 0 !important;
-    box-shadow: 0 8px 40px rgba(26,10,46,0.4);
+    border: 1px solid rgba(199,125,255,0.18);
+    border-top: 3px solid #C77DFF;
+    box-shadow:
+      0 8px 40px rgba(26,10,46,0.5),
+      0 0 0 1px rgba(199,125,255,0.06),
+      inset 0 1px 0 rgba(199,125,255,0.08);
   }
 
   .g-card-featured:hover {
-    transform: translateY(-4px) !important;
-    box-shadow: 0 16px 56px rgba(91,44,142,0.5);
+    transform: translateY(-5px) !important;
+    box-shadow:
+      0 20px 64px rgba(91,44,142,0.55),
+      0 0 48px rgba(199,125,255,0.12),
+      0 0 0 1px rgba(199,125,255,0.15);
+    border-color: rgba(199,125,255,0.3);
+    border-top-color: #C77DFF;
   }
 
   .g-blob-2 {
@@ -243,11 +253,12 @@ const COLORS = ['lavender', 'light', 'dark', 'vibrant', 'midlav'] as const;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #C77DFF;
-    background: rgba(199,125,255,0.12);
-    border: 1px solid rgba(199,125,255,0.25);
-    padding: 0.175rem 0.5rem;
+    color: #E8C8FF;
+    background: rgba(199,125,255,0.2);
+    border: 1px solid rgba(199,125,255,0.4);
+    padding: 0.2rem 0.625rem;
     border-radius: 999px;
+    box-shadow: 0 0 10px rgba(199,125,255,0.2);
   }
 
   .gf-giant-quote {
@@ -275,10 +286,11 @@ const COLORS = ['lavender', 'light', 'dark', 'vibrant', 'midlav'] as const;
   .gf-lyric-line {
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: clamp(1.75rem, 3.5vw, 3rem);
-    line-height: 1.2;
+    font-size: clamp(2rem, 4.5vw, 3.75rem);
+    line-height: 1.15;
     color: #FDFBFF;
     letter-spacing: -0.02em;
+    text-shadow: 0 2px 24px rgba(199,125,255,0.15);
   }
 
   .gf-lyric-indent { padding-left: clamp(1rem, 4vw, 4rem); }
