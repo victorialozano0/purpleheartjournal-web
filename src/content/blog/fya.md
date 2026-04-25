@@ -3,6 +3,7 @@ title: "FYA: el fuego que queda cuando todo lo demás se apaga"
 song: "FYA"
 album: "ARIRANG (2026)"
 excerpt: "Puedes estar agotada. Puedes sentir que no te queda nada. Pero FYA encuentra el fuego que nunca se apaga del todo — y te pregunta qué harías si lo usaras."
+quote: "There's still fire / even when you think / there's nothing left to burn"
 date: 2026-04-17
 tags: ["fuego-interior", "burnout", "ARIRANG", "resiliencia"]
 ---

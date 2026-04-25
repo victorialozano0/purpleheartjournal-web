@@ -3,6 +3,7 @@ title: "One More Night: las cartas que nunca enviaste y lo que todavía quieres 
 song: "One More Night"
 album: "ARIRANG (2026)"
 excerpt: "Hay personas a quienes no pudiste decirle todo lo que necesitabas decirles. One More Night te da esa noche — aunque sea en papel."
+quote: "One more night / for everything / I never said"
 date: 2026-04-13
 tags: ["pérdida", "nostalgia", "ARIRANG", "relaciones", "cartas"]
 ---

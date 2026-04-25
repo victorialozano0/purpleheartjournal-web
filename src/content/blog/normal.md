@@ -3,6 +3,7 @@ title: "Normal: cuando BTS admitió que también se cansa"
 song: "Normal"
 album: "ARIRANG (2026)"
 excerpt: "BTS lleva años siendo la fortaleza de millones. Normal es la primera vez que lo dicen sin metáfora: también nosotros nos cansamos. Esa distinción — cansada, no rota — lo cambia todo."
+quote: "Are you okay? / even if you're not / that's okay too"
 date: 2026-04-24
 tags: ["vulnerabilidad", "autenticidad", "ARIRANG", "cansancio"]
 ---

@@ -3,6 +3,7 @@ title: "Hooligan: ser ARMY nunca fue lo 'normal' — y ese es exactamente el pun
 song: "Hooligan"
 album: "ARIRANG (2026)"
 excerpt: "Un hooligan no sigue las reglas del juego que otros diseñaron. Hooligan es la canción con la que BTS celebra ser exactamente lo que el mundo dijo que no podían ser."
+quote: "They said we couldn't / We said watch us"
 date: 2026-04-08
 tags: ["identidad-ARMY", "comunidad", "ARIRANG", "autenticidad", "diferencia"]
 ---

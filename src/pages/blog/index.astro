@@ -99,6 +99,7 @@ const [featured, ...rest] = posts;
               song={post.data.song}
               album={post.data.album}
               excerpt={post.data.excerpt}
+              quote={post.data.quote}
               date={post.data.date}
               tags={post.data.tags}
             />
@@ -479,19 +480,24 @@ const [featured, ...rest] = posts;
     box-shadow: 0 0 20px rgba(199,125,255,0.4);
   }
 
-  /* ── Grid ── */
+  /* ── Grid masonry (Pinterest) ── */
   .posts-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+    columns: 1;
+    column-gap: 1.25rem;
+  }
+
+  .posts-grid > * {
+    break-inside: avoid;
+    margin-bottom: 1.25rem;
+    display: block;
   }
 
   @media (min-width: 520px) {
-    .posts-grid { grid-template-columns: repeat(2, 1fr); }
+    .posts-grid { columns: 2; }
   }
 
   @media (min-width: 1100px) {
-    .posts-grid { grid-template-columns: repeat(3, 1fr); }
+    .posts-grid { columns: 3; }
   }
 
   /* ── Índice derecho ── */
@@ -537,7 +543,7 @@ const [featured, ...rest] = posts;
     font-family: var(--font-heading);
     font-style: normal;
     font-weight: 900;
-    font-size: 0.5rem;
+    font-size: 0.625rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--color-purple-heart);
@@ -556,7 +562,7 @@ const [featured, ...rest] = posts;
 
   .index-brand {
     font-family: var(--font-body);
-    font-size: 0.5rem;
+    font-size: 0.625rem;
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -584,9 +590,9 @@ const [featured, ...rest] = posts;
   .index-album-year {
     display: block;
     font-family: var(--font-body);
-    font-size: 0.5rem;
+    font-size: 0.625rem;
     font-weight: 800;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: rgba(199, 125, 255, 0.65);
     margin-bottom: 0.125rem;
@@ -597,7 +603,7 @@ const [featured, ...rest] = posts;
     display: block;
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: 0.9375rem;
+    font-size: 1.0625rem;
     font-weight: 600;
     color: var(--color-text-deep);
     line-height: 1.2;
@@ -614,7 +620,7 @@ const [featured, ...rest] = posts;
     display: block;
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: 0.8125rem;
+    font-size: 0.9375rem;
     color: rgba(26, 10, 46, 0.55);
     text-decoration: none;
     padding: 0.275rem 0.75rem;

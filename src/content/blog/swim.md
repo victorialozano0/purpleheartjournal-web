@@ -3,6 +3,7 @@ title: "Swim: BTS y el permiso de avanzar a tu propio ritmo"
 song: "Swim"
 album: "ARIRANG (2026)"
 excerpt: "El mundo te dice que nades más rápido, más fuerte, más lejos. BTS eligió volver con una canción que no trata de ganar. Que trata de sentir el agua."
+quote: "You don't have to swim faster / just feel the water / that's enough"
 date: 2026-04-25
 tags: ["autoconocimiento", "ritmo-propio", "ARIRANG", "comparación"]
 ---

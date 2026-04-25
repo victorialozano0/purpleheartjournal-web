@@ -3,6 +3,7 @@ title: "Into the Sun: cómo se siente salir de la oscuridad (aunque sea despacio
 song: "Into the Sun"
 album: "ARIRANG (2026)"
 excerpt: "Nadie sale de un período oscuro de golpe. Into the Sun es sobre el proceso lento, irregular, y a veces confuso de moverse hacia la luz — y por qué eso ya es suficiente."
+quote: "Moving toward the light / slowly / even that counts"
 date: 2026-04-09
 tags: ["sanación", "resiliencia", "ARIRANG", "proceso"]
 ---

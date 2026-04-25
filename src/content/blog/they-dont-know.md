@@ -2,7 +2,8 @@
 title: "They Don't Know 'Bout Us: los vínculos que no necesitan ser explicados"
 song: "They Don't Know 'Bout Us"
 album: "ARIRANG (2026)"
-excerpt: "Hay relaciones que existen en un idioma propio, fuera de la mirada de todos. They Don't Know 'Bout Us es sobre el valor de lo que no necesita ser público para ser real."
+excerpt: "Hay relaciones que existen en un idioma propio, fuera de la mirada de todos. They Don’t Know ‘Bout Us es sobre el valor de lo que no necesita ser público para ser real."
+quote: "They don't know what we built / in the quiet / between words"
 date: 2026-04-14
 tags: ["relaciones", "vínculos", "ARIRANG", "privacidad"]
 ---

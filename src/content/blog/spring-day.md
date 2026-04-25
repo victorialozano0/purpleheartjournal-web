@@ -3,6 +3,7 @@ title: "Spring Day: todo lo que no pudiste decirle antes de que se fuera"
 song: "Spring Day"
 album: "You Never Walk Alone (2017)"
 excerpt: "Esta canción no es sobre esperar que alguien vuelva. Es sobre aprender a extrañar sin que el extrañar te destruya. Sobre guardar a alguien en el corazón sin quedarte atrapada ahí."
+quote: "Missing you / after a long time passes / will it come back to me?"
 date: 2026-04-15
 tags: ["pérdida", "duelo", "relaciones", "You Never Walk Alone", "nostalgia", "cartas"]
 ---

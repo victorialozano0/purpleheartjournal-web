@@ -3,6 +3,7 @@ title: "Life Goes On: la canción que nos dio permiso de no estar listas"
 song: "Life Goes On"
 album: "BE (2020)"
 excerpt: "BTS no nos dijo que todo iba a estar bien. Nos dijeron que la vida iba a seguir, con o sin nuestro permiso. Eso es distinto. Y más honesto."
+quote: "One day this rain will stop"
 date: 2026-04-20
 tags: ["presente", "resiliencia", "autoconocimiento", "BE", "proceso"]
 ---

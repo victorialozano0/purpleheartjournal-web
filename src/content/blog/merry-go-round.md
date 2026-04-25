@@ -3,6 +3,7 @@ title: "Merry Go Round: el ciclo que se repite, y cómo salir de él"
 song: "Merry Go Round"
 album: "ARIRANG (2026)"
 excerpt: "Un carrusel siempre vuelve al mismo punto. Merry Go Round pregunta: ¿qué ciclo en tu vida sigue girando aunque ya quieras bajarte?"
+quote: "Same sky / same pain / different face / same merry-go-round"
 date: 2026-04-16
 tags: ["ciclos", "patrones", "ARIRANG", "autoconocimiento"]
 ---

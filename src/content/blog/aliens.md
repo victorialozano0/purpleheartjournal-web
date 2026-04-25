@@ -3,6 +3,7 @@ title: "Aliens: sentirse diferente no es un defecto — es tu identidad"
 song: "Aliens"
 album: "ARIRANG (2026)"
 excerpt: "¿Alguna vez sentiste que eres de otro planeta? Aliens no te dice que te adaptes. Te dice que ser diferente puede ser exactamente lo que necesitabas ser."
+quote: "They called us aliens / we made it / our planet"
 date: 2026-04-15
 tags: ["identidad", "diferencia", "ARIRANG", "identidad-ARMY"]
 ---

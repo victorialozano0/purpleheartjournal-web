@@ -3,6 +3,7 @@ title: "Like Animals: la versión de ti que aparece cuando dejas de actuar"
 song: "Like Animals"
 album: "ARIRANG (2026)"
 excerpt: "Hay una versión de ti que existe debajo de todo el rol, la imagen y la expectativa. Like Animals la llama por su nombre — y te pregunta cuánto tiempo llevas escondiéndola."
+quote: "Before the words / something animal / something true"
 date: 2026-04-11
 tags: ["autenticidad", "ARIRANG", "autoconocimiento", "máscaras"]
 ---

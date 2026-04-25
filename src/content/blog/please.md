@@ -3,6 +3,7 @@ title: "Please: BTS de vuelta, y la valentía de quedarse"
 song: "Please"
 album: "ARIRANG (2026)"
 excerpt: "Dos años esperando. Y cuando volvieron, no cantaron sobre la gloria. Cantaron sobre quedarse. Please es la promesa más honesta que pueden hacer — porque cuesta algo decirla."
+quote: "If you go / leave the door / unlocked for yourself"
 date: 2026-04-23
 tags: ["relaciones", "ARIRANG", "regreso-BTS", "compromiso"]
 ---

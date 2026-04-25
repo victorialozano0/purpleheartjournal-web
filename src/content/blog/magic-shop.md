@@ -3,6 +3,7 @@ title: "Magic Shop: la parte de ti que siempre ha estado ahí"
 song: "Magic Shop"
 album: "Love Yourself: Tear (2018)"
 excerpt: "BTS no escribió esta canción para ellos. La escribieron para ti. Para el momento en que te pierdes y no sabes dónde encontrarte."
+quote: "Open the door / and this is all yours"
 date: 2026-04-10
 tags: ["fuerza interior", "autoconocimiento", "amor propio", "Love Yourself: Tear", "vulnerabilidad", "resiliencia"]
 ---

@@ -8,6 +8,7 @@ const blog = defineCollection({
     song: z.string(),
     album: z.string(),
     excerpt: z.string(),
+    quote: z.string().optional(),
     date: z.date(),
     tags: z.array(z.string()),
   }),

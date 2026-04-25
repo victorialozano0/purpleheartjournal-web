@@ -3,6 +3,7 @@ title: "Body to Body: la diferencia entre estar cerca y estar presente"
 song: "Body to Body"
 album: "ARIRANG (2026)"
 excerpt: "Puedes estar en la misma habitación y estar completamente ausente. Body to Body pregunta qué significa realmente estar presente — contigo misma y con los demás."
+quote: "Close enough to touch / far enough / to feel the distance"
 date: 2026-04-12
 tags: ["relaciones", "conexión", "ARIRANG", "presencia"]
 ---
