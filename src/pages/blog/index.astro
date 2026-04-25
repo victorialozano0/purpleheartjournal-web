@@ -18,56 +18,13 @@ const ERA_SHORT: Record<string, string> = {
 const era  = (p: typeof posts[0]) => ERA_SHORT[p.data.album] ?? p.data.album.replace(/ \(\d{4}\)$/, '');
 const lns  = (p: typeof posts[0]) => p.data.quote?.split(' / ') ?? [];
 
-// Marquee text
+const COLORS = ['lavender', 'light', 'dark', 'vibrant', 'midlav'] as const;
+
 const marqueeText = posts
   .filter(p => p.data.quote)
   .slice(0, 6)
   .map(p => p.data.quote!.split(' / ')[0])
   .join('  ·  ');
-
-// Grupos de cards (post 0 va al héroe)
-const groups = [
-  posts.slice(1, 4),
-  posts.slice(4, 7),
-  posts.slice(7, 10),
-  posts.slice(10, 13),
-  posts.slice(13),
-];
-
-// Rotaciones y márgenes por grupo/posición
-const ROTATIONS = [
-  ['-1.5deg', '0.8deg', '-0.6deg'],
-  ['1deg',   '-1.2deg', '0.5deg'],
-  ['-0.8deg', '1.5deg', '-1deg'],
-  ['0.6deg', '-0.8deg', '1.2deg'],
-  ['-1.2deg', '0.5deg', '-0.7deg', '0.9deg'],
-];
-
-const MARGINS = [
-  ['1.5rem', '0',     '2.5rem'],
-  ['0',      '2rem',  '0.5rem'],
-  ['2rem',   '0',     '1.5rem'],
-  ['0.5rem', '1.5rem','0'],
-  ['1rem',   '0',     '1.5rem', '0.5rem'],
-];
-
-// Colores por grupo/posición
-const COLORS = [
-  ['lavender', 'light',   'dark'],
-  ['vibrant',  'lavender','light'],
-  ['light',    'dark',    'lavender'],
-  ['lavender', 'vibrant', 'light'],
-  ['dark',     'light',   'lavender', 'midlav'],
-];
-
-// Labels de sección
-const LABELS = [
-  'desde el principio',
-  'seguir leyendo',
-  'mientras tanto',
-  'para cuando quieras',
-  'y también estas',
-];
 ---
 
 <Layout
@@ -95,20 +52,16 @@ const LABELS = [
     <a href={`/blog/${posts[0].id}`} class="hero-post">
       <span class="hero-blob" aria-hidden="true" />
       <span class="hero-blob hero-blob-2" aria-hidden="true" />
-
       <div class="hero-top">
         <span class="hero-era-pill">{era(posts[0])}</span>
         <span class="hero-count">01 / {String(posts.length).padStart(2,'0')}</span>
       </div>
-
       <span class="hero-giant-quote" aria-hidden="true">"</span>
-
       <div class="hero-lyric-block">
         {lns(posts[0]).map((l, i) => (
           <p class={`hero-lyric-line ${i > 0 ? 'hero-lyric-indent' : ''}`}>{l}</p>
         ))}
       </div>
-
       <div class="hero-bottom">
         <div>
           <p class="hero-song">{posts[0].data.song}</p>
@@ -127,73 +80,60 @@ const LABELS = [
     </div>
   </div>
 
-  <!-- ══ CLUSTERS ══ -->
-  <div class="clusters-wrap">
-    {groups.map((group, gi) => (
-      <section class="cluster-section">
-        <p class="cluster-label">{LABELS[gi]}</p>
-        <div class="cluster-row">
-          {group.map((post, ci) => {
-            const color = COLORS[gi]?.[ci] ?? 'light';
-            const rot   = ROTATIONS[gi]?.[ci] ?? '0deg';
-            const mt    = MARGINS[gi]?.[ci] ?? '0';
-            const lines = lns(post);
-            const isDark = color === 'dark' || color === 'vibrant';
+  <!-- ══ GRID ROTADO ══ -->
+  <main class="grid-wrap">
+    <p class="grid-label">— {posts.length - 1} entradas más —</p>
+    <div class="cards-grid">
+      {posts.slice(1).map((post, i) => {
+        const color   = COLORS[i % 5];
+        const isDark  = color === 'dark' || color === 'vibrant';
+        const lines   = lns(post);
 
-            return (
-              <a
-                href={`/blog/${post.id}`}
-                class={`c-card color-${color}`}
-                style={`--rot:${rot}; --mt:${mt};`}
-              >
-                {isDark && <span class="c-blob" aria-hidden="true" />}
+        return (
+          <a
+            href={`/blog/${post.id}`}
+            class={`g-card color-${color}`}
+          >
+            {isDark && <span class="g-blob" aria-hidden="true" />}
 
-                <span class={`c-era ${isDark ? 'c-era-light' : ''}`}>
-                  {era(post)}
-                </span>
+            <span class={`g-era ${isDark ? 'g-era-light' : ''}`}>
+              {era(post)}
+            </span>
 
-                {color === 'dark' ? (
-                  /* Dark: lírica hero */
-                  <>
-                    <span class="c-overflow-quote" aria-hidden="true">"</span>
-                    <div class="c-lyric-block">
-                      {lines.map((l, li) => (
-                        <p class={`c-lyric-line ${li > 0 ? 'c-lyric-indent' : ''}`}>{l}</p>
-                      ))}
-                    </div>
-                    <div class="c-dark-footer">
-                      <p class="c-dark-song">{post.data.song}</p>
-                      <span class="c-cta c-cta-dark">Leer →</span>
-                    </div>
-                  </>
-                ) : color === 'vibrant' ? (
-                  /* Vibrant: canción + lírica en blanco */
-                  <>
-                    <h2 class="c-song c-song-light">{post.data.song}</h2>
-                    {lines[0] && (
-                      <p class="c-lyric-small c-lyric-white">"{lines[0]}"</p>
-                    )}
-                    <p class="c-excerpt c-excerpt-white">{post.data.excerpt}</p>
-                    <span class="c-cta c-cta-white">Leer →</span>
-                  </>
-                ) : (
-                  /* Light / lavender / midlav */
-                  <>
-                    <h2 class="c-song">{post.data.song}</h2>
-                    {lines[0] && (
-                      <p class="c-lyric-small">"{lines[0]}"</p>
-                    )}
-                    <p class="c-excerpt">{post.data.excerpt}</p>
-                    <span class="c-cta">Leer →</span>
-                  </>
+            {color === 'dark' ? (
+              <>
+                <span class="g-overflow-quote" aria-hidden="true">"</span>
+                <div class="g-lyric-block">
+                  {lines.map((l, li) => (
+                    <p class={`g-lyric-line ${li > 0 ? 'g-lyric-indent' : ''}`}>{l}</p>
+                  ))}
+                </div>
+                <div class="g-dark-footer">
+                  <p class="g-dark-song">{post.data.song}</p>
+                  <span class="g-cta g-cta-dark">Leer →</span>
+                </div>
+              </>
+            ) : (
+              <>
+                <h2 class={`g-song ${color === 'vibrant' ? 'g-song-light' : ''}`}>
+                  {post.data.song}
+                </h2>
+                {lines[0] && (
+                  <p class={`g-lyric-small ${color === 'vibrant' ? 'g-lyric-white' : ''}`}>
+                    "{lines[0]}"
+                  </p>
                 )}
-              </a>
-            );
-          })}
-        </div>
-      </section>
-    ))}
-  </div>
+                <p class={`g-excerpt ${color === 'vibrant' ? 'g-excerpt-white' : ''}`}>
+                  {post.data.excerpt}
+                </p>
+                <span class={`g-cta ${color === 'vibrant' ? 'g-cta-white' : ''}`}>Leer →</span>
+              </>
+            )}
+          </a>
+        );
+      })}
+    </div>
+  </main>
 
   <!-- ══ CTA ══ -->
   <section class="blog-cta">
@@ -281,7 +221,6 @@ const LABELS = [
   }
 
   @media (min-width: 768px) { .hero-post { padding: 3.5rem 5vw 3rem; min-height: 58vh; } }
-
   .hero-post:hover { filter: brightness(1.07); }
 
   .hero-blob {
@@ -407,12 +346,7 @@ const LABELS = [
   }
 
   .hero-post:hover .hero-cta { color: #C77DFF; }
-
-  .arrow-long {
-    display: inline-block;
-    transition: transform 0.25s;
-  }
-
+  .arrow-long { display: inline-block; transition: transform 0.25s; }
   .hero-post:hover .arrow-long { transform: translateX(6px); }
 
   /* ══ Marquee ══ */
@@ -442,40 +376,40 @@ const LABELS = [
     to   { transform: translateX(-50%); }
   }
 
-  /* ══ Clusters wrapper ══ */
-  .clusters-wrap {
+  /* ══ Grid wrap ══ */
+  .grid-wrap {
     background: #F3EAFA;
-    padding: 0.5rem 0 5rem;
+    padding: 2.5rem 1.25rem 5rem;
   }
 
-  /* ══ Cluster section ══ */
-  .cluster-section {
-    padding: 1.25rem 1.25rem 0.25rem;
-    max-width: 80rem;
-    margin: 0 auto;
-  }
+  @media (min-width: 768px) { .grid-wrap { padding: 3rem 2rem 6rem; } }
 
-  @media (min-width: 768px) { .cluster-section { padding: 1.5rem 2rem 0.25rem; } }
-
-  .cluster-label {
-    font-family: var(--font-accent);
-    font-size: 1rem;
-    color: rgba(107,91,123,0.35);
+  .grid-label {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 0.8125rem;
+    color: rgba(107,91,123,0.4);
     text-align: center;
-    margin-bottom: 0.875rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 2.5rem;
   }
 
-  .cluster-row {
-    display: flex;
+  /* ══ Grid ══ */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1rem;
-    align-items: flex-start;
-    flex-direction: column;
+    max-width: 72rem;
+    margin: 0 auto;
+    /* overflow visible para que las rotaciones no se corten */
+    overflow: visible;
   }
 
-  @media (min-width: 580px) { .cluster-row { flex-direction: row; } }
+  @media (min-width: 560px) { .cards-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 900px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
 
   /* ══ Card base ══ */
-  .c-card {
+  .g-card {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -484,20 +418,23 @@ const LABELS = [
     text-decoration: none;
     overflow: hidden;
     cursor: pointer;
-    flex: 1;
     min-height: 220px;
-    /* Rotación y margen superiror vía CSS custom props */
-    transform: rotate(var(--rot, 0deg));
-    margin-top: var(--mt, 0);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  /* En móvil, sin rotaciones */
-  @media (max-width: 579px) {
-    .c-card { transform: none !important; margin-top: 0 !important; }
+  /* Patrón de 5 rotaciones + margin-top que se repite */
+  .g-card:nth-child(5n+1) { transform: rotate(-1.2deg); }
+  .g-card:nth-child(5n+2) { transform: rotate(0.7deg);  margin-top: 0.75rem; }
+  .g-card:nth-child(5n+3) { transform: rotate(-0.5deg); margin-top: 1.5rem; }
+  .g-card:nth-child(5n+4) { transform: rotate(0.9deg);  margin-top: 0.25rem; }
+  .g-card:nth-child(5n+5) { transform: rotate(-0.8deg); margin-top: 1rem; }
+
+  /* Sin rotaciones en móvil */
+  @media (max-width: 559px) {
+    .g-card { transform: none !important; margin-top: 0 !important; }
   }
 
-  .c-card:hover {
+  .g-card:hover {
     transform: rotate(0deg) translateY(-5px) !important;
     z-index: 2;
   }
@@ -539,18 +476,18 @@ const LABELS = [
   }
   .color-midlav:hover { box-shadow: 0 10px 32px rgba(155,77,202,0.18); }
 
-  /* ── Blob decorativo en cards oscuras ── */
-  .c-blob {
+  /* ── Decorative blob ── */
+  .g-blob {
     position: absolute;
     bottom: -15%; right: -8%;
-    width: 160px; height: 160px;
+    width: 150px; height: 150px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(199,125,255,0.2) 0%, transparent 70%);
     pointer-events: none;
   }
 
-  /* ── Era pill ── */
-  .c-era {
+  /* ── Era ── */
+  .g-era {
     font-family: var(--font-accent);
     font-size: 0.6875rem;
     color: #7B2FBE;
@@ -560,10 +497,10 @@ const LABELS = [
     flex-shrink: 0;
   }
 
-  .c-era-light { color: rgba(199,125,255,0.8); }
+  .g-era-light { color: rgba(199,125,255,0.8); }
 
-  /* ── Dark card content ── */
-  .c-overflow-quote {
+  /* ── Dark card ── */
+  .g-overflow-quote {
     font-family: var(--font-heading);
     font-size: 5rem;
     line-height: 0.55;
@@ -577,7 +514,7 @@ const LABELS = [
     z-index: 1;
   }
 
-  .c-lyric-block {
+  .g-lyric-block {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -586,7 +523,7 @@ const LABELS = [
     z-index: 1;
   }
 
-  .c-lyric-line {
+  .g-lyric-line {
     font-family: var(--font-heading);
     font-style: italic;
     font-size: clamp(1.125rem, 2.2vw, 1.625rem);
@@ -594,9 +531,9 @@ const LABELS = [
     color: #FDFBFF;
   }
 
-  .c-lyric-indent { padding-left: 1rem; }
+  .g-lyric-indent { padding-left: 1rem; }
 
-  .c-dark-footer {
+  .g-dark-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -607,7 +544,7 @@ const LABELS = [
     z-index: 1;
   }
 
-  .c-dark-song {
+  .g-dark-song {
     font-family: var(--font-heading);
     font-style: italic;
     font-size: 0.9375rem;
@@ -615,8 +552,8 @@ const LABELS = [
     color: #C77DFF;
   }
 
-  /* ── Song hero (light / lavender / vibrant / midlav) ── */
-  .c-song {
+  /* ── Song name ── */
+  .g-song {
     font-family: var(--font-heading);
     font-style: italic;
     font-size: clamp(1.125rem, 1.8vw, 1.5rem);
@@ -628,16 +565,16 @@ const LABELS = [
     z-index: 1;
   }
 
-  .c-song-light { color: #FDFBFF; }
+  .g-song-light { color: #FDFBFF; }
 
-  .color-light:hover .c-song,
-  .color-lavender:hover .c-song,
-  .color-midlav:hover .c-song { color: #9B4DCA; }
+  .color-light:hover .g-song,
+  .color-lavender:hover .g-song,
+  .color-midlav:hover .g-song { color: #9B4DCA; }
 
-  .color-vibrant:hover .c-song-light { color: #E8C8FF; }
+  .color-vibrant:hover .g-song-light { color: #E8C8FF; }
 
-  /* ── Lyric quote (small) ── */
-  .c-lyric-small {
+  /* ── Lyric small ── */
+  .g-lyric-small {
     font-family: var(--font-heading);
     font-style: italic;
     font-size: 0.9375rem;
@@ -653,14 +590,14 @@ const LABELS = [
     z-index: 1;
   }
 
-  .c-lyric-white { color: rgba(253,251,255,0.6); }
+  .g-lyric-white { color: rgba(253,251,255,0.6); }
 
-  .color-light:hover .c-lyric-small,
-  .color-lavender:hover .c-lyric-small,
-  .color-midlav:hover .c-lyric-small { color: rgba(155,77,202,0.65); }
+  .color-light:hover .g-lyric-small,
+  .color-lavender:hover .g-lyric-small,
+  .color-midlav:hover .g-lyric-small { color: rgba(155,77,202,0.65); }
 
   /* ── Excerpt ── */
-  .c-excerpt {
+  .g-excerpt {
     font-family: var(--font-body);
     font-size: 0.8125rem;
     line-height: 1.6;
@@ -674,10 +611,10 @@ const LABELS = [
     z-index: 1;
   }
 
-  .c-excerpt-white { color: rgba(253,251,255,0.6); }
+  .g-excerpt-white { color: rgba(253,251,255,0.6); }
 
-  /* ── CTA ── */
-  .c-cta {
+  /* ── CTAs ── */
+  .g-cta {
     display: inline-block;
     font-family: var(--font-body);
     font-size: 0.75rem;
@@ -690,17 +627,17 @@ const LABELS = [
     z-index: 1;
   }
 
-  .c-cta-dark { color: rgba(199,125,255,0.45); }
-  .c-cta-white { color: rgba(253,251,255,0.45); }
+  .g-cta-dark  { color: rgba(199,125,255,0.45); }
+  .g-cta-white { color: rgba(253,251,255,0.45); }
 
-  .color-light:hover .c-cta,
-  .color-lavender:hover .c-cta,
-  .color-midlav:hover .c-cta { color: #9B4DCA; transform: translateX(4px); }
+  .color-light:hover .g-cta,
+  .color-lavender:hover .g-cta,
+  .color-midlav:hover .g-cta { color: #9B4DCA; transform: translateX(4px); }
 
-  .color-dark:hover .c-cta-dark { color: #C77DFF; transform: translateX(4px); }
-  .color-vibrant:hover .c-cta-white { color: #FDFBFF; transform: translateX(4px); }
+  .color-dark:hover .g-cta-dark   { color: #C77DFF; transform: translateX(4px); }
+  .color-vibrant:hover .g-cta-white { color: #FDFBFF; transform: translateX(4px); }
 
-  /* ══ CTA section ══ */
+  /* ══ CTA ══ */
   .blog-cta {
     background: linear-gradient(135deg, #1A0A2E 0%, #3B1066 100%);
     padding: 4.5rem 1.5rem;
