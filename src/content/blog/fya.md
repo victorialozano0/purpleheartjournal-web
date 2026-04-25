@@ -8,66 +8,56 @@ date: 2026-04-17
 tags: ["fuego-interior", "burnout", "ARIRANG", "resiliencia"]
 ---
 
-Hay un tipo de agotamiento que no se resuelve durmiendo.
+Hay un cansancio que no se arregla durmiendo. No es el cansancio del cuerpo — es el de cargar con demasiado durante demasiado tiempo sin parar a preguntarte cómo estás. Es el cansancio de seguir funcionando cuando por dentro sentís que se te acabó el combustible.
 
-Es el agotamiento de haber dado demasiado durante demasiado tiempo. De haber puesto fuego en cosas que no te lo devolvieron. De **haberte vaciado en proyectos, personas, expectativas** — y un día mirarte por adentro y encontrar solo ceniza.
+Si lo reconocés, es porque lo estás viviendo. O lo viviste. O ambas.
 
-*FYA* empieza ahí. Pero el título lo cambia todo.
+*FYA* no llega con soluciones. No te dice que te levantes, que sonrías, que pienses positivo. Llega y se sienta con vos en ese lugar oscuro, y dice: todavía hay fuego. Aunque no lo veas. Aunque jurarías que no queda nada.
 
----
+## "Even when you think / there's nothing left to burn"
 
-## FYA: Find Your Ashes
+El agotamiento real — no el dramático, el de verdad — tiene una característica particular: te convence de que esta es tu nueva normalidad. Que así sos ahora. Que el entusiasmo que tenías antes era una fase, o era mentira, o simplemente se te acabó y punto.
 
-Tres palabras que hacen exactamente lo que las mejores canciones de BTS hacen: **toman algo que el mundo trata como fracaso y lo reencuadran completamente.**
+Es mentira. Pero cuando estás en el medio de eso, no se siente como mentira.
 
-*Find your ashes.* No "levántate de las cenizas." No "supera el agotamiento." No "vuelve más fuerte." **Encuentra tus cenizas. Primero. Antes de nada.**
+Nosotras conocemos esa sensación. La de abrir una canción de BTS que antes te encendía y sentirte... nada. Preocuparte de que hasta eso se fue. La de mirar el journal que empezaste con tanta intención y no poder escribir más que dos palabras antes de cerrarlo. La de scrollear el feed y sentir que todos están viviendo mientras vos solo estás existiendo.
 
-Hay una diferencia enorme entre esas dos cosas. "Levántate de las cenizas" implica que las cenizas son el problema — que el objetivo es dejarlas atrás lo antes posible. **"Encuentra tus cenizas" implica que las cenizas tienen información.** Que en lo que quedó hay algo que vale la pena ver antes de seguir.
+Ese no es el final. Es el fondo. Y el fondo tiene piso.
 
-La canción no comienza en la recuperación. **Comienza en el reconocimiento.**
+## La diferencia entre estar vacía y estar en pausa
 
----
+Una cosa que *FYA* captura sin decirlo directamente: hay una diferencia enorme entre haberse apagado y estar en pausa. El fuego en pausa no es lo mismo que el fuego muerto.
 
-## "Even ashes can burn / Even smoke remembers the flame"
+Cuando estás en pausa, nada brilla. Todo cuesta. La energía que antes te sobraba para hacer mil cosas ahora apenas alcanza para lo básico. Y está bien. Eso no significa que se acabó — significa que tu sistema necesita quietud antes de poder volver a moverse.
 
-<div class="kf">LAS <em>CE</em>NIZAS<br>GUA<em>RDAN</em><br>LA FORMA.</div>
+El problema es que la pausa a veces dura más de lo que creemos que podemos aguantar. Y ahí viene el miedo: ¿y si esta vez no vuelve? ¿Y si de verdad se apagó?
 
-Este verso hace algo casi científicamente preciso: **las cenizas literalmente guardan la estructura de lo que fue.** Las cenizas de madera conservan la forma celular del árbol. Las cenizas de papel conservan las fibras. El agotamiento — el burnout real, el profundo — guarda algo también: **la forma de lo que alguna vez te importó suficiente como para quemarte.**
+No se apagó. El fuego que *FYA* nombra no es el entusiasmo de los días buenos. Es algo más quieto y más profundo. Es lo que queda cuando sacás todo lo que pusiste para los demás, todo lo que gastaste en rendir y funcionar y demostrar. Lo que sobrevive cuando todo lo otro se va.
 
-*Even smoke remembers the flame.* Hasta el humo recuerda el fuego.
+Eso no desaparece.
 
-Eso es una brújula. **Si puedes encontrar de qué te quemaste — no la causa superficial, sino lo que había debajo — sabes hacia dónde apuntaba tu fuego.** Y eso, en un momento de ceniza total, vale más de lo que parece.
+## ¿Qué harías con ese fuego?
 
----
+La pregunta más incómoda de la canción no es si el fuego existe. Es qué harías si lo usaras.
 
-## El burnout que nadie nombra con exactitud
+Porque a veces el agotamiento tiene una función. No en el sentido de que sea "necesario" o "un aprendizaje" — sino en el sentido de que a veces el cuerpo para porque la dirección que llevábamos ya no era la que queríamos, y no habíamos tenido el tiempo ni el permiso de parar a notarlo.
 
-Burnout se ha convertido en una palabra de moda que paradójicamente ha perdido peso. Se usa para todo hasta que se vuelve sinónimo de "estoy cansada."
+El cansancio no siempre es una señal de que fallaste. A veces es una señal de que llevás demasiado tiempo yendo en dirección a algo que no elegiste del todo.
 
-El burnout real es diferente y más específico. **Es cuando ya no puedes identificar qué te da energía** porque hace tanto que lo que te daba energía dejó de funcionar. Es cuando las cosas que antes te apasionaban ahora solo producen obligación. Es cuando **la versión apagada de ti misma empieza a sentirse como la versión real** — la más honesta, incluso — porque al menos es lo que hay.
+No tenés que tener la respuesta ahora. Pero sí vale la pena preguntarte, desde adentro del agotamiento, qué es lo que todavía te importa. No lo que debería importarte. No lo que le importa a los demás que te importe. Lo que, aun en el peor día, todavía se siente como tuyo.
 
-*FYA* no minimiza eso. Lo reconoce exactamente como lo que es. Y después te ofrece algo: **que en esa versión apagada todavía hay algo.** Aunque sea humo. Aunque sea la memoria de lo que fue.
-
----
-
-## La diferencia entre recuperar y renacer
-
-*FYA* no promete que vas a volver a ser lo que eras. Promete algo diferente y más real: **que el fuego que encuentres en las cenizas va a ser tuyo de una manera nueva.**
-
-Recuperarse es volver al estado anterior. **Renacer es transformar lo que quedó en algo diferente.** Las cenizas no se convierten de vuelta en madera — se convierten en abono, en tierra, en algo que permite que crezca lo siguiente.
-
-La chispa que buscas después de un burnout **no va a encender exactamente lo mismo que encendía antes.** Va a encender algo nuevo, construido sobre lo que aprendiste al quemarte.
+Ahí está el fuego.
 
 ---
 
-## Prompts de journaling
+**Para el journal:**
 
-1. ¿De qué te has quemado? No la causa superficial — ¿qué había debajo? ¿Qué amabas tanto que lo diste hasta que dolió?
+¿De qué estás cansada ahora mismo — de verdad, sin filtrar? No lo que debería cansarte. Lo que realmente te pesa, aunque te parezca pequeño o injusto decirlo.
 
-2. Si tus cenizas guardan la forma de lo que importa — ¿qué forma tienen? ¿Qué puedes ver todavía en lo que quedó, aunque sea borroso?
+¿Cuándo fue la última vez que hiciste algo solo porque querías, sin que tuviera que producir algo, rendir algo, demostrar algo? ¿Qué pasaría si volvieras a hacer eso?
 
-3. ¿Cuál sería la chispa mínima para empezar? No el fuego completo — solo el primer movimiento. ¿Qué requiere esa chispa de ti ahora mismo, aunque sea pequeño?
+Si el fuego que te queda — ese que todavía está, aunque sea una chispa — pudiera ir hacia algo esta semana, ¿hacia qué iría? No el plan grande. Solo esta semana.
 
 ---
 
-*El Love Yourself Journal es el espacio para escribir lo que queda cuando todo lo demás se apaga — 85+ prompts guiados por BTS para encontrarte en las cenizas.*
+El Love Yourself Journal tiene más de 85 prompts guiados por BTS para momentos exactamente como este — no para fingir que estás bien, sino para encontrar, desde donde estás, qué todavía importa.

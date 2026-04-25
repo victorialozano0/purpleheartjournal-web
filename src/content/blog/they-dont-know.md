@@ -2,74 +2,66 @@
 title: "They Don't Know 'Bout Us: los vínculos que no necesitan ser explicados"
 song: "They Don't Know 'Bout Us"
 album: "ARIRANG (2026)"
-excerpt: "Hay relaciones que existen en un idioma propio, fuera de la mirada de todos. They Don’t Know ‘Bout Us es sobre el valor de lo que no necesita ser público para ser real."
+excerpt: "Hay relaciones que existen en un idioma propio, fuera de la mirada de todos. They Don't Know 'Bout Us es sobre el valor de lo que no necesita ser público para ser real."
 quote: "They don't know what we built / in the quiet / between words"
 date: 2026-04-14
 tags: ["relaciones", "vínculos", "ARIRANG", "privacidad"]
 ---
 
-No todo lo que importa necesita ser visible.
+Hay cosas que no caben en un post.
 
-Hay relaciones que viven en mensajes de las 2am. En frases que solo tienen sentido entre dos personas. En silencios que no hay que llenar. En el hecho de que **con ciertas personas simplemente *eres*** — sin tener que explicar ni justificar ni actuar una versión de ti misma.
+No porque sean secretas. Sino porque existen en un idioma que solo vos entendés — o vos y una persona, o vos y una canción, o vos y una comunidad que tampoco necesita explicarse entre sí. Un idioma que se construyó en privado, de a poco, y que ya tiene su forma propia.
 
-*They Don't Know 'Bout Us* es sobre eso. Sobre lo que existe en privado y no por eso es menos real. **A veces más.**
+Mostrarlas requeriría traducirlas. Y en la traducción se pierde exactamente lo que las hace lo que son.
 
----
+*They Don't Know 'Bout Us* es sobre ese idioma. Y sobre el valor de lo que existe aunque nadie más lo vea.
 
-## "They see what we show / But they don't know what we know"
+## "They don't know what we built / in the quiet / between words"
 
-El primer verso hace algo específico: **distingue entre la superficie y el interior de una relación.**
+En el silencio. Entre las palabras.
 
-*They see what we show.* El mundo exterior solo tiene acceso a lo que mostramos — las fotos, las historias, lo que contamos. La versión pública de algo que no es público en su esencia.
+Lo que se construye entre dos personas — o entre una persona y BTS, o entre una y su propio journal — no siempre ocurre en lo que se dice. Ocurre en lo que no necesita decirse. En que la otra persona ya sabe. En que ciertos silencios no son incómodos sino llenos. En que hay un lenguaje compartido que no tuvo que ser explicado porque se fue formando solo, de a poco, con el tiempo.
 
-*They don't know what we know.* Lo que existe entre dos personas — el lenguaje compartido, la historia acumulada, el mapa de quién es cada una para la otra — **eso no se puede mostrar porque no existe en ese formato.** Solo existe en la experiencia directa de estar ahí.
+Eso no tiene representación pública posible. No cabe en una foto, no cabe en una historia, no cabe en un caption por más que lo intentes. Existe solo en la experiencia directa de estar ahí — y eso es exactamente lo que lo hace especial.
 
-<div class="kf">NO LO<br><em>NECE</em>SITAN<br>ENTEN<em>DER</em>.</div>
+*They Don't Know 'Bout Us* no dice que eso sea superior a lo que se muestra. Solo dice que es diferente. Y que merece ser protegido como lo que es: algo que fue construido en privado y que tiene esa forma.
 
----
+## "They see what we show / but they don't know what we know"
 
-## "This space between us / Is not for everyone"
+El mundo exterior solo tiene acceso a la superficie.
 
-Esta frase es **una declaración de privacidad como acto de amor** — no de exclusión.
+Ven lo que mostramos — las fotos juntas, los momentos que subimos, la versión editada de lo que somos. Y en base a eso arman su interpretación de lo que tenemos.
 
-*Not for everyone* no significa "solo para nosotros, que somos especiales." Significa: este espacio fue construido por nosotros, **tiene nuestra forma, habla nuestro idioma.** No es que los demás no sean bienvenidos — es que no tienen las coordenadas para llegar aquí.
+Pero lo que existe adentro — el mapa de quién es cada persona para la otra, la historia acumulada, el momento exacto en que algo cambió entre nosotras, lo que sabemos de la otra que nadie más sabe — eso no se puede mostrar porque no existe en ese formato. Solo existe en la experiencia.
 
-Hay algo profundamente íntimo en tener un espacio así con alguien. **Y esa especificidad no los hace exclusivos. Los hace precisos.**
+Nosotras lo vivimos con BTS también. Alguien que no entiende te pregunta por qué te importan tanto, y no sabés bien cómo responder — no porque no tengas razón, sino porque la respuesta verdadera no cabe en palabras neutrales. Requeriría que la otra persona hubiera estado ahí. Que hubiera escuchado lo que vos escuchaste en el momento en que lo necesitabas. Que supiera lo que esa canción hizo con vos esa noche específica.
 
----
+*They don't know what we know.* Exacto. Y no tienen por qué.
 
-## ARMY y BTS: el vínculo que nadie termina de entender
+## El vínculo ARMY-BTS que nadie termina de entender
 
-Desde afuera, la relación entre ARMY y BTS parece inexplicable. *"¿Cómo puedes querer tanto a personas que no te conocen?"* preguntan los que no lo entienden.
+"¿Cómo podés querer tanto a alguien que no te conoce?"
 
-Y la respuesta honesta es difícil de dar en palabras neutrales, porque la respuesta verdadera es: ***porque BTS dice exactamente lo que yo sentía sin poder nombrarlo.*** Porque cuando los escucho me siento menos sola en algo que pensaba que era solo mío.
+Nosotras escuchamos eso. De la familia, de amigos que no son ARMY, de personas que observan desde afuera con genuina confusión. Y es una pregunta válida desde donde la hacen — porque desde afuera, la lógica no cierra.
 
-Ese vínculo — que existe aunque nunca hayas estado en el mismo cuarto que ellos, que es real aunque nadie a tu alrededor lo comprenda — es exactamente lo que *They Don't Know 'Bout Us* nombra y protege.
+Pero la lógica no es el idioma de este vínculo.
 
-**No necesita ser comprendido desde afuera para ser válido desde adentro.**
+BTS dice exactamente lo que nosotras sentíamos sin poder nombrarlo. Se para frente al mundo y habla de las cosas que nosotras llevábamos adentro sin saber bien cómo decirlas. Suena como un amigo que se sienta a tu lado y no dice nada — solo está. Y en ese estar, en esa presencia, algo en vos se siente menos sola.
 
----
+Eso no necesita ser comprendido desde afuera para ser válido desde adentro. La canción no crea ese vínculo — lo reconoce. Lo nombra. Lo protege.
 
-## La era de la visibilidad obligatoria
-
-Vivimos en un momento cultural donde **lo que no se documenta casi no existe.** Si no está en el story, si no quedó en fotos, si la relación no tiene registro público — ¿de verdad importa?
-
-*They Don't Know 'Bout Us* empuja directo en la dirección contraria.
-
-Algunas de las relaciones más significativas que tenemos son exactamente **las que no caben en un post.** Las que son demasiado específicas para un caption, demasiado matizadas para un like, demasiado íntimas para ser el contenido de una historia.
-
-**Lo que vive en privado no necesita justificarse con visibilidad.**
-
----
+*They Don't Know 'Bout Us* es una declaración de que algunos vínculos existen en su propio lenguaje, y no requieren ser traducidos para ser reales.
 
 ## Prompts de journaling
 
-1. ¿Tienes algún vínculo — con una persona, con una comunidad, con una práctica — que existe en privado y que el mundo que te rodea no termina de entender? ¿Cómo lo describes para ti misma cuando tratas de nombrarlo?
+No hay que justificar lo que sentís. Solo nombrarlo.
 
-2. ¿Hay algo en tu relación con BTS o con ARMY que sientes pero rara vez explicas en voz alta? ¿Qué es? ¿Por qué cuesta nombrarlo?
+1. ¿Hay algún vínculo en tu vida — con una persona, con BTS, con ARMY — que exista en privado y que el mundo que te rodea no termina de entender? ¿Cómo lo describís para vos misma cuando intentás nombrarlo?
 
-3. ¿A quién en tu vida le mostrarías este artículo y sabrías que lo entiende sin que tengas que explicarlo? ¿Qué dice eso de ese vínculo?
+2. ¿Hay algo en tu relación con BTS o con ser ARMY que sentís profundamente pero rara vez decís en voz alta? ¿Qué es? ¿Por qué cuesta ponerlo en palabras — o por qué no querés tener que ponerlo en palabras?
+
+3. ¿A quién en tu vida le mostrarías este texto y sabrías que lo entiende sin que tengas que explicarlo? ¿Qué dice eso de ese vínculo?
 
 ---
 
-*El Love Yourself Journal es un espacio privado para escribir lo que no necesita ser explicado — 85+ prompts guiados por BTS para lo que vive adentro, no afuera.*
+*El Love Yourself Journal es un espacio privado para escribir lo que no necesita ser explicado — 85+ prompts guiados por canciones de BTS para lo que vive adentro, no afuera.*

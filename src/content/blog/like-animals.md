@@ -8,74 +8,58 @@ date: 2026-04-11
 tags: ["autenticidad", "ARIRANG", "autoconocimiento", "máscaras"]
 ---
 
-Los animales no actúan.
+Hay una versión de ti que existe debajo de todo lo demás.
 
-No se levantan y deciden qué versión de sí mismos van a mostrar hoy. No filtran sus reacciones según lo que se espera de ellos en este contexto. No monitorean cómo están siendo percibidos. **Solo son, completamente, lo que son.**
+Antes del rol. Antes de la máscara que te pusiste esta mañana antes de salir. Antes del personaje que activás automáticamente cuando entrás a ciertos espacios — el trabajo, la familia, el grupo de amigas donde siempre sos la que tiene todo bajo control.
 
-*Like Animals* usa esa imagen para hablar de algo que todos sabemos pero raramente nombramos: **cuánto de lo que mostramos es real, y cuánto es performance.**
+Esa versión no desaparece cuando actuás. Solo espera. Quieta, debajo de todo, sin hacer mucho ruido. Pero está ahí.
 
----
+*Like Animals* la llama por su nombre.
 
-## "Strip it all away / No script, no stage"
+## "Before the words / something animal / something true"
 
-El vocabulario teatral es **intencional.**
+Antes de las palabras. Antes del guión, del filtro, de saber qué decir y cómo decirlo para que suene bien.
 
-***Script.* Guión.** La versión de lo que vas a decir que ya tienes ensayada antes de llegar a la conversación. La respuesta preparada para la pregunta que sabes que van a hacer. La forma en que presentas tu historia — seleccionando qué incluir, qué omitir, qué énfasis poner.
+Nosotras hemos aprendido a habitar ese espacio — el de las palabras — con mucha destreza. Sabemos qué decir cuando alguien pregunta cómo estamos. Sabemos cuándo no conviene decir la verdad y qué versión de la verdad es suficiente para pasar. Sabemos cómo presentar lo que nos pasa de manera que no incomode demasiado, que no pida demasiado, que no haga sentir al otro que tiene que hacer algo con lo que acaba de escuchar.
 
-***Stage.* Escenario.** El espacio donde performás para una audiencia — que puede ser el trabajo, la familia, las redes, incluso ciertos amigos. Cada espacio tiene su código de comportamiento, su versión esperada de ti.
+Lo que *Like Animals* nombra es lo que existe antes de todo ese procesamiento. Algo más instintivo. Algo más verdadero. Algo que no ha sido editado todavía.
 
-*Strip it all away.* Quitá todo eso. **No la versión de ti sin defectos — la versión de ti sin guión.** Sin saber exactamente qué viene después porque no hay escenario. Solo lo que hay.
+La canción no dice que ese lugar es mejor ni que deberías vivir ahí todo el tiempo. Solo dice que existe. Y que hay momentos en que lo perdemos de vista tanto que ya no sabemos bien cómo se siente.
 
-*What's left when you stop performing? / Something animal, something real.*
+## Las máscaras que ya no sentimos
 
-<div class="kf">ALGO<br><em>ANIMAL</em>.<br>ALGO <em>REAL</em>.</div>
+Hay máscaras que usamos con plena conciencia. La versión profesional que te pones en el trabajo. La hija que tiene todo bajo control. La amiga siempre disponible que no tiene sus propios problemas porque ¿cuándo sería el momento de hablar de eso?
 
-La canción equipara los dos — **como si lo animal y lo real fueran sinónimos.** Como si la autenticidad profunda tuviera algo que ver con recuperar algo que era instintivo antes de que el mundo te entrenara para performarlo.
+Esas las reconocemos. Sabemos cuándo las ponemos y lo que esconden.
 
----
+Pero hay otras máscaras más sutiles. Las que llevas tanto tiempo usando que ya no sientes el peso. Las que se activaron solas en algún punto de tu historia — quizás cuando aprendiste que ser demasiado auténtica costaba, que mostrar demasiado dolía, que era más fácil ser la versión que el mundo necesitaba.
 
-## Las máscaras que usamos sin darnos cuenta
+Esas son las más difíciles. No porque sean más fuertes. Sino porque ya no las distinguís de vos misma.
 
-No todas las máscaras son conscientes.
+Y de repente estás con alguien — una persona, una canción, un momento — con quien la máscara baja sola. Sin esfuerzo. Y sentís la diferencia. Ese alivio específico de simplemente *ser*.
 
-Hay algunas que elegimos deliberadamente: la versión profesional en el trabajo, la versión de "hija que tiene todo bajo control" con la familia, la versión "todo bien" con conocidos. **Esas las reconocemos — sabemos cuándo las ponemos, sabemos qué esconden.**
+Ahí está la versión que *Like Animals* llama.
 
-Pero hay máscaras más sutiles. **La que se activa automáticamente cuando entras a ciertos espacios.** La que llevas tanto tiempo usando que ya no sientes el peso. La que no sabes que tenías hasta que un día estás con alguien con quien no la necesitas y **sientes la diferencia** — ese alivio específico de simplemente *ser*.
+## Cuándo aparece sin que lo llames
 
-*Like Animals* no te pide que elimines las máscaras que tiene sentido usar. **Te pide que las puedas distinguir de ti misma.**
+Nosotras sabemos cuándo ocurre aunque no siempre lo nombremos.
 
----
+Cuando estás tan metida en algo que amás que el tiempo desaparece y te olvidás de monitorear cómo estás siendo. Cuando estás con ciertas personas y no tenés que pensar en qué decir porque lo que sale es simplemente lo que es. Cuando escuchás una canción que te conoce mejor de lo que te conocés a vos misma y algo se suelta adentro — la postura, la respiración, el nudo en el pecho que no sabías que estaba ahí.
 
-## El costo de la actuación constante
+BTS suena así para nosotras. Como algo que no tenés que explicar. Algo que simplemente *te* reconoce.
 
-Existe lo que en psicología se llama impression management — la gestión activa de cómo los demás nos perciben. En muchos contextos es funcional.
-
-El problema es cuando **la actuación se convierte en el modo predeterminado.** Cuando ya no sabes distinguir cuándo estás siendo tú y cuándo estás siendo la versión de ti que crees que el mundo necesita ver. Cuando te preguntas qué quieres de verdad y **la respuesta no llega porque llevas tanto tiempo respondiendo a lo que otros quieren.**
-
-Ese cansancio es real. No es metáfora. Es el agotamiento específico de sostener una imagen, de ajustarte constantemente. **Y el alivio de dejarlo caer — aunque sea por un momento — es también muy real.**
-
----
-
-## ¿Cuándo aparece la versión real?
-
-Hay momentos en que la actuación baja sola — si prestas atención.
-
-Cuando estás completamente absorta en algo que amas y el tiempo desaparece. Cuando estás con ciertas personas y no necesitas pensar en qué decir. Cuando escribes sin audiencia. Cuando escuchas música que **te conoce mejor que tú misma.**
-
-En esos momentos, algo se suelta. La postura cambia. La respiración cambia. Eres, simplemente, sin esfuerzo.
-
-**Nota esos momentos.** La versión de ti que aparece ahí — esa es la que *Like Animals* llama por su nombre.
-
----
+Esos momentos son pistas. La versión de vos que aparece ahí — con esa música, en esa conversación, haciendo esa cosa que amás — esa es la que *Like Animals* llama por su nombre.
 
 ## Prompts de journaling
 
-1. ¿Con quién eres más tú misma — donde la actuación baja sola y simplemente eres, sin pensar en cómo estás siendo percibida? ¿Qué tienen esas personas o esos momentos?
+No hay respuestas correctas. Solo hay lo que es verdad para vos.
 
-2. ¿Hay algún contexto de tu vida donde sientas que actúas más de lo que te gustaría? ¿Qué te cuesta de quitarte esa máscara ahí?
+1. ¿Con quién sos más vos misma — donde la actuación baja sola y simplemente sos, sin pensar en cómo te están viendo? ¿Qué tienen en común esas personas o esos momentos?
 
-3. Si pudieras mostrar la versión más auténtica de ti misma en un área donde actualmente la escondes — ¿qué cambiaría? ¿A qué le tienes miedo de ese cambio?
+2. ¿De qué estás cansada de actuar? No lo que deberías decir que te cansa. Lo que realmente te pesa sostener. La máscara que ya querés poder dejar un rato.
+
+3. Si la versión de vos que nadie ve pudiera decir una cosa — una sola cosa que lleva tiempo sin poder ser dicha — ¿qué diría?
 
 ---
 
-*Conocerte de verdad empieza por dejar de actuar para ti misma. El Love Yourself Journal — 85+ prompts guiados por BTS para encontrar la versión real debajo de todos los roles.*
+*Conocerte de verdad empieza por dejar de actuar para vos misma. El Love Yourself Journal tiene 85+ prompts guiados por canciones de BTS — para ARMY que escribe lo que siente y va encontrando, página a página, quién es debajo de todos los roles.*

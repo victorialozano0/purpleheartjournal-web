@@ -8,68 +8,58 @@ date: 2026-04-12
 tags: ["relaciones", "conexión", "ARIRANG", "presencia"]
 ---
 
-Hay personas con quienes puedes estar en la misma habitación durante horas y sentirte completamente sola.
+Hay una soledad que no viene de estar sola.
 
-Y hay personas con quienes una conversación de diez minutos **te llena de una manera que no sabes bien cómo explicar.** No pasó "nada especial." Solo estuviste ahí, y ellas estuvieron ahí contigo, de verdad.
+Viene de estar rodeada — de gente, de ruido, de conversaciones que se superponen — y sentir que nadie en esa habitación realmente te ve. Que podrías salir y el silencio sería casi el mismo. Que la distancia más grande no es la que se mide en metros sino la que existe entre los cuerpos y las personas que los habitan.
 
-La diferencia no es el tiempo. No es la distancia. **Es la presencia.**
+Nosotras conocemos eso. Lo conocemos muy bien.
 
----
+*Body to Body* suena como si BTS hubiera escuchado exactamente eso. No como observadores. Como alguien que también lo vivió y lo entendió por adentro.
 
-## "Body to body / But miles apart"
+## "Close enough to touch / far enough / to feel the distance"
 
-Esa imagen hace algo que pocas metáforas logran: **captura exactamente la paradoja de la cercanía sin conexión.**
+Esta imagen tarda en asentarse porque es una paradoja que el cuerpo conoce antes que la mente.
 
-Los cuerpos están juntos — *body to body*, la proximidad más física que existe. Y al mismo tiempo: **miles apart**. A millas de distancia. No en el espacio. En el lugar donde la conexión real ocurre.
+Lo suficientemente cerca para tocar. Lo suficientemente lejos para sentir toda la distancia.
 
-*What does it mean to be close / When touch can't reach the heart.*
+Nosotras lo hemos vivido con la familia en la mesa del domingo, donde la conversación no para y aun así hay algo que no llega. Con la amiga que está al lado pero está en su teléfono, o en su cabeza, o en otro lugar que no es este. Con personas que nos abrazan y el abrazo se siente vacío — no porque no quieran, sino porque algo en la conexión no termina de ocurrir.
 
-**Esta pregunta no es retórica. Es genuinamente abierta.** ¿Qué hace que la presencia sea presencia, no solo proximidad? La canción no responde con una definición — lo cual es más honesto, porque la respuesta es diferente para cada persona y cada relación.
+La canción no dice que eso está mal. No propone que lo arregles ni te culpa de que exista. Solo lo nombra.
 
-<div class="kf">CER<em>CA</em>NOS.<br>PERO<br><em>AUSENTES</em>.</div>
+Y hay algo profundamente reparador en que BTS lo nombre. Porque la soledad en presencia de otros es de las más difíciles de explicar. "¿Cómo vas a estar sola si estás rodeada de gente?" La respuesta es esta canción.
 
----
+## Lo que la presencia no es
 
-## La paradoja de la hiperconectividad
+Estar presente no es el tiempo que pasas con alguien. No es la frecuencia de los mensajes ni la cantidad de fotos juntas.
 
-Nunca hemos estado más "conectadas" en la historia de la humanidad. Más mensajes, más plataformas, más formas de estar en contacto.
+Nosotras hemos tenido conversaciones de horas con personas que no nos escucharon en ningún momento. Y hemos tenido momentos de diez minutos con alguien que nos miró de verdad — y salimos de ahí sintiéndonos más enteras que cuando llegamos.
 
-**Y la soledad es una de las crisis más documentadas de este momento histórico.**
+La diferencia no está en el reloj. Está en la calidad de la atención.
 
-No es contradicción. Es exactamente lo que *Body to Body* nombra: **la conectividad y la conexión no son lo mismo.** Puedes estar en contacto constante con alguien y no estar presente para ellas en ningún momento. Puedes responder mensajes toda la semana y **no haber estado ahí en ninguna conversación.**
+Y esa calidad escasea. No porque seamos malas personas ni porque nadie nos quiera. Sino porque el mundo en que vivimos entrena para la multitarea, para la mitad del cerebro siempre en otra cosa, para el scroll entre conversaciones. Aprendemos a estar físicamente y a no estar de ninguna otra manera.
 
-La presencia no se mide en frecuencia. **Se mide en calidad de atención.**
+*Body to Body* habla de esa brecha. De la distancia que crece despacio en los espacios entre cuerpos que ya no se encuentran de verdad.
 
----
+## La distancia contigo misma
 
-## ¿Cuándo fue la última vez que estuviste presente?
+Hay una dimensión de esta canción que me llegó diferente: la posibilidad de estar ausente de ti misma.
 
-Presente no significa sin teléfono — aunque a veces sí. Significa **sin la parte de tu cabeza que ya está en otra conversación, en el trabajo de mañana, en lo que dijiste ayer.**
+Pasar el día respondiendo, funcionando, siendo lo que hay que ser — y en algún punto preguntarte cuándo fue la última vez que sentiste algo que fuera tuyo de verdad. No el cansancio funcional, no la lista de cosas por hacer, no la versión de ti que existe para el mundo. Algo genuinamente tuyo.
 
-Presente es cuando alguien habla y la escuchas **para entender, no para responder.** Cuando estás en un lugar y estás en ese lugar, no en tres lugares simultáneamente. Cuando la persona que tienes enfrente **puede sentir que la ves de verdad.**
+Nosotras también hacemos eso. Nos volvemos fantasmas en nuestra propia vida. Presentes en cuerpo, ausentes en todo lo que importa. Y lo más desconcertante es que a veces no sabes cuándo empezó — solo que en algún punto dejaste de estar y no te diste cuenta.
 
-Esa presencia es escasa. Y es exactamente lo que más recordamos de las personas que han importado en nuestra vida — no cuánto tiempo pasamos con ellas, sino **cuánto nos sentimos vistas cuando estábamos con ellas.**
-
----
-
-## La presencia contigo misma
-
-*Body to Body* también aplica a la relación más cercana que tienes: **la que tienes contigo misma.**
-
-¿Cuándo fue la última vez que estuviste presente para ti? No productiva, no ocupada, no planificando — sino **presente. Escuchándote con la misma atención que le pondrías a alguien que quieres.**
-
-Escribir es uno de los pocos actos que fuerzan esa presencia. Cuando escribes de verdad — no una lista de tareas, sino lo que realmente piensas y sientes — **estás contigo misma de una manera que pocas cosas permiten.**
-
----
+La presencia es algo que se puede perder con una persona y también con una misma. Y recuperarla requiere lo mismo: parar. Prestar atención. Estar.
 
 ## Prompts de journaling
 
-1. ¿Con quién te sientes verdaderamente presente — donde el tiempo pasa sin darte cuenta y te vas sintiéndote más entera que cuando llegaste? ¿Qué tienen esas personas o esos momentos en común?
+Respira antes de escribir. Estas preguntas no buscan respuestas limpias.
 
-2. ¿Hay alguna relación en tu vida donde estés cerca físicamente pero sientas que hay una distancia que no sabes cómo nombrar? ¿Qué crees que la genera?
+1. ¿Hay alguien en tu vida con quien estés físicamente cerca pero sientas una distancia que no sabes cómo nombrar? ¿Cuánto tiempo llevas sintiéndola — y cuándo crees que empezó a aparecer?
 
-3. ¿Cuándo fue la última vez que estuviste completamente presente para ti misma — sin múltiples pestañas abiertas mentalmente? ¿Cómo fue eso?
+2. ¿Hay algo que flota entre tú y esa persona — algo que ninguna de las dos ha dicho en voz alta? ¿Qué te impide nombrarlo? No lo que "deberías" decir. Lo que realmente te frena.
+
+3. ¿Cuándo fue la última vez que te sentiste genuinamente presente — contigo misma, sin la parte de tu cabeza que ya estaba en otro lado? ¿Dónde estabas, qué hacías? ¿Cómo se sentía eso?
 
 ---
 
-*El journaling es presencia contigo misma. El Love Yourself Journal — 85+ prompts guiados por BTS para estar presente en las preguntas que importan.*
+*Estar presente contigo misma empieza por conocerte. El Love Yourself Journal tiene 85+ prompts guiados por canciones de BTS — para ARMY que escribe lo que siente y va encontrando, página a página, quién es cuando nadie está mirando.*
