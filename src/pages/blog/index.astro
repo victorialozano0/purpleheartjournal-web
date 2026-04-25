@@ -2,19 +2,11 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import BlogNav from '../../components/BlogNav.astro';
-import BlogCard from '../../components/BlogCard.astro';
 import Footer from '../../components/Footer.astro';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
-
-const byAlbum: Record<string, typeof posts> = {};
-for (const post of posts) {
-  const album = post.data.album;
-  if (!byAlbum[album]) byAlbum[album] = [];
-  byAlbum[album].push(post);
-}
 
 const albumOrder = [
   'ARIRANG (2026)',
@@ -22,7 +14,6 @@ const albumOrder = [
   'You Never Walk Alone (2017)',
   'Love Yourself: Tear (2018)',
 ];
-
 ---
 
 <Layout
@@ -31,7 +22,7 @@ const albumOrder = [
 >
   <BlogNav />
 
-  <!-- Header asimétrico -->
+  <!-- Header -->
   <header class="blog-header">
     <div class="header-inner">
       <div class="header-left">
@@ -56,78 +47,46 @@ const albumOrder = [
     <span class="divider-line"></span>
   </div>
 
-  <!-- Mobile song strip -->
-  <div class="mobile-strip" aria-label="Índice de entradas">
-    {posts.map(post => (
-      <a href={`/blog/${post.id}`} class="mobile-pill">{post.data.song}</a>
-    ))}
-  </div>
+  <!-- Tracklist: layout tipo setlist / contracubierta de álbum -->
+  <main class="tracklist-wrap">
 
-  <!-- Layout: main izquierda, índice derecha -->
-  <div class="blog-layout">
-
-    <!-- Main content -->
-    <main class="blog-main">
-
-      <!-- Feed unificado: primera entrada destacada dentro del mismo grid -->
-      <div class="posts-grid">
-        {posts.map((post, i) => (
-          <BlogCard
-            slug={post.id}
-            title={post.data.title}
-            song={post.data.song}
-            album={post.data.album}
-            excerpt={post.data.excerpt}
-            quote={post.data.quote}
-            date={post.data.date}
-            tags={post.data.tags}
-            featured={i === 0}
-          />
-        ))}
-      </div>
-
-    </main>
-
-    <!-- Índice editorial — derecha -->
-    <aside class="blog-index" aria-label="Índice de artículos">
-      <div class="index-inner">
-
-        <div class="index-header">
-          <span class="index-label-vertical">ÍNDICE</span>
-          <div class="index-meta">
-            <span class="index-brand">Purple Heart Journal</span>
-            <span class="index-tagline">{posts.length} canciones<br/>para conocerte</span>
+    <!-- Era headers con entradas como tracklist -->
+    {albumOrder.map(album => {
+      const albumPosts = posts.filter(p => p.data.album === album);
+      if (!albumPosts.length) return null;
+      const albumName = album.replace(/ \(\d{4}\)$/, '');
+      const albumYear = album.match(/\((\d+)\)/)?.[1] ?? '';
+      return (
+        <section class="era-section">
+          <div class="era-header">
+            <span class="era-year">{albumYear}</span>
+            <h2 class="era-name">{albumName}</h2>
+            <span class="era-count">{albumPosts.length} entrada{albumPosts.length !== 1 ? 's' : ''}</span>
           </div>
-        </div>
-
-        {albumOrder.map(album => byAlbum[album] && (
-          <div class="index-album">
-            <div class="index-album-header">
-              <span class="index-album-year">{album.match(/\((\d+)\)/)?.[1]}</span>
-              <span class="index-album-title">
-                {album.replace(/ \(\d{4}\)$/, '')}
-              </span>
-            </div>
-            <ul class="index-list">
-              {byAlbum[album].map(post => (
-                <li>
-                  <a href={`/blog/${post.id}`} class="index-link">
-                    {post.data.song}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div class="tracklist">
+            {albumPosts.map((post, i) => (
+              <a href={`/blog/${post.id}`} class="track-item">
+                <span class="track-num">{String(i + 1).padStart(2, '0')}</span>
+                <div class="track-body">
+                  <div class="track-top">
+                    <span class="track-song">{post.data.song}</span>
+                    {post.data.quote && (
+                      <span class="track-quote">
+                        "{post.data.quote.split(' / ')[0]}"
+                      </span>
+                    )}
+                  </div>
+                  <p class="track-excerpt">{post.data.excerpt}</p>
+                </div>
+                <span class="track-arrow" aria-hidden="true">→</span>
+              </a>
+            ))}
           </div>
-        ))}
+        </section>
+      );
+    })}
 
-        <div class="index-footer">
-          <span>💜 Para ARMY que escribe entre canciones</span>
-        </div>
-
-      </div>
-    </aside>
-
-  </div>
+  </main>
 
   <!-- CTA -->
   <section class="blog-cta">
@@ -153,7 +112,7 @@ const albumOrder = [
 </Layout>
 
 <style>
-  /* ── Header asimétrico ── */
+  /* ── Header ── */
   .blog-header {
     background: linear-gradient(135deg, #1A0A2E 0%, #3D1278 55%, #9B4DCA 100%);
     padding: 4.5rem 1.5rem 4rem;
@@ -208,7 +167,6 @@ const albumOrder = [
     max-width: 36rem;
   }
 
-  /* Número fantasma decorativo */
   .header-right {
     display: none;
     flex-direction: column;
@@ -217,9 +175,7 @@ const albumOrder = [
     padding-bottom: 0.5rem;
   }
 
-  @media (min-width: 600px) {
-    .header-right { display: flex; }
-  }
+  @media (min-width: 600px) { .header-right { display: flex; } }
 
   .header-count-num {
     font-family: var(--font-heading);
@@ -244,7 +200,7 @@ const albumOrder = [
     margin-top: 0.25rem;
   }
 
-  /* ── Separador editorial ── */
+  /* ── Separador ── */
   .section-divider {
     display: flex;
     align-items: center;
@@ -270,245 +226,194 @@ const albumOrder = [
     flex-shrink: 0;
   }
 
-  /* ── Mobile strip ── */
-  .mobile-strip {
-    display: flex;
-    overflow-x: auto;
-    gap: 0.5rem;
-    padding: 0.875rem 1.25rem;
+  /* ── Tracklist wrap ── */
+  .tracklist-wrap {
     background: #FDFBFF;
-    border-bottom: 1px solid var(--color-soft-lilac);
-    scrollbar-width: none;
-  }
-
-  .mobile-strip::-webkit-scrollbar { display: none; }
-
-  @media (min-width: 900px) {
-    .mobile-strip { display: none; }
-  }
-
-  .mobile-pill {
-    flex-shrink: 0;
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-size: 0.875rem;
-    color: var(--color-purple-deep);
-    text-decoration: none;
-    background: var(--color-lavender-mist);
-    border: 1px solid rgba(199, 125, 255, 0.2);
-    padding: 0.3rem 0.875rem;
-    border-radius: 999px;
-    white-space: nowrap;
-    transition: background 0.2s, border-color 0.2s;
-    cursor: pointer;
-  }
-
-  .mobile-pill:hover {
-    background: rgba(199, 125, 255, 0.14);
-    border-color: var(--color-purple-heart);
-  }
-
-  /* ── Layout: main + índice ── */
-  .blog-layout {
-    display: flex;
-    align-items: flex-start;
-    background: #FDFBFF;
-    min-height: 60vh;
-  }
-
-  /* ── Main ── */
-  .blog-main {
-    flex: 1;
-    min-width: 0;
-    padding: 2.5rem 1.5rem 5rem;
+    padding: 3rem 1.5rem 5rem;
   }
 
   @media (min-width: 768px) {
-    .blog-main { padding: 3rem 2.25rem 5rem; }
+    .tracklist-wrap { padding: 3.5rem 2.5rem 6rem; }
   }
 
-  /* ── Grid masonry (Pinterest) ── */
-  .posts-grid {
-    columns: 1;
-    column-gap: 1.25rem;
+  /* ── Era section ── */
+  .era-section {
+    max-width: 60rem;
+    margin: 0 auto 4rem;
   }
 
-  .posts-grid > * {
-    break-inside: avoid;
-    margin-bottom: 1.25rem;
-    display: block;
-  }
+  .era-section:last-child { margin-bottom: 0; }
 
-  @media (min-width: 520px) {
-    .posts-grid { columns: 2; }
-  }
-
-  @media (min-width: 1100px) {
-    .posts-grid { columns: 3; }
-  }
-
-  /* ── Índice derecho ── */
-  .blog-index {
-    display: none;
-  }
-
-  @media (min-width: 900px) {
-    .blog-index {
-      display: block;
-      width: 256px;
-      flex-shrink: 0;
-      position: sticky;
-      top: 56px;
-      max-height: calc(100vh - 56px);
-      overflow-y: auto;
-      border-left: 1px solid rgba(199, 125, 255, 0.18);
-      background: #FAF7FE;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(199,125,255,0.18) transparent;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .blog-index { width: 280px; }
-  }
-
-  .index-inner {
-    padding: 2rem 1.375rem 2.5rem;
-  }
-
-  /* Header del índice con ÍNDICE vertical */
-  .index-header {
+  .era-header {
     display: flex;
-    align-items: stretch;
-    gap: 0.875rem;
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.75rem;
-    border-bottom: 2px solid var(--color-purple-heart);
+    align-items: baseline;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    border-bottom: 2px solid var(--color-text-deep);
   }
 
-  .index-label-vertical {
-    font-family: var(--font-heading);
-    font-style: normal;
-    font-weight: 900;
-    font-size: 0.625rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--color-purple-heart);
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    flex-shrink: 0;
-    align-self: stretch;
-    opacity: 0.8;
-  }
-
-  .index-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.375rem;
-  }
-
-  .index-brand {
-    font-family: var(--font-body);
-    font-size: 0.625rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(107, 91, 123, 0.4);
-    line-height: 1;
-  }
-
-  .index-tagline {
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-size: 1.0625rem;
-    color: var(--color-text-deep);
-    line-height: 1.25;
-  }
-
-  /* Álbum en el índice */
-  .index-album {
-    margin-bottom: 1.625rem;
-  }
-
-  .index-album-header {
-    margin-bottom: 0.5rem;
-  }
-
-  .index-album-year {
-    display: block;
+  .era-year {
     font-family: var(--font-body);
     font-size: 0.625rem;
     font-weight: 800;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(199, 125, 255, 0.65);
-    margin-bottom: 0.125rem;
-    line-height: 1;
-  }
-
-  .index-album-title {
-    display: block;
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-size: 1.0625rem;
-    font-weight: 600;
-    color: var(--color-text-deep);
-    line-height: 1.2;
-  }
-
-  .index-list {
-    list-style: none;
-    padding: 0;
-    margin: 0.5rem 0 0 0.375rem;
-    border-left: 1px solid rgba(199, 125, 255, 0.2);
-  }
-
-  .index-link {
-    display: block;
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-size: 0.9375rem;
-    color: rgba(26, 10, 46, 0.55);
-    text-decoration: none;
-    padding: 0.275rem 0.75rem;
-    line-height: 1.35;
-    position: relative;
-    transition: color 0.15s ease, padding-left 0.18s ease;
-    cursor: pointer;
-  }
-
-  .index-link::before {
-    content: '→';
-    position: absolute;
-    left: 0.25rem;
-    font-style: normal;
-    opacity: 0;
     color: var(--color-purple-heart);
-    transition: opacity 0.15s ease, left 0.18s ease;
-    font-size: 0.625rem;
-    top: 50%;
-    transform: translateY(-50%);
+    flex-shrink: 0;
   }
 
-  .index-link:hover {
-    color: var(--color-purple-vibrant);
-    padding-left: 1.25rem;
+  .era-name {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-text-deep);
+    flex: 1;
   }
 
-  .index-link:hover::before {
-    opacity: 1;
-    left: 0.5rem;
-  }
-
-  .index-footer {
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(199, 125, 255, 0.15);
-    margin-top: 0.5rem;
+  .era-count {
     font-family: var(--font-body);
-    font-size: 0.5625rem;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(107, 91, 123, 0.35);
+    flex-shrink: 0;
+  }
+
+  /* ── Tracklist ── */
+  .tracklist {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Track item ── */
+  .track-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.375rem 0.5rem 1.375rem 0;
+    border-bottom: 1px solid rgba(224, 208, 240, 0.55);
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s ease, padding-left 0.22s ease;
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  .track-item::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--color-purple-heart);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: 0 2px 2px 0;
+  }
+
+  @media (min-width: 768px) {
+    .track-item:hover {
+      padding-left: 1rem;
+      background: rgba(199, 125, 255, 0.04);
+    }
+    .track-item:hover::before { opacity: 1; }
+  }
+
+  /* Número de track */
+  .track-num {
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: rgba(107, 91, 123, 0.3);
+    letter-spacing: 0.06em;
+    min-width: 1.75rem;
+    flex-shrink: 0;
+    padding-top: 0.5rem;
+    transition: color 0.2s ease;
+    user-select: none;
+  }
+
+  .track-item:hover .track-num { color: var(--color-purple-heart); }
+
+  /* Cuerpo del track */
+  .track-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .track-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Nombre de la canción — protagonista */
+  .track-song {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: clamp(1.625rem, 3.5vw, 2.375rem);
+    line-height: 1.1;
+    color: var(--color-text-deep);
+    transition: color 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .track-item:hover .track-song { color: var(--color-purple-vibrant); }
+
+  /* Primera línea de la lírica — derecha */
+  .track-quote {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 0.8125rem;
     color: rgba(107, 91, 123, 0.4);
-    letter-spacing: 0.04em;
-    line-height: 1.6;
+    text-align: right;
+    line-height: 1.4;
+    flex-shrink: 1;
+    transition: color 0.2s ease;
+    max-width: 18rem;
+  }
+
+  .track-item:hover .track-quote { color: rgba(155, 77, 202, 0.55); }
+
+  /* Excerpt: oculto, aparece en hover */
+  .track-excerpt {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.32s ease, opacity 0.25s ease;
+  }
+
+  .track-item:hover .track-excerpt {
+    max-height: 6rem;
+    opacity: 1;
+  }
+
+  /* Flecha de navegación */
+  .track-arrow {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: rgba(107, 91, 123, 0.2);
+    flex-shrink: 0;
+    transition: color 0.2s, transform 0.22s;
+    align-self: center;
+    padding-left: 0.5rem;
+  }
+
+  .track-item:hover .track-arrow {
+    color: var(--color-purple-heart);
+    transform: translateX(5px);
   }
 
   /* ── CTA ── */
