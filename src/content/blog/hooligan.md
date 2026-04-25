@@ -52,13 +52,13 @@ Nosotras ya lo sabíamos. *BTS solo lo puso en palabras.*
 
 ---
 
-**Para el journal:**
+## Prompts de journaling
 
-¿Qué parte de ser ARMY todavía no te animás a mostrar en ciertos espacios de tu vida? ¿Qué te dice eso sobre esos espacios — y sobre lo que merecés de ellos?
+1. ¿Qué parte de ser ARMY todavía no te animás a mostrar en ciertos espacios de tu vida? ¿Qué te dice eso sobre esos espacios — y sobre lo que merecés de ellos?
 
-¿Hubo un momento en que dejaste de defender algo que amabas porque cansaba demasiado explicarlo? ¿Cómo te sentiste después de ese silencio?
+2. ¿Hubo un momento en que dejaste de defender algo que amabas porque cansaba demasiado explicarlo? ¿Cómo te sentiste después de ese silencio?
 
-¿Qué significa para vos "no seguir las reglas del juego de otros"? No en abstracto — en tu vida, esta semana, con las personas que tenés cerca.
+3. ¿Qué significa para vos "no seguir las reglas del juego de otros"? No en abstracto — en tu vida, esta semana, con las personas que tenés cerca.
 
 ---
 

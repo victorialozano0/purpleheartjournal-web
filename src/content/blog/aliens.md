@@ -46,13 +46,13 @@ Amar profundamente, sentir todo con intensidad, encontrar en la música algo que
 
 ---
 
-**Para el journal:**
+## Prompts de journaling
 
-¿En qué espacios de tu vida sentís que tenés que achicarte o dosificarte para encajar? ¿Qué parte de vos dejás afuera en esas situaciones?
+1. ¿En qué espacios de tu vida sentís que tenés que achicarte o dosificarte para encajar? ¿Qué parte de vos dejás afuera en esas situaciones?
 
-Pensá en alguien con quien podés ser completamente vos misma. ¿Qué hace que sea posible con esa persona y no con otras? ¿Qué dice eso de lo que realmente necesitás?
+2. Pensá en alguien con quien podés ser completamente vos misma. ¿Qué hace que sea posible con esa persona y no con otras? ¿Qué dice eso de lo que realmente necesitás?
 
-¿Hay algo que amás — de BTS, de la escritura, de cualquier cosa — que todavía no te animaste a mostrar completamente? ¿De qué tenés miedo que pase si lo hacés?
+3. ¿Hay algo que amás — de BTS, de la escritura, de cualquier cosa — que todavía no te animaste a mostrar completamente? ¿De qué tenés miedo que pase si lo hacés?
 
 ---
 

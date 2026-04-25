@@ -50,13 +50,13 @@ Algunas canciones hacen eso. **No crean el alivio — lo reconocen.** Te encuent
 
 ---
 
-**Para el journal:**
+## Prompts de journaling
 
-¿En qué parte del proceso estás ahora mismo — todavía en el fondo, moviéndote, o en el in-between sin saber dónde? No hay respuesta correcta. Solo la que es verdad.
+1. ¿En qué parte del proceso estás ahora mismo — todavía en el fondo, moviéndote, o en el in-between sin saber dónde? No hay respuesta correcta. Solo la que es verdad.
 
-¿Qué es lo más pequeño que hiciste esta semana que, si lo mirás bien, era un paso — aunque no lo parezca? ¿Cómo te sentiste después de hacerlo?
+2. ¿Qué es lo más pequeño que hiciste esta semana que, si lo mirás bien, era un paso — aunque no lo parezca? ¿Cómo te sentiste después de hacerlo?
 
-¿Qué te cuesta más perdonarte de este período? No lo que debería costarte. Lo que de verdad todavía cargás como si fuera una falla tuya.
+3. ¿Qué te cuesta más perdonarte de este período? No lo que debería costarte. Lo que de verdad todavía cargás como si fuera una falla tuya.
 
 ---
 

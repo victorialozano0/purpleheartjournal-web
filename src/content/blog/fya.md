@@ -50,13 +50,13 @@ Porque a veces el agotamiento tiene una función. No en el sentido de que sea "n
 
 ---
 
-**Para el journal:**
+## Prompts de journaling
 
-¿De qué estás cansada ahora mismo — de verdad, sin filtrar? No lo que debería cansarte. Lo que realmente te pesa, aunque te parezca pequeño o injusto decirlo.
+1. ¿De qué estás cansada ahora mismo — de verdad, sin filtrar? No lo que debería cansarte. Lo que realmente te pesa, aunque te parezca pequeño o injusto decirlo.
 
-¿Cuándo fue la última vez que hiciste algo solo porque querías, sin que tuviera que producir algo, rendir algo, demostrar algo? ¿Qué pasaría si volvieras a hacer eso?
+2. ¿Cuándo fue la última vez que hiciste algo solo porque querías, sin que tuviera que producir algo, rendir algo, demostrar algo? ¿Qué pasaría si volvieras a hacer eso?
 
-Si el fuego que te queda — ese que todavía está, aunque sea una chispa — pudiera ir hacia algo esta semana, ¿hacia qué iría? No el plan grande. Solo esta semana.
+3. Si el fuego que te queda — ese que todavía está, aunque sea una chispa — pudiera ir hacia algo esta semana, ¿hacia qué iría? No el plan grande. Solo esta semana.
 
 ---
 
