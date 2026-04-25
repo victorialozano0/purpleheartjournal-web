@@ -1,0 +1,121 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  song: string;
+  album: string;
+  excerpt: string;
+  date: Date;
+  tags: string[];
+}
+
+const { slug, title, song, album, excerpt, date, tags } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('es-MX', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<a href={`/blog/${slug}`} class="blog-card group block">
+  <div class="song-label">{song}</div>
+  <div class="album-label">{album}</div>
+  <h2 class="card-title">{title}</h2>
+  <p class="card-excerpt">{excerpt}</p>
+  <div class="card-footer">
+    <time class="card-date">{formattedDate}</time>
+    <div class="card-tags">
+      {tags.slice(0, 2).map(tag => (
+        <span class="tag">#{tag}</span>
+      ))}
+    </div>
+  </div>
+</a>
+
+<style>
+  .blog-card {
+    background: rgba(253, 251, 255, 0.9);
+    border: 1px solid var(--color-soft-lilac);
+    border-radius: 1rem;
+    padding: 1.75rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .blog-card:hover {
+    border-color: rgba(199, 125, 255, 0.5);
+    box-shadow: 0 8px 30px rgba(199, 125, 255, 0.15);
+    transform: translateY(-3px);
+  }
+
+  .song-label {
+    font-family: var(--font-accent);
+    font-size: 1.25rem;
+    color: var(--color-purple-heart);
+    line-height: 1.2;
+  }
+
+  .album-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  .card-title {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.375rem;
+    line-height: 1.25;
+    color: var(--color-text-deep);
+    margin-bottom: 0.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .blog-card:hover .card-title {
+    color: var(--color-purple-vibrant);
+  }
+
+  .card-excerpt {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    flex: 1;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(224, 208, 240, 0.5);
+  }
+
+  .card-date {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+  }
+
+  .card-tags {
+    display: flex;
+    gap: 0.375rem;
+  }
+
+  .tag {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--color-purple-vibrant);
+    background: rgba(155, 77, 202, 0.08);
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+  }
+</style>

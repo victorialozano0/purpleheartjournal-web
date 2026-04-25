@@ -1,0 +1,86 @@
+---
+---
+<nav class="blog-nav">
+  <div class="blog-nav-inner">
+    <a href="/" class="nav-logo">Purple Heart Journal</a>
+    <div class="nav-links">
+      <a href="/blog" class="nav-link">Blog</a>
+      <a
+        href="https://purpleheart.hotmart.com/product/love-yourself-journal"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="nav-cta"
+      >
+        El journal 💜
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .blog-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(26, 10, 46, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(224, 208, 240, 0.08);
+  }
+
+  .blog-nav-inner {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 0.875rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.125rem;
+    color: var(--color-white-glow);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .nav-logo:hover {
+    color: var(--color-purple-heart);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: rgba(224, 208, 240, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--color-purple-heart);
+  }
+
+  .nav-cta {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-deep);
+    background: var(--color-purple-heart);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .nav-cta:hover {
+    background: var(--color-white-glow);
+    color: var(--color-purple-vibrant);
+  }
+</style>

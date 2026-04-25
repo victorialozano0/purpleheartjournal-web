@@ -1,0 +1,412 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import BlogNav from '../../components/BlogNav.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const allPosts = await getCollection('blog');
+const related = allPosts
+  .filter(p => p.id !== post.id)
+  .sort((a, b) => {
+    const sharedTags = (p: typeof post) =>
+      p.data.tags.filter(t => post.data.tags.includes(t)).length;
+    return sharedTags(b) - sharedTags(a) || b.data.date.getTime() - a.data.date.getTime();
+  })
+  .slice(0, 3);
+
+const formattedDate = post.data.date.toLocaleDateString('es-MX', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const isARIRANG = post.data.tags.includes('ARIRANG');
+---
+
+<Layout
+  title={`${post.data.title} | Purple Heart Journal`}
+  description={post.data.excerpt}
+  ogType="article"
+>
+  <BlogNav />
+
+  <!-- Article header -->
+  <header class="article-header">
+    <div class="header-inner">
+      <div class="song-badge">
+        <span class="song-name">{post.data.song}</span>
+        <span class="song-sep">·</span>
+        <span class="song-album">{post.data.album}</span>
+      </div>
+      <h1 class="article-title">{post.data.title}</h1>
+      <p class="article-excerpt">{post.data.excerpt}</p>
+      <div class="article-meta">
+        <time class="article-date">{formattedDate}</time>
+        <div class="article-tags">
+          {post.data.tags.map(tag => (
+            <span class="tag">#{tag}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article body -->
+  <main class="article-main">
+    <article class="prose">
+      <Content />
+    </article>
+
+    <!-- CTA contextual -->
+    <aside class="article-cta">
+      {isARIRANG ? (
+        <div class="cta-box">
+          <p class="cta-intro">Para saber qué tienes para decir, primero hay que conocerte.</p>
+          <p class="cta-desc">
+            El <strong>Love Yourself Journal</strong> es el primer capítulo — 85+ prompts de journaling
+            guiados por la música de BTS. El espacio donde escribes lo que sientes antes de encontrar
+            las palabras para decirlo en voz alta.
+          </p>
+          <a
+            href="https://purpleheart.hotmart.com/product/love-yourself-journal"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-btn"
+          >
+            Conoce el Love Yourself Journal 💜
+          </a>
+        </div>
+      ) : (
+        <div class="cta-box">
+          <p class="cta-intro">¿Estas preguntas te movieron algo?</p>
+          <p class="cta-desc">
+            El <strong>Love Yourself Journal</strong> tiene 85+ prompts como estos — guiados por
+            35 canciones de BTS. Para ARMY que procesa sus emociones escribiendo.
+          </p>
+          <a
+            href="https://purpleheart.hotmart.com/product/love-yourself-journal"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-btn"
+          >
+            Ver el Love Yourself Journal 💜
+          </a>
+        </div>
+      )}
+    </aside>
+
+    <!-- Related articles -->
+    {related.length > 0 && (
+      <section class="related-section">
+        <h2 class="related-title">También en el blog</h2>
+        <div class="related-grid">
+          {related.map(p => (
+            <BlogCard
+              slug={p.id}
+              title={p.data.title}
+              song={p.data.song}
+              album={p.data.album}
+              excerpt={p.data.excerpt}
+              date={p.data.date}
+              tags={p.data.tags}
+            />
+          ))}
+        </div>
+        <div class="related-footer">
+          <a href="/blog" class="btn-all">Ver todos los artículos →</a>
+        </div>
+      </section>
+    )}
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* ── Header ── */
+  .article-header {
+    background: linear-gradient(135deg, #1A0A2E 0%, #5B2C8E 60%, #9B4DCA 100%);
+    padding: 3rem 1.25rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .article-header::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(199, 125, 255, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-inner {
+    max-width: 48rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .song-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .song-name {
+    font-family: var(--font-accent);
+    font-size: 1.375rem;
+    color: var(--color-purple-heart);
+  }
+
+  .song-sep { color: rgba(224, 208, 240, 0.4); }
+
+  .song-album {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    color: rgba(224, 208, 240, 0.6);
+    letter-spacing: 0.04em;
+  }
+
+  .article-title {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--color-white-glow);
+    margin-bottom: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .article-header { padding: 4rem 1.25rem 5rem; }
+    .article-title { font-size: 2.75rem; }
+  }
+
+  .article-excerpt {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: rgba(224, 208, 240, 0.85);
+    margin-bottom: 1.75rem;
+    font-style: italic;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .article-date {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    color: rgba(224, 208, 240, 0.55);
+  }
+
+  .article-tags { display: flex; gap: 0.375rem; flex-wrap: wrap; }
+
+  .tag {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--color-purple-heart);
+    background: rgba(199, 125, 255, 0.12);
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+  }
+
+  /* ── Body ── */
+  .article-main {
+    background: var(--color-white-glow);
+    padding: 4rem 1.25rem 0;
+  }
+
+  /* ── Prose ── */
+  .prose { max-width: 42rem; margin: 0 auto; }
+
+  .prose :global(p) {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-deep);
+    margin-bottom: 1.5rem;
+  }
+
+  .prose :global(h2) {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.625rem;
+    color: var(--color-text-deep);
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  @media (min-width: 768px) {
+    .prose :global(h2) { font-size: 2rem; }
+  }
+
+  .prose :global(blockquote) {
+    border-left: 3px solid var(--color-purple-heart);
+    padding: 0.875rem 1.25rem;
+    margin: 2rem 0;
+    background: rgba(199, 125, 255, 0.05);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  .prose :global(blockquote p) {
+    font-style: italic;
+    color: var(--color-purple-vibrant);
+    margin-bottom: 0;
+  }
+
+  .prose :global(hr) {
+    border: none;
+    border-top: 1px solid var(--color-soft-lilac);
+    margin: 2.5rem 0;
+  }
+
+  .prose :global(strong) { font-weight: 700; color: var(--color-text-deep); }
+
+  .prose :global(ol) {
+    margin: 1.5rem 0;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    counter-reset: list-counter;
+  }
+
+  .prose :global(ol li) {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-text-deep);
+    background: var(--color-lavender-mist);
+    border: 1px solid rgba(224, 208, 240, 0.7);
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem 1rem 3.25rem;
+    counter-increment: list-counter;
+    position: relative;
+  }
+
+  .prose :global(ol li)::before {
+    content: counter(list-counter);
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: linear-gradient(135deg, #9B4DCA, #C77DFF);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body);
+  }
+
+  /* ── CTA ── */
+  .article-cta {
+    max-width: 42rem;
+    margin: 3rem auto 0;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, rgba(91, 44, 142, 0.06) 0%, rgba(199, 125, 255, 0.08) 100%);
+    border: 1px solid rgba(199, 125, 255, 0.25);
+    border-radius: 1rem;
+    padding: 2rem;
+  }
+
+  .cta-intro {
+    font-family: var(--font-accent);
+    font-size: 1.25rem;
+    color: var(--color-purple-vibrant);
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-desc {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .cta-desc strong { color: var(--color-text-deep); }
+
+  .cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #9B4DCA, #C77DFF);
+    color: var(--color-white-glow);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(199, 125, 255, 0.25);
+  }
+
+  .cta-btn:hover {
+    box-shadow: 0 0 35px rgba(199, 125, 255, 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* ── Related ── */
+  .related-section {
+    max-width: 42rem;
+    margin: 4rem auto 0;
+    padding-bottom: 5rem;
+  }
+
+  .related-title {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--color-text-deep);
+    margin-bottom: 1.5rem;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .related-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .related-footer { margin-top: 1.5rem; }
+
+  .btn-all {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--color-purple-vibrant);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .btn-all:hover { color: var(--color-purple-heart); }
+</style>

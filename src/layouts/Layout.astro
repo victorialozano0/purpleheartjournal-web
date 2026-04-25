@@ -2,11 +2,13 @@
 interface Props {
   title?: string;
   description?: string;
+  ogType?: string;
 }
 
 const {
   title = 'Love Yourself Journal — Para ARMY que escribe entre canciones 💜',
   description = 'Journal digital para ARMY. 85+ prompts de journaling guiados por 35 canciones de BTS. Escribe lo que sientes, acompañada de la música que ya te conoce.',
+  ogType = 'website',
 } = Astro.props;
 
 import '../styles/global.css';
@@ -23,7 +25,7 @@ import '../styles/global.css';
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/og-image.jpg" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
