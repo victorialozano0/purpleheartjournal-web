@@ -45,49 +45,22 @@ const COLORS = ['lavender', 'light', 'dark', 'vibrant', 'midlav'] as const;
   <!-- ══ GRID ══ -->
   <main class="grid-wrap">
     <div class="cards-grid">
-      {/* Card destacada — primera entrada */}
-      {posts[0] && (() => {
-        const lines = lns(posts[0]);
-        return (
-          <a href={`/blog/${posts[0].id}`} class="g-card g-card-featured">
-            <span class="g-blob" aria-hidden="true" />
-            <span class="g-blob g-blob-2" aria-hidden="true" />
-            <div class="gf-top">
-              <span class="gf-era">{era(posts[0])}</span>
-              <span class="gf-badge">Nueva entrada</span>
-            </div>
-            <span class="gf-giant-quote" aria-hidden="true">"</span>
-            <div class="gf-lyric-block">
-              {lines.map((l, i) => (
-                <p class={`gf-lyric-line ${i > 0 ? 'gf-lyric-indent' : ''}`}>{l}</p>
-              ))}
-            </div>
-            <div class="gf-bottom">
-              <div>
-                <p class="gf-song">{posts[0].data.song}</p>
-                <p class="gf-excerpt">{posts[0].data.excerpt}</p>
-              </div>
-              <span class="gf-cta">Leer análisis →</span>
-            </div>
-          </a>
-        );
-      })()}
-
-      {posts.slice(1).map((post, i) => {
-        const color   = COLORS[i % 5];
+      {posts.map((post, i) => {
+        const color   = i === 0 ? 'dark' : COLORS[(i - 1) % 5];
         const isDark  = color === 'dark' || color === 'vibrant';
         const lines   = lns(post);
 
         return (
           <a
             href={`/blog/${post.id}`}
-            class={`g-card color-${color}`}
+            class={`g-card color-${color} ${i === 0 ? 'g-card-featured' : ''}`}
           >
             {isDark && <span class="g-blob" aria-hidden="true" />}
 
-            <span class={`g-era ${isDark ? 'g-era-light' : ''}`}>
-              {era(post)}
-            </span>
+            <div class={`g-era-row ${isDark ? '' : 'g-era-row-light'}`}>
+              <span class={`g-era ${isDark ? 'g-era-light' : ''}`}>{era(post)}</span>
+              {i === 0 && <span class="g-new-badge">Nueva entrada</span>}
+            </div>
 
             {color === 'dark' ? (
               <>
@@ -194,60 +167,31 @@ const COLORS = ['lavender', 'light', 'dark', 'vibrant', 'midlav'] as const;
     text-align: right;
   }
 
-  /* ══ Featured card ══ */
+  /* ══ Featured card (primera, misma estructura dark) ══ */
   .g-card-featured {
-    grid-column: 1 / -1;
-    background: linear-gradient(150deg, #0D051E 0%, #2A0A5E 45%, #6B2FA0 100%);
-    min-height: 300px;
-    transform: none !important;
-    margin-top: 0 !important;
-    border: 1px solid rgba(199,125,255,0.18);
-    border-top: 3px solid #C77DFF;
+    border-top: 3px solid #C77DFF !important;
     box-shadow:
       0 8px 40px rgba(26,10,46,0.5),
-      0 0 0 1px rgba(199,125,255,0.06),
-      inset 0 1px 0 rgba(199,125,255,0.08);
+      0 0 32px rgba(199,125,255,0.1) !important;
   }
 
   .g-card-featured:hover {
-    transform: translateY(-5px) !important;
     box-shadow:
       0 20px 64px rgba(91,44,142,0.55),
-      0 0 48px rgba(199,125,255,0.12),
-      0 0 0 1px rgba(199,125,255,0.15);
-    border-color: rgba(199,125,255,0.3);
-    border-top-color: #C77DFF;
+      0 0 48px rgba(199,125,255,0.18) !important;
   }
 
-  .g-blob-2 {
-    position: absolute;
-    bottom: -10%; left: 20%;
-    width: 180px; height: 180px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(91,44,142,0.35) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .gf-top {
+  /* Era + badge en la misma fila */
+  .g-era-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 0.625rem;
     position: relative;
     z-index: 1;
-    margin-bottom: 1.25rem;
   }
 
-  .gf-era {
-    font-family: var(--font-accent);
-    font-size: 0.875rem;
-    color: rgba(199,125,255,0.8);
-    background: rgba(199,125,255,0.1);
-    border: 1px solid rgba(199,125,255,0.22);
-    padding: 0.2rem 0.75rem;
-    border-radius: 999px;
-  }
-
-  .gf-badge {
+  .g-new-badge {
     font-family: var(--font-body);
     font-size: 0.5625rem;
     font-weight: 700;
@@ -258,88 +202,7 @@ const COLORS = ['lavender', 'light', 'dark', 'vibrant', 'midlav'] as const;
     border: 1px solid rgba(199,125,255,0.4);
     padding: 0.2rem 0.625rem;
     border-radius: 999px;
-    box-shadow: 0 0 10px rgba(199,125,255,0.2);
   }
-
-  .gf-giant-quote {
-    font-family: var(--font-heading);
-    font-size: clamp(7rem, 16vw, 14rem);
-    line-height: 0.7;
-    color: rgba(199,125,255,0.07);
-    position: absolute;
-    top: 0.25rem; left: 0.75rem;
-    pointer-events: none;
-    user-select: none;
-    z-index: 0;
-  }
-
-  .gf-lyric-block {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    padding: 0.5rem 0;
-  }
-
-  .gf-lyric-line {
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-size: clamp(2rem, 4.5vw, 3.75rem);
-    line-height: 1.15;
-    color: #FDFBFF;
-    letter-spacing: -0.02em;
-    text-shadow: 0 2px 24px rgba(199,125,255,0.15);
-  }
-
-  .gf-lyric-indent { padding-left: clamp(1rem, 4vw, 4rem); }
-
-  .gf-bottom {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 1.5rem;
-    position: relative;
-    z-index: 1;
-    padding-top: 1.25rem;
-    border-top: 1px solid rgba(199,125,255,0.12);
-  }
-
-  .gf-bottom > div { margin-left: auto; text-align: right; }
-
-  .gf-song {
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #C77DFF;
-    margin-bottom: 0.25rem;
-  }
-
-  .gf-excerpt {
-    font-family: 'Poppins', var(--font-body);
-    font-size: 0.8125rem;
-    line-height: 1.55;
-    color: rgba(224,208,240,0.45);
-    max-width: 44rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .gf-cta {
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: rgba(199,125,255,0.55);
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: color 0.2s, transform 0.2s;
-  }
-
-  .g-card-featured:hover .gf-cta { color: #C77DFF; transform: translateX(4px); }
 
   /* ══ Grid wrap ══ */
   .grid-wrap {
