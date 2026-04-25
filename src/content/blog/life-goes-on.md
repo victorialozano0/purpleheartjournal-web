@@ -8,11 +8,11 @@ date: 2026-04-20
 tags: ["presente", "resiliencia", "autoconocimiento", "BE", "proceso"]
 ---
 
-Hay momentos en que el mundo sigue y tú no. Cuando afuera todo avanza — la gente hace planes, cumple metas, aparece en fotos sonriendo — y adentro tuyo el tiempo se siente detenido, espeso, sin forma de saber qué viene después.
+Hay momentos en que **el mundo sigue y tú no**. Cuando afuera todo avanza — la gente hace planes, cumple metas, aparece en fotos sonriendo — y adentro tuyo el tiempo **se siente detenido, espeso**, sin forma de saber qué viene después.
 
-Nosotras conocemos ese momento. No hace falta una pandemia para sentirlo. Basta con una pérdida, un fin, un cambio que llegó antes de que estuvieras lista. Basta con ese tipo de cansancio que no te deja arrancar, aunque sabes que deberías.
+Nosotras conocemos ese momento. No hace falta una pandemia para sentirlo. Basta con una pérdida, un fin, **un cambio que llegó antes de que estuvieras lista**. Basta con ese tipo de cansancio **que no te deja arrancar**, aunque sabes que deberías.
 
-Y en ese lugar, lo que menos necesitas es que alguien te diga que todo va a estar bien.
+Y en ese lugar, **lo que menos necesitas** es que alguien te diga que todo va a estar bien.
 
 Porque "todo va a estar bien" requiere que lo crean tú y quien lo dice. Y a veces no puedes. Y a veces ellos tampoco lo saben.
 
@@ -30,7 +30,7 @@ Porque cuando estás adentro de algo difícil, la promesa con fecha falla siempr
 
 *One day* no tiene fecha. No tiene calendario. Tiene la certeza de que el estado actual no es permanente, sin comprometerse con el cuándo. Y eso — paradójicamente — es más fácil de creer. Porque no requiere que el tiempo sea exacto. Solo que cambie.
 
-La canción no crea esperanza de la nada. Reconoce la que ya existe, enterrada debajo de todo lo que está pesando, y la nombra sin exagerarla.
+La canción no crea esperanza de la nada. *Reconoce la que ya existe*, enterrada debajo de todo lo que está pesando, y la nombra sin exagerarla.
 
 ## Lo que BTS eligió hacer en 2020
 
@@ -42,19 +42,19 @@ BTS hizo *Life Goes On*. Una canción lenta. Que respira. Que no te pide que est
 
 Jimin habló de cómo todos los miembros estaban atrapados en una rutina irreconocible — los conciertos cancelados, los planes borrados, la sensación de estar suspendidos en un tiempo que no avanzaba como debía. Y en vez de esconder eso detrás de un banger que celebrara la resiliencia, hicieron algo más difícil: mostraron el estado real.
 
-La canción suena como un amigo que se sienta a tu lado y no dice nada. No busca soluciones. No trata de animarte. Solo está ahí, presente, sin exigirte que ya hayas procesado lo que todavía estás procesando.
+La canción suena como un amigo que **se sienta a tu lado y no dice nada**. No busca soluciones. No trata de animarte. Solo está ahí, presente, **sin exigirte que ya hayas procesado** lo que todavía estás procesando.
 
-Nosotras sabemos lo que es ese tipo de presencia. Y lo poco que se consigue.
+Nosotras sabemos lo que es ese tipo de presencia. *Y lo poco que se consigue.*
 
 ## El permiso de no estar lista
 
 Hay una versión de ti que vive en el futuro. La que ya lo procesó todo. La que encontró la dirección correcta. La que puede responder con claridad cuando le preguntan cómo está.
 
-Y una parte de ti lleva mucho tiempo esperando convertirse en esa versión para poder vivir de verdad.
+Y **una parte de ti lleva mucho tiempo esperando** convertirse en esa versión para poder vivir de verdad.
 
 Mientras tanto, la vida ocurre aquí. En la versión que todavía no lo tiene resuelto. En la que no está lista, que no tiene las respuestas, que sigue cargando cosas que no sabe cómo soltar.
 
-*Life Goes On* confronta eso sin cruelidad: la vida no espera a la versión resuelta de ti. Ya está pasando. No como castigo — como realidad. Y dentro de esa realidad puedes exigirte que ya deberías estar bien, o puedes habitarla aunque sea despacio, aunque sea sin tenerlo claro, aunque todavía llueva.
+*Life Goes On* confronta eso sin cruelidad: **la vida no espera a la versión resuelta de ti**. *Ya está pasando.* No como castigo — como realidad. Y dentro de esa realidad puedes exigirte que ya deberías estar bien, o puedes habitarla aunque sea despacio, aunque sea sin tenerlo claro, aunque todavía llueva.
 
 BTS eligió lo segundo. Y te invitaron a hacer lo mismo.
 
@@ -70,7 +70,7 @@ Solo dice: *like an echo in the forest, one day this rain will stop.*
 
 Y algo adentro lo escucha y lo reconoce. No como información nueva — como algo que ya sabías pero que no habías podido decirte a ti misma todavía. La certeza pequeña y sin adornos de que no va a ser siempre así.
 
-Eso es lo que BTS hace cuando está en su mejor momento: no crear el sentimiento. Reconocerlo. Ponerle nombre justo cuando más lo necesitas.
+Eso es lo que BTS hace cuando está en su mejor momento: no crear el sentimiento. *Reconocerlo. Ponerle nombre justo cuando más lo necesitas.*
 
 ## Prompts de journaling
 

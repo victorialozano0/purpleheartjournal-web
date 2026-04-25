@@ -8,7 +8,7 @@ date: 2026-04-17
 tags: ["fuego-interior", "burnout", "ARIRANG", "resiliencia"]
 ---
 
-Hay un cansancio que no se arregla durmiendo. No es el cansancio del cuerpo — es el de cargar con demasiado durante demasiado tiempo sin parar a preguntarte cómo estás. Es el cansancio de seguir funcionando cuando por dentro sentís que se te acabó el combustible.
+Hay **un cansancio que no se arregla durmiendo**. No es el cansancio del cuerpo — es el de cargar con demasiado durante demasiado tiempo **sin parar a preguntarte cómo estás**. Es el cansancio de seguir funcionando cuando por dentro sentís que se te acabó el combustible.
 
 Si lo reconocés, es porque lo estás viviendo. O lo viviste. O ambas.
 
@@ -16,13 +16,13 @@ Si lo reconocés, es porque lo estás viviendo. O lo viviste. O ambas.
 
 ## "Even when you think / there's nothing left to burn"
 
-El agotamiento real — no el dramático, el de verdad — tiene una característica particular: te convence de que esta es tu nueva normalidad. Que así sos ahora. Que el entusiasmo que tenías antes era una fase, o era mentira, o simplemente se te acabó y punto.
+El agotamiento real — no el dramático, el de verdad — tiene una característica particular: **te convence de que esta es tu nueva normalidad**. Que así sos ahora. Que el entusiasmo que tenías antes era una fase, o era mentira, o simplemente **se te acabó y punto**.
 
-Es mentira. Pero cuando estás en el medio de eso, no se siente como mentira.
+Es mentira. *Pero cuando estás en el medio de eso, no se siente como mentira.*
 
-Nosotras conocemos esa sensación. La de abrir una canción de BTS que antes te encendía y sentirte... nada. Preocuparte de que hasta eso se fue. La de mirar el journal que empezaste con tanta intención y no poder escribir más que dos palabras antes de cerrarlo. La de scrollear el feed y sentir que todos están viviendo mientras vos solo estás existiendo.
+Nosotras conocemos esa sensación. La de abrir una canción de BTS que antes te encendía **y sentirte... nada**. Preocuparte de que hasta eso se fue. La de mirar el journal que empezaste con tanta intención y no poder escribir más que dos palabras antes de cerrarlo. La de scrollear el feed y sentir que **todos están viviendo mientras vos solo estás existiendo**.
 
-Ese no es el final. Es el fondo. Y el fondo tiene piso.
+Ese no es el final. *Es el fondo.* **Y el fondo tiene piso.**
 
 ## La diferencia entre estar vacía y estar en pausa
 
@@ -32,7 +32,7 @@ Cuando estás en pausa, nada brilla. Todo cuesta. La energía que antes te sobra
 
 El problema es que la pausa a veces dura más de lo que creemos que podemos aguantar. Y ahí viene el miedo: ¿y si esta vez no vuelve? ¿Y si de verdad se apagó?
 
-No se apagó. El fuego que *FYA* nombra no es el entusiasmo de los días buenos. Es algo más quieto y más profundo. Es lo que queda cuando sacás todo lo que pusiste para los demás, todo lo que gastaste en rendir y funcionar y demostrar. Lo que sobrevive cuando todo lo otro se va.
+No se apagó. El fuego que *FYA* nombra no es el entusiasmo de los días buenos. *Es algo más quieto y más profundo.* Es lo que queda cuando sacás todo lo que pusiste para los demás, todo lo que gastaste en rendir y funcionar y demostrar. Lo que sobrevive cuando todo lo otro se va.
 
 Eso no desaparece.
 
@@ -42,11 +42,11 @@ La pregunta más incómoda de la canción no es si el fuego existe. Es qué har�
 
 Porque a veces el agotamiento tiene una función. No en el sentido de que sea "necesario" o "un aprendizaje" — sino en el sentido de que a veces el cuerpo para porque la dirección que llevábamos ya no era la que queríamos, y no habíamos tenido el tiempo ni el permiso de parar a notarlo.
 
-El cansancio no siempre es una señal de que fallaste. A veces es una señal de que llevás demasiado tiempo yendo en dirección a algo que no elegiste del todo.
+**El cansancio no siempre es una señal de que fallaste**. A veces es una señal de que llevás demasiado tiempo yendo en dirección a algo **que no elegiste del todo**.
 
-No tenés que tener la respuesta ahora. Pero sí vale la pena preguntarte, desde adentro del agotamiento, qué es lo que todavía te importa. No lo que debería importarte. No lo que le importa a los demás que te importe. Lo que, aun en el peor día, todavía se siente como tuyo.
+*No tenés que tener la respuesta ahora.* Pero sí vale la pena preguntarte, **desde adentro del agotamiento**, qué es lo que todavía te importa. No lo que debería importarte. No lo que le importa a los demás que te importe. Lo que, **aun en el peor día, todavía se siente como tuyo**.
 
-Ahí está el fuego.
+*Ahí está el fuego.*
 
 ---
 

@@ -10,7 +10,7 @@ tags: ["pérdida", "duelo", "relaciones", "You Never Walk Alone", "nostalgia", "
 
 Hay canciones que no puedes escuchar en cualquier momento.
 
-No porque sean tristes — hay miles de canciones tristes que puedes poner de fondo mientras lavas los platos o esperas el metro. Sino porque te nombran demasiado bien. Porque llegan hasta donde el resto no llega. Porque algo en el primer segundo — ese piano, esa voz de Jungkook que suena como si ya conociera tu historia — hace que algo en el pecho se afloje sin que hayas decidido soltarlo.
+No porque sean tristes — hay miles de canciones tristes que puedes poner de fondo mientras lavas los platos o esperas el metro. Sino porque **te nombran demasiado bien**. Porque llegan hasta donde el resto no llega. Porque algo en el primer segundo — ese piano, esa voz de Jungkook que **suena como si ya conociera tu historia** — hace que *algo en el pecho se afloje* sin que hayas decidido soltarlo.
 
 *Spring Day* es una de esas. Y la razón por la que duele de la manera específica en que duele no es que sea una canción triste. Es que es una canción honesta.
 
@@ -20,9 +20,9 @@ No porque sean tristes — hay miles de canciones tristes que puedes poner de fo
 
 Esta no es una pregunta retórica.
 
-Es la pregunta de alguien que genuinamente no sabe la respuesta. No dice "sé que el dolor va a ceder con el tiempo." No dice "todo pasa, todo cambia." Dice: *¿volverá?* ¿Este extrañar — esta forma específica de extrañar, este peso que tiene un nombre y un rostro — va a ceder, o es algo que simplemente aprendo a cargar de otra manera?
+Es la pregunta de alguien que genuinamente no sabe la respuesta. No dice "sé que el dolor va a ceder con el tiempo." No dice "todo pasa, todo cambia." Dice: *¿volverá?* ¿Este extrañar — **esta forma específica de extrañar, este peso que tiene un nombre y un rostro** — *va a ceder, o es algo que simplemente aprendo a cargar de otra manera?*
 
-Esa pregunta sin respuesta es lo que hace que *Spring Day* duela como duele. Porque BTS no finge saber. Solo pregunta. Y en esa pregunta nos reconocemos — porque nosotras también hemos preguntado eso, aunque no en voz alta, aunque lo hayamos disfrazado de otra cosa.
+Esa pregunta sin respuesta es lo que hace que *Spring Day* duela como duele. Porque **BTS no finge saber. Solo pregunta.** Y en esa pregunta nos reconocemos — porque nosotras también hemos preguntado eso, aunque no en voz alta, aunque lo hayamos disfrazado de otra cosa.
 
 Hay algo más en el título original coreano que no se traduce del todo: 보고싶다 — *bogoshipda* — que muchas veces se vierte como "te extraño", pero que literalmente significa "quiero verte." No solo la ausencia. El deseo activo de presencia. El querer ver, no solo recordar. Esa distinción es pequeña y lo cambia todo.
 
@@ -36,7 +36,7 @@ Saber eso no hace la canción más pesada. La hace más verdadera.
 
 Porque habla de algo que muchas conocemos de otra forma: la persona que ya no está, a quien no pudiste decirle todo lo que necesitabas decir. La conversación que quedó a medias. El momento en que pensaste "después" y el después nunca llegó de la manera que esperabas.
 
-La especificidad del Sewol no borra la universalidad — la abre. Se convierte en el portal hacia todas las pérdidas que no tienen forma de resolverse limpiamente. Las que no cierran bien. Las que no tienen ritual, ni fecha, ni forma socialmente aceptada de ser lloradas.
+La especificidad del Sewol no borra la universalidad — la abre. Se convierte en el portal hacia **todas las pérdidas que no tienen forma de resolverse limpiamente**. Las que no cierran bien. Las que **no tienen ritual, ni fecha, ni forma socialmente aceptada de ser lloradas**.
 
 ---
 
@@ -48,19 +48,19 @@ No dice "quiero que vuelvas." No dice "quiero que el tiempo retroceda." Dice: qu
 
 No es retención. Es compañía en la ausencia. Y esa distinción lo cambia todo.
 
-La canción no está atrapada en la negación de la pérdida. Está aprendiendo a existir junto a ella — a seguir caminando con esa persona adentro, sin dejar de moverse hacia adelante. El tren que sigue aunque el paisaje sea nieve. El tren que sigue precisamente porque sigue.
+La canción no está atrapada en la negación de la pérdida. *Está aprendiendo a existir junto a ella* — a seguir caminando con esa persona adentro, sin dejar de moverse hacia adelante. El tren que sigue aunque el paisaje sea nieve. El tren que sigue precisamente porque sigue.
 
 ---
 
 ## Lo que quizás no te has permitido extrañar
 
-Hay una forma de pérdida de la que no siempre hablamos: las personas que todavía están pero que ya no son las que eran. La amiga que dejó de serlo sin que nadie lo declarara en voz alta. La relación que terminó sin cierre, sin conversación final, sin la escena que sientes que merecías. La versión de ti misma que se fue en algún momento — quizás a los dieciséis, quizás a los veinte — y no sabes exactamente cuándo desapareció.
+Hay una forma de pérdida de la que no siempre hablamos: **las personas que todavía están pero que ya no son las que eran**. La amiga que dejó de serlo sin que nadie lo declarara en voz alta. La relación que terminó sin cierre, sin conversación final, sin la escena que sientes que merecías. La versión de ti misma que se fue en algún momento — quizás a los dieciséis, quizás a los veinte — y no sabes exactamente cuándo desapareció.
 
-Para esas pérdidas también falta lenguaje. No hay ritual de duelo. No hay fechas marcadas. No hay una forma socialmente sancionada de decir: extraño lo que esto fue, extraño lo que yo era, aunque técnicamente todo siga existiendo de otra manera.
+Para esas pérdidas también falta lenguaje. No hay ritual de duelo. No hay fechas marcadas. No hay una forma socialmente sancionada de decir: **extraño lo que esto fue, extraño lo que yo era**, aunque técnicamente todo siga existiendo de otra manera.
 
-*Spring Day* también es para esas pérdidas. Para el extrañar que no tiene nombre oficial. Para el duelo que no se llama duelo porque la persona todavía respira, porque la etapa todavía existe en algún sentido, porque tú misma todavía existes aunque ya no seas la misma.
+*Spring Day* también es para esas pérdidas. Para el extrañar que no tiene nombre oficial. Para **el duelo que no se llama duelo** porque la persona todavía respira, porque la etapa todavía existe en algún sentido, porque tú misma todavía existes aunque ya no seas la misma.
 
-No todo se resuelve. Y eso también merece ser dicho.
+No todo se resuelve. *Y eso también merece ser dicho.*
 
 ---
 

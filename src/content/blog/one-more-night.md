@@ -8,11 +8,11 @@ date: 2026-04-13
 tags: ["pérdida", "nostalgia", "ARIRANG", "relaciones", "cartas"]
 ---
 
-Hay cosas que se quedan sin decir no porque no tuvieras las palabras. Sino porque siempre había tiempo. Porque el momento nunca era exactamente el correcto. Porque decirlas hubiera cambiado algo que no estabas lista para cambiar.
+Hay cosas que se quedan sin decir no porque no tuvieras las palabras. Sino porque **siempre había tiempo**. Porque el momento nunca era exactamente el correcto. Porque decirlas hubiera cambiado algo **que no estabas lista para cambiar**.
 
-Y entonces el tiempo se termina — por muerte, por distancia, por una relación que dejó de ser lo que era — y lo que quedó adentro se queda adentro. Sin salida. Sin destino.
+Y entonces el tiempo se termina — por muerte, por distancia, por una relación que dejó de ser lo que era — y **lo que quedó adentro se queda adentro**. Sin salida. Sin destino.
 
-Nosotras cargamos eso. Las palabras que se cerraron antes de poder salir.
+Nosotras cargamos eso. **Las palabras que se cerraron antes de poder salir.**
 
 *One More Night* las conoce.
 
@@ -20,13 +20,13 @@ Nosotras cargamos eso. Las palabras que se cerraron antes de poder salir.
 
 Una noche más. Para todo lo que nunca dije en voz alta.
 
-No lo que deberías haber dicho. No lo que el mundo espera que lamentés haber callado. *Everything I never said* — todo lo que existía, que siempre existió, que tenía una forma adentro tuyo pero nunca encontró el camino hacia afuera.
+No lo que deberías haber dicho. No lo que el mundo espera que lamentés haber callado. *Everything I never said* — todo lo que existía, que siempre existió, *que tenía una forma adentro tuyo* pero nunca encontró el camino hacia afuera.
 
-El pedido de la canción es simple y al mismo tiempo enorme: una noche más. No para arreglar nada. No para cambiar lo que pasó. Solo para que quede dicho.
+El pedido de la canción es simple y al mismo tiempo enorme: una noche más. No para arreglar nada. No para cambiar lo que pasó. **Solo para que quede dicho.**
 
-Nosotras sabemos lo que es querer esa noche. Con una abuela que ya no está. Con una amiga de quien nos fuimos alejando sin que nadie lo decidiera exactamente. Con una versión de una relación que murió antes de que la relación terminara. Con una versión de nosotras mismas que quedó atrás en algún punto del camino.
+Nosotras sabemos lo que es querer esa noche. Con una abuela que ya no está. Con una amiga de quien nos fuimos alejando sin que nadie lo decidiera exactamente. Con una versión de una relación que murió **antes de que la relación terminara**. Con una versión de nosotras mismas que quedó atrás en algún punto del camino.
 
-La canción no promete que esa noche llegue. Hace algo diferente: te da permiso de quererla. De reconocer que hay algo sin cerrar, sin por eso hundirte en culpa de que quedó así.
+La canción no promete que esa noche llegue. Hace algo diferente: *te da permiso de quererla.* De reconocer que hay algo sin cerrar, sin por eso hundirte en culpa de que quedó así.
 
 ## "Before the morning takes you"
 
@@ -44,13 +44,13 @@ La canción vive en ese instante. Y te invita a vivir ahí un momento, aunque ya
 
 Hay cartas que no se envían. Que desde el principio nunca iban a ser enviadas.
 
-Y esas cartas tienen un poder particular: la honestidad sin consecuencias. Cuando escribís sin audiencia — cuando la única que va a leer esto sos vos — podés decir lo que realmente pensás. No la versión diplomática. No la versión que cuida los sentimientos de la otra persona. La versión verdadera de lo que quedó adentro.
+Y esas cartas tienen un poder particular: **la honestidad sin consecuencias**. Cuando escribís sin audiencia — cuando la única que va a leer esto sos vos — podés decir lo que realmente pensás. No la versión diplomática. No la versión que cuida los sentimientos de la otra persona. La versión verdadera de lo que quedó adentro.
 
-Escribir lo que no pudiste decir no es para la otra persona. Es para vos. Es sacar algo del limbo — del lugar donde existe pero no tiene forma — y darle forma. No convierte lo no-dicho en dicho. Pero sí lo saca del lugar donde solo puede dar vueltas.
+Escribir lo que no pudiste decir **no es para la otra persona. Es para vos.** Es sacar algo del limbo — del lugar donde existe pero no tiene forma — y darle forma. *No convierte lo no-dicho en dicho.* Pero sí lo saca del lugar donde solo puede dar vueltas.
 
-Nosotras hacemos eso en el journal. Escribimos cartas para personas que no las van a leer. Para versiones pasadas de nosotras mismas. Para relaciones que terminaron sin ceremonia. Para el duelo que el mundo no siempre nos deja hacer en voz alta.
+Nosotras hacemos eso en el journal. Escribimos cartas para personas que no las van a leer. Para versiones pasadas de nosotras mismas. Para relaciones que terminaron sin ceremonia. Para **el duelo que el mundo no siempre nos deja hacer en voz alta**.
 
-Y algo cambia cuando lo escribís. No todo. No siempre. Pero algo.
+Y algo cambia cuando lo escribís. No todo. No siempre. *Pero algo.*
 
 ## Prompts de journaling
 

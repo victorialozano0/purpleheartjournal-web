@@ -8,11 +8,11 @@ date: 2026-04-24
 tags: ["vulnerabilidad", "autenticidad", "ARIRANG", "cansancio"]
 ---
 
-El cansancio que más cuesta nombrar no es el que tiene razón. Es el otro. El que aparece sin que puedas señalar una causa concreta. El que se instala en el cuerpo cuando, desde afuera, todo "está bien."
+**El cansancio que más cuesta nombrar** no es el que tiene razón. Es el otro. El que aparece sin que puedas señalar una causa concreta. El que se instala en el cuerpo cuando, desde afuera, todo "está bien."
 
-Nosotras aprendemos muy temprano que ese cansancio necesita justificación. Que decir "estoy cansada" sin poder responder "¿de qué?" es casi una confesión de fragilidad. Como si el cansancio sin causa visible fuera un defecto, una exageración, algo que deberías poder controlar si te esforzaras un poco más.
+Nosotras aprendemos muy temprano que ese cansancio necesita justificación. Que decir "estoy cansada" sin poder responder "¿de qué?" **es casi una confesión de fragilidad**. Como si el cansancio sin causa visible fuera un defecto, una exageración, algo que deberías poder controlar si te esforzaras un poco más.
 
-Y entonces lo callamos. Lo disfrazamos de mal humor, de distracción, de "estoy bien, solo cansada." Y seguimos.
+Y entonces lo callamos. *Lo disfrazamos de mal humor, de distracción, de "estoy bien, solo cansada."* Y seguimos.
 
 *Normal* existe porque BTS también lo calla. Y en esta canción decidieron no hacerlo.
 
@@ -26,7 +26,7 @@ BTS la hace como espacio. *Are you okay?* Y antes de que respondas, te dan el pe
 
 Tres líneas. Sin moraleja al final. Sin "y acuérdate de que mañana va a mejorar." Sin redención inmediata. Solo: estés como estés, eso también es válido.
 
-Nosotras no recibimos eso muy seguido. Generalmente la pregunta de cómo estamos viene con la expectativa implícita de que respondamos dentro de ciertos límites. Cansada sí, pero no demasiado. Triste sí, pero ya mejorando. Frustrada sí, pero con perspectiva.
+Nosotras no recibimos eso muy seguido. Generalmente **la pregunta de cómo estamos viene con la expectativa implícita** de que respondamos dentro de ciertos límites. *Cansada sí, pero no demasiado. Triste sí, pero ya mejorando.*
 
 *Normal* no te pide que estés dentro de esos límites.
 
@@ -38,9 +38,9 @@ No dicen que están en crisis. No dicen que no pueden más. Dicen que están can
 
 Porque cuando no tienes ese vocabulario, cuando solo tienes "estoy bien" o "estoy en crisis," todo el cansancio normal de existir se convierte en una amenaza. Te preguntas si lo que sientes es demasiado. Si deberías buscar ayuda. Si algo está mal contigo porque no puedes simplemente estar bien.
 
-*Normal* te da el espacio del medio. El espacio donde estás cansada y eso no significa que estés rota. Donde no estás en tu mejor momento y eso no es una emergencia. Donde puedes decir "hoy no puedo" sin que eso sea el fin de algo.
+*Normal* te da el espacio del medio. El espacio donde **estás cansada y eso no significa que estés rota**. Donde no estás en tu mejor momento y eso no es una emergencia. Donde puedes decir **"hoy no puedo"** sin que eso sea el fin de algo.
 
-Esa franja — entre el "estoy perfecta" y el "estoy hundiéndome" — es donde vivimos la mayor parte del tiempo. Y BTS acaba de darle nombre.
+**Esa franja — entre el "estoy perfecta" y el "estoy hundiéndome"** — es donde vivimos la mayor parte del tiempo. Y BTS acaba de darle nombre.
 
 ## Por qué cuesta tanto decirlo cuando amas a BTS
 
@@ -50,7 +50,7 @@ BTS es alegría. BTS es esperanza. BTS es la prueba de que las cosas pueden ser 
 
 Pero esa es la trampa. Porque BTS no te pide que llegues bien. Lleva años diciéndote lo contrario. Y *Normal* lo dice más directamente que nunca: nosotras también nos cansamos. No estamos siempre en nuestro mejor momento. Y eso no nos hace menos capaces de estar aquí contigo.
 
-La canción no crea permiso. Reconoce el que ya debería existir y que alguien te quitó en algún momento que ya no recuerdas.
+La canción no crea permiso. **Reconoce el que ya debería existir** *y que alguien te quitó en algún momento que ya no recuerdas.*
 
 ## Lo que pasa cuando lo dices en voz alta
 
@@ -60,7 +60,7 @@ No se resuelve sola. Pero se vuelve más manejable de sostener. Menos peso secre
 
 BTS lo hizo en esta canción. Nombraron el cansancio sin prometerte que ya pasó. Sin decirte que tienen la solución. Sin fingir que porque lo nombraron ya está mejor.
 
-Solo lo pusieron ahí. Como quien dice: esto existe. Yo también lo cargo. Y puedo seguir cargándolo sin fingir que no está.
+Solo lo pusieron ahí. *Como quien dice: esto existe.* **Yo también lo cargo.** Y puedo seguir cargándolo **sin fingir que no está**.
 
 Nosotras también podemos hacer eso.
 
