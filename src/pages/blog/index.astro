@@ -42,35 +42,37 @@ const COLORS = ['lavender', 'light', 'dark', 'vibrant', 'midlav'] as const;
     </div>
   </header>
 
-  <!-- ══ HÉROE ══ -->
-  {posts[0] && (
-    <a href={`/blog/${posts[0].id}`} class="hero-post">
-      <span class="hero-blob" aria-hidden="true" />
-      <span class="hero-blob hero-blob-2" aria-hidden="true" />
-      <div class="hero-top">
-        <span class="hero-era-pill">{era(posts[0])}</span>
-        <span class="hero-count">01 / {String(posts.length).padStart(2,'0')}</span>
-      </div>
-      <span class="hero-giant-quote" aria-hidden="true">"</span>
-      <div class="hero-lyric-block">
-        {lns(posts[0]).map((l, i) => (
-          <p class={`hero-lyric-line ${i > 0 ? 'hero-lyric-indent' : ''}`}>{l}</p>
-        ))}
-      </div>
-      <div class="hero-bottom">
-        <div>
-          <p class="hero-song">{posts[0].data.song}</p>
-          <p class="hero-excerpt">{posts[0].data.excerpt}</p>
-        </div>
-        <span class="hero-cta">Leer análisis <span class="arrow-long">→</span></span>
-      </div>
-    </a>
-  )}
-
-  <!-- ══ GRID ROTADO ══ -->
+  <!-- ══ GRID ══ -->
   <main class="grid-wrap">
-    <p class="grid-label">— {posts.length - 1} entradas más —</p>
     <div class="cards-grid">
+      {/* Card destacada — primera entrada */}
+      {posts[0] && (() => {
+        const lines = lns(posts[0]);
+        return (
+          <a href={`/blog/${posts[0].id}`} class="g-card g-card-featured">
+            <span class="g-blob" aria-hidden="true" />
+            <span class="g-blob g-blob-2" aria-hidden="true" />
+            <div class="gf-top">
+              <span class="gf-era">{era(posts[0])}</span>
+              <span class="gf-badge">Nueva entrada</span>
+            </div>
+            <span class="gf-giant-quote" aria-hidden="true">"</span>
+            <div class="gf-lyric-block">
+              {lines.map((l, i) => (
+                <p class={`gf-lyric-line ${i > 0 ? 'gf-lyric-indent' : ''}`}>{l}</p>
+              ))}
+            </div>
+            <div class="gf-bottom">
+              <div>
+                <p class="gf-song">{posts[0].data.song}</p>
+                <p class="gf-excerpt">{posts[0].data.excerpt}</p>
+              </div>
+              <span class="gf-cta">Leer análisis →</span>
+            </div>
+          </a>
+        );
+      })()}
+
       {posts.slice(1).map((post, i) => {
         const color   = COLORS[i % 5];
         const isDark  = color === 'dark' || color === 'vibrant';
@@ -192,149 +194,138 @@ const COLORS = ['lavender', 'light', 'dark', 'vibrant', 'midlav'] as const;
     text-align: right;
   }
 
-  /* ══ Héroe ══ */
-  .hero-post {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    background: linear-gradient(150deg, #0D051E 0%, #2A0A5E 45%, #5B2C8E 100%);
-    padding: 2rem 1.75rem 1.75rem;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
-    min-height: 34vh;
-    transition: filter 0.3s;
+  /* ══ Featured card ══ */
+  .g-card-featured {
+    grid-column: 1 / -1;
+    background: linear-gradient(150deg, #0D051E 0%, #2A0A5E 50%, #6B2FA0 100%);
+    min-height: 280px;
+    transform: none !important;
+    margin-top: 0 !important;
+    box-shadow: 0 8px 40px rgba(26,10,46,0.4);
   }
 
-  @media (min-width: 768px) { .hero-post { padding: 2.25rem 5vw 2rem; min-height: 38vh; } }
-  .hero-post:hover { filter: brightness(1.07); }
+  .g-card-featured:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 16px 56px rgba(91,44,142,0.5);
+  }
 
-  .hero-blob {
+  .g-blob-2 {
     position: absolute;
+    bottom: -10%; left: 20%;
+    width: 180px; height: 180px;
     border-radius: 50%;
+    background: radial-gradient(circle, rgba(91,44,142,0.35) 0%, transparent 70%);
     pointer-events: none;
   }
 
-  .hero-blob:first-of-type {
-    width: 55vw; height: 55vw;
-    max-width: 600px; max-height: 600px;
-    top: -20%; right: -10%;
-    background: radial-gradient(circle, rgba(199,125,255,0.15) 0%, transparent 65%);
-  }
-
-  .hero-blob-2 {
-    width: 30vw; height: 30vw;
-    max-width: 320px; max-height: 320px;
-    bottom: -10%; left: 15%;
-    background: radial-gradient(circle, rgba(91,44,142,0.4) 0%, transparent 70%);
-  }
-
-  .hero-top {
+  .gf-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
     z-index: 1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
-  .hero-era-pill {
+  .gf-era {
     font-family: var(--font-accent);
     font-size: 0.875rem;
     color: rgba(199,125,255,0.8);
-    background: rgba(199,125,255,0.12);
-    border: 1px solid rgba(199,125,255,0.25);
+    background: rgba(199,125,255,0.1);
+    border: 1px solid rgba(199,125,255,0.22);
     padding: 0.2rem 0.75rem;
     border-radius: 999px;
   }
 
-  .hero-count {
+  .gf-badge {
     font-family: var(--font-body);
-    font-size: 0.625rem;
-    letter-spacing: 0.2em;
+    font-size: 0.5625rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(199,125,255,0.3);
+    color: #C77DFF;
+    background: rgba(199,125,255,0.12);
+    border: 1px solid rgba(199,125,255,0.25);
+    padding: 0.175rem 0.5rem;
+    border-radius: 999px;
   }
 
-  .hero-giant-quote {
+  .gf-giant-quote {
     font-family: var(--font-heading);
-    font-size: clamp(10rem, 22vw, 18rem);
+    font-size: clamp(7rem, 16vw, 14rem);
     line-height: 0.7;
-    color: rgba(199,125,255,0.08);
+    color: rgba(199,125,255,0.07);
     position: absolute;
-    top: 0.5rem; left: 1rem;
+    top: 0.25rem; left: 0.75rem;
     pointer-events: none;
     user-select: none;
     z-index: 0;
   }
 
-  .hero-lyric-block {
+  .gf-lyric-block {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     z-index: 1;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
   }
 
-  .hero-lyric-line {
+  .gf-lyric-line {
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: clamp(1.75rem, 4vw, 3rem);
-    line-height: 1.15;
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    line-height: 1.2;
     color: #FDFBFF;
     letter-spacing: -0.02em;
   }
 
-  .hero-lyric-indent { padding-left: clamp(1rem, 5vw, 5rem); }
+  .gf-lyric-indent { padding-left: clamp(1rem, 4vw, 4rem); }
 
-  .hero-bottom {
+  .gf-bottom {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     gap: 1.5rem;
     position: relative;
     z-index: 1;
-    padding-top: 1.5rem;
+    padding-top: 1.25rem;
     border-top: 1px solid rgba(199,125,255,0.12);
   }
 
-  .hero-song {
+  .gf-song {
     font-family: var(--font-heading);
     font-style: italic;
     font-size: 1rem;
     font-weight: 600;
     color: #C77DFF;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.25rem;
   }
 
-  .hero-excerpt {
-    font-family: var(--font-body);
+  .gf-excerpt {
+    font-family: 'Poppins', var(--font-body);
     font-size: 0.8125rem;
     line-height: 1.55;
-    color: rgba(224,208,240,0.4);
-    max-width: 38rem;
+    color: rgba(224,208,240,0.45);
+    max-width: 44rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
-  .hero-cta {
+  .gf-cta {
     font-family: var(--font-body);
     font-size: 0.875rem;
     font-weight: 600;
-    color: rgba(199,125,255,0.6);
+    color: rgba(199,125,255,0.55);
     white-space: nowrap;
     flex-shrink: 0;
-    transition: color 0.2s;
+    transition: color 0.2s, transform 0.2s;
   }
 
-  .hero-post:hover .hero-cta { color: #C77DFF; }
-  .arrow-long { display: inline-block; transition: transform 0.25s; }
-  .hero-post:hover .arrow-long { transform: translateX(6px); }
+  .g-card-featured:hover .gf-cta { color: #C77DFF; transform: translateX(4px); }
 
   /* ══ Grid wrap ══ */
   .grid-wrap {
@@ -343,16 +334,6 @@ const COLORS = ['lavender', 'light', 'dark', 'vibrant', 'midlav'] as const;
   }
 
   @media (min-width: 768px) { .grid-wrap { padding: 3rem 2rem 6rem; } }
-
-  .grid-label {
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-size: 0.8125rem;
-    color: rgba(107,91,123,0.4);
-    text-align: center;
-    letter-spacing: 0.06em;
-    margin-bottom: 2.5rem;
-  }
 
   /* ══ Grid ══ */
   .cards-grid {
