@@ -9,7 +9,7 @@ const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 
-// Group posts by album for sidebar
+// Group posts by album for sidebar, preserving date order within group
 const byAlbum: Record<string, typeof posts> = {};
 for (const post of posts) {
   const album = post.data.album;
@@ -17,13 +17,15 @@ for (const post of posts) {
   byAlbum[album].push(post);
 }
 
-// Album display order (most recent first)
 const albumOrder = [
   'ARIRANG (2026)',
   'BE (2020)',
   'You Never Walk Alone (2017)',
   'Love Yourself: Tear (2018)',
 ];
+
+// Featured = most recent post; rest = the grid
+const [featured, ...rest] = posts;
 ---
 
 <Layout
@@ -35,36 +37,53 @@ const albumOrder = [
   <!-- Header -->
   <header class="blog-header">
     <div class="header-inner">
-      <p class="header-label">El diario de una ARMY</p>
-      <h1 class="header-title">Canciones que nos enseñan<br />a conocernos</h1>
+      <p class="header-eyebrow">El diario de una ARMY</p>
+      <h1 class="header-title">Canciones que nos<br />enseñan a conocernos</h1>
       <p class="header-desc">
         No somos un medio de noticias de BTS. Somos ARMY que escribe lo que siente
         y que encuentra en las canciones el espejo perfecto para hacerlo.
       </p>
     </div>
+    <!-- Wave divider -->
+    <div class="header-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 56" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 56 C360 0 1080 0 1440 56 L1440 56 L0 56Z" fill="#FDFBFF"/>
+      </svg>
+    </div>
   </header>
 
-  <!-- Mobile index strip (visible only <900px) -->
-  <div class="blog-mobile-index">
+  <!-- Mobile song strip -->
+  <div class="mobile-strip" aria-label="Índice de entradas">
     {posts.map(post => (
-      <a href={`/blog/${post.id}`} class="mobile-index-tag">{post.data.song}</a>
+      <a href={`/blog/${post.id}`} class="mobile-pill">{post.data.song}</a>
     ))}
   </div>
 
-  <!-- Layout: sidebar + content -->
+  <!-- Layout -->
   <div class="blog-layout">
 
     <!-- Sidebar editorial -->
     <aside class="blog-sidebar">
       <div class="sidebar-inner">
-        <p class="sidebar-heading">Índice</p>
-        {albumOrder.map(album => byAlbum[album] && (
+
+        <div class="sidebar-title-block">
+          <span class="sidebar-vol">Purple Heart Journal</span>
+          <h2 class="sidebar-title">ÍNDICE</h2>
+          <div class="sidebar-rule"></div>
+        </div>
+
+        {albumOrder.map((album, ai) => byAlbum[album] && (
           <div class="sidebar-group">
-            <p class="sidebar-album">{album}</p>
+            <div class="sidebar-album-header">
+              <span class="sidebar-album-num">0{ai + 1}</span>
+              <span class="sidebar-album-name">{album.replace(' (2026)', '').replace(' (2020)', '').replace(' (2017)', '').replace(' (2018)', '')}</span>
+              <span class="sidebar-album-year">{album.match(/\((\d+)\)/)?.[1]}</span>
+            </div>
             <ul class="sidebar-list">
-              {byAlbum[album].map(post => (
-                <li>
+              {byAlbum[album].map((post, pi) => (
+                <li class="sidebar-item">
                   <a href={`/blog/${post.id}`} class="sidebar-link">
+                    <span class="sidebar-num">{String(pi + 1).padStart(2, '0')}</span>
                     <span class="sidebar-song">{post.data.song}</span>
                   </a>
                 </li>
@@ -72,16 +91,40 @@ const albumOrder = [
             </ul>
           </div>
         ))}
+
+        <div class="sidebar-footer">
+          <span class="sidebar-footer-text">💜 {posts.length} entradas</span>
+        </div>
+
       </div>
     </aside>
 
-    <!-- Main articles -->
+    <!-- Main content -->
     <main class="blog-main">
-      {posts.length === 0 ? (
-        <p class="empty-state">Próximamente — mientras tanto, escribe lo que sientes. 💜</p>
-      ) : (
+
+      <!-- Featured post -->
+      {featured && (
+        <a href={`/blog/${featured.id}`} class="featured-card">
+          <div class="featured-banner">
+            <div class="featured-banner-inner">
+              <span class="featured-badge">Nueva entrada</span>
+              <p class="featured-song">{featured.data.song}</p>
+              <p class="featured-album">{featured.data.album}</p>
+            </div>
+            <div class="featured-glow" aria-hidden="true"></div>
+          </div>
+          <div class="featured-body">
+            <h2 class="featured-title">{featured.data.title}</h2>
+            <p class="featured-excerpt">{featured.data.excerpt}</p>
+            <span class="featured-cta">Leer artículo →</span>
+          </div>
+        </a>
+      )}
+
+      <!-- Rest of posts grid -->
+      {rest.length > 0 && (
         <div class="posts-grid">
-          {posts.map(post => (
+          {rest.map(post => (
             <BlogCard
               slug={post.id}
               title={post.data.title}
@@ -94,13 +137,13 @@ const albumOrder = [
           ))}
         </div>
       )}
-    </main>
 
+    </main>
   </div>
 
   <!-- CTA -->
   <section class="blog-cta">
-    <div class="max-w-2xl mx-auto text-center px-5">
+    <div class="cta-inner">
       <p class="cta-label">¿Quieres escribir con BTS de fondo?</p>
       <h2 class="cta-title">El journal que habla en nuestro idioma</h2>
       <p class="cta-desc">
@@ -109,7 +152,7 @@ const albumOrder = [
       </p>
       <a
         href="https://pay.hotmart.com/P104306248S"
-        class="btn-primary inline-block mt-6"
+        class="cta-btn"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -122,9 +165,10 @@ const albumOrder = [
 </Layout>
 
 <style>
+  /* ── Header ── */
   .blog-header {
     background: linear-gradient(135deg, #1A0A2E 0%, #5B2C8E 60%, #9B4DCA 100%);
-    padding: 3rem 1.25rem 4rem;
+    padding: 4rem 1.5rem 0;
     position: relative;
     overflow: hidden;
   }
@@ -133,10 +177,10 @@ const albumOrder = [
     content: '';
     position: absolute;
     top: -40%;
-    right: -20%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(199, 125, 255, 0.15) 0%, transparent 70%);
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(199, 125, 255, 0.12) 0%, transparent 70%);
     pointer-events: none;
   }
 
@@ -145,38 +189,87 @@ const albumOrder = [
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    padding-bottom: 3rem;
   }
 
-  .header-label {
+  .header-eyebrow {
     font-family: var(--font-accent);
-    font-size: 1.5rem;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
     color: var(--color-purple-heart);
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
   }
 
   .header-title {
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: 2.25rem;
-    line-height: 1.2;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.15;
     color: var(--color-white-glow);
     margin-bottom: 1.25rem;
-  }
-
-  @media (min-width: 768px) {
-    .blog-header { padding: 4rem 1.25rem 5rem; }
-    .header-title { font-size: 3rem; }
   }
 
   .header-desc {
     font-family: var(--font-body);
     font-size: 1.0625rem;
-    line-height: 1.65;
-    color: rgba(224, 208, 240, 0.8);
-    max-width: 42rem;
+    line-height: 1.7;
+    color: rgba(224, 208, 240, 0.75);
+    max-width: 38rem;
   }
 
-  /* ── Layout: sidebar + main ── */
+  .header-wave {
+    position: relative;
+    z-index: 1;
+    line-height: 0;
+    margin-top: -1px;
+  }
+
+  .header-wave svg {
+    width: 100%;
+    height: 56px;
+    display: block;
+  }
+
+  /* ── Mobile strip ── */
+  .mobile-strip {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--color-white-glow);
+    border-bottom: 1px solid var(--color-soft-lilac);
+    scrollbar-width: none;
+  }
+
+  .mobile-strip::-webkit-scrollbar { display: none; }
+
+  @media (min-width: 900px) {
+    .mobile-strip { display: none; }
+  }
+
+  .mobile-pill {
+    flex-shrink: 0;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 0.875rem;
+    color: var(--color-purple-deep);
+    text-decoration: none;
+    background: var(--color-lavender-mist);
+    border: 1px solid rgba(199, 125, 255, 0.2);
+    padding: 0.35rem 0.875rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    transition: background 0.2s, border-color 0.2s;
+    cursor: pointer;
+  }
+
+  .mobile-pill:hover {
+    background: rgba(199, 125, 255, 0.15);
+    border-color: var(--color-purple-heart);
+  }
+
+  /* ── Layout ── */
   .blog-layout {
     display: flex;
     align-items: flex-start;
@@ -186,81 +279,139 @@ const albumOrder = [
 
   /* ── Sidebar ── */
   .blog-sidebar {
-    display: none; /* hidden on mobile */
-    width: 220px;
-    flex-shrink: 0;
-    border-right: 1px solid var(--color-soft-lilac);
-    background: var(--color-white-glow);
+    display: none;
   }
 
   @media (min-width: 900px) {
     .blog-sidebar {
       display: block;
+      width: 240px;
+      flex-shrink: 0;
       position: sticky;
-      top: 56px; /* below BlogNav */
+      top: 56px;
       max-height: calc(100vh - 56px);
       overflow-y: auto;
+      border-right: 1px solid var(--color-soft-lilac);
+      background: var(--color-white-glow);
+      scrollbar-width: thin;
+      scrollbar-color: rgba(199,125,255,0.2) transparent;
     }
   }
 
-  @media (min-width: 1100px) {
-    .blog-sidebar { width: 260px; }
+  @media (min-width: 1200px) {
+    .blog-sidebar { width: 280px; }
   }
 
   .sidebar-inner {
     padding: 2.5rem 1.5rem 3rem;
   }
 
-  .sidebar-heading {
-    font-family: var(--font-body);
-    font-size: 0.6875rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--color-purple-vibrant);
-    margin-bottom: 1.75rem;
+  /* Title block */
+  .sidebar-title-block {
+    margin-bottom: 2rem;
   }
 
+  .sidebar-vol {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(107, 91, 123, 0.5);
+    margin-bottom: 0.375rem;
+  }
+
+  .sidebar-title {
+    font-family: var(--font-heading);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    color: var(--color-text-deep);
+    line-height: 1;
+    margin-bottom: 0.875rem;
+  }
+
+  .sidebar-rule {
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-purple-heart) 0%, rgba(199,125,255,0.1) 100%);
+    border-radius: 1px;
+  }
+
+  /* Group */
   .sidebar-group {
     margin-bottom: 1.75rem;
   }
 
-  .sidebar-album {
-    font-family: var(--font-body);
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(107, 91, 123, 0.6);
-    margin-bottom: 0.625rem;
-    padding-bottom: 0.375rem;
-    border-bottom: 1px solid rgba(224, 208, 240, 0.6);
+  .sidebar-album-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.75rem 0 0.5rem;
+    border-top: 1px solid rgba(224, 208, 240, 0.6);
   }
 
+  .sidebar-album-num {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-purple-heart);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .sidebar-album-name {
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-deep);
+    flex: 1;
+    line-height: 1.2;
+  }
+
+  .sidebar-album-year {
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    color: rgba(107, 91, 123, 0.5);
+    flex-shrink: 0;
+  }
+
+  /* List */
   .sidebar-list {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
+    margin: 0.25rem 0 0;
+  }
+
+  .sidebar-item {
+    border-left: 2px solid transparent;
+    transition: border-color 0.15s ease;
+  }
+
+  .sidebar-item:hover {
+    border-left-color: var(--color-purple-heart);
   }
 
   .sidebar-link {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
     text-decoration: none;
-    padding: 0.3125rem 0.625rem;
-    border-radius: 0.375rem;
-    transition: background 0.15s ease, color 0.15s ease;
+    padding: 0.375rem 0.625rem;
     cursor: pointer;
   }
 
-  .sidebar-link:hover {
-    background: rgba(199, 125, 255, 0.1);
-  }
-
-  .sidebar-link:hover .sidebar-song {
-    color: var(--color-purple-vibrant);
+  .sidebar-num {
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: rgba(107, 91, 123, 0.4);
+    flex-shrink: 0;
+    letter-spacing: 0.05em;
+    min-width: 1.5rem;
   }
 
   .sidebar-song {
@@ -268,93 +419,226 @@ const albumOrder = [
     font-style: italic;
     font-size: 0.9375rem;
     color: var(--color-text-deep);
-    line-height: 1.4;
+    line-height: 1.35;
     transition: color 0.15s ease;
   }
 
-  /* Mobile index strip */
-  .blog-mobile-index {
-    display: flex;
-    overflow-x: auto;
-    gap: 0.5rem;
-    padding: 0.875rem 1.25rem;
-    background: var(--color-lavender-mist);
-    border-bottom: 1px solid var(--color-soft-lilac);
-    scrollbar-width: none;
-  }
-
-  .blog-mobile-index::-webkit-scrollbar { display: none; }
-
-  @media (min-width: 900px) {
-    .blog-mobile-index { display: none; }
-  }
-
-  .mobile-index-tag {
-    flex-shrink: 0;
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-size: 0.875rem;
-    color: var(--color-text-deep);
-    text-decoration: none;
-    background: var(--color-white-glow);
-    border: 1px solid var(--color-soft-lilac);
-    padding: 0.3rem 0.75rem;
-    border-radius: 999px;
-    white-space: nowrap;
-    transition: border-color 0.2s ease, color 0.2s ease;
-  }
-
-  .mobile-index-tag:hover {
-    border-color: var(--color-purple-heart);
+  .sidebar-item:hover .sidebar-song {
     color: var(--color-purple-vibrant);
+  }
+
+  .sidebar-item:hover .sidebar-num {
+    color: var(--color-purple-heart);
+  }
+
+  /* Footer */
+  .sidebar-footer {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(224, 208, 240, 0.4);
+    margin-top: 0.5rem;
+  }
+
+  .sidebar-footer-text {
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    color: rgba(107, 91, 123, 0.5);
+    letter-spacing: 0.04em;
   }
 
   /* ── Main ── */
   .blog-main {
     flex: 1;
-    padding: 3rem 1.5rem 4rem;
     min-width: 0;
+    padding: 2.5rem 1.5rem 4rem;
   }
 
   @media (min-width: 768px) {
-    .blog-main { padding: 3.5rem 2rem 5rem; }
+    .blog-main { padding: 3rem 2rem 5rem; }
   }
 
   @media (min-width: 1100px) {
-    .blog-main { padding: 3.5rem 3rem 5rem; }
+    .blog-main { padding: 3rem 2.5rem 5rem; }
   }
 
+  /* ── Featured card ── */
+  .featured-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-decoration: none;
+    border-radius: 1.125rem;
+    overflow: hidden;
+    border: 1px solid rgba(199, 125, 255, 0.2);
+    margin-bottom: 2rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    background: var(--color-white-glow);
+  }
+
+  .featured-card:hover {
+    box-shadow: 0 16px 48px rgba(199, 125, 255, 0.2);
+    transform: translateY(-3px);
+  }
+
+  @media (min-width: 640px) {
+    .featured-card {
+      grid-template-columns: 280px 1fr;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .featured-card {
+      grid-template-columns: 320px 1fr;
+    }
+  }
+
+  .featured-banner {
+    background: linear-gradient(145deg, #1A0A2E 0%, #5B2C8E 60%, #9B4DCA 100%);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    min-height: 180px;
+  }
+
+  @media (min-width: 640px) {
+    .featured-banner { min-height: 220px; }
+  }
+
+  .featured-banner-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .featured-badge {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-purple-heart);
+    background: rgba(199, 125, 255, 0.12);
+    border: 1px solid rgba(199, 125, 255, 0.3);
+    padding: 0.2rem 0.625rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+  }
+
+  .featured-song {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-white-glow);
+    margin-bottom: 0.5rem;
+  }
+
+  .featured-album {
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(199, 125, 255, 0.7);
+  }
+
+  .featured-glow {
+    position: absolute;
+    bottom: -30%;
+    right: -15%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(199, 125, 255, 0.3) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .featured-body {
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .featured-title {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+    line-height: 1.3;
+    color: var(--color-text-deep);
+  }
+
+  .featured-card:hover .featured-title {
+    color: var(--color-purple-vibrant);
+  }
+
+  .featured-excerpt {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+  }
+
+  .featured-cta {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-purple-vibrant);
+    margin-top: 0.25rem;
+    transition: color 0.2s;
+  }
+
+  .featured-card:hover .featured-cta {
+    color: var(--color-purple-heart);
+  }
+
+  /* ── Grid ── */
   .posts-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 540px) {
     .posts-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1100px) {
     .posts-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-
-  .empty-state {
-    text-align: center;
-    font-family: var(--font-body);
-    color: var(--color-text-muted);
-    padding: 4rem 0;
   }
 
   /* ── CTA ── */
   .blog-cta {
-    background: var(--color-lavender-mist);
-    padding: 5rem 0;
-    border-top: 1px solid var(--color-soft-lilac);
+    background: linear-gradient(135deg, #1A0A2E 0%, #3B1066 100%);
+    padding: 5rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-cta::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(199, 125, 255, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-inner {
+    max-width: 36rem;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
   .cta-label {
     font-family: var(--font-accent);
-    font-size: 1.375rem;
+    font-size: 1.25rem;
     color: var(--color-purple-heart);
     margin-bottom: 0.75rem;
   }
@@ -362,20 +646,37 @@ const albumOrder = [
   .cta-title {
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: 2rem;
-    color: var(--color-text-deep);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--color-white-glow);
     margin-bottom: 1rem;
     line-height: 1.2;
   }
 
   .cta-desc {
     font-family: var(--font-body);
-    font-size: 1.0625rem;
-    color: var(--color-text-muted);
-    line-height: 1.65;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(224, 208, 240, 0.7);
+    margin-bottom: 2rem;
   }
 
-  @media (min-width: 768px) {
-    .cta-title { font-size: 2.5rem; }
+  .cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #9B4DCA, #C77DFF);
+    color: var(--color-white-glow);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 24px rgba(199, 125, 255, 0.3);
+    cursor: pointer;
+  }
+
+  .cta-btn:hover {
+    box-shadow: 0 0 40px rgba(199, 125, 255, 0.5);
+    transform: translateY(-2px);
   }
 </style>
