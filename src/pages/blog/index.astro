@@ -20,11 +20,6 @@ const lns  = (p: typeof posts[0]) => p.data.quote?.split(' / ') ?? [];
 
 const COLORS = ['lavender', 'light', 'dark', 'vibrant', 'midlav'] as const;
 
-const marqueeText = posts
-  .filter(p => p.data.quote)
-  .slice(0, 6)
-  .map(p => p.data.quote!.split(' / ')[0])
-  .join('  ·  ');
 ---
 
 <Layout
@@ -71,14 +66,6 @@ const marqueeText = posts
       </div>
     </a>
   )}
-
-  <!-- ══ MARQUEE ══ -->
-  <div class="marquee-strip" aria-hidden="true">
-    <div class="marquee-track">
-      <span class="marquee-text">{marqueeText} &nbsp;&nbsp;&nbsp;</span>
-      <span class="marquee-text">{marqueeText} &nbsp;&nbsp;&nbsp;</span>
-    </div>
-  </div>
 
   <!-- ══ GRID ROTADO ══ -->
   <main class="grid-wrap">
@@ -348,33 +335,6 @@ const marqueeText = posts
   .hero-post:hover .hero-cta { color: #C77DFF; }
   .arrow-long { display: inline-block; transition: transform 0.25s; }
   .hero-post:hover .arrow-long { transform: translateX(6px); }
-
-  /* ══ Marquee ══ */
-  .marquee-strip {
-    background: #9B4DCA;
-    padding: 0.75rem 0;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  .marquee-track {
-    display: inline-flex;
-    animation: scroll-left 28s linear infinite;
-  }
-
-  .marquee-text {
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-size: 0.9375rem;
-    color: rgba(253,251,255,0.7);
-    padding-right: 2rem;
-    letter-spacing: 0.02em;
-  }
-
-  @keyframes scroll-left {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
 
   /* ══ Grid wrap ══ */
   .grid-wrap {
