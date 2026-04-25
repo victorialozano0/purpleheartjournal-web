@@ -8,6 +8,22 @@ import Footer from '../../components/Footer.astro';
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
+
+// Group posts by album for sidebar
+const byAlbum: Record<string, typeof posts> = {};
+for (const post of posts) {
+  const album = post.data.album;
+  if (!byAlbum[album]) byAlbum[album] = [];
+  byAlbum[album].push(post);
+}
+
+// Album display order (most recent first)
+const albumOrder = [
+  'ARIRANG (2026)',
+  'BE (2020)',
+  'You Never Walk Alone (2017)',
+  'Love Yourself: Tear (2018)',
+];
 ---
 
 <Layout
@@ -22,15 +38,45 @@ const posts = (await getCollection('blog')).sort(
       <p class="header-label">El diario de una ARMY</p>
       <h1 class="header-title">Canciones que nos enseñan<br />a conocernos</h1>
       <p class="header-desc">
-        No somos un medio de noticias de BTS. Somos ARMY que escribe lo que siente —<br class="hidden md:block" />
+        No somos un medio de noticias de BTS. Somos ARMY que escribe lo que siente
         y que encuentra en las canciones el espejo perfecto para hacerlo.
       </p>
     </div>
   </header>
 
-  <!-- Articles grid -->
-  <main class="blog-main">
-    <div class="max-w-4xl mx-auto">
+  <!-- Mobile index strip (visible only <900px) -->
+  <div class="blog-mobile-index">
+    {posts.map(post => (
+      <a href={`/blog/${post.id}`} class="mobile-index-tag">{post.data.song}</a>
+    ))}
+  </div>
+
+  <!-- Layout: sidebar + content -->
+  <div class="blog-layout">
+
+    <!-- Sidebar editorial -->
+    <aside class="blog-sidebar">
+      <div class="sidebar-inner">
+        <p class="sidebar-heading">Índice</p>
+        {albumOrder.map(album => byAlbum[album] && (
+          <div class="sidebar-group">
+            <p class="sidebar-album">{album}</p>
+            <ul class="sidebar-list">
+              {byAlbum[album].map(post => (
+                <li>
+                  <a href={`/blog/${post.id}`} class="sidebar-link">
+                    <span class="sidebar-song">{post.data.song}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </aside>
+
+    <!-- Main articles -->
+    <main class="blog-main">
       {posts.length === 0 ? (
         <p class="empty-state">Próximamente — mientras tanto, escribe lo que sientes. 💜</p>
       ) : (
@@ -48,8 +94,9 @@ const posts = (await getCollection('blog')).sort(
           ))}
         </div>
       )}
-    </div>
-  </main>
+    </main>
+
+  </div>
 
   <!-- CTA -->
   <section class="blog-cta">
@@ -94,24 +141,10 @@ const posts = (await getCollection('blog')).sort(
   }
 
   .header-inner {
-    max-width: 48rem;
+    max-width: 56rem;
     margin: 0 auto;
     position: relative;
     z-index: 1;
-  }
-
-  .back-link {
-    display: inline-block;
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    color: rgba(224, 208, 240, 0.7);
-    text-decoration: none;
-    margin-bottom: 2rem;
-    transition: color 0.2s ease;
-  }
-
-  .back-link:hover {
-    color: var(--color-purple-heart);
   }
 
   .header-label {
@@ -131,12 +164,8 @@ const posts = (await getCollection('blog')).sort(
   }
 
   @media (min-width: 768px) {
-    .blog-header {
-      padding: 4rem 1.25rem 5rem;
-    }
-    .header-title {
-      font-size: 3rem;
-    }
+    .blog-header { padding: 4rem 1.25rem 5rem; }
+    .header-title { font-size: 3rem; }
   }
 
   .header-desc {
@@ -147,9 +176,152 @@ const posts = (await getCollection('blog')).sort(
     max-width: 42rem;
   }
 
-  .blog-main {
-    padding: 4rem 1.25rem;
+  /* ── Layout: sidebar + main ── */
+  .blog-layout {
+    display: flex;
+    align-items: flex-start;
     background: var(--color-white-glow);
+    min-height: 60vh;
+  }
+
+  /* ── Sidebar ── */
+  .blog-sidebar {
+    display: none; /* hidden on mobile */
+    width: 220px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--color-soft-lilac);
+    background: var(--color-white-glow);
+  }
+
+  @media (min-width: 900px) {
+    .blog-sidebar {
+      display: block;
+      position: sticky;
+      top: 56px; /* below BlogNav */
+      max-height: calc(100vh - 56px);
+      overflow-y: auto;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .blog-sidebar { width: 260px; }
+  }
+
+  .sidebar-inner {
+    padding: 2.5rem 1.5rem 3rem;
+  }
+
+  .sidebar-heading {
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-purple-vibrant);
+    margin-bottom: 1.75rem;
+  }
+
+  .sidebar-group {
+    margin-bottom: 1.75rem;
+  }
+
+  .sidebar-album {
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(107, 91, 123, 0.6);
+    margin-bottom: 0.625rem;
+    padding-bottom: 0.375rem;
+    border-bottom: 1px solid rgba(224, 208, 240, 0.6);
+  }
+
+  .sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .sidebar-link {
+    display: block;
+    text-decoration: none;
+    padding: 0.3125rem 0.625rem;
+    border-radius: 0.375rem;
+    transition: background 0.15s ease, color 0.15s ease;
+    cursor: pointer;
+  }
+
+  .sidebar-link:hover {
+    background: rgba(199, 125, 255, 0.1);
+  }
+
+  .sidebar-link:hover .sidebar-song {
+    color: var(--color-purple-vibrant);
+  }
+
+  .sidebar-song {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 0.9375rem;
+    color: var(--color-text-deep);
+    line-height: 1.4;
+    transition: color 0.15s ease;
+  }
+
+  /* Mobile index strip */
+  .blog-mobile-index {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding: 0.875rem 1.25rem;
+    background: var(--color-lavender-mist);
+    border-bottom: 1px solid var(--color-soft-lilac);
+    scrollbar-width: none;
+  }
+
+  .blog-mobile-index::-webkit-scrollbar { display: none; }
+
+  @media (min-width: 900px) {
+    .blog-mobile-index { display: none; }
+  }
+
+  .mobile-index-tag {
+    flex-shrink: 0;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 0.875rem;
+    color: var(--color-text-deep);
+    text-decoration: none;
+    background: var(--color-white-glow);
+    border: 1px solid var(--color-soft-lilac);
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .mobile-index-tag:hover {
+    border-color: var(--color-purple-heart);
+    color: var(--color-purple-vibrant);
+  }
+
+  /* ── Main ── */
+  .blog-main {
+    flex: 1;
+    padding: 3rem 1.5rem 4rem;
+    min-width: 0;
+  }
+
+  @media (min-width: 768px) {
+    .blog-main { padding: 3.5rem 2rem 5rem; }
+  }
+
+  @media (min-width: 1100px) {
+    .blog-main { padding: 3.5rem 3rem 5rem; }
   }
 
   .posts-grid {
@@ -158,10 +330,12 @@ const posts = (await getCollection('blog')).sort(
     gap: 1.5rem;
   }
 
-  @media (min-width: 640px) {
-    .posts-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  @media (min-width: 600px) {
+    .posts-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1200px) {
+    .posts-grid { grid-template-columns: repeat(3, 1fr); }
   }
 
   .empty-state {
@@ -171,6 +345,7 @@ const posts = (await getCollection('blog')).sort(
     padding: 4rem 0;
   }
 
+  /* ── CTA ── */
   .blog-cta {
     background: var(--color-lavender-mist);
     padding: 5rem 0;
@@ -201,8 +376,6 @@ const posts = (await getCollection('blog')).sort(
   }
 
   @media (min-width: 768px) {
-    .cta-title {
-      font-size: 2.5rem;
-    }
+    .cta-title { font-size: 2.5rem; }
   }
 </style>
