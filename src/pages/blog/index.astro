@@ -9,11 +9,19 @@ const posts = (await getCollection('blog')).sort(
 );
 
 const ERA_SHORT: Record<string, string> = {
-  'ARIRANG (2026)':         'ARIRANG 2026',
-  'BE (2020)':              'BE 2020',
+  'ARIRANG (2026)':              'ARIRANG 2026',
+  'BE (2020)':                   'BE 2020',
   'You Never Walk Alone (2017)': 'YNWA 2017',
-  'Love Yourself: Tear (2018)': 'LY: Tear 2018',
+  'Love Yourself: Tear (2018)':  'LY: Tear 2018',
 };
+
+// Color rotation for non-wide cards: light → lavender → vibrant → repeat
+const SMALL_COLORS = ['light', 'lavender', 'vibrant'] as const;
+let smallIdx = 0;
+const cardColors = posts.map((_, i) => {
+  if (i % 5 === 0) return 'dark';           // wide card
+  return SMALL_COLORS[smallIdx++ % 3];
+});
 ---
 
 <Layout
@@ -22,25 +30,24 @@ const ERA_SHORT: Record<string, string> = {
 >
   <BlogNav />
 
-  <!-- Header -->
+  <!-- Header compacto -->
   <header class="blog-header">
     <div class="header-inner">
       <div class="header-left">
         <p class="header-eyebrow">El diario de una ARMY</p>
-        <h1 class="header-title">Canciones que<br /><em>nos enseñan</em><br />a conocernos</h1>
+        <h1 class="header-title">Canciones que <em>nos enseñan</em> a conocernos</h1>
         <p class="header-desc">
-          No somos un medio de noticias de BTS. Somos ARMY que escribe lo que siente
-          y que encuentra en las canciones el espejo perfecto para hacerlo.
+          No somos un medio de noticias. Somos ARMY que escribe lo que siente.
         </p>
       </div>
-      <div class="header-right" aria-hidden="true">
-        <span class="header-count-num">{posts.length}</span>
-        <span class="header-count-label">canciones<br/>analizadas</span>
+      <div class="header-stat" aria-hidden="true">
+        <span class="stat-num">{posts.length}</span>
+        <span class="stat-label">canciones<br/>analizadas</span>
       </div>
     </div>
   </header>
 
-  <!-- Separador editorial -->
+  <!-- Separador -->
   <div class="section-divider">
     <span class="divider-line"></span>
     <span class="divider-text">— {posts.length} entradas —</span>
@@ -51,22 +58,24 @@ const ERA_SHORT: Record<string, string> = {
   <main class="bento-wrap">
     <div class="bento-grid">
       {posts.map((post, i) => {
+        const color   = cardColors[i];
         const isWide  = i % 5 === 0;
-        const isDark  = isWide;
+        const isDark  = color === 'dark' || color === 'vibrant';
         const isARI   = post.data.album.includes('ARIRANG');
         const era     = ERA_SHORT[post.data.album] ?? post.data.album.replace(/ \(\d{4}\)$/, '');
-        const quote   = post.data.quote ?? '';
-        const lines   = quote ? quote.split(' / ') : [];
+        const lines   = post.data.quote ? post.data.quote.split(' / ') : [];
 
         return (
           <a
             href={`/blog/${post.id}`}
-            class={`bento-card ${isDark ? 'card-dark' : 'card-light'} ${isARI ? 'era-ari' : 'era-cl'}`}
+            class={`bento-card color-${color}`}
           >
-            <span class={`era-pill ${isARI ? 'pill-ari' : 'pill-cl'}`}>{era}</span>
+            <span class={`era-pill ${isARI ? 'pill-ari' : 'pill-cl'} ${isDark ? 'pill-dark' : ''}`}>
+              {era}
+            </span>
 
-            {isDark ? (
-              /* ── Wide / dark card: lírica hero ── */
+            {isWide ? (
+              /* ── Wide dark card: lírica hero ── */
               <>
                 <div class="quote-zone">
                   <span class="big-quote" aria-hidden="true">"</span>
@@ -77,22 +86,32 @@ const ERA_SHORT: Record<string, string> = {
                   </p>
                 </div>
                 <div class="dark-footer">
-                  <div>
+                  <div class="dark-meta">
                     <p class="dark-song">{post.data.song}</p>
                     <p class="dark-excerpt">{post.data.excerpt}</p>
                   </div>
-                  <span class="dark-cta">Leer <span class="arrow">→</span></span>
+                  <span class="card-cta">Leer <span class="arrow">→</span></span>
                 </div>
               </>
+            ) : color === 'vibrant' ? (
+              /* ── Vibrant card: canción en grande, lírica contrastada ── */
+              <>
+                <h2 class="song-hero">{post.data.song}</h2>
+                {lines[0] && (
+                  <p class="vibrant-lyric">"{lines[0]}"</p>
+                )}
+                <p class="vibrant-excerpt">{post.data.excerpt}</p>
+                <span class="card-cta light-cta">Leer <span class="arrow">→</span></span>
+              </>
             ) : (
-              /* ── Small / light card: canción hero ── */
+              /* ── Light / lavender card ── */
               <>
                 <h2 class="song-hero">{post.data.song}</h2>
                 {lines[0] && (
                   <p class="light-lyric">"{lines[0]}"</p>
                 )}
                 <p class="light-excerpt">{post.data.excerpt}</p>
-                <span class="light-cta">Leer <span class="arrow">→</span></span>
+                <span class="card-cta light-cta">Leer <span class="arrow">→</span></span>
               </>
             )}
           </a>
@@ -104,8 +123,8 @@ const ERA_SHORT: Record<string, string> = {
   <!-- CTA -->
   <section class="blog-cta">
     <div class="cta-inner">
-      <p class="cta-label">¿Quieres escribir con BTS de fondo?</p>
-      <h2 class="cta-title">El journal que habla en nuestro idioma</h2>
+      <p class="cta-eyebrow">¿Quieres escribir con BTS de fondo?</p>
+      <h2 class="cta-title">El journal que habla<br/>en nuestro idioma</h2>
       <p class="cta-desc">
         85+ prompts de journaling guiados por 35 canciones de BTS.<br />
         Para ARMY que escribe entre canciones.
@@ -125,10 +144,10 @@ const ERA_SHORT: Record<string, string> = {
 </Layout>
 
 <style>
-  /* ── Header ── */
+  /* ── Header compacto ── */
   .blog-header {
     background: linear-gradient(135deg, #1A0A2E 0%, #3D1278 55%, #9B4DCA 100%);
-    padding: 4.5rem 1.5rem 4rem;
+    padding: 2.25rem 1.5rem 2rem;
     position: relative;
     overflow: hidden;
   }
@@ -145,7 +164,7 @@ const ERA_SHORT: Record<string, string> = {
     max-width: 72rem;
     margin: 0 auto;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     gap: 2rem;
     position: relative;
@@ -156,61 +175,57 @@ const ERA_SHORT: Record<string, string> = {
 
   .header-eyebrow {
     font-family: var(--font-accent);
-    font-size: 0.8125rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    font-size: 1.125rem;
     color: var(--color-purple-heart);
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.5rem;
   }
 
   .header-title {
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: clamp(2.25rem, 5vw, 4rem);
-    line-height: 1.08;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    line-height: 1.15;
     color: #FDFBFF;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .header-desc {
     font-family: var(--font-body);
-    font-size: 1rem;
-    line-height: 1.75;
-    color: rgba(224, 208, 240, 0.65);
-    max-width: 36rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(224, 208, 240, 0.6);
+    max-width: 32rem;
   }
 
-  .header-right {
+  .header-stat {
     display: none;
     flex-direction: column;
     align-items: flex-end;
     flex-shrink: 0;
-    padding-bottom: 0.5rem;
   }
 
-  @media (min-width: 600px) { .header-right { display: flex; } }
+  @media (min-width: 600px) { .header-stat { display: flex; } }
 
-  .header-count-num {
+  .stat-num {
     font-family: var(--font-heading);
     font-style: italic;
     font-weight: 700;
-    font-size: clamp(6rem, 14vw, 10rem);
+    font-size: clamp(4rem, 10vw, 7rem);
     line-height: 0.9;
     color: rgba(199, 125, 255, 0.13);
     letter-spacing: -0.04em;
     user-select: none;
   }
 
-  .header-count-label {
+  .stat-label {
     font-family: var(--font-body);
-    font-size: 0.5625rem;
+    font-size: 0.5rem;
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(199, 125, 255, 0.35);
+    color: rgba(199, 125, 255, 0.3);
     text-align: right;
     line-height: 1.6;
-    margin-top: 0.25rem;
   }
 
   /* ── Separador ── */
@@ -218,8 +233,8 @@ const ERA_SHORT: Record<string, string> = {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 0.9rem 2rem;
-    background: #FDFBFF;
+    padding: 0.75rem 2rem;
+    background: #F3EAFA;
     border-bottom: 1px solid var(--color-soft-lilac);
   }
 
@@ -242,39 +257,30 @@ const ERA_SHORT: Record<string, string> = {
   /* ── Bento wrap ── */
   .bento-wrap {
     background: #F3EAFA;
-    padding: 2.5rem 1.25rem 5rem;
+    padding: 1.5rem 1.25rem 5rem;
   }
 
   @media (min-width: 768px) {
-    .bento-wrap { padding: 3rem 2rem 6rem; }
+    .bento-wrap { padding: 2rem 2rem 6rem; }
   }
 
   /* ── Bento grid ── */
   .bento-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.875rem;
+    gap: 0.75rem;
     max-width: 72rem;
     margin: 0 auto;
   }
 
   @media (min-width: 560px) {
-    .bento-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    /* Every 5th card (wide) spans 2 cols */
-    .bento-card:nth-child(5n+1) {
-      grid-column: span 2;
-    }
+    .bento-grid { grid-template-columns: repeat(2, 1fr); }
+    .bento-card:nth-child(5n+1) { grid-column: span 2; }
   }
 
   @media (min-width: 900px) {
-    .bento-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .bento-card:nth-child(5n+1) {
-      grid-column: span 2;
-    }
+    .bento-grid { grid-template-columns: repeat(3, 1fr); }
+    .bento-card:nth-child(5n+1) { grid-column: span 2; }
   }
 
   /* ── Base card ── */
@@ -282,97 +288,109 @@ const ERA_SHORT: Record<string, string> = {
     position: relative;
     display: flex;
     flex-direction: column;
-    border-radius: 1.25rem;
-    padding: 1.625rem 1.5rem 1.375rem;
+    border-radius: 1.125rem;
+    padding: 1.5rem;
     text-decoration: none;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    min-height: 220px;
+    min-height: 210px;
   }
 
-  .bento-card:hover {
-    transform: translateY(-4px);
-  }
+  .bento-card:hover { transform: translateY(-3px); }
 
-  /* ── Dark card (wide, every 5th) ── */
-  .card-dark {
+  /* ── Dark (wide) card ── */
+  .color-dark {
     background: linear-gradient(140deg, #1A0A2E 0%, #3B1066 60%, #6B2FA0 100%);
-    box-shadow: 0 4px 24px rgba(26, 10, 46, 0.3);
-    min-height: 280px;
+    box-shadow: 0 4px 20px rgba(26, 10, 46, 0.28);
+    min-height: 260px;
   }
 
-  .card-dark::before {
+  .color-dark::before {
     content: '';
     position: absolute;
     bottom: -15%;
     right: -5%;
-    width: 260px;
-    height: 260px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(199,125,255,0.18) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(199,125,255,0.15) 0%, transparent 70%);
     pointer-events: none;
   }
 
-  .card-dark:hover {
-    box-shadow: 0 12px 48px rgba(107, 47, 160, 0.5);
+  .color-dark:hover {
+    box-shadow: 0 10px 40px rgba(107, 47, 160, 0.45);
   }
 
-  /* ── Light card ── */
-  .card-light {
+  /* ── Light (white) card ── */
+  .color-light {
     background: #FDFBFF;
     border: 1px solid var(--color-soft-lilac);
+    border-top: 3px solid #9B4DCA;
     box-shadow: 0 2px 8px rgba(107, 91, 123, 0.06);
   }
 
-  .card-light.era-ari {
+  .color-light:hover {
+    box-shadow: 0 8px 30px rgba(155, 77, 202, 0.14);
+    border-color: rgba(155, 77, 202, 0.35);
+    border-top-color: #9B4DCA;
+  }
+
+  /* ── Lavender card ── */
+  .color-lavender {
+    background: #E8D5F5;
+    border: 1px solid rgba(199, 125, 255, 0.25);
     border-top: 3px solid #C77DFF;
+    box-shadow: 0 2px 8px rgba(199, 125, 255, 0.08);
   }
 
-  .card-light.era-cl {
-    border-top: 3px solid #9B4DCA;
-  }
-
-  .card-light:hover {
-    box-shadow: 0 10px 36px rgba(199, 125, 255, 0.18);
+  .color-lavender:hover {
+    box-shadow: 0 8px 30px rgba(199, 125, 255, 0.2);
     border-color: rgba(199, 125, 255, 0.4);
+    border-top-color: #C77DFF;
+  }
+
+  /* ── Vibrant (purple gradient) card ── */
+  .color-vibrant {
+    background: linear-gradient(135deg, #9B4DCA 0%, #C77DFF 100%);
+    box-shadow: 0 4px 16px rgba(155, 77, 202, 0.3);
+  }
+
+  .color-vibrant:hover {
+    box-shadow: 0 8px 32px rgba(199, 125, 255, 0.45);
   }
 
   /* ── Era pill ── */
   .era-pill {
     display: inline-block;
-    font-family: var(--font-body);
-    font-size: 0.5rem;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    padding: 0.2rem 0.6rem;
+    font-family: var(--font-accent);
+    font-size: 0.75rem;
+    padding: 0.15rem 0.6rem;
     border-radius: 999px;
     align-self: flex-start;
-    margin-bottom: 1.125rem;
+    margin-bottom: 1rem;
     flex-shrink: 0;
   }
 
   .pill-ari {
-    background: rgba(199, 125, 255, 0.18);
-    color: #C77DFF;
-    border: 1px solid rgba(199, 125, 255, 0.35);
+    background: rgba(199, 125, 255, 0.15);
+    color: #9B4DCA;
+    border: 1px solid rgba(199, 125, 255, 0.3);
   }
 
   .pill-cl {
     background: rgba(155, 77, 202, 0.1);
-    color: #9B4DCA;
-    border: 1px solid rgba(155, 77, 202, 0.25);
+    color: #6B2FA0;
+    border: 1px solid rgba(155, 77, 202, 0.2);
   }
 
-  .card-dark .pill-ari,
-  .card-dark .pill-cl {
+  .pill-dark {
     background: rgba(199, 125, 255, 0.15);
     color: rgba(199, 125, 255, 0.9);
     border-color: rgba(199, 125, 255, 0.3);
   }
 
-  /* ── Dark card: quote zone ── */
+  /* ── Dark card content ── */
   .quote-zone {
     flex: 1;
     position: relative;
@@ -382,9 +400,9 @@ const ERA_SHORT: Record<string, string> = {
   .big-quote {
     display: block;
     font-family: var(--font-heading);
-    font-size: 4rem;
-    line-height: 0.45;
-    color: rgba(199, 125, 255, 0.25);
+    font-size: 3.5rem;
+    line-height: 0.4;
+    color: rgba(199, 125, 255, 0.22);
     margin-bottom: 0.5rem;
     user-select: none;
   }
@@ -392,40 +410,38 @@ const ERA_SHORT: Record<string, string> = {
   .lyric-hero {
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-    line-height: 1.45;
+    font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+    line-height: 1.5;
     color: #FDFBFF;
-    letter-spacing: -0.01em;
   }
 
-  /* ── Dark card: footer zone ── */
   .dark-footer {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 1.25rem;
+    padding-top: 0.875rem;
+    border-top: 1px solid rgba(199, 125, 255, 0.15);
     position: relative;
     z-index: 1;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(199, 125, 255, 0.15);
   }
 
   .dark-song {
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: 1rem;
+    font-size: 0.9375rem;
     font-weight: 600;
     color: #C77DFF;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.2rem;
     line-height: 1.2;
   }
 
   .dark-excerpt {
     font-family: var(--font-body);
     font-size: 0.8125rem;
-    line-height: 1.6;
-    color: rgba(224, 208, 240, 0.5);
+    line-height: 1.55;
+    color: rgba(224, 208, 240, 0.45);
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -433,55 +449,61 @@ const ERA_SHORT: Record<string, string> = {
     max-width: 36rem;
   }
 
-  .dark-cta {
-    font-family: var(--font-body);
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: rgba(199, 125, 255, 0.6);
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: color 0.2s ease;
-  }
-
-  .card-dark:hover .dark-cta {
-    color: #C77DFF;
-  }
-
-  /* ── Light card: song hero ── */
+  /* ── Song hero (light + lavender + vibrant cards) ── */
   .song-hero {
     font-family: var(--font-heading);
     font-style: italic;
     font-size: clamp(1.5rem, 3vw, 2rem);
     line-height: 1.1;
     color: var(--color-text-deep);
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.5rem;
     transition: color 0.2s ease;
   }
 
-  .card-light:hover .song-hero {
+  .color-light:hover .song-hero,
+  .color-lavender:hover .song-hero {
     color: var(--color-purple-vibrant);
   }
 
-  /* ── Light card: lyric line ── */
+  .color-vibrant .song-hero {
+    color: #FDFBFF;
+  }
+
+  /* ── Lyric line (light + lavender cards) ── */
   .light-lyric {
     font-family: var(--font-heading);
     font-style: italic;
     font-size: 0.875rem;
     line-height: 1.5;
-    color: rgba(107, 91, 123, 0.5);
-    margin-bottom: 0.75rem;
+    color: rgba(107, 91, 123, 0.55);
+    margin-bottom: 0.625rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     transition: color 0.2s ease;
+  }
+
+  .color-light:hover .light-lyric,
+  .color-lavender:hover .light-lyric {
+    color: rgba(155, 77, 202, 0.65);
+  }
+
+  /* ── Lyric line (vibrant card) ── */
+  .vibrant-lyric {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: rgba(253, 251, 255, 0.65);
+    margin-bottom: 0.625rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
-  .card-light:hover .light-lyric {
-    color: rgba(155, 77, 202, 0.65);
-  }
-
-  /* ── Light card: excerpt ── */
+  /* ── Excerpts ── */
   .light-excerpt {
     font-family: var(--font-body);
     font-size: 0.875rem;
@@ -494,20 +516,54 @@ const ERA_SHORT: Record<string, string> = {
     flex: 1;
   }
 
-  /* ── Light card: cta ── */
-  .light-cta {
+  .vibrant-excerpt {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: rgba(253, 251, 255, 0.7);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  /* ── CTAs ── */
+  .card-cta {
     display: inline-block;
     font-family: var(--font-body);
     font-size: 0.75rem;
     font-weight: 600;
-    color: rgba(107, 91, 123, 0.4);
-    margin-top: 1rem;
-    transition: color 0.2s ease;
+    margin-top: 0.875rem;
     align-self: flex-end;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
-  .card-light:hover .light-cta {
+  .color-dark .card-cta {
+    color: rgba(199, 125, 255, 0.55);
+  }
+
+  .color-dark:hover .card-cta {
+    color: #C77DFF;
+  }
+
+  .light-cta {
+    color: rgba(107, 91, 123, 0.4);
+  }
+
+  .color-light:hover .light-cta,
+  .color-lavender:hover .light-cta {
     color: var(--color-purple-vibrant);
+  }
+
+  .color-vibrant .light-cta {
+    color: rgba(253, 251, 255, 0.55);
+  }
+
+  .color-vibrant:hover .light-cta {
+    color: #FDFBFF;
   }
 
   /* ── Arrow ── */
@@ -516,14 +572,12 @@ const ERA_SHORT: Record<string, string> = {
     transition: transform 0.2s ease;
   }
 
-  .bento-card:hover .arrow {
-    transform: translateX(4px);
-  }
+  .bento-card:hover .arrow { transform: translateX(4px); }
 
-  /* ── CTA ── */
+  /* ── CTA section ── */
   .blog-cta {
     background: linear-gradient(135deg, #1A0A2E 0%, #3B1066 100%);
-    padding: 5rem 1.5rem;
+    padding: 4.5rem 1.5rem;
     position: relative;
     overflow: hidden;
   }
@@ -547,9 +601,9 @@ const ERA_SHORT: Record<string, string> = {
     z-index: 1;
   }
 
-  .cta-label {
+  .cta-eyebrow {
     font-family: var(--font-accent);
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     color: var(--color-purple-heart);
     margin-bottom: 0.75rem;
   }
