@@ -11,9 +11,9 @@ Hay cosas que BTS había rodeado, pero nunca dicho así de directo.
 
 Habían hablado de momentos oscuros. De querer rendirse. Pero siempre con distancia — a través de metáforas, de personajes, de narrativas de álbum que te permiten escuchar sin que duela demasiado.
 
-*Normal* no tiene esa distancia.
+***Normal* no tiene esa distancia.**
 
-*Normal* es RM mirando a cámara — o lo que sea equivalente en música — y diciendo algo que no habían dicho en doce años de carrera, sin protección narrativa: *estoy cansado. No roto. Cansado.*
+*Normal* es RM mirando a cámara — o lo que sea equivalente en música — y diciendo algo que no habían dicho en doce años de carrera, sin protección narrativa: **estoy cansado. No roto. Cansado.**
 
 ---
 
@@ -25,9 +25,11 @@ Cuatro palabras. La puntuación hace todo el trabajo.
 
 Y entonces: *just tired.*
 
-El "just" no minimiza el cansancio. Lo ubica. Dice: es esto, no es más que esto, pero es real y lo estoy nombrando porque necesito que sepas que esto es lo que hay.
+**El "just" no minimiza el cansancio. Lo ubica.** Dice: es esto, no es más que esto, pero es real y lo estoy nombrando porque necesito que sepas que esto es lo que hay.
 
-En doce años de carrera, RM — que carga con más presión lingüística y representativa que cualquier otro miembro — había hablado de depresión, de duda, de sentir que no era suficiente. Pero siempre anclado en algo que superó, algo que lo llevó a un lugar mejor. *Normal* no promete un lugar mejor. Solo dice: hoy estoy cansado, y eso es lo que hay.
+<div class="kf"><em>CAN</em>SADA.<br>NO <em>ROTA</em>.</div>
+
+En doce años de carrera, RM había hablado de depresión, de duda, de sentir que no era suficiente. Pero siempre anclado en algo que superó. ***Normal* no promete un lugar mejor. Solo dice: hoy estoy cansado, y eso es lo que hay.**
 
 Esa honestidad sin redención inmediata es, paradójicamente, lo más esperanzador que ha dicho.
 
@@ -35,13 +37,13 @@ Esa honestidad sin redención inmediata es, paradójicamente, lo más esperanzad
 
 ## "Is that not enough / To be normal for once"
 
-Esta pregunta — *is that not enough* — lleva años sin respuesta para la mayoría de nosotras.
+Esta pregunta lleva años sin respuesta para la mayoría de nosotras.
 
-Porque aprendemos muy temprano que las emociones "negativas" necesitan justificación. No puedes estar cansada si no hiciste suficiente. No puedes estar triste si "no pasó nada." No puedes necesitar descanso si no alcanzaste la meta que te pusiste.
+Porque aprendemos muy temprano que las emociones "negativas" necesitan justificación. **No puedes estar cansada si no hiciste suficiente. No puedes estar triste si "no pasó nada."** No puedes necesitar descanso si no alcanzaste la meta que te pusiste.
 
-El cansancio sin causa visible — el existencial, el de cargar todo el tiempo con demasiado — es especialmente difícil de defender. ¿Cansada de qué, exactamente?
+El cansancio sin causa visible — el existencial, el de cargar todo el tiempo con demasiado — es especialmente difícil de defender. *¿Cansada de qué, exactamente?*
 
-BTS le da respuesta a esa pregunta con el título mismo: *Normal*. El cansancio es la experiencia normal de ser humano bajo presión sostenida. No hace falta una catástrofe para estar agotada. Hace falta simplemente haber estado viva durante suficiente tiempo cargando cosas.
+BTS le da respuesta a esa pregunta con el título mismo: ***Normal*. El cansancio es la experiencia normal de ser humano bajo presión sostenida.** No hace falta una catástrofe para estar agotada. Hace falta simplemente haber estado viva durante suficiente tiempo cargando cosas.
 
 ---
 
@@ -51,9 +53,9 @@ BTS no es solo música para ARMY. Es la prueba viva de que se puede ser sensible
 
 Y parte de lo que hace que ese refugio funcione es la imagen — nunca explícita, pero siempre presente — de que ellos *pueden*. Que mientras nosotras tambaleamos, ellos están bien.
 
-*Normal* rompe eso. Con gentileza, pero lo rompe.
+***Normal* rompe eso.** Con gentileza, pero lo rompe.
 
-No dice "miren que también sufrimos, somos iguales a ustedes." Dice algo más específico: el cansancio no discrimina. No respeta el tamaño del logro, la cantidad de fans que te aman, o los años que llevas trabajando. Viene de todas formas. Y nombrarlo — no fingir que no está — es la única forma de empezar a manejarlo.
+No dice "miren que también sufrimos, somos iguales a ustedes." Dice algo más específico: **el cansancio no discrimina.** No respeta el tamaño del logro, la cantidad de fans que te aman, o los años que llevas trabajando. Viene de todas formas. Y nombrarlo — no fingir que no está — es la única forma de empezar a manejarlo.
 
 ---
 
@@ -61,9 +63,9 @@ No dice "miren que también sufrimos, somos iguales a ustedes." Dice algo más e
 
 ARMY carga mucho.
 
-Emociones intensas que el mundo exterior no siempre tiene espacio para recibir. Exámenes. Trabajo. Familias. Expectativas propias que a veces no tienen ninguna relación con lo que realmente quieres. Y encima, la presión de ser "la ARMY que está bien" — porque si amas algo tan lleno de vida y esperanza, ¿cómo puedes no estarlo?
+Emociones intensas que el mundo exterior no siempre tiene espacio para recibir. Exámenes. Trabajo. Familias. Expectativas propias que a veces no tienen ninguna relación con lo que realmente quieres. Y encima, la presión de ser **"la ARMY que está bien"** — porque si amas algo tan lleno de vida y esperanza, ¿cómo puedes no estarlo?
 
-*Normal* dice: puedes. Nombrarlo no es traicionar esa esperanza. Es lo más honesto que puedes hacer.
+*Normal* dice: puedes. **Nombrarlo no es traicionar esa esperanza. Es lo más honesto que puedes hacer.**
 
 ---
 

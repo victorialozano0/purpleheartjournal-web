@@ -9,55 +9,55 @@ tags: ["relaciones", "vínculos", "ARIRANG", "privacidad"]
 
 No todo lo que importa necesita ser visible.
 
-Hay relaciones que viven en mensajes de las 2am. En frases que solo tienen sentido entre dos personas. En silencios que no hay que llenar porque el silencio ya dice lo suficiente. En el hecho de que con ciertas personas simplemente *eres* — sin tener que explicar ni justificar ni actuar una versión de ti misma.
+Hay relaciones que viven en mensajes de las 2am. En frases que solo tienen sentido entre dos personas. En silencios que no hay que llenar. En el hecho de que **con ciertas personas simplemente *eres*** — sin tener que explicar ni justificar ni actuar una versión de ti misma.
 
-*They Don't Know 'Bout Us* es sobre eso. Sobre lo que existe en privado y no por eso es menos real. A veces más.
+*They Don't Know 'Bout Us* es sobre eso. Sobre lo que existe en privado y no por eso es menos real. **A veces más.**
 
 ---
 
 ## "They see what we show / But they don't know what we know"
 
-El primer verso hace algo específico: distingue entre la superficie y el interior de una relación.
+El primer verso hace algo específico: **distingue entre la superficie y el interior de una relación.**
 
-*They see what we show.* El mundo exterior solo tiene acceso a lo que mostramos — las fotos, las historias, lo que contamos en las conversaciones. La versión pública de algo que no es público en su esencia.
+*They see what we show.* El mundo exterior solo tiene acceso a lo que mostramos — las fotos, las historias, lo que contamos. La versión pública de algo que no es público en su esencia.
 
-*They don't know what we know.* Lo que existe entre dos personas — el lenguaje compartido, la historia acumulada, el mapa de quién es cada una para la otra — eso no se puede mostrar porque no existe en ese formato. Solo existe en la experiencia directa de estar ahí.
+*They don't know what we know.* Lo que existe entre dos personas — el lenguaje compartido, la historia acumulada, el mapa de quién es cada una para la otra — **eso no se puede mostrar porque no existe en ese formato.** Solo existe en la experiencia directa de estar ahí.
 
-El "we know" también incluye el conocimiento de que esto es real aunque no se pueda demostrar desde afuera. Que la validez de una relación no depende de cuántas personas la atestigüen.
+<div class="kf">NO LO<br><em>NECE</em>SITAN<br>ENTEN<em>DER</em>.</div>
 
 ---
 
 ## "This space between us / Is not for everyone"
 
-Esta frase es una declaración de privacidad como acto de amor — no de exclusión.
+Esta frase es **una declaración de privacidad como acto de amor** — no de exclusión.
 
-*Not for everyone* no significa "solo para nosotros, que somos especiales." Significa: este espacio fue construido por nosotros, tiene nuestra forma, habla nuestro idioma. No es que los demás no sean bienvenidos — es que no tienen las coordenadas para llegar aquí.
+*Not for everyone* no significa "solo para nosotros, que somos especiales." Significa: este espacio fue construido por nosotros, **tiene nuestra forma, habla nuestro idioma.** No es que los demás no sean bienvenidos — es que no tienen las coordenadas para llegar aquí.
 
-Hay algo profundamente íntimo en tener un espacio así con alguien. Ya sea una amistad, un amor, una relación con la música que amas, con un fandom — hay vínculos que existen en frecuencias que no todo el mundo puede sintonizar. Y esa especificidad no los hace exclusivos. Los hace precisos.
+Hay algo profundamente íntimo en tener un espacio así con alguien. **Y esa especificidad no los hace exclusivos. Los hace precisos.**
 
 ---
 
 ## ARMY y BTS: el vínculo que nadie termina de entender
 
-Hay algo particular en ser ARMY que encaja exactamente aquí.
+Desde afuera, la relación entre ARMY y BTS parece inexplicable. *"¿Cómo puedes querer tanto a personas que no te conocen?"* preguntan los que no lo entienden.
 
-Desde afuera, la relación entre ARMY y BTS parece inexplicable. "¿Cómo puedes querer tanto a personas que no te conocen?" preguntan los que no lo entienden. Y la respuesta honesta es difícil de dar en palabras neutrales, porque la respuesta verdadera es: *porque BTS dice exactamente lo que yo sentía sin poder nombrarlo. Porque cuando los escucho me siento menos sola en algo que pensaba que era solo mío.*
+Y la respuesta honesta es difícil de dar en palabras neutrales, porque la respuesta verdadera es: ***porque BTS dice exactamente lo que yo sentía sin poder nombrarlo.*** Porque cuando los escucho me siento menos sola en algo que pensaba que era solo mío.
 
 Ese vínculo — que existe aunque nunca hayas estado en el mismo cuarto que ellos, que es real aunque nadie a tu alrededor lo comprenda — es exactamente lo que *They Don't Know 'Bout Us* nombra y protege.
 
-No necesita ser comprendido desde afuera para ser válido desde adentro. Los mejores vínculos nunca necesitan esa validación.
+**No necesita ser comprendido desde afuera para ser válido desde adentro.**
 
 ---
 
 ## La era de la visibilidad obligatoria
 
-Vivimos en un momento cultural donde lo que no se documenta casi no existe. Si no está en el story, si no quedó en fotos, si la relación no tiene registro público — ¿de verdad pasó? ¿De verdad importa?
+Vivimos en un momento cultural donde **lo que no se documenta casi no existe.** Si no está en el story, si no quedó en fotos, si la relación no tiene registro público — ¿de verdad importa?
 
 *They Don't Know 'Bout Us* empuja directo en la dirección contraria.
 
-Algunas de las relaciones más significativas que tenemos son exactamente las que no caben en un post. Las que son demasiado específicas para un caption, demasiado matizadas para un like, demasiado íntimas para ser el contenido de una historia. Y la presión de convertirlas en contenido puede hacer que las perdamos, o que las distorsionemos para que encajen en un formato que no es el suyo.
+Algunas de las relaciones más significativas que tenemos son exactamente **las que no caben en un post.** Las que son demasiado específicas para un caption, demasiado matizadas para un like, demasiado íntimas para ser el contenido de una historia.
 
-Lo que vive en privado no necesita justificarse con visibilidad.
+**Lo que vive en privado no necesita justificarse con visibilidad.**
 
 ---
 

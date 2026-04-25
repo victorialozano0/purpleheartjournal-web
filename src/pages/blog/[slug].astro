@@ -319,7 +319,35 @@ const isARIRANG = post.data.tags.includes('ARIRANG');
     opacity: 0.35;
   }
 
-  .prose :global(strong) { font-weight: 700; color: var(--color-text-deep); }
+  .prose :global(strong) {
+    font-weight: 700;
+    color: var(--color-purple-deep);
+  }
+
+  /* ── Frase clave display — split de color tipográfico ── */
+  .prose :global(.kf) {
+    display: block;
+    font-family: var(--font-heading);
+    font-style: normal;
+    font-weight: 900;
+    font-size: clamp(2.25rem, 9vw, 4rem);
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    color: #1A0A2E;
+    margin: 3rem 0 3.5rem;
+  }
+
+  .prose :global(.kf em) {
+    font-style: normal;
+    color: var(--color-purple-heart);
+  }
+
+  @media (min-width: 768px) {
+    .prose :global(.kf) {
+      font-size: clamp(3rem, 6vw, 5rem);
+    }
+  }
 
   /* Prompts de journaling — ol con cards */
   .prose :global(ol) {

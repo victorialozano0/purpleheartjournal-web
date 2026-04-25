@@ -9,53 +9,55 @@ tags: ["identidad-ARMY", "comunidad", "ARIRANG", "autenticidad", "diferencia"]
 
 Ser ARMY siempre ha sido un poco radical.
 
-No en el sentido político — aunque a veces también. Sino en el sentido de que elegiste amar algo con una intensidad que el mundo que te rodea no siempre entiende, en un idioma que aprendiste porque valía la pena, de una manera que no cabe fácilmente en ninguna caja conocida.
+No en el sentido político — aunque a veces también. Sino en el sentido de que **elegiste amar algo con una intensidad que el mundo que te rodea no siempre entiende,** en un idioma que aprendiste porque valía la pena, de una manera que no cabe fácilmente en ninguna caja conocida.
 
-*Hooligan* celebra eso. Sin disculpas.
+*Hooligan* celebra eso. **Sin disculpas.**
 
 ---
 
 ## "They said we couldn't / We said watch us"
 
-La estructura de este verso es simple y directa — y esa simplicidad es intencional.
+La estructura de este verso es simple y directa — **y esa simplicidad es intencional.**
 
-*They said we couldn't.* El mercado musical global en 2013 dijo que un grupo de hip-hop de Corea, cantando en coreano, no tenía chance fuera de Asia. Las reglas del juego eran claras: el pop mainstream era anglohablante, los estándares de belleza eran occidentales, las estructuras de carrera seguían ciertos caminos probados.
+*They said we couldn't.* El mercado musical global en 2013 dijo que un grupo de hip-hop de Corea, cantando en coreano, **no tenía chance fuera de Asia.** Las reglas del juego eran claras: el pop mainstream era anglohablante, los estándares de belleza eran occidentales, las estructuras de carrera seguían ciertos caminos probados.
 
-*We said watch us.* No "vamos a intentarlo." No "veremos qué pasa." *Watch us.* Míranos. La confianza de quien no está pidiendo permiso para existir, sino declarando que va a existir de todas formas.
+*We said watch us.* No "vamos a intentarlo." No "veremos qué pasa." ***Watch us.* Míranos.** La confianza de quien no está pidiendo permiso para existir, sino declarando que va a existir de todas formas.
 
-Y el resultado — más de una década después, con un impact cultural que nadie previó — es la demostración de que las reglas del juego no son leyes naturales. Son convenciones que alguien diseñó, y que pueden ser reescritas.
+<div class="kf"><em>ELLOS</em> DIJERON<br>QUE NO.<br>NOSOTROS <em>DIJIMOS</em>.</div>
+
+Y el resultado — más de una década después, con un impacto cultural que nadie previó — es **la demostración de que las reglas del juego no son leyes naturales. Son convenciones que alguien diseñó, y que pueden ser reescritas.**
 
 ---
 
 ## "Hooligans in your industry / Changing every rule you wrote"
 
-Un hooligan, en su definición original, es alguien que no respeta el código de comportamiento del espacio en que entra. Que desordena el orden establecido. Que no se comporta "como se espera."
+Un hooligan, en su definición original, es alguien que **no respeta el código de comportamiento del espacio en que entra.** Que desordena el orden establecido.
 
-BTS usó esa palabra a propósito — y eso dice algo sobre cómo eligieron entender su propia historia. No como la historia de quienes lograron encajar en el sistema. Como la historia de quienes cambiaron el sistema mientras no encajaban.
+BTS usó esa palabra a propósito — y eso dice algo sobre cómo eligieron entender su propia historia. **No como la historia de quienes lograron encajar en el sistema. Como la historia de quienes cambiaron el sistema mientras no encajaban.**
 
-*Changing every rule you wrote.* No adaptándose a las reglas. Cambiándolas. Eso es diferente. Y eso es lo que convierte la identidad de "hooligan" de insult en declaración.
+*Changing every rule you wrote.* No adaptándose a las reglas. **Cambiándolas.** Eso es diferente. Y eso es lo que convierte la identidad de "hooligan" de insulto en declaración.
 
 ---
 
 ## La identidad ARMY como acto de resistencia
 
-Amar a BTS con la intensidad con que lo amas — especialmente si eres latinoamericana, especialmente si tienes 16 o 20 o 25 años — ha requerido defender ese amor más de una vez.
+Amar a BTS con la intensidad con que lo amas — especialmente si eres latinoamericana, especialmente si tienes 16 o 20 o 25 años — **ha requerido defender ese amor más de una vez.**
 
-Frente a la familia que no entiende. Frente al círculo social que minimiza. Frente a la mirada que dice "¿no es demasiado?" Frente a la voz interna que a veces pregunta si es proporcional querer tanto algo así.
+Frente a la familia que no entiende. Frente al círculo social que minimiza. Frente a la mirada que dice "¿no es demasiado?" Frente a **la voz interna que a veces pregunta si es proporcional querer tanto algo así.**
 
-Y elegir seguir amándolo de todas formas — sin pedir disculpas, sin reducirlo para que quepa en lo que otros entienden — eso es ser hooligan.
+Y elegir seguir amándolo de todas formas — sin pedir disculpas, sin reducirlo para que quepa en lo que otros entienden — **eso es ser hooligan.**
 
-No en el sentido de confrontación. En el sentido de ocupar el espacio que te corresponde aunque nadie te haya dado permiso explícito para ocuparlo.
+No en el sentido de confrontación. **En el sentido de ocupar el espacio que te corresponde aunque nadie te haya dado permiso explícito para ocuparlo.**
 
 ---
 
 ## Lo que la comunidad hace posible
 
-Hay algo que *Hooligan* también celebra: que los hooligans no están solos.
+Hay algo que *Hooligan* también celebra: **que los hooligans no están solos.**
 
-Hay algo poderoso en encontrar a quienes rompen las mismas reglas que tú. ARMY es eso — una comunidad de personas que amaron algo con intensidad suficiente como para encontrarse entre sí alrededor de ese amor. Que se reconocieron en la diferencia compartida. Que no necesitaron explicarse porque la otra ya entendía.
+Hay algo poderoso en encontrar a quienes rompen las mismas reglas que tú. ARMY es eso — **una comunidad de personas que amaron algo con intensidad suficiente como para encontrarse entre sí** alrededor de ese amor. Que se reconocieron en la diferencia compartida.
 
-Esa comunidad — con todo lo que tiene de complicada, de diversa, de contradictoria — es también una de las pruebas de que ser hooligan vale la pena. Que no estás sola en el no-encajar.
+Esa comunidad — con todo lo que tiene de complicada, de diversa, de contradictoria — es también una de las pruebas de que **ser hooligan vale la pena. Que no estás sola en el no-encajar.**
 
 ---
 

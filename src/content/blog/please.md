@@ -9,7 +9,7 @@ tags: ["relaciones", "ARIRANG", "regreso-BTS", "compromiso"]
 
 Hubo un momento, cuando empezaron a sonar los primeros segundos de *Please*, que millones de personas en todo el mundo rompieron a llorar sin entender bien por qué.
 
-No porque la canción sea triste. Sino porque es una promesa.
+No porque la canción sea triste. Sino porque **es una promesa.**
 
 Y las promesas — las reales, las que cuestan algo — tienen un peso que se siente antes de entenderlo.
 
@@ -17,11 +17,13 @@ Y las promesas — las reales, las que cuestan algo — tienen un peso que se si
 
 ## "Please stay with me / I stayed for you"
 
-Lo que hace diferente este verso de cualquier otra canción de regreso es la simetría.
+Lo que hace diferente este verso de cualquier otra canción de regreso es la **simetría.**
 
-No es "volvimos por ustedes." No es "los extrañamos." Es: *yo también me quedé*. Durante el silencio. Durante los dos años donde ARMY se preguntaba en silencio si iba a ser lo mismo, si ellos iban a ser lo mismo, si *ella* iba a ser lo mismo cuando volvieran — BTS también estuvo pensando eso. También esperó. También eligió, todos los días, seguir estando.
+No es "volvimos por ustedes." No es "los extrañamos." Es: *yo también me quedé*. Durante el silencio. Durante los dos años donde ARMY se preguntaba si iba a ser lo mismo, si ellos iban a ser lo mismo — BTS también estuvo pensando eso. **También esperó. También eligió, todos los días, seguir estando.**
 
-*I stayed for you* cambia la dinámica por completo. No es la estrella que regresa a la fan que esperó. Son dos personas que esperaron la una por la otra, desde lados distintos del mismo silencio.
+*I stayed for you* cambia la dinámica por completo. No es la estrella que regresa a la fan que esperó. **Son dos personas que esperaron la una por la otra, desde lados distintos del mismo silencio.**
+
+<div class="kf">QUEDAR<em>SE</em><br>ES UN ACTO<br>DE <em>VALENTÍA</em>.</div>
 
 Esa igualdad — "yo también tuve que quedarme, también me costó" — es lo que rompe a las ARMY que entendieron eso en el primer escucha.
 
@@ -29,25 +31,25 @@ Esa igualdad — "yo también tuve que quedarme, también me costó" — es lo q
 
 ## "In the silence I only thought of this / Please"
 
-El servicio militar coreano es, en esencia, un aislamiento forzado. Sin palcos, sin grabaciones, sin la adrenalina de hacer lo que mejor sabes hacer. Solo el deber, la rutina, y el tiempo.
+El servicio militar coreano es, en esencia, un **aislamiento forzado.** Sin palcos, sin grabaciones, sin la adrenalina de hacer lo que mejor sabes hacer. Solo el deber, la rutina, y el tiempo.
 
 Y BTS — siete hombres cuya identidad completa ha estado entrelazada con la música desde los dieciséis, diecisiete, veinte años — tuvo que existir en ese espacio sin el instrumento que los define.
 
-*In the silence I only thought of this.* En el silencio, solo pensé en esto. La canción no especifica qué es "esto" — y esa ambigüedad es intencional. Podría ser ARMY. Podría ser la música. Podría ser la promesa de volver. Probablemente es todo eso al mismo tiempo, indistinguible porque cuando algo es parte de ti no sabes dónde termina una cosa y empieza otra.
+*In the silence I only thought of this.* En el silencio, solo pensé en esto. **La canción no especifica qué es "esto"** — y esa ambigüedad es intencional. Podría ser ARMY. Podría ser la música. Podría ser la promesa de volver. Probablemente es todo eso al mismo tiempo, indistinguible porque cuando algo es parte de ti no sabes dónde termina una cosa y empieza otra.
 
-Pero lo que importa es que el silencio no los apagó. Los hizo pensar más claro en lo que querían decir cuando pudieran volver a hablar.
+Pero lo que importa es que **el silencio no los apagó. Los hizo pensar más claro en lo que querían decir cuando pudieran volver a hablar.**
 
 ---
 
-## Quedarse como acto de valentía
+## Quedarse cuando es más fácil irse
 
 Hay una narrativa cultural que glorifica irse. El que se va es libre, valiente, independiente. El que se queda es el que no pudo escapar.
 
 *Please* invierte eso completamente.
 
-Quedarse — cuando tienes la opción de irte, cuando sería más fácil irte, cuando el mundo te da mil razones para irte — es uno de los actos más valientes que existen. Quedarse requiere elegir activamente algo que ya tienes. Renovar ese sí sin la energía del inicio, sin la novedad que lo hacía fácil. Quedarse cuando ya conoces los lados difíciles de lo que estás sosteniendo.
+**Quedarse — cuando tienes la opción de irte, cuando sería más fácil irte, cuando el mundo te da mil razones para irte — es uno de los actos más valientes que existen.** Quedarse requiere elegir activamente algo que ya tienes. Renovar ese sí sin la energía del inicio, sin la novedad que lo hacía fácil.
 
-BTS se quedó en el silencio del servicio militar. En la pausa. Sin el ruido que los define. Y cuando salieron, lo primero que le dijeron a ARMY fue: gracias por quedarte también. No "volvimos triunfantes." Gracias. Por quedarte.
+BTS se quedó en el silencio del servicio militar. En la pausa. Sin el ruido que los define. Y cuando salieron, lo primero que dijeron fue: **gracias por quedarte también.** No "volvimos triunfantes." Gracias. Por quedarte.
 
 ---
 
@@ -55,11 +57,11 @@ BTS se quedó en el silencio del servicio militar. En la pausa. Sin el ruido que
 
 *Please* también es, si lo escuchas así, una conversación contigo misma.
 
-Cuántas veces has prometido cuidarte y no lo hiciste. Has prometido no abandonarte en los momentos difíciles y lo hiciste de todas formas. Has dicho "esta vez me quedo" y te has ido en cuanto se puso incómodo.
+Cuántas veces has prometido cuidarte y no lo hiciste. Has prometido **no abandonarte en los momentos difíciles** y lo hiciste de todas formas. Has dicho "esta vez me quedo" y te has ido en cuanto se puso incómodo.
 
-No porque seas inconsistente o débil. Sino porque quedarse con una misma — especialmente cuando la situación se pone incómoda, cuando lo que ves en el espejo no te gusta, cuando el proceso es más lento de lo que esperabas — es exactamente tan difícil como quedarse con otra persona.
+No porque seas inconsistente. Sino porque quedarse con una misma — especialmente cuando lo que ves no te gusta, cuando el proceso es más lento de lo que esperabas — es exactamente tan difícil como quedarse con otra persona.
 
-*Please* dice: eso también es una promesa que vale la pena hacer. Y vale la pena renovar.
+*Please* dice: **eso también es una promesa que vale la pena hacer. Y vale la pena renovar.**
 
 ---
 

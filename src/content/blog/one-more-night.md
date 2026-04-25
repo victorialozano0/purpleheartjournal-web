@@ -9,7 +9,7 @@ tags: ["pérdida", "nostalgia", "ARIRANG", "relaciones", "cartas"]
 
 Existe un tipo particular de nostalgia que no es tristeza exactamente.
 
-Es el deseo específico de una conversación que no tuviste. De decirle algo a alguien que ya no está — o que está, pero ya no de la misma manera. No para cambiar nada. Solo para que quedara dicho.
+Es el deseo específico de una conversación que no tuviste. De decirle algo a alguien que ya no está — o que está, pero ya no de la misma manera. **No para cambiar nada. Solo para que quedara dicho.**
 
 *One More Night* vive exactamente ahí.
 
@@ -19,33 +19,35 @@ Es el deseo específico de una conversación que no tuviste. De decirle algo a a
 
 Este verso es el más honesto de la canción — y el que más pesa.
 
-*What I never said out loud.* No lo que debiste haber dicho. No lo que deberías decir ahora. Lo que nunca dijiste en voz alta. Que existía, que siempre existió, pero quedó adentro porque siempre había tiempo, porque el momento no era el correcto, porque decirlo hubiera cambiado demasiadas cosas.
+*What I never said out loud.* **No lo que debiste haber dicho. No lo que deberías decir ahora. Lo que nunca dijiste en voz alta.** Que existía, que siempre existió, pero quedó adentro porque siempre había tiempo, porque el momento no era el correcto, porque decirlo hubiera cambiado demasiadas cosas.
 
-La canción no te pide que lo digas ahora a esa persona — a veces eso ya no es posible. Te pide algo diferente: que lo digas, aunque sea aquí, aunque sea en papel, aunque la única audiencia seas tú.
+La canción no te pide que lo digas ahora a esa persona — a veces eso ya no es posible. **Te pide algo diferente: que lo digas, aunque sea aquí, aunque sea en papel, aunque la única audiencia seas tú.**
 
-*Out loud* importa. Hay una diferencia entre pensar algo y decirlo, aunque sea en un journal. El acto de darle forma lingüística a lo que estaba informe es en sí mismo algo. No convierte el no-dicho en dicho, pero sí lo saca del limbo.
+<div class="kf">DILO.<br>AUNQUE<br>SEA <em>AQUÍ</em>.</div>
+
+*Out loud* importa. Hay una diferencia entre pensar algo y decirlo, aunque sea en un journal. **El acto de darle forma lingüística a lo que estaba informe es en sí mismo algo.** No convierte el no-dicho en dicho, pero sí lo saca del limbo.
 
 ---
 
-## "One more night / Just to say what I couldn't / Before the morning takes you"
+## "Before the morning takes you"
 
-*Before the morning takes you.* El tiempo como el que se lleva las cosas. La mañana como el inicio de la normalidad que borra lo que no fue terminado en la noche.
+*Before the morning takes you.* **El tiempo como el que se lleva las cosas.** La mañana como el inicio de la normalidad que borra lo que no fue terminado en la noche.
 
-Esta imagen no es solo poética. Es precisa para describir cómo funcionan los cierres que no ocurrieron: la vida siguió, la mañana llegó, y lo que quedó sin decir quedó así. No porque no importara. Porque el tiempo es implacable.
+Esta imagen no es solo poética. Es precisa para describir cómo funcionan los cierres que no ocurrieron: **la vida siguió, la mañana llegó, y lo que quedó sin decir quedó así.** No porque no importara. Porque el tiempo es implacable.
 
-La canción no te promete esa noche de más. Te da algo diferente: el permiso de quererla. De reconocer que hay algo que quedó sin terminar, sin por eso hundirte en culpa. Puedes querer esa noche aunque no la tengas. Puedes querer ese cierre aunque el mundo haya seguido.
+La canción no te promete esa noche de más. Te da algo diferente: **el permiso de quererla.** De reconocer que hay algo que quedó sin terminar, sin por eso hundirte en culpa.
 
 ---
 
 ## Por qué el cierre importa aunque no lo tengas
 
-Los psicólogos hablan del efecto Zeigarnik — la tendencia del cerebro a recordar más las situaciones incompletas que las completas. Las conversaciones que no terminaron. Los finales que no fueron finales. Lo que quedó abierto.
+Los psicólogos hablan del efecto Zeigarnik — **la tendencia del cerebro a recordar más las situaciones incompletas que las completas.** Las conversaciones que no terminaron. Los finales que no fueron finales.
 
-Hay algo que el cerebro no puede simplemente "dejar ir" cuando no encuentra cierre. Lo guarda, lo procesa, lo vuelve a girar, porque en algún nivel sigue buscando el final que no llegó.
+Hay algo que el cerebro no puede simplemente "dejar ir" cuando no encuentra cierre. **Lo guarda, lo procesa, lo vuelve a girar** — porque en algún nivel sigue buscando el final que no llegó.
 
-*One More Night* no promete cierre real. Pero sí sugiere que puedes darle forma a lo que quedó incompleto — aunque sea en papel, aunque la otra persona nunca lo lea.
+*One More Night* no promete cierre real. Pero sí sugiere que **puedes darle forma a lo que quedó incompleto — aunque sea en papel, aunque la otra persona nunca lo lea.**
 
-Escribir lo que no pudiste decir no es para la otra persona. Es para ti. Para tu propio cerebro, que necesita algo que se parezca a un cierre aunque no sea el real.
+Escribir lo que no pudiste decir no es para la otra persona. **Es para ti.**
 
 ---
 
@@ -53,7 +55,7 @@ Escribir lo que no pudiste decir no es para la otra persona. Es para ti. Para tu
 
 Hay cartas que no se envían. Que desde el principio nunca iban a ser enviadas.
 
-Y esas cartas tienen un poder particular: la honestidad sin consecuencias. Cuando escribes sin audiencia, sin la presión de cómo va a recibirlo alguien, puedes decir lo que realmente piensas. No la versión diplomática, no la que cuida los sentimientos del otro, sino la versión verdadera de lo que quedó adentro.
+Y esas cartas tienen un poder particular: **la honestidad sin consecuencias.** Cuando escribes sin audiencia, sin la presión de cómo va a recibirlo alguien, puedes decir lo que realmente piensas. No la versión diplomática — **la versión verdadera de lo que quedó adentro.**
 
 Esas cartas son para ti. Son el cierre que el mundo real a veces no te da — y que de todas formas necesitas.
 
@@ -65,7 +67,7 @@ Esas cartas son para ti. Son el cierre que el mundo real a veces no te da — y 
 
 2. Si tuvieras una noche más con esa persona (o con una situación, una etapa, una versión de ti misma), ¿qué harías con esa noche? ¿Qué necesitarías que pasara?
 
-3. ¿Hay algo que llevas cargando de esa relación o situación que ya es momento de soltar — no para olvidar, sino para que deje de pesar tanto sin poder ir a ninguna parte?
+3. ¿Hay algo que llevas cargando de esa relación o situación que ya es momento de soltar — no para olvidar, sino para que deje de pesar tanto sin ir a ninguna parte?
 
 ---
 

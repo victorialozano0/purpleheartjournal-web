@@ -11,7 +11,7 @@ Después de dos años de silencio, BTS podría haber vuelto con cualquier cosa.
 
 Un himno de regreso. Un banger de celebración. Algo que gritara que estaban de vuelta y más grandes que nunca. Tenían todo el capital emocional del mundo para hacerlo — ARMY esperándolos, el mundo mirando.
 
-Eligieron *Swim*.
+**Eligieron *Swim*.**
 
 Una canción sobre nadar sin querer ganar. Esa decisión — de lo que eligieron decir primero — lo revela todo.
 
@@ -19,23 +19,25 @@ Una canción sobre nadar sin querer ganar. Esa decisión — de lo que eligieron
 
 ## "I don't swim to win / I swim to feel the water"
 
-Hay mucho en lo que BTS *no* dijo en ese verso.
+Hay mucho en lo que BTS **no** dijo en ese verso.
 
 No dijeron "no me importa ganar." No dijeron "el proceso importa más que el resultado." No usaron la frase motivacional que todos conocemos.
 
 Dijeron: *I swim to feel the water.*
 
-Nadar para sentir el agua. Para estar presente en el acto mismo — no en dónde terminas, no en cuánto tiempo tardas, no en si alguien más llegó antes. En el contacto del agua con tu piel. En el movimiento de tu cuerpo. En el ahora exacto de este golpe, este respiro, este momento.
+**Nadar para sentir el agua.** Para estar presente en el acto mismo — no en dónde terminas, no en cuánto tiempo tardas, no en si alguien más llegó antes. En el contacto del agua con tu piel. En el movimiento de tu cuerpo. En el ahora exacto de este golpe, este respiro, este momento.
 
-Eso es diferente a "el proceso importa." Es mucho más radical: dice que la experiencia en sí misma *es suficiente*. Sin conversión en logro. Sin validación externa. Sin meta que justifique el esfuerzo.
+<div class="kf"><em>NADA</em><br>A TU<br><em>RITMO</em>.</div>
+
+Eso es diferente a "el proceso importa." Es mucho más radical: dice que **la experiencia en sí misma es suficiente**. Sin conversión en logro. Sin validación externa. Sin meta que justifique el esfuerzo.
 
 Para ARMY — que lleva años viendo a BTS como símbolo de logro y perseverancia — esto es una reorientación completa.
 
 ---
 
-## El verso que más corta: "Every stroke is mine / Not yours, not theirs / Mine"
+## "Every stroke is mine / Not yours, not theirs / Mine"
 
-Cuando BTS dice *mine*, no lo dice en el sentido posesivo del éxito. No es "este logro es mío." Es algo más íntimo: *este movimiento es mío. Esta forma de avanzar es mía.*
+Cuando BTS dice *mine*, no lo dice en el sentido posesivo del éxito. No es "este logro es mío." Es algo más íntimo: **este movimiento es mío. Esta forma de avanzar es mía.**
 
 La repetición importa: *not yours, not theirs*. Dos negaciones antes de afirmar. Como si la afirmación solo pudiera existir después de nombrar todo lo que no es — todo el ruido externo, todas las voces que definen cómo se supone que debes moverte, cuán rápido, en qué dirección.
 
@@ -47,23 +49,21 @@ El cansancio de no saber si lo que sientes es tuyo o es el eco de lo que otros e
 
 Hay una forma específica de agotamiento que viene de ser ARMY.
 
-No es solo la presión del mundo exterior. Es la presión interna — compararse con otras ARMY que llevan más años, que fueron a más conciertos, que hablan mejor coreano, que tienen más seguidores, que parecen sentir todo más profundo o más limpio o más legítimo.
+No es solo la presión del mundo exterior. Es la presión interna — **compararse con otras ARMY que llevan más años, que fueron a más conciertos, que hablan mejor coreano, que tienen más seguidores**, que parecen sentir todo más profundo o más limpio o más legítimo.
 
 Es el "comparison suffering": el sufrimiento que no viene de lo que vives, sino de medirlo contra lo que otros parecen vivir.
 
-*Swim* no te pide que ignores eso. No te dice que la comparación es mala y ya. Te da algo más útil: una imagen. Nadar en aguas abiertas donde no hay carriles marcados, no hay línea de llegada visible, no hay manera objetiva de saber si vas "bien." Solo tú, el agua, y la decisión de seguir moviéndote.
+*Swim* no te pide que ignores eso. No te dice que la comparación es mala y ya. Te da algo más útil: una imagen. Nadar en aguas abiertas donde no hay carriles marcados, no hay línea de llegada visible, **no hay manera objetiva de saber si vas "bien."** Solo tú, el agua, y la decisión de seguir moviéndote.
 
 En ese espacio, la comparación literalmente no tiene donde aterrizar.
 
 ---
 
-## ¿Y tú, a qué ritmo nadas?
+## ¿Nadar para sentir, o nadar para ganar?
 
 *Swim* hace una pregunta que no pregunta en voz alta pero que late en cada verso: ¿estás nadando para sentir el agua, o estás nadando para llegar primero?
 
-No hay respuesta correcta. Pero sí hay una diferencia.
-
-Nadar para sentir el agua se parece a hacer algo porque quieres saber cómo se siente. Nadar para llegar primero se parece a hacer algo porque necesitas demostrar que puedes.
+**Nadar para sentir el agua** se parece a hacer algo porque quieres saber cómo se siente. **Nadar para llegar primero** se parece a hacer algo porque necesitas demostrar que puedes.
 
 Ambas cosas conviven en la misma persona. El punto no es elegir una y matar la otra — es notar cuándo una está ahogando a la otra.
 
