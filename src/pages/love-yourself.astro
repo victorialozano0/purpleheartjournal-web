@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Problem from '../components/Problem.astro';
+import Preview from '../components/Preview.astro';
+import Solution from '../components/Solution.astro';
+import Features from '../components/Features.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Faq from '../components/Faq.astro';
+import CtaFinal from '../components/CtaFinal.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <main>
+    <Hero />
+    <Problem />
+    <Preview />
+    <Solution />
+    <Features />
+
+    <!-- Visual divider: Believe in Yourself -->
+    <section class="bg-lavender-mist py-10 md:py-14">
+      <div class="max-w-xs md:max-w-sm mx-auto">
+        <img
+          src="/images/believe-in-yourself.png"
+          alt="Believe in Yourself — BE YOU"
+          class="w-full"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <Testimonials />
+    <Faq />
+    <CtaFinal />
+  </main>
+  <Footer />
+</Layout>
