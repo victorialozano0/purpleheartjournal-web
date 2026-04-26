@@ -207,6 +207,59 @@ img {
   filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
 }
 
+/* Tablet CSS — e-reader mockup for journal covers */
+.book-frame {
+  position: relative;
+  width: 280px;
+  background: #1a0a2e;
+  border-radius: 24px;
+  padding: 16px 14px;
+  border: 2px solid rgba(199, 125, 255, 0.25);
+  box-shadow:
+    0 0 0 6px #0d0618,
+    0 24px 48px rgba(0, 0, 0, 0.5),
+    0 8px 20px rgba(91, 44, 142, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+@media (min-width: 768px) {
+  .book-frame { width: 360px; }
+}
+.book-frame:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 0 0 6px #0d0618,
+    0 32px 60px rgba(0, 0, 0, 0.55),
+    0 12px 28px rgba(91, 44, 142, 0.4);
+}
+/* Top bar — camera dot */
+.book-frame::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #3a1a6e;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+}
+/* Bottom bar — home indicator */
+.book-frame::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 4px;
+  background: rgba(199, 125, 255, 0.3);
+  border-radius: 2px;
+  margin: 12px auto 0;
+}
+.book-cover {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+.book-spine { display: none; }
+.book-glow  { display: none; }
+
 /* ========================================
    Responsive overrides
    ======================================== */
