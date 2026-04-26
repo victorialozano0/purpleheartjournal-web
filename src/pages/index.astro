@@ -239,15 +239,15 @@ const leadMagnet = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
       </div>
       <div class="relative z-10 max-w-xl mx-auto">
         <p class="section-intro mb-4">BTS ya te dio las palabras</p>
-        <h2 class="section-title text-white-glow mb-8">Este journal te da el espacio.</h2>
+        <h2 class="section-title text-white-glow mb-8">Estos journals te dan el espacio.</h2>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href={lyHotmart} target="_blank" rel="noopener noreferrer" class="btn-primary-lg"
+          <a href={lyHotmart} target="_blank" rel="noopener noreferrer" class="btn-cta-equal"
             onclick="gtag && gtag('event', 'click_cta_pagar', { button_location: 'home_cta_final_ly' })">
             Love Yourself — $9.90 💜
           </a>
-          <a href={syHotmart} target="_blank" rel="noopener noreferrer" class="btn-outline-lg"
+          <a href={syHotmart} target="_blank" rel="noopener noreferrer" class="btn-cta-equal btn-cta-secondary"
             onclick="gtag && gtag('event', 'click_cta_pagar', { button_location: 'home_cta_final_sy' })">
-            Speak Yourself — $9.90
+            Speak Yourself — $9.90 💜
           </a>
         </div>
         <p class="font-body text-xs text-soft-lilac/50 mt-6">
@@ -403,21 +403,29 @@ const leadMagnet = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
     margin-bottom: 12px;
   }
 
-  /* ── Outline CTA button ── */
-  .btn-outline-lg {
+  /* ── Equal-weight CTA buttons ── */
+  .btn-cta-equal {
     display: inline-block;
-    border: 2px solid rgba(224,208,240,0.6);
-    color: var(--color-white-glow, #FDFBFF);
-    padding: 16px 32px;
+    background: var(--color-purple-heart, #C77DFF);
+    color: var(--color-text-deep, #1A0A2E);
+    padding: 16px 28px;
     border-radius: 12px;
     font-family: var(--font-body, 'DM Sans', sans-serif);
     font-weight: 700;
-    font-size: 16px;
+    font-size: 15px;
     text-decoration: none;
     transition: all 0.2s;
+    border: 2px solid transparent;
   }
-  .btn-outline-lg:hover {
-    background: rgba(224,208,240,0.1);
+  .btn-cta-equal:hover { filter: brightness(1.08); }
+  .btn-cta-secondary {
+    background: transparent;
+    border-color: rgba(224,208,240,0.5);
+    color: var(--color-white-glow, #FDFBFF);
+  }
+  .btn-cta-secondary:hover {
+    background: rgba(224,208,240,0.08);
     border-color: rgba(224,208,240,0.9);
+    filter: none;
   }
 </style>
