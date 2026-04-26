@@ -427,17 +427,26 @@ const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL_SY || 'https://pay.hotmart
       </div>
     </section>
 
-    <!-- Visual divider: Believe in Yourself -->
-    <section class="bg-lavender-mist py-10 md:py-14">
-      <div class="max-w-xs md:max-w-sm mx-auto">
-        <img
-          src="/images/believe-in-yourself.png"
-          alt="Believe in Yourself — BE YOU"
-          class="w-full"
-          loading="lazy"
-        />
+    <!-- Visual divider: SPEAK YOUR SELF FREE -->
+    <section class="bg-lavender-mist py-10 md:py-14 text-center px-5">
+      <div class="max-w-2xl mx-auto" style="line-height: 0.92; letter-spacing: 0.01em;">
+        <p class="speak-free-text">
+          <span style="color: #C77DFF;">SPEAK</span><span style="color: #1A0A2E;"> YOUR</span><br/>
+          <span style="color: #1A0A2E;">SELF </span><span style="color: #C77DFF;">FREE</span><span style="color: #1A0A2E;">.</span>
+        </p>
       </div>
     </section>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+      .speak-free-text {
+        font-family: 'Anton', sans-serif;
+        font-size: clamp(3.5rem, 14vw, 7rem);
+        text-transform: uppercase;
+        line-height: 0.92;
+        letter-spacing: 0.01em;
+      }
+    </style>
 
     <!-- TESTIMONIOS SY -->
     <section class="bg-lavender-mist section-padding">
