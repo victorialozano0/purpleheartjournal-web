@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Testimonials from '../components/Testimonials.astro';
 import Faq from '../components/Faq.astro';
 import Footer from '../components/Footer.astro';
 
@@ -298,7 +297,49 @@ const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL_SY || 'https://pay.hotmart
       </div>
     </section>
 
-    <Testimonials />
+    <!-- TESTIMONIOS SY -->
+    <section class="bg-lavender-mist section-padding">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="section-intro">lo que pasa cuando empezás a hablar</p>
+          <h2 class="section-title text-text-deep">Esto pasa cuando encontrás tu voz.</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {[
+            {
+              text: "Llegué al capítulo de Arirang pensando que no iba a poder escribir nada. Terminé con tres páginas que nunca le había dicho a nadie. No sabía que tenía tanto guardado.",
+              name: "Daniela",
+              detail: "ARMY — Argentina",
+            },
+            {
+              text: "El ejercicio de 'tu voz sin filtros' con Swim me rompió el esquema. Siempre pensé que lo que yo sentía no valía tanto como lo que sentían otras. Este journal me demostró que sí vale.",
+              name: "Sofía",
+              detail: "ARMY desde 2020",
+            },
+            {
+              text: "La carta a mi yo futura del cierre me hizo llorar. Escribí cosas que ni sabía que pensaba. Sentí que Jin me acompañó en cada página — eso no lo esperaba de un journal.",
+              name: "Mariana",
+              detail: "ARMY — Chile",
+            },
+          ].map((t) => (
+            <div class="card-testimonial">
+              <div>
+                <svg class="w-7 h-7 text-purple-heart/25 mb-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zm-14.017 0v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H0z"/>
+                </svg>
+                <p class="font-body text-text-deep text-sm md:text-base leading-relaxed">{t.text}</p>
+              </div>
+              <div class="border-t border-soft-lilac/60 pt-3 mt-5">
+                <p class="font-body font-bold text-text-deep text-sm">{t.name}</p>
+                <p class="font-body text-text-muted text-xs">{t.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <Faq />
 
     <!-- CTA FINAL -->
