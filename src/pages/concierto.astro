@@ -1,0 +1,541 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+const leadMagnetEndpoint = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
+const syUrl = '/speak-yourself';
+---
+
+<Layout
+  title="Diario ARMY para el Tour ARIRANG 2026 · Antes y Después del Concierto"
+  description="Dos mini journals gratuitos para ARMY que va al Tour ARIRANG 2026 de BTS. Uno para prepararte antes de entrar al estadio, otro para procesar lo que sentiste cuando vuelvas a casa. PDF descarga directa."
+>
+  <main>
+
+    <!-- ─── SCHEMA MARKUP SEO ──────────────────────────────────────────── -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Diarios ARIRANG Tour — Antes de entrar + Después de todo",
+      "description": "Dos mini journals gratuitos de journaling para ARMY que asiste al BTS World Tour ARIRANG 2026. Uno pre-concierto y uno post-concierto.",
+      "brand": { "@type": "Brand", "name": "Purple Heart Journal" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+      "audience": { "@type": "Audience", "audienceType": "ARMY (fans de BTS)" },
+      "inLanguage": "es"
+    })} />
+
+    <!-- ─── HERO ────────────────────────────────────────────────────────── -->
+    <section class="arirang-hero section-padding text-center overflow-hidden relative">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-arirang/10 blur-[100px]"></div>
+      </div>
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <!-- Three circles motif -->
+        <div class="flex justify-center gap-3 mb-5" aria-hidden="true">
+          <div class="arirang-circle"></div>
+          <div class="arirang-circle"></div>
+          <div class="arirang-circle"></div>
+        </div>
+        <p class="font-accent text-sm tracking-[0.25em] uppercase text-arirang mb-3">BTS World Tour ARIRANG 2026</p>
+        <h1 class="font-heading italic text-4xl md:text-5xl lg:text-6xl text-hanji-text leading-[1.1] mb-5">
+          Escribe el concierto.<br/>
+          <span class="text-arirang">Antes y después.</span>
+        </h1>
+        <p class="font-body text-base md:text-lg text-hanji-soft max-w-2xl mx-auto leading-relaxed mb-4">
+          Dos mini journals gratuitos para que el concierto no se quede solo en un recuerdo que se desvanece.
+          Uno para los días antes de entrar. Otro para cuando vuelvas a casa.
+        </p>
+        <p class="font-body text-sm text-hanji-soft/80 mb-8">
+          PDF · Descarga directa · Sin contraseña
+        </p>
+        <a href="#diarios" class="btn-arirang-primary">
+          Quiero los dos diarios gratis →
+        </a>
+      </div>
+    </section>
+
+    <!-- ─── POR QUÉ ESTOS DIARIOS ──────────────────────────────────────── -->
+    <section class="bg-hanji section-padding">
+      <div class="max-w-3xl mx-auto">
+        <p class="font-accent text-xs tracking-[0.2em] uppercase text-arirang text-center mb-4">Por qué existen</p>
+        <h2 class="font-heading italic text-3xl md:text-4xl text-hanji-text text-center leading-tight mb-10">
+          El concierto dura tres horas.<br/>Lo que sientes, semanas.
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="arirang-reason-card">
+            <div class="arirang-reason-number">01</div>
+            <h3 class="font-body font-semibold text-hanji-text mb-2">La espera fue real</h3>
+            <p class="font-body text-sm text-hanji-soft leading-relaxed">
+              Cuatro años. Servicio militar. Entradas agotadas en minutos. Sacrificio económico.
+              Todo eso merece un espacio donde nombrarse.
+            </p>
+          </div>
+          <div class="arirang-reason-card">
+            <div class="arirang-reason-number">02</div>
+            <h3 class="font-body font-semibold text-hanji-text mb-2">El concert high no dura</h3>
+            <p class="font-body text-sm text-hanji-soft leading-relaxed">
+              Lo que sientes justo después — esa mezcla de euforia, surrealismo y vacío —
+              desaparece si no lo escribes mientras todavía tiemblas.
+            </p>
+          </div>
+          <div class="arirang-reason-card">
+            <div class="arirang-reason-number">03</div>
+            <h3 class="font-body font-semibold text-hanji-text mb-2">BTS pregunta. Tú respondes.</h3>
+            <p class="font-body text-sm text-hanji-soft leading-relaxed">
+              ARIRANG tiene 3.600 versiones porque cada persona la hizo suya.
+              Estos diarios son para que escribas la tuya.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── LOS DOS DIARIOS + FORMULARIO ──────────────────────────────── -->
+    <section id="diarios" class="bg-white-glow section-padding">
+      <div class="max-w-4xl mx-auto">
+        <p class="font-accent text-xs tracking-[0.2em] uppercase text-arirang text-center mb-4">Gratis · Descarga inmediata</p>
+        <h2 class="font-heading italic text-3xl md:text-4xl text-hanji-text text-center leading-tight mb-3">
+          Dos diarios. Un solo email.
+        </h2>
+        <p class="font-body text-sm text-hanji-soft text-center mb-10">
+          Te los enviamos juntos. Los usas en el momento que necesites cada uno.
+        </p>
+
+        <!-- Two journal cards -->
+        <div class="grid md:grid-cols-2 gap-6 mb-10">
+
+          <!-- Card 1: Pre-concert -->
+          <div class="arirang-journal-card border-arirang">
+            <div class="arirang-journal-badge bg-arirang text-white">Diario 1</div>
+            <h3 class="font-heading italic text-2xl text-hanji-text mb-2 mt-4">Antes de entrar</h3>
+            <p class="font-accent text-xs tracking-widest uppercase text-arirang mb-4">Para los días antes del show</p>
+            <ul class="arirang-feature-list mb-4">
+              <li>¿Quién eres hoy vs. quien eras cuando te hiciste ARMY?</li>
+              <li>Los rituales de preparación y lo que no puedes controlar</li>
+              <li>Las palabras que quieres llevar contigo al estadio</li>
+              <li>Una carta para ti misma — la abres cuando vuelvas</li>
+            </ul>
+            <p class="font-body text-xs text-hanji-soft">20 páginas · Anclado en Swim, Please y Normal</p>
+          </div>
+
+          <!-- Card 2: Post-concert -->
+          <div class="arirang-journal-card border-arirang-dark">
+            <div class="arirang-journal-badge bg-arirang-dark text-white">Diario 2</div>
+            <h3 class="font-heading italic text-2xl text-hanji-text mb-2 mt-4">Después de todo</h3>
+            <p class="font-accent text-xs tracking-widest uppercase text-arirang-dark mb-4">Para cuando llegues a casa</p>
+            <ul class="arirang-feature-list mb-4">
+              <li>Todavía tiemblo — las primeras 24 horas sin filtros</li>
+              <li>El momento que no olvidarás, descrito con todos los sentidos</li>
+              <li>La Post-Concert Depression y el vacío de volver</li>
+              <li>¿Quién eres tú después de haberlos visto?</li>
+            </ul>
+            <p class="font-body text-xs text-hanji-soft">20 páginas · Anclado en Body to Body, Hooligan, Into the Sun</p>
+          </div>
+        </div>
+
+        <!-- Email form -->
+        <div class="arirang-form-wrapper">
+          <p class="font-heading italic text-xl text-hanji-text text-center mb-2">
+            Déjanos tu email y te los enviamos ahora.
+          </p>
+          <p class="font-body text-sm text-hanji-soft text-center mb-6">
+            También te avisamos cuando haya contenido nuevo sobre la era ARIRANG.
+          </p>
+
+          <form id="arirang-form" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" data-endpoint={leadMagnetEndpoint} novalidate>
+            <input
+              type="email"
+              name="email"
+              placeholder="tu@email.com"
+              required
+              autocomplete="email"
+              class="arirang-email-input flex-1"
+              aria-label="Tu dirección de email"
+            />
+            <button type="submit" class="btn-arirang-primary whitespace-nowrap" id="arirang-submit">
+              Enviarme los PDFs →
+            </button>
+          </form>
+
+          <p id="arirang-error" class="text-red-600 text-sm text-center mt-3 hidden" role="alert"></p>
+          <p class="font-body text-xs text-hanji-soft/70 text-center mt-4">
+            Sin spam. Puedes darte de baja cuando quieras.
+          </p>
+        </div>
+
+        <!-- Success message (hidden) -->
+        <div id="arirang-success" class="arirang-success hidden text-center">
+          <div class="flex justify-center gap-3 mb-4" aria-hidden="true">
+            <div class="arirang-circle-sm"></div>
+            <div class="arirang-circle-sm"></div>
+            <div class="arirang-circle-sm"></div>
+          </div>
+          <h3 class="font-heading italic text-2xl text-hanji-text mb-2">¡Revisa tu email!</h3>
+          <p class="font-body text-hanji-soft leading-relaxed">
+            Te enviamos los dos diarios ahora mismo.<br/>
+            En 3 días te escribimos de nuevo para ver cómo va el proceso.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PARA QUIEN NO VA AL CONCIERTO ─────────────────────────────── -->
+    <section class="bg-hanji section-padding">
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="font-accent text-xs tracking-[0.2em] uppercase text-arirang mb-4">También para ti</p>
+        <h2 class="font-heading italic text-2xl md:text-3xl text-hanji-text leading-tight mb-5">
+          ¿No vas al concierto<br/>pero sí vives la era?
+        </h2>
+        <p class="font-body text-base text-hanji-soft leading-relaxed mb-6">
+          Estos diarios no son solo para quienes están en el estadio.
+          Si estás siguiendo el tour desde casa, desde un stream, desde el lado de las que
+          no pudieron conseguir entrada — tu experiencia también merece nombrarse.
+        </p>
+        <blockquote class="arirang-quote">
+          <p class="font-heading italic text-lg text-hanji-text leading-relaxed mb-2">
+            "¿Cómo cuido mi conexión sin estar presente?"
+          </p>
+          <cite class="font-body text-sm text-arirang not-italic">— Prompt del Diario 1</cite>
+        </blockquote>
+        <p class="font-body text-sm text-hanji-soft mt-6">
+          El diario "Antes de entrar" incluye un ejercicio específico para ARMY
+          que viven el concierto desde la distancia.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── TESTIMONIO / PULLQUOTE ─────────────────────────────────────── -->
+    <section class="bg-white-glow section-padding">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="flex justify-center gap-3 mb-6" aria-hidden="true">
+          <div class="arirang-circle-sm"></div>
+          <div class="arirang-circle-sm"></div>
+          <div class="arirang-circle-sm"></div>
+        </div>
+        <blockquote class="font-heading italic text-2xl md:text-3xl text-hanji-text leading-tight mb-4">
+          "Es como llegar a casa después de un vuelo larguísimo."
+        </blockquote>
+        <p class="font-body text-sm text-hanji-soft mb-2">
+          Así describen las ARMY asistir a un concierto de BTS.
+        </p>
+        <p class="font-body text-sm text-hanji-soft">
+          Estos diarios son para que el viaje de vuelta a casa tenga su propio mapa.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ────────────────────────────────────────────────────────── -->
+    <section class="bg-hanji section-padding">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="font-heading italic text-3xl text-hanji-text text-center mb-10">Preguntas frecuentes</h2>
+        <div class="space-y-6">
+          {[
+            {
+              q: '¿Es completamente gratis?',
+              a: 'Sí. Los dos PDFs son gratuitos. Solo necesitas dejar tu email y te los enviamos de inmediato.'
+            },
+            {
+              q: '¿Cuándo debo usar cada diario?',
+              a: '"Antes de entrar" es para los días previos al concierto — puedes empezarlo hasta dos semanas antes. "Después de todo" es para cuando llegues a casa del show, preferiblemente en las primeras 24–48 horas.'
+            },
+            {
+              q: '¿Puedo usarlos si no voy al concierto en persona?',
+              a: 'Completamente. Ambos diarios tienen ejercicios adaptados para ARMY que viven el tour desde casa, desde un stream, o desde la distancia. Tu experiencia también cuenta.'
+            },
+            {
+              q: '¿En qué formato están los PDFs?',
+              a: 'PDF A5, optimizado para imprimir o llenar digitalmente en GoodNotes, Notability o cualquier app de notas. Sin contraseña, descarga directa.'
+            },
+            {
+              q: '¿Qué pasa después de descargarlos?',
+              a: 'En 3 días te enviamos un recordatorio para el Diario 2 (post-concierto). En 7 días te contamos sobre el Speak Yourself Journal — el journal completo de la era ARIRANG, con 184 páginas.'
+            },
+          ].map(({ q, a }) => (
+            <div class="arirang-faq-item">
+              <h3 class="font-body font-semibold text-hanji-text mb-2">{q}</h3>
+              <p class="font-body text-sm text-hanji-soft leading-relaxed">{a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CTA FINAL ───────────────────────────────────────────────────── -->
+    <section class="arirang-cta-final section-padding text-center">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex justify-center gap-3 mb-6" aria-hidden="true">
+          <div class="arirang-circle-lg"></div>
+          <div class="arirang-circle-lg"></div>
+          <div class="arirang-circle-lg"></div>
+        </div>
+        <h2 class="font-heading italic text-3xl md:text-4xl text-hanji-cream leading-tight mb-4">
+          El concierto es una noche.<br/>
+          Lo que escribes dura para siempre.
+        </h2>
+        <p class="font-body text-hanji-cream/80 mb-8 leading-relaxed">
+          Dos mini journals. Descarga gratis. Para ARMY que escribe entre canciones.
+        </p>
+        <a href="#diarios" class="btn-arirang-white">
+          Quiero los diarios →
+        </a>
+      </div>
+    </section>
+
+    <!-- ─── LINK AL JOURNAL COMPLETO ───────────────────────────────────── -->
+    <section class="bg-hanji section-padding text-center">
+      <div class="max-w-xl mx-auto">
+        <p class="font-body text-sm text-hanji-soft mb-2">¿Quieres más de la era ARIRANG?</p>
+        <a href={syUrl} class="font-heading italic text-xl text-arirang hover:text-arirang-dark transition-colors underline underline-offset-4">
+          Speak Yourself Journal — 184 páginas →
+        </a>
+        <p class="font-body text-xs text-hanji-soft/70 mt-2">7 capítulos · 80+ ejercicios · 14 canciones ARIRANG</p>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Layout>
+
+<!-- ─── ESTILOS ARIRANG ─────────────────────────────────────────────────── -->
+<style>
+  /* Paleta ARIRANG */
+  :root {
+    --arirang:       #FF1340;
+    --arirang-dark:  #CC0F32;
+    --hanji:         #FDF6EE;
+    --hanji-text:    #140608;
+    --hanji-soft:    #5C3840;
+    --hanji-cream:   #FDF6EE;
+  }
+
+  .text-arirang        { color: var(--arirang); }
+  .text-arirang-dark   { color: var(--arirang-dark); }
+  .text-hanji-text     { color: var(--hanji-text); }
+  .text-hanji-soft     { color: var(--hanji-soft); }
+  .text-hanji-cream    { color: var(--hanji-cream); }
+  .bg-hanji            { background-color: var(--hanji); }
+  .bg-arirang          { background-color: var(--arirang); }
+  .bg-arirang-dark     { background-color: var(--arirang-dark); }
+  .border-arirang      { border-color: var(--arirang); }
+  .border-arirang-dark { border-color: var(--arirang-dark); }
+
+  /* Hero */
+  .arirang-hero {
+    background: linear-gradient(135deg, #FDF6EE 0%, #FDFAF5 60%, #FFF5F7 100%);
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Three circles */
+  .arirang-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 3px solid var(--arirang);
+  }
+  .arirang-circle-sm {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--arirang);
+  }
+  .arirang-circle-lg {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2.5px solid #FDF6EE;
+  }
+
+  /* Buttons */
+  .btn-arirang-primary {
+    display: inline-block;
+    background: var(--arirang);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-family: var(--font-body, 'DM Sans', Arial, sans-serif);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+  .btn-arirang-primary:hover { background: var(--arirang-dark); }
+
+  .btn-arirang-white {
+    display: inline-block;
+    background: white;
+    color: var(--arirang);
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-family: var(--font-body, 'DM Sans', Arial, sans-serif);
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .btn-arirang-white:hover { opacity: 0.9; }
+
+  /* Reason cards */
+  .arirang-reason-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    border-top: 4px solid var(--arirang);
+  }
+  .arirang-reason-number {
+    font-family: var(--font-heading, 'Cormorant Garamond', serif);
+    font-size: 36px;
+    font-style: italic;
+    color: var(--arirang);
+    opacity: 0.25;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  /* Journal cards */
+  .arirang-journal-card {
+    background: white;
+    border-radius: 12px;
+    border: 2px solid;
+    padding: 28px;
+    position: relative;
+  }
+  .arirang-journal-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .arirang-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    space-y: 8px;
+  }
+  .arirang-feature-list li {
+    font-family: var(--font-body, 'DM Sans', Arial, sans-serif);
+    font-size: 13px;
+    color: var(--hanji-soft);
+    padding: 6px 0 6px 18px;
+    border-bottom: 1px solid #F5EAD8;
+    position: relative;
+    line-height: 1.5;
+  }
+  .arirang-feature-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--arirang);
+    font-size: 11px;
+  }
+
+  /* Form wrapper */
+  .arirang-form-wrapper {
+    background: var(--hanji);
+    border-radius: 16px;
+    padding: 36px;
+    border: 1px solid #F5EAD8;
+  }
+  .arirang-email-input {
+    padding: 14px 18px;
+    border: 2px solid #E5D5C5;
+    border-radius: 10px;
+    font-size: 15px;
+    background: white;
+    color: var(--hanji-text);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .arirang-email-input:focus {
+    border-color: var(--arirang);
+  }
+
+  /* Success */
+  .arirang-success {
+    background: white;
+    border: 2px solid var(--arirang);
+    border-radius: 16px;
+    padding: 40px;
+    margin-top: 16px;
+  }
+
+  /* Quote */
+  .arirang-quote {
+    background: white;
+    border-left: 4px solid var(--arirang);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    text-align: left;
+    margin: 0;
+  }
+
+  /* FAQ */
+  .arirang-faq-item {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 24px;
+    border-left: 3px solid var(--arirang);
+  }
+
+  /* CTA final */
+  .arirang-cta-final {
+    background: linear-gradient(135deg, var(--arirang-dark) 0%, #8A0820 100%);
+  }
+</style>
+
+<!-- ─── FORM SCRIPT ─────────────────────────────────────────────────────── -->
+<script>
+  const form    = document.getElementById('arirang-form') as HTMLFormElement | null;
+  const btn     = document.getElementById('arirang-submit') as HTMLButtonElement | null;
+  const errorEl = document.getElementById('arirang-error') as HTMLElement | null;
+  const success = document.getElementById('arirang-success') as HTMLElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form || !btn) return;
+
+    const email    = (form.querySelector('input[name="email"]') as HTMLInputElement)?.value?.trim();
+    const endpoint = (form as HTMLFormElement & { dataset: { endpoint: string } }).dataset.endpoint;
+
+    if (!email || !endpoint) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    if (errorEl) errorEl.classList.add('hidden');
+
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, journal: 'arirang' }),
+      });
+
+      if (!res.ok) throw new Error('Error del servidor');
+
+      // Show success, hide form
+      form.classList.add('hidden');
+      success?.classList.remove('hidden');
+
+      // GA4 event
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'lead_magnet_submit', {
+          event_category: 'lead_magnet',
+          event_label: 'arirang_tour',
+        });
+      }
+    } catch (err) {
+      if (errorEl) {
+        errorEl.textContent = 'Algo salió mal. Inténtalo de nuevo.';
+        errorEl.classList.remove('hidden');
+      }
+      btn.disabled = false;
+      btn.textContent = 'Enviarme los PDFs →';
+    }
+  });
+</script>
