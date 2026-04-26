@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# No indexar descargas de lead magnets
+Disallow: /downloads/
+
+Sitemap: https://loveyourselfjournal.me/sitemap-index.xml
