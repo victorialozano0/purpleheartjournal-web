@@ -67,6 +67,157 @@ const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL_SY || 'https://pay.hotmart
       </div>
     </section>
 
+    <!-- PREVIEW CAROUSEL -->
+    <section id="preview" class="relative gradient-hero section-padding overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-purple-heart/15 blur-[80px] pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="section-intro">mira por dentro</p>
+          <h2 class="section-title text-white-glow max-w-2xl mx-auto">
+            Preguntas que abren conversaciones contigo misma.
+          </h2>
+          <p class="section-desc text-soft-lilac max-w-xl mx-auto">
+            Desliza para hojear las páginas del journal. <strong class="text-white-glow">Toca una página para verla en grande</strong>.
+          </p>
+        </div>
+
+        <div class="swiper sy-swiper select-none" id="sy-preview">
+          <div class="swiper-wrapper">
+            {[
+              { src: '/sy-journal/page-01.webp', alt: 'Portada — Speak Yourself Journal para ARMY' },
+              { src: '/sy-journal/page-02.webp', alt: '¿Cuánto tiempo llevas guardando cosas que solo dices en tu cabeza?' },
+              { src: '/sy-journal/page-03.webp', alt: 'Arirang — la canción que existe en 3.600 versiones' },
+              { src: '/sy-journal/page-04.webp', alt: 'Las Versiones que Muestras — ejercicio de identidad' },
+              { src: '/sy-journal/page-05.webp', alt: 'El Reencuentro — honrar la espera y el regreso de BTS' },
+              { src: '/sy-journal/page-06.webp', alt: 'Capítulo 02 Swim — Tu Voz Real' },
+              { src: '/sy-journal/page-07.webp', alt: 'Esto No Es Mío — identificar qué voces son realmente tuyas' },
+              { src: '/sy-journal/page-08.webp', alt: 'Merry Go Round — Jin · ejercicio guiado por letra de BTS' },
+              { src: '/sy-journal/page-09.webp', alt: 'Lo Que Vivo en el Medio — Arirang · identidad entre mundos' },
+              { src: '/sy-journal/page-10.webp', alt: 'One More Night — Jin · todos los años que callaste' },
+              { src: '/sy-journal/page-11.webp', alt: 'El Inventario del Silencio — mapa honesto de lo no dicho' },
+            ].map((page, i) => (
+              <div class="swiper-slide flex justify-center">
+                <img
+                  src={page.src}
+                  alt={page.alt}
+                  class="sy-page-img"
+                  loading="lazy"
+                  draggable="false"
+                  oncontextmenu="return false"
+                  data-index={i}
+                />
+              </div>
+            ))}
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <p class="text-center font-body text-sm text-soft-lilac/60 mt-4">
+          11 páginas de preview &middot; Desliza para explorar
+        </p>
+      </div>
+
+      <!-- Modal lightbox -->
+      <div id="sy-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out">
+        <button id="sy-modal-close" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white-glow/20 flex items-center justify-center text-white-glow hover:bg-white-glow/40 transition-colors cursor-pointer z-10" aria-label="Cerrar">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <img id="sy-modal-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl select-none" draggable="false" oncontextmenu="return false" />
+      </div>
+    </section>
+
+    <script>
+      import Swiper from 'swiper';
+      import { Navigation, Pagination } from 'swiper/modules';
+      import 'swiper/css';
+      import 'swiper/css/navigation';
+      import 'swiper/css/pagination';
+
+      function initSYSwiper() {
+        new Swiper('#sy-preview', {
+          modules: [Navigation, Pagination],
+          slidesPerView: 1,
+          spaceBetween: 20,
+          centeredSlides: true,
+          grabCursor: true,
+          loop: false,
+          navigation: { nextEl: '.sy-swiper .swiper-button-next', prevEl: '.sy-swiper .swiper-button-prev' },
+          pagination: { el: '.sy-swiper .swiper-pagination', clickable: true },
+          breakpoints: {
+            768: { slidesPerView: 1.4, spaceBetween: 30 },
+            1024: { slidesPerView: 1.6, spaceBetween: 40 },
+          },
+        });
+
+        const modal = document.getElementById('sy-modal');
+        const modalImg = document.getElementById('sy-modal-img') as HTMLImageElement | null;
+        const modalClose = document.getElementById('sy-modal-close');
+
+        document.querySelectorAll('.sy-page-img').forEach((img) => {
+          (img as HTMLElement).style.cursor = 'zoom-in';
+          img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (modal && modalImg) {
+              modalImg.src = (img as HTMLImageElement).src;
+              modalImg.alt = (img as HTMLImageElement).alt;
+              modal.classList.remove('hidden');
+              modal.classList.add('flex');
+              document.body.style.overflow = 'hidden';
+            }
+          });
+        });
+
+        const closeModal = () => {
+          modal?.classList.add('hidden');
+          modal?.classList.remove('flex');
+          document.body.style.overflow = '';
+        };
+        modalClose?.addEventListener('click', closeModal);
+        modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSYSwiper);
+      } else {
+        initSYSwiper();
+      }
+    </script>
+
+    <style>
+      .sy-page-img {
+        width: auto;
+        max-width: 100%;
+        max-height: 75vh;
+        border-radius: 0.75rem;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba(199, 125, 255, 0.15);
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+      .sy-swiper .swiper-button-prev,
+      .sy-swiper .swiper-button-next {
+        color: rgba(253, 251, 255, 0.8);
+        background: rgba(91, 44, 142, 0.5);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        backdrop-filter: blur(8px);
+      }
+      .sy-swiper .swiper-button-prev:after,
+      .sy-swiper .swiper-button-next:after { font-size: 18px; font-weight: bold; }
+      .sy-swiper .swiper-button-prev:hover,
+      .sy-swiper .swiper-button-next:hover { background: rgba(91, 44, 142, 0.8); }
+      .sy-swiper .swiper-pagination-bullet { background: rgba(224, 208, 240, 0.5); opacity: 1; }
+      .sy-swiper .swiper-pagination-bullet-active { background: #C77DFF; }
+      .sy-swiper .swiper-slide:not(.swiper-slide-active) { opacity: 0.5; transition: opacity 0.3s ease; }
+      .sy-swiper .swiper-slide-active { opacity: 1; }
+    </style>
+
     <!-- PROBLEMA -->
     <section class="bg-white-glow section-padding">
       <div class="max-w-2xl mx-auto text-center">
