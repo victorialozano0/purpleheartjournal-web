@@ -1,39 +1,423 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Problem from '../components/Problem.astro';
-import Preview from '../components/Preview.astro';
-import Solution from '../components/Solution.astro';
-import Features from '../components/Features.astro';
-import Testimonials from '../components/Testimonials.astro';
 import Faq from '../components/Faq.astro';
-import CtaFinal from '../components/CtaFinal.astro';
 import Footer from '../components/Footer.astro';
+
+const lyHotmart  = import.meta.env.PUBLIC_HOTMART_URL    || 'https://pay.hotmart.com/P104306248S';
+const syHotmart  = import.meta.env.PUBLIC_HOTMART_URL_SY || 'https://pay.hotmart.com/P104306248S';
+const leadMagnet = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
 ---
 
-<Layout>
+<Layout
+  title="Purple Heart Journal — Para ARMY que escribe entre canciones"
+  description="Colección de journals para ARMY hispanohablante. Love Yourself Journal, Speak Yourself Journal y diarios gratuitos del Tour ARIRANG 2026. Hecho por ARMY, para ARMY."
+>
   <main>
-    <Hero />
-    <Problem />
-    <Preview />
-    <Solution />
-    <Features />
 
-    <!-- Visual divider: Believe in Yourself -->
-    <section class="bg-lavender-mist py-10 md:py-14">
-      <div class="max-w-xs md:max-w-sm mx-auto">
-        <img
-          src="/images/believe-in-yourself.png"
-          alt="Believe in Yourself — BE YOU"
-          class="w-full"
-          loading="lazy"
-        />
+    <!-- ─── HERO ──────────────────────────────────────────────────────────── -->
+    <section class="relative min-h-[88vh] flex items-center gradient-hero overflow-hidden px-5 py-16 md:py-0">
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-purple-heart/15 blur-[120px]"></div>
+      </div>
+      <div class="relative z-10 max-w-3xl mx-auto text-center">
+        <p class="font-accent text-sm tracking-[0.25em] uppercase text-soft-lilac/70 mb-4">
+          Purple Heart Journal
+        </p>
+        <h1 class="font-heading italic text-4xl md:text-6xl lg:text-7xl text-white-glow leading-[1.1] mb-6">
+          Para ARMY<br/>que escribe<br/>entre canciones.
+        </h1>
+        <p class="font-body text-base md:text-xl text-soft-lilac/80 max-w-xl mx-auto leading-relaxed mb-10">
+          Journals guiados por la música de BTS para escribir lo que siempre quisiste decir.
+        </p>
+        <a href="#coleccion" class="btn-primary-lg">
+          Ver la colección 💜
+        </a>
+      </div>
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg class="w-5 h-5 text-soft-lilac/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
       </div>
     </section>
 
-    <Testimonials />
+    <!-- ─── LA COLECCIÓN ──────────────────────────────────────────────────── -->
+    <section id="coleccion" class="bg-lavender-mist section-padding">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="section-intro">la colección</p>
+          <h2 class="section-title text-text-deep">Dos journals. Un arco completo.</h2>
+          <p class="section-desc max-w-xl mx-auto">
+            Cada journal trabaja una era de BTS. Puedes empezar por cualquiera — o recorrer el arco completo.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <!-- Card LY -->
+          <div class="journal-card">
+            <div class="journal-card-header">
+              <img src="/images/journal-cover.png" alt="Love Yourself Journal" class="journal-thumb" loading="lazy" />
+            </div>
+            <div class="journal-card-body">
+              <p class="font-accent text-xs tracking-widest uppercase text-purple-heart mb-2">Era Love Yourself</p>
+              <h3 class="font-heading italic text-2xl md:text-3xl text-text-deep mb-2 leading-tight">Love Yourself Journal</h3>
+              <p class="font-body text-sm text-text-muted leading-relaxed mb-4">
+                35 canciones · 85+ ejercicios · 165 páginas. Para encontrarte a ti misma en la música de BTS.
+              </p>
+              <div class="flex items-baseline gap-2 mb-5">
+                <span class="font-body text-sm text-text-muted line-through">$24.90</span>
+                <span class="font-heading text-3xl text-purple-vibrant font-bold">$9.90</span>
+                <span class="font-body text-sm text-text-muted">USD</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <a
+                  href={lyHotmart}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-primary text-center"
+                  onclick="gtag && gtag('event', 'click_cta_pagar', { button_location: 'home_ly' })"
+                >
+                  Comprar Love Yourself 💜
+                </a>
+                <a href="/love-yourself" class="font-body text-sm text-purple-vibrant underline underline-offset-4 text-center">
+                  Ver landing completa →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card SY -->
+          <div class="journal-card journal-card-dark">
+            <div class="journal-card-header journal-card-header-dark">
+              <img src="/images/journal-sy.png" alt="Speak Yourself Journal" class="journal-thumb" loading="lazy" />
+            </div>
+            <div class="journal-card-body">
+              <p class="font-accent text-xs tracking-widest uppercase text-purple-heart mb-2">Era ARIRANG</p>
+              <h3 class="font-heading italic text-2xl md:text-3xl text-text-deep mb-2 leading-tight">Speak Yourself Journal</h3>
+              <p class="font-body text-sm text-text-muted leading-relaxed mb-4">
+                15+ canciones del regreso · 80+ ejercicios · 184 páginas. Para encontrar tu voz y escribir desde ella.
+              </p>
+              <div class="flex items-baseline gap-2 mb-5">
+                <span class="font-body text-sm text-text-muted line-through">$24.90</span>
+                <span class="font-heading text-3xl text-purple-vibrant font-bold">$9.90</span>
+                <span class="font-body text-sm text-text-muted">USD</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <a
+                  href={syHotmart}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-primary text-center"
+                  onclick="gtag && gtag('event', 'click_cta_pagar', { button_location: 'home_sy' })"
+                >
+                  Comprar Speak Yourself 💜
+                </a>
+                <a href="/speak-yourself" class="font-body text-sm text-purple-vibrant underline underline-offset-4 text-center">
+                  Ver landing completa →
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hotmart trust -->
+        <p class="font-body text-xs text-text-muted text-center mt-6">
+          Compra segura con Hotmart · Descarga inmediata · Garantía de 15 días
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── TOUR ARIRANG (FREE) ────────────────────────────────────────────── -->
+    <section id="arirang" class="arirang-band section-padding">
+      <div class="max-w-4xl mx-auto">
+
+        <div class="text-center mb-10">
+          <div class="flex justify-center gap-3 mb-4" aria-hidden="true">
+            <div class="arirang-dot"></div>
+            <div class="arirang-dot"></div>
+            <div class="arirang-dot"></div>
+          </div>
+          <p class="font-accent text-xs tracking-[0.25em] uppercase text-arirang mb-3">BTS World Tour ARIRANG 2026</p>
+          <h2 class="font-heading italic text-3xl md:text-4xl text-hanji-text leading-tight mb-3">
+            ¿Vas al concierto?<br/>Tienes dos diarios esperándote.
+          </h2>
+          <p class="font-body text-sm text-hanji-soft max-w-lg mx-auto leading-relaxed">
+            Gratis. Uno para antes de entrar al estadio, otro para cuando vuelvas a casa.
+          </p>
+        </div>
+
+        <!-- Two mini cards -->
+        <div class="grid sm:grid-cols-2 gap-4 mb-8">
+          <div class="arirang-mini-card">
+            <p class="font-accent text-xs tracking-widest uppercase text-arirang mb-1">Diario 1</p>
+            <h4 class="font-heading italic text-xl text-hanji-text mb-1">Antes de entrar</h4>
+            <p class="font-body text-xs text-hanji-soft leading-relaxed">El precio de llegar hasta aquí · Quién eras vs. quién eres · La carta que abres cuando vuelvas</p>
+          </div>
+          <div class="arirang-mini-card">
+            <p class="font-accent text-xs tracking-widest uppercase text-arirang mb-1">Diario 2</p>
+            <h4 class="font-heading italic text-xl text-hanji-text mb-1">Después de todo</h4>
+            <p class="font-body text-xs text-hanji-soft leading-relaxed">Todavía tiemblo · El momento que fue solo tuyo · ¿Quién eres después de haberlos visto?</p>
+          </div>
+        </div>
+
+        <!-- Email form -->
+        <div class="arirang-form-box">
+          <p class="font-heading italic text-lg text-hanji-text text-center mb-1">
+            Déjanos tu email y los enviamos ahora.
+          </p>
+          <p class="font-body text-xs text-hanji-soft text-center mb-5">PDF · Descarga directa · Sin contraseña</p>
+
+          <form id="home-arirang-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" data-endpoint={leadMagnet} novalidate>
+            <input
+              type="email"
+              name="email"
+              placeholder="tu@email.com"
+              required
+              autocomplete="email"
+              class="arirang-input flex-1"
+              aria-label="Tu dirección de email"
+            />
+            <button type="submit" id="home-arirang-btn" class="btn-arirang whitespace-nowrap">
+              Enviarme los PDFs →
+            </button>
+          </form>
+          <p id="home-arirang-error" class="text-red-600 text-xs text-center mt-2 hidden" role="alert"></p>
+
+          <div id="home-arirang-success" class="hidden text-center mt-4">
+            <p class="font-body text-sm text-hanji-text font-semibold">¡Revisa tu email! Te los enviamos ahora mismo. 💜</p>
+          </div>
+
+          <p class="font-body text-xs text-hanji-soft/60 text-center mt-4">
+            Sin spam · Puedes darte de baja cuando quieras ·
+            <a href="/concierto" class="underline underline-offset-2">Más sobre estos diarios →</a>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── POR QUÉ BTS + JOURNALING ─────────────────────────────────────── -->
+    <section class="bg-white-glow section-padding">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="section-intro">por qué funciona</p>
+          <h2 class="section-title text-text-deep">BTS no es el tema. Es la puerta.</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div class="why-card">
+            <div class="why-icon">🎵</div>
+            <h3 class="font-body font-bold text-text-deep mb-2">La letra ya abrió algo</h3>
+            <p class="font-body text-sm text-text-muted leading-relaxed">
+              Escuchaste una canción y sentiste que hablaba de ti. Este journal te da el espacio para responder.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">✍️</div>
+            <h3 class="font-body font-bold text-text-deep mb-2">Escribir lo hace real</h3>
+            <p class="font-body text-sm text-text-muted leading-relaxed">
+              Las emociones que no nombramos se quedan girando. Los ejercicios te ayudan a aterrizarlas.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">💜</div>
+            <h3 class="font-body font-bold text-text-deep mb-2">Hecho por ARMY</h3>
+            <p class="font-body text-sm text-text-muted leading-relaxed">
+              No un coach ni un terapeuta. Una ARMY que también escribe lo que siente, para ARMY que necesita hacerlo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <Faq />
-    <CtaFinal />
+
+    <!-- ─── CTA FINAL ─────────────────────────────────────────────────────── -->
+    <section class="relative gradient-hero section-padding overflow-hidden text-center">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-purple-heart/20 blur-[100px]"></div>
+      </div>
+      <div class="relative z-10 max-w-xl mx-auto">
+        <p class="section-intro mb-4">BTS ya te dio las palabras</p>
+        <h2 class="section-title text-white-glow mb-8">Este journal te da el espacio.</h2>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={lyHotmart} target="_blank" rel="noopener noreferrer" class="btn-primary-lg"
+            onclick="gtag && gtag('event', 'click_cta_pagar', { button_location: 'home_cta_final_ly' })">
+            Love Yourself — $9.90 💜
+          </a>
+          <a href={syHotmart} target="_blank" rel="noopener noreferrer" class="btn-outline-lg"
+            onclick="gtag && gtag('event', 'click_cta_pagar', { button_location: 'home_cta_final_sy' })">
+            Speak Yourself — $9.90
+          </a>
+        </div>
+        <p class="font-body text-xs text-soft-lilac/50 mt-6">
+          Descarga inmediata · Garantía Hotmart 15 días
+        </p>
+      </div>
+    </section>
+
   </main>
   <Footer />
 </Layout>
+
+<!-- ─── ARIRANG FORM SCRIPT ───────────────────────────────────────────────── -->
+<script>
+  const form    = document.getElementById('home-arirang-form') as HTMLFormElement | null;
+  const btn     = document.getElementById('home-arirang-btn') as HTMLButtonElement | null;
+  const errorEl = document.getElementById('home-arirang-error') as HTMLElement | null;
+  const success = document.getElementById('home-arirang-success') as HTMLElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form || !btn) return;
+
+    const email    = (form.querySelector('input[name="email"]') as HTMLInputElement)?.value?.trim();
+    const endpoint = (form.dataset as { endpoint: string }).endpoint;
+    if (!email || !endpoint) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    if (errorEl) errorEl.classList.add('hidden');
+
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, journal: 'arirang' }),
+      });
+      if (!res.ok) throw new Error();
+      form.classList.add('hidden');
+      success?.classList.remove('hidden');
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'lead_magnet_submit', { event_category: 'lead_magnet', event_label: 'arirang_home' });
+      }
+    } catch {
+      if (errorEl) { errorEl.textContent = 'Algo salió mal. Inténtalo de nuevo.'; errorEl.classList.remove('hidden'); }
+      btn.disabled = false;
+      btn.textContent = 'Enviarme los PDFs →';
+    }
+  });
+</script>
+
+<style>
+  /* ── Journal cards ── */
+  .journal-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(199,125,255,0.15);
+    box-shadow: 0 4px 24px rgba(26,10,46,0.06);
+    display: flex;
+    flex-direction: column;
+  }
+  .journal-card-dark { border-color: rgba(91,44,142,0.2); }
+  .journal-card-header {
+    background: linear-gradient(135deg, #1A0A2E 0%, #2D1057 100%);
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+  .journal-card-header-dark {
+    background: linear-gradient(135deg, #0D0520 0%, #1A0A2E 100%);
+  }
+  .journal-thumb {
+    height: 140px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+  .journal-card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  /* ── ARIRANG section ── */
+  .arirang-band {
+    background: #FDF6EE;
+    border-top: 4px solid #FF1340;
+    border-bottom: 4px solid #FF1340;
+  }
+  .arirang-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2.5px solid #FF1340;
+  }
+  .arirang-mini-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid #FF1340;
+  }
+  .arirang-form-box {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 24px;
+    border: 1px solid #F5EAD8;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .arirang-input {
+    padding: 13px 16px;
+    border: 2px solid #E5D5C5;
+    border-radius: 10px;
+    font-size: 15px;
+    background: white;
+    color: #140608;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .arirang-input:focus { border-color: #FF1340; }
+  .btn-arirang {
+    background: #FF1340;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 10px;
+    font-family: var(--font-body, 'DM Sans', sans-serif);
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-arirang:hover { background: #CC0F32; }
+  .btn-arirang:disabled { opacity: 0.6; cursor: not-allowed; }
+  .text-arirang { color: #FF1340; }
+  .text-hanji-text { color: #140608; }
+  .text-hanji-soft { color: #5C3840; }
+
+  /* ── Why cards ── */
+  .why-card {
+    padding: 24px 16px;
+    border-radius: 12px;
+    background: var(--color-lavender-mist, #F3EAFA);
+  }
+  .why-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  /* ── Outline CTA button ── */
+  .btn-outline-lg {
+    display: inline-block;
+    border: 2px solid rgba(224,208,240,0.6);
+    color: var(--color-white-glow, #FDFBFF);
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-family: var(--font-body, 'DM Sans', sans-serif);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-outline-lg:hover {
+    background: rgba(224,208,240,0.1);
+    border-color: rgba(224,208,240,0.9);
+  }
+</style>
