@@ -1,160 +1,475 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
+
+const lyUrl  = '/';
+const syUrl  = '/speak-yourself';
+const lyHotmart = import.meta.env.PUBLIC_HOTMART_URL     || 'https://pay.hotmart.com/P104306248S';
+const syHotmart = import.meta.env.PUBLIC_HOTMART_URL_SY  || 'https://pay.hotmart.com/P104306248S';
+const leadMagnetEndpoint = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
+
+const lyPages = [
+  { src: '/journal/page-01.webp',       alt: 'Portada — Love Yourself Journal para ARMY' },
+  { src: '/journal/page-contenido.webp', alt: 'Tabla de contenido — 7 capítulos, 165 páginas' },
+  { src: '/journal/page-02.webp',       alt: 'Página Sé Tú — espacio de reflexión' },
+  { src: '/journal/page-03.webp',       alt: 'Autorretratos de BTS — BTS Festa 2020' },
+  { src: '/journal/page-04.webp',       alt: 'Mi autorretrato — espacio para crear' },
+  { src: '/journal/page-05.webp',       alt: 'Mi nombre — ejercicio de identidad' },
+  { src: '/journal/page-06.webp',       alt: 'Las 20 cosas sobre mi Bias — ejercicio interactivo' },
+  { src: '/journal/page-07.webp',       alt: 'Las 20 cosas random sobre mí — autoconocimiento' },
+  { src: '/journal/page-08.webp',       alt: 'Todas las chicas que hay en mí — identidad' },
+  { src: '/journal/page-09.webp',       alt: 'Capítulo 02 Love Yourself — identidad individual' },
+  { src: '/journal/page-10.webp',       alt: 'Mi Wishlist Vital — sueños y metas' },
+];
+
+const syPages = [
+  { src: '/sy-journal/page-01.webp', alt: 'Portada — Speak Yourself Journal para ARMY' },
+  { src: '/sy-journal/page-02.webp', alt: '¿Cuánto tiempo llevas guardando cosas que solo dices en tu cabeza?' },
+  { src: '/sy-journal/page-03.webp', alt: 'Arirang — la canción que existe en 3.600 versiones' },
+  { src: '/sy-journal/page-04.webp', alt: 'Las Versiones que Muestras — ejercicio de identidad' },
+  { src: '/sy-journal/page-05.webp', alt: 'El Reencuentro — honrar la espera y el regreso de BTS' },
+  { src: '/sy-journal/page-06.webp', alt: 'Capítulo 02 Swim — Tu Voz Real' },
+  { src: '/sy-journal/page-07.webp', alt: 'Esto No Es Mío — identificar qué voces son realmente tuyas' },
+  { src: '/sy-journal/page-08.webp', alt: 'Merry Go Round — Jin · ejercicio guiado por letra de BTS' },
+  { src: '/sy-journal/page-09.webp', alt: 'Lo Que Vivo en el Medio — Arirang · identidad entre mundos' },
+  { src: '/sy-journal/page-10.webp', alt: 'One More Night — Jin · todos los años que callaste' },
+  { src: '/sy-journal/page-11.webp', alt: 'El Inventario del Silencio — mapa honesto de lo no dicho' },
+];
 ---
 
 <Layout
   title="Colección Purple Heart Journal — Love Yourself + Speak Yourself 💜"
-  description="Dos journals para ARMY. Love Yourself: un viaje hacia adentro, 165 páginas, 7 capítulos. Speak Yourself: encuentra tu voz, 184 páginas, 8 capítulos. Hecho por ARMY, para ARMY."
+  description="Dos journals para ARMY hispanohablante. Love Yourself (era Her·Tear·Answer) y Speak Yourself (ARIRANG 2026 + Jin solos). Hecho por ARMY, para ARMY."
 >
   <main>
 
-    <!-- Hero de colección -->
-    <section class="relative gradient-hero section-padding overflow-hidden">
-      <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-purple-heart/15 blur-[100px]"></div>
+    <!-- ─── HERO COLECCIÓN ──────────────────────────────────────────── -->
+    <section class="relative gradient-hero section-padding overflow-hidden text-center">
+      <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-purple-heart/15 blur-[120px]"></div>
       </div>
-      <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <div class="relative z-10 max-w-3xl mx-auto">
         <p class="font-accent text-2xl text-white-glow/70 mb-3">Purple Heart Journal</p>
-        <h1 class="font-heading italic text-4xl md:text-5xl lg:text-6xl text-white-glow leading-[1.15] mb-5">
-          Dos preguntas. Un viaje completo.
+        <h1 class="font-heading italic text-4xl md:text-5xl lg:text-6xl text-white-glow leading-[1.1] mb-6">
+          Dos preguntas.<br/>Un viaje completo.
         </h1>
-        <p class="font-body text-base md:text-lg text-soft-lilac/90 max-w-2xl mx-auto leading-relaxed">
-          BTS lleva años dejando dos preguntas en el aire para que ARMY las responda. <strong class="text-white-glow">¿Quién eres?</strong> y <strong class="text-white-glow">¿qué tienes para decir?</strong> Estos dos journals existen para que las respondas en voz alta.
+        <p class="font-body text-base md:text-lg text-soft-lilac/90 max-w-2xl mx-auto leading-relaxed mb-8">
+          BTS lleva años dejando dos preguntas en el aire para que ARMY las responda.
+          Estos dos journals existen para que las respondas <strong class="text-white-glow">en voz alta, en papel, desde ti misma</strong>.
         </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#love-yourself" class="btn-primary-lg text-center">Ver los dos journals 💜</a>
+        </div>
       </div>
     </section>
 
-    <!-- Journals grid -->
-    <section class="bg-lavender-mist section-padding">
-      <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-
-          <!-- Love Yourself Journal -->
-          <div class="bg-white-glow rounded-2xl overflow-hidden border border-soft-lilac shadow-lg shadow-purple-heart/10 flex flex-col">
-            <div class="relative bg-lavender-mist/60 p-8 flex justify-center">
-              <img
-                src="/images/journal-ly.png"
-                alt="Love Yourself Journal para ARMY — portada"
-                class="h-[200px] md:h-[220px] w-auto object-contain drop-shadow-[0_20px_20px_rgba(155,77,202,0.25)]"
-                loading="lazy"
-              />
-              <span class="absolute top-4 right-4 font-accent text-sm text-purple-vibrant bg-lavender-mist border border-purple-heart/20 rounded-full px-3 py-1">
-                Vol. 1
-              </span>
-            </div>
-
-            <div class="p-6 md:p-8 flex flex-col flex-1">
-              <p class="font-accent text-lg text-purple-heart mb-1">¿Quién eres?</p>
-              <h2 class="font-heading italic text-2xl md:text-3xl text-text-deep mb-3 leading-tight">Love Yourself Journal</h2>
-              <p class="font-body text-sm text-purple-vibrant/70 mb-4">Era Her · Tear · Answer</p>
-              <p class="font-body text-base text-text-muted leading-relaxed mb-6">
-                Un viaje hacia adentro. 85+ prompts guiados por 35 canciones de BTS para escribir lo que siempre quisiste decir — sobre quién eres, lo que sientes, y lo que te mueve.
-              </p>
-
-              <!-- Stats -->
-              <div class="grid grid-cols-4 gap-2 bg-lavender-mist/50 rounded-xl p-4 mb-6">
-                <div class="text-center">
-                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">7</span>
-                  <span class="font-body text-xs text-text-muted mt-1 block">caps</span>
-                </div>
-                <div class="text-center">
-                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">85+</span>
-                  <span class="font-body text-xs text-text-muted mt-1 block">ejercicios</span>
-                </div>
-                <div class="text-center">
-                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">35</span>
-                  <span class="font-body text-xs text-text-muted mt-1 block">canciones</span>
-                </div>
-                <div class="text-center">
-                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">165</span>
-                  <span class="font-body text-xs text-text-muted mt-1 block">páginas</span>
-                </div>
-              </div>
-
-              <div class="mt-auto">
-                <a
-                  href="/"
-                  class="btn-primary block text-center"
-                  onclick="gtag && gtag('event', 'click_coleccion_ly', { button_location: 'coleccion' })"
-                >
-                  Ver Love Yourself Journal
-                </a>
-              </div>
-            </div>
+    <!-- ─── ARC INTRO ───────────────────────────────────────────────── -->
+    <section class="bg-white-glow py-12 px-5 text-center">
+      <div class="max-w-3xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-lavender-mist/60 border border-soft-lilac rounded-2xl p-6 text-left">
+            <p class="font-accent text-purple-heart text-lg mb-1">Pregunta 1</p>
+            <h2 class="font-heading italic text-2xl text-text-deep mb-2">¿Quién eres?</h2>
+            <p class="font-body text-sm text-text-muted leading-relaxed">La pregunta que BTS planteó en la era <strong class="text-text-deep">Love Yourself</strong>. Her, Tear, Answer. El viaje hacia adentro para mirarte a los ojos y decirte tu propio nombre.</p>
           </div>
-
-          <!-- Speak Yourself Journal -->
-          <div class="bg-white-glow rounded-2xl overflow-hidden border border-purple-heart/30 shadow-lg shadow-purple-heart/15 flex flex-col relative">
-            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-vibrant to-purple-heart"></div>
-
-            <div class="relative bg-lavender-mist/60 p-8 flex justify-center">
-              <img
-                src="/images/journal-sy.png"
-                alt="Speak Yourself Journal para ARMY — portada"
-                class="h-[200px] md:h-[220px] w-auto object-contain drop-shadow-[0_20px_20px_rgba(155,77,202,0.25)]"
-                loading="lazy"
-              />
-              <span class="absolute top-4 right-4 font-accent text-sm text-white-glow bg-purple-vibrant rounded-full px-3 py-1">
-                Vol. 2 · Nuevo
-              </span>
-            </div>
-
-            <div class="p-6 md:p-8 flex flex-col flex-1">
-              <p class="font-accent text-lg text-purple-heart mb-1">¿Qué tienes para decir?</p>
-              <h2 class="font-heading italic text-2xl md:text-3xl text-text-deep mb-3 leading-tight">Speak Yourself Journal</h2>
-              <p class="font-body text-sm text-purple-vibrant/70 mb-4">ARIRANG (2026) · Solos Jin</p>
-              <p class="font-body text-base text-text-muted leading-relaxed mb-6">
-                El segundo journal de la colección. Después de saber quién eres, llega el momento de hablar desde ahí. 15+ canciones del regreso de BTS para encontrar tu voz y escribir desde ella.
-              </p>
-
-              <!-- Stats -->
-              <div class="grid grid-cols-4 gap-2 bg-lavender-mist/50 rounded-xl p-4 mb-6">
-                <div class="text-center">
-                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">8</span>
-                  <span class="font-body text-xs text-text-muted mt-1 block">caps</span>
-                </div>
-                <div class="text-center">
-                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">80+</span>
-                  <span class="font-body text-xs text-text-muted mt-1 block">ejercicios</span>
-                </div>
-                <div class="text-center">
-                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">15+</span>
-                  <span class="font-body text-xs text-text-muted mt-1 block">canciones</span>
-                </div>
-                <div class="text-center">
-                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">184</span>
-                  <span class="font-body text-xs text-text-muted mt-1 block">páginas</span>
-                </div>
-              </div>
-
-              <div class="mt-auto">
-                <a
-                  href="/speak-yourself"
-                  class="btn-primary block text-center"
-                  onclick="gtag && gtag('event', 'click_coleccion_sy', { button_location: 'coleccion' })"
-                >
-                  Ver Speak Yourself Journal
-                </a>
-              </div>
-            </div>
+          <div class="bg-lavender-mist/60 border border-purple-heart/30 rounded-2xl p-6 text-left">
+            <p class="font-accent text-purple-heart text-lg mb-1">Pregunta 2</p>
+            <h2 class="font-heading italic text-2xl text-text-deep mb-2">¿Qué tenés para decir?</h2>
+            <p class="font-body text-sm text-text-muted leading-relaxed">La pregunta del regreso. <strong class="text-text-deep">ARIRANG 2026</strong>, los solos de Jin, la voz que encontraste después del hiato. El viaje hacia afuera — hablar desde lo que sos.</p>
           </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ─── LOVE YOURSELF JOURNAL ───────────────────────────────────── -->
+    <section id="love-yourself" class="bg-lavender-mist section-padding">
+      <div class="max-w-4xl mx-auto">
+
+        <!-- Header -->
+        <div class="text-center mb-10">
+          <p class="font-accent text-xl text-purple-heart mb-1">Vol. 1 · Era Her · Tear · Answer</p>
+          <h2 class="font-heading italic text-4xl md:text-5xl text-text-deep leading-tight mb-4">
+            Love Yourself Journal
+          </h2>
+          <p class="font-body text-base md:text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
+            La era del autoconocimiento. BTS preguntó <em>"¿quién eres?"</em> y ARMY respondió con millones de reflexiones privadas. Este journal es el espacio para escribir la tuya — con Epiphany, Reflection, Spring Day y 32 canciones más guiando cada página.
+          </p>
         </div>
 
-        <!-- El arco completo -->
-        <div class="mt-10 bg-white-glow/80 border border-soft-lilac rounded-2xl p-6 md:p-8 max-w-3xl mx-auto text-center">
-          <p class="font-accent text-xl text-purple-heart mb-3">El arco completo</p>
-          <p class="font-body text-base md:text-lg text-text-deep leading-relaxed">
-            Arirang tiene 3.600 versiones porque 3.600 personas distintas la tomaron y la hicieron suya. Los dos journals juntos forman un recorrido completo: de conocerte a hablar desde lo que encontraste.
+        <!-- Era songs -->
+        <div class="flex flex-wrap gap-2 justify-center mb-8">
+          {['Epiphany', 'Reflection', 'Spring Day', 'DNA', 'Magic Shop', 'Answer: Love Myself', 'Serendipity', 'Trivia: Love', 'Her', 'Outro: Tear'].map(s => (
+            <span class="font-body text-xs text-purple-vibrant bg-white-glow border border-soft-lilac rounded-full px-3 py-1">{s}</span>
+          ))}
+          <span class="font-body text-xs text-text-muted bg-transparent px-2 py-1">+25 más</span>
+        </div>
+
+        <!-- Carousel -->
+        <div class="swiper ly-swiper select-none" id="ly-preview">
+          <div class="swiper-wrapper">
+            {lyPages.map((page, i) => (
+              <div class="swiper-slide flex justify-center">
+                <img src={page.src} alt={page.alt} class="col-page-img" loading="lazy" draggable="false" oncontextmenu="return false" data-modal="ly" data-index={i} />
+              </div>
+            ))}
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <p class="text-center font-body text-sm text-text-muted/60 mt-3 mb-8">{lyPages.length} páginas de preview · Desliza para explorar</p>
+
+        <!-- Stats + CTA -->
+        <div class="grid grid-cols-4 gap-3 bg-white-glow/70 rounded-2xl p-5 mb-6 max-w-lg mx-auto">
+          <div class="text-center"><span class="block font-heading text-3xl text-purple-vibrant">7</span><span class="font-body text-xs text-text-muted">capítulos</span></div>
+          <div class="text-center"><span class="block font-heading text-3xl text-purple-vibrant">85+</span><span class="font-body text-xs text-text-muted">ejercicios</span></div>
+          <div class="text-center"><span class="block font-heading text-3xl text-purple-vibrant">35</span><span class="font-body text-xs text-text-muted">canciones</span></div>
+          <div class="text-center"><span class="block font-heading text-3xl text-purple-vibrant">165</span><span class="font-body text-xs text-text-muted">páginas</span></div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href={lyHotmart} target="_blank" rel="noopener noreferrer" class="btn-primary text-center"
+             onclick="gtag && gtag('event','click_coleccion_ly_comprar')">
+            Comprar Love Yourself — $9.90 USD
+          </a>
+          <a href={lyUrl} class="font-body text-sm text-purple-vibrant underline underline-offset-4 self-center">
+            Ver landing completa →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── DIVIDER ──────────────────────────────────────────────────── -->
+    <div class="bg-white-glow py-8 text-center">
+      <div class="w-px h-12 bg-purple-heart/20 mx-auto"></div>
+    </div>
+
+    <!-- ─── SPEAK YOURSELF JOURNAL ──────────────────────────────────── -->
+    <section id="speak-yourself-section" class="relative gradient-hero section-padding overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-purple-heart/15 blur-[100px]"></div>
+      </div>
+      <div class="relative z-10 max-w-4xl mx-auto">
+
+        <!-- Header -->
+        <div class="text-center mb-10">
+          <p class="font-accent text-xl text-white-glow/70 mb-1">Vol. 2 · ARIRANG 2026 · Solos Jin · Nuevo</p>
+          <h2 class="font-heading italic text-4xl md:text-5xl text-white-glow leading-tight mb-4">
+            Speak Yourself Journal
+          </h2>
+          <p class="font-body text-base md:text-lg text-soft-lilac/90 max-w-2xl mx-auto leading-relaxed">
+            El regreso de BTS llegó con una pregunta nueva: <em>"¿qué tenés para decir?"</em> ARIRANG tiene 3.600 versiones porque 3.600 personas distintas la tomaron y la hicieron suya. Este journal es el espacio para escribir la tuya — con Swim, One More Night, Merry Go Round y más canciones del regreso guiando cada capítulo.
           </p>
-          <p class="font-heading italic text-lg md:text-xl text-purple-vibrant mt-4">
-            "You never walk alone."
+        </div>
+
+        <!-- Era songs -->
+        <div class="flex flex-wrap gap-2 justify-center mb-8">
+          {['ARIRANG', 'Swim', 'Normal', 'Into the Sun', 'Merry Go Round', 'One More Night', 'Like Animals', 'Hooligan', 'No. 29', 'Please'].map(s => (
+            <span class="font-body text-xs text-white-glow bg-white-glow/15 border border-white-glow/20 rounded-full px-3 py-1">{s}</span>
+          ))}
+          <span class="font-body text-xs text-soft-lilac/60 px-2 py-1">+5 más</span>
+        </div>
+
+        <!-- Carousel -->
+        <div class="swiper sy-swiper select-none" id="sy-preview-col">
+          <div class="swiper-wrapper">
+            {syPages.map((page, i) => (
+              <div class="swiper-slide flex justify-center">
+                <img src={page.src} alt={page.alt} class="col-page-img sy-col-img" loading="lazy" draggable="false" oncontextmenu="return false" data-modal="sy" data-index={i} />
+              </div>
+            ))}
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <p class="text-center font-body text-sm text-soft-lilac/50 mt-3 mb-8">{syPages.length} páginas de preview · Desliza para explorar</p>
+
+        <!-- Stats + CTA -->
+        <div class="grid grid-cols-4 gap-3 bg-white-glow/10 border border-white-glow/15 rounded-2xl p-5 mb-6 max-w-lg mx-auto">
+          <div class="text-center"><span class="block font-heading text-3xl text-white-glow">8</span><span class="font-body text-xs text-soft-lilac/70">capítulos</span></div>
+          <div class="text-center"><span class="block font-heading text-3xl text-white-glow">80+</span><span class="font-body text-xs text-soft-lilac/70">ejercicios</span></div>
+          <div class="text-center"><span class="block font-heading text-3xl text-white-glow">15+</span><span class="font-body text-xs text-soft-lilac/70">canciones</span></div>
+          <div class="text-center"><span class="block font-heading text-3xl text-white-glow">184</span><span class="font-body text-xs text-soft-lilac/70">páginas</span></div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href={syHotmart} target="_blank" rel="noopener noreferrer" class="btn-primary-lg text-center"
+             onclick="gtag && gtag('event','click_coleccion_sy_comprar')">
+            Comprar Speak Yourself — $9.90 USD
+          </a>
+          <a href={syUrl} class="font-body text-sm text-soft-lilac/60 underline underline-offset-4 self-center hover:text-white-glow transition-colors">
+            Ver landing completa →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── COLECCIÓN COMPLETA ──────────────────────────────────────── -->
+    <section class="bg-white-glow section-padding text-center">
+      <div class="max-w-2xl mx-auto">
+        <p class="font-accent text-xl text-purple-heart mb-3">Los dos juntos</p>
+        <h2 class="font-heading italic text-3xl md:text-4xl text-text-deep mb-5">
+          El arco completo: de conocerte a hablar desde ahí.
+        </h2>
+        <p class="font-body text-base md:text-lg text-text-muted leading-relaxed mb-6">
+          Arirang tiene 3.600 versiones porque 3.600 personas distintas la tomaron y la hicieron suya. Los dos journals juntos te llevan del primer paso al último: saber quién sos <em>y</em> encontrar tu voz para decirlo.
+        </p>
+        <p class="font-heading italic text-xl text-purple-vibrant">"You never walk alone."</p>
+      </div>
+    </section>
+
+    <!-- ─── LEAD MAGNET ─────────────────────────────────────────────── -->
+    <section id="prueba-gratis" class="bg-lavender-mist section-padding">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="font-accent text-xl text-purple-heart mb-2">Antes de comprar, probá el journal</p>
+          <h2 class="font-heading italic text-3xl md:text-4xl text-text-deep mb-4">
+            Recibí tu versión gratuita.
+          </h2>
+          <p class="font-body text-base text-text-muted max-w-xl mx-auto leading-relaxed">
+            20 páginas de cada journal, completamente gratis. Escribí tu correo, elegí cuál querés probar, y te lo enviamos ahora.
           </p>
+        </div>
+
+        <!-- Journal selection cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <label class="journal-select-card cursor-pointer">
+            <input type="radio" name="journal-select" value="love-yourself" class="sr-only" checked />
+            <div class="card-check bg-white-glow border-2 border-soft-lilac rounded-2xl p-5 flex gap-4 items-start transition-all duration-200">
+              <img src="/images/journal-ly.png" alt="Love Yourself Journal" class="h-20 w-auto object-contain shrink-0" />
+              <div class="text-left">
+                <p class="font-body font-bold text-text-deep mb-1">Love Yourself Journal</p>
+                <p class="font-body text-xs text-text-muted leading-relaxed">Era Her · Tear · Answer<br/>¿Quién eres? · 20 páginas gratis</p>
+                <span class="inline-block mt-2 font-body text-xs text-purple-vibrant font-bold bg-lavender-mist px-2 py-0.5 rounded-full">Gratis</span>
+              </div>
+            </div>
+          </label>
+
+          <label class="journal-select-card cursor-pointer">
+            <input type="radio" name="journal-select" value="speak-yourself" class="sr-only" />
+            <div class="card-check bg-white-glow border-2 border-soft-lilac rounded-2xl p-5 flex gap-4 items-start transition-all duration-200">
+              <img src="/images/journal-sy.png" alt="Speak Yourself Journal" class="h-20 w-auto object-contain shrink-0" />
+              <div class="text-left">
+                <p class="font-body font-bold text-text-deep mb-1">Speak Yourself Journal</p>
+                <p class="font-body text-xs text-text-muted leading-relaxed">ARIRANG 2026 · Jin solos<br/>¿Qué tenés para decir? · 20 páginas gratis</p>
+                <span class="inline-block mt-2 font-body text-xs text-purple-vibrant font-bold bg-lavender-mist px-2 py-0.5 rounded-full">Gratis</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <!-- Email form -->
+        <form id="lead-magnet-form" class="max-w-md mx-auto" novalidate>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              id="lead-email"
+              placeholder="tu@correo.com"
+              required
+              autocomplete="email"
+              class="flex-1 font-body text-base text-text-deep bg-white-glow border border-soft-lilac rounded-xl px-4 py-3 outline-none focus:border-purple-heart transition-colors placeholder:text-text-muted/40"
+            />
+            <button
+              type="submit"
+              id="lead-submit"
+              class="btn-primary text-center whitespace-nowrap cursor-pointer"
+            >
+              Enviar gratis 💜
+            </button>
+          </div>
+          <p class="font-body text-xs text-text-muted/60 mt-3 text-center">
+            Sin spam. Solo el journal y, de vez en cuando, algo para ARMY que escribe.
+          </p>
+        </form>
+
+        <!-- Success state (hidden) -->
+        <div id="lead-success" class="hidden max-w-md mx-auto text-center bg-white-glow border border-purple-heart/20 rounded-2xl p-6 mt-4">
+          <p class="font-heading italic text-2xl text-purple-vibrant mb-2">¡Ya va en camino! 💜</p>
+          <p class="font-body text-sm text-text-muted leading-relaxed">
+            Revisá tu correo en los próximos minutos. Si no aparece, buscá en spam — a veces el universo es así.
+          </p>
+        </div>
+
+        <!-- Error state (hidden) -->
+        <div id="lead-error" class="hidden max-w-md mx-auto text-center bg-red-50 border border-red-200 rounded-2xl p-4 mt-4">
+          <p class="font-body text-sm text-red-600">Algo salió mal. Intentá de nuevo en un momento.</p>
         </div>
       </div>
     </section>
 
   </main>
+
   <Footer />
+
+  <!-- ─── MODALS ─────────────────────────────────────────────────────── -->
+  <div id="col-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out">
+    <button id="col-modal-close" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white-glow/20 flex items-center justify-center text-white-glow hover:bg-white-glow/40 transition-colors cursor-pointer z-10" aria-label="Cerrar">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <img id="col-modal-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl select-none" draggable="false" oncontextmenu="return false" />
+  </div>
+
 </Layout>
+
+<script define:vars={{ leadMagnetEndpoint }}>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+
+  const swiperConfig = {
+    modules: [Navigation, Pagination],
+    slidesPerView: 1,
+    spaceBetween: 20,
+    centeredSlides: true,
+    grabCursor: true,
+    loop: false,
+    pagination: { clickable: true },
+    breakpoints: {
+      768:  { slidesPerView: 1.4, spaceBetween: 30 },
+      1024: { slidesPerView: 1.6, spaceBetween: 40 },
+    },
+  };
+
+  new Swiper('#ly-preview', {
+    ...swiperConfig,
+    navigation: { nextEl: '.ly-swiper .swiper-button-next', prevEl: '.ly-swiper .swiper-button-prev' },
+    pagination: { el: '.ly-swiper .swiper-pagination', clickable: true },
+  });
+
+  new Swiper('#sy-preview-col', {
+    ...swiperConfig,
+    navigation: { nextEl: '.sy-swiper .swiper-button-next', prevEl: '.sy-swiper .swiper-button-prev' },
+    pagination: { el: '.sy-swiper .swiper-pagination', clickable: true },
+  });
+
+  // Modal
+  const modal     = document.getElementById('col-modal');
+  const modalImg  = document.getElementById('col-modal-img');
+  const modalClose = document.getElementById('col-modal-close');
+
+  document.querySelectorAll('.col-page-img').forEach((img) => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (modal && modalImg) {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  const closeModal = () => {
+    modal?.classList.add('hidden');
+    modal?.classList.remove('flex');
+    document.body.style.overflow = '';
+  };
+  modalClose?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  // Journal selection cards — highlight selected
+  document.querySelectorAll('.journal-select-card input[type="radio"]').forEach((radio) => {
+    radio.addEventListener('change', () => {
+      document.querySelectorAll('.journal-select-card .card-check').forEach(card => {
+        card.classList.remove('border-purple-heart');
+        card.classList.add('border-soft-lilac');
+      });
+      if (radio.checked) {
+        radio.closest('.journal-select-card').querySelector('.card-check').classList.remove('border-soft-lilac');
+        radio.closest('.journal-select-card').querySelector('.card-check').classList.add('border-purple-heart');
+      }
+    });
+    // Init state
+    if (radio.checked) {
+      radio.closest('.journal-select-card').querySelector('.card-check').classList.remove('border-soft-lilac');
+      radio.closest('.journal-select-card').querySelector('.card-check').classList.add('border-purple-heart');
+    }
+  });
+
+  // Lead magnet form
+  const form       = document.getElementById('lead-magnet-form');
+  const submitBtn  = document.getElementById('lead-submit');
+  const successEl  = document.getElementById('lead-success');
+  const errorEl    = document.getElementById('lead-error');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email   = document.getElementById('lead-email').value.trim();
+    const journal = document.querySelector('input[name="journal-select"]:checked')?.value || 'love-yourself';
+
+    if (!email) return;
+
+    submitBtn.textContent = 'Enviando...';
+    submitBtn.disabled = true;
+    errorEl?.classList.add('hidden');
+
+    try {
+      if (leadMagnetEndpoint) {
+        const res = await fetch(leadMagnetEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, journal }),
+        });
+        if (!res.ok) throw new Error('error');
+      }
+      // Show success
+      form.classList.add('hidden');
+      successEl?.classList.remove('hidden');
+      gtag && gtag('event', 'lead_magnet_submit', { journal });
+    } catch {
+      submitBtn.textContent = 'Enviar gratis 💜';
+      submitBtn.disabled = false;
+      errorEl?.classList.remove('hidden');
+    }
+  });
+</script>
+
+<style>
+  /* ── Carousels ── */
+  .col-page-img {
+    width: auto;
+    max-width: 100%;
+    max-height: 72vh;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2), 0 0 30px rgba(199,125,255,0.1);
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .ly-swiper .swiper-button-prev,
+  .ly-swiper .swiper-button-next {
+    color: var(--color-purple-vibrant);
+    background: rgba(253,251,255,0.7);
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+  }
+  .ly-swiper .swiper-button-prev:after,
+  .ly-swiper .swiper-button-next:after { font-size: 16px; font-weight: bold; }
+  .ly-swiper .swiper-pagination-bullet { background: rgba(155,77,202,0.3); opacity: 1; }
+  .ly-swiper .swiper-pagination-bullet-active { background: #9B4DCA; }
+  .ly-swiper .swiper-slide:not(.swiper-slide-active) { opacity: 0.45; transition: opacity 0.3s; }
+
+  .sy-swiper .swiper-button-prev,
+  .sy-swiper .swiper-button-next {
+    color: rgba(253,251,255,0.9);
+    background: rgba(91,44,142,0.5);
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+  }
+  .sy-swiper .swiper-button-prev:after,
+  .sy-swiper .swiper-button-next:after { font-size: 16px; font-weight: bold; }
+  .sy-swiper .swiper-pagination-bullet { background: rgba(224,208,240,0.4); opacity: 1; }
+  .sy-swiper .swiper-pagination-bullet-active { background: #C77DFF; }
+  .sy-swiper .swiper-slide:not(.swiper-slide-active) { opacity: 0.45; transition: opacity 0.3s; }
+
+  /* ── Lead magnet ── */
+  .journal-select-card input:checked ~ .card-check {
+    border-color: var(--color-purple-heart);
+  }
+</style>
