@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Colección Purple Heart Journal — Love Yourself + Speak Yourself 💜"
+  description="Dos journals para ARMY. Love Yourself: un viaje hacia adentro, 165 páginas, 7 capítulos. Speak Yourself: encuentra tu voz, 184 páginas, 8 capítulos. Hecho por ARMY, para ARMY."
+>
+  <main>
+
+    <!-- Hero de colección -->
+    <section class="relative gradient-hero section-padding overflow-hidden">
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-purple-heart/15 blur-[100px]"></div>
+      </div>
+      <div class="relative z-10 max-w-3xl mx-auto text-center">
+        <p class="font-accent text-2xl text-white-glow/70 mb-3">Purple Heart Journal</p>
+        <h1 class="font-heading italic text-4xl md:text-5xl lg:text-6xl text-white-glow leading-[1.15] mb-5">
+          Dos preguntas. Un viaje completo.
+        </h1>
+        <p class="font-body text-base md:text-lg text-soft-lilac/90 max-w-2xl mx-auto leading-relaxed">
+          BTS lleva años dejando dos preguntas en el aire para que ARMY las responda. <strong class="text-white-glow">¿Quién eres?</strong> y <strong class="text-white-glow">¿qué tienes para decir?</strong> Estos dos journals existen para que las respondas en voz alta.
+        </p>
+      </div>
+    </section>
+
+    <!-- Journals grid -->
+    <section class="bg-lavender-mist section-padding">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+
+          <!-- Love Yourself Journal -->
+          <div class="bg-white-glow rounded-2xl overflow-hidden border border-soft-lilac shadow-lg shadow-purple-heart/10 flex flex-col">
+            <div class="relative bg-lavender-mist/60 p-8 flex justify-center">
+              <img
+                src="/images/journal-ly.png"
+                alt="Love Yourself Journal para ARMY — portada"
+                class="h-[200px] md:h-[220px] w-auto object-contain drop-shadow-[0_20px_20px_rgba(155,77,202,0.25)]"
+                loading="lazy"
+              />
+              <span class="absolute top-4 right-4 font-accent text-sm text-purple-vibrant bg-lavender-mist border border-purple-heart/20 rounded-full px-3 py-1">
+                Vol. 1
+              </span>
+            </div>
+
+            <div class="p-6 md:p-8 flex flex-col flex-1">
+              <p class="font-accent text-lg text-purple-heart mb-1">¿Quién eres?</p>
+              <h2 class="font-heading italic text-2xl md:text-3xl text-text-deep mb-3 leading-tight">Love Yourself Journal</h2>
+              <p class="font-body text-sm text-purple-vibrant/70 mb-4">Era Her · Tear · Answer</p>
+              <p class="font-body text-base text-text-muted leading-relaxed mb-6">
+                Un viaje hacia adentro. 85+ prompts guiados por 35 canciones de BTS para escribir lo que siempre quisiste decir — sobre quién eres, lo que sientes, y lo que te mueve.
+              </p>
+
+              <!-- Stats -->
+              <div class="grid grid-cols-4 gap-2 bg-lavender-mist/50 rounded-xl p-4 mb-6">
+                <div class="text-center">
+                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">7</span>
+                  <span class="font-body text-xs text-text-muted mt-1 block">caps</span>
+                </div>
+                <div class="text-center">
+                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">85+</span>
+                  <span class="font-body text-xs text-text-muted mt-1 block">ejercicios</span>
+                </div>
+                <div class="text-center">
+                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">35</span>
+                  <span class="font-body text-xs text-text-muted mt-1 block">canciones</span>
+                </div>
+                <div class="text-center">
+                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">165</span>
+                  <span class="font-body text-xs text-text-muted mt-1 block">páginas</span>
+                </div>
+              </div>
+
+              <div class="mt-auto">
+                <a
+                  href="/"
+                  class="btn-primary block text-center"
+                  onclick="gtag && gtag('event', 'click_coleccion_ly', { button_location: 'coleccion' })"
+                >
+                  Ver Love Yourself Journal
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Speak Yourself Journal -->
+          <div class="bg-white-glow rounded-2xl overflow-hidden border border-purple-heart/30 shadow-lg shadow-purple-heart/15 flex flex-col relative">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-vibrant to-purple-heart"></div>
+
+            <div class="relative bg-lavender-mist/60 p-8 flex justify-center">
+              <img
+                src="/images/journal-sy.png"
+                alt="Speak Yourself Journal para ARMY — portada"
+                class="h-[200px] md:h-[220px] w-auto object-contain drop-shadow-[0_20px_20px_rgba(155,77,202,0.25)]"
+                loading="lazy"
+              />
+              <span class="absolute top-4 right-4 font-accent text-sm text-white-glow bg-purple-vibrant rounded-full px-3 py-1">
+                Vol. 2 · Nuevo
+              </span>
+            </div>
+
+            <div class="p-6 md:p-8 flex flex-col flex-1">
+              <p class="font-accent text-lg text-purple-heart mb-1">¿Qué tienes para decir?</p>
+              <h2 class="font-heading italic text-2xl md:text-3xl text-text-deep mb-3 leading-tight">Speak Yourself Journal</h2>
+              <p class="font-body text-sm text-purple-vibrant/70 mb-4">ARIRANG (2026) · Solos Jin</p>
+              <p class="font-body text-base text-text-muted leading-relaxed mb-6">
+                El segundo journal de la colección. Después de saber quién eres, llega el momento de hablar desde ahí. 15+ canciones del regreso de BTS para encontrar tu voz y escribir desde ella.
+              </p>
+
+              <!-- Stats -->
+              <div class="grid grid-cols-4 gap-2 bg-lavender-mist/50 rounded-xl p-4 mb-6">
+                <div class="text-center">
+                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">8</span>
+                  <span class="font-body text-xs text-text-muted mt-1 block">caps</span>
+                </div>
+                <div class="text-center">
+                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">80+</span>
+                  <span class="font-body text-xs text-text-muted mt-1 block">ejercicios</span>
+                </div>
+                <div class="text-center">
+                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">15+</span>
+                  <span class="font-body text-xs text-text-muted mt-1 block">canciones</span>
+                </div>
+                <div class="text-center">
+                  <span class="block font-heading text-2xl text-purple-vibrant leading-none">184</span>
+                  <span class="font-body text-xs text-text-muted mt-1 block">páginas</span>
+                </div>
+              </div>
+
+              <div class="mt-auto">
+                <a
+                  href="/speak-yourself"
+                  class="btn-primary block text-center"
+                  onclick="gtag && gtag('event', 'click_coleccion_sy', { button_location: 'coleccion' })"
+                >
+                  Ver Speak Yourself Journal
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- El arco completo -->
+        <div class="mt-10 bg-white-glow/80 border border-soft-lilac rounded-2xl p-6 md:p-8 max-w-3xl mx-auto text-center">
+          <p class="font-accent text-xl text-purple-heart mb-3">El arco completo</p>
+          <p class="font-body text-base md:text-lg text-text-deep leading-relaxed">
+            Arirang tiene 3.600 versiones porque 3.600 personas distintas la tomaron y la hicieron suya. Los dos journals juntos forman un recorrido completo: de conocerte a hablar desde lo que encontraste.
+          </p>
+          <p class="font-heading italic text-lg md:text-xl text-purple-vibrant mt-4">
+            "You never walk alone."
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
