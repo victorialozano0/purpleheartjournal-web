@@ -55,9 +55,10 @@ const leadMagnet = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
 
           <!-- Card LY -->
           <div class="journal-card">
-            <div class="journal-card-header">
-              <div class="wordplay-card">
-                <div class="wc-line"><span class="wc-accent">BE</span><span class="wc-light">LOVED.</span></div>
+            <div class="journal-card-header-ly">
+              <p class="font-accent text-xs tracking-[0.25em] uppercase text-purple-heart/60 mb-2">Era Love Yourself</p>
+              <div class="wordplay-block">
+                <span class="wordplay-accent">BE</span><span class="wordplay-dark">LOVED.</span>
               </div>
             </div>
             <div class="journal-card-body">
@@ -308,6 +309,16 @@ const leadMagnet = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
   @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
   /* ── Wordplay card headers ── */
+  .journal-card-header-ly {
+    background: #F3EAFA;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    text-align: center;
+  }
   .journal-card-header-sy {
     background: #F3EAFA;
     padding: 32px;
