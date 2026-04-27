@@ -20,15 +20,10 @@ import Footer from '../components/Footer.astro';
     <Features />
 
     <!-- Visual divider: wordplay LY -->
-    <section class="bg-lavender-mist py-10 md:py-14">
-      <div class="max-w-lg mx-auto text-center px-6">
-        <p class="font-accent text-xs tracking-[0.3em] uppercase text-purple-heart/60 mb-3">Era Love Yourself</p>
-        <div class="wordplay-block">
-          <span class="wordplay-accent">BE</span><span class="wordplay-dark">LOVED.</span>
-        </div>
-        <p class="font-heading italic text-base md:text-lg text-text-muted mt-4">
-          Ya lo eres. Solo tienes que escribirlo.
-        </p>
+    <section class="ly-wordplay-section">
+      <div class="ly-wordplay-inner">
+        <div class="ly-line"><span class="ly-accent">BE</span><span class="ly-dark">LIEVE IN</span></div>
+        <div class="ly-line"><span class="ly-accent">YOU</span><span class="ly-dark">RSELF.</span></div>
       </div>
     </section>
 
@@ -38,3 +33,28 @@ import Footer from '../components/Footer.astro';
   </main>
   <Footer />
 </Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+  .ly-wordplay-section {
+    background: #F3EAFA;
+    padding: 3rem 1.5rem;
+    overflow: hidden;
+  }
+  .ly-wordplay-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 0.92;
+  }
+  .ly-line {
+    display: block;
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: clamp(3rem, 14vw, 8rem);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .ly-accent { color: #C77DFF; }
+  .ly-dark   { color: #1A0A2E; }
+</style>
