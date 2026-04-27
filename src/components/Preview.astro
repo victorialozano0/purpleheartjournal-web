@@ -1,5 +1,8 @@
 ---
-const pages = [
+const { journal = 'ly' } = Astro.props;
+const isSY = journal === 'sy';
+
+const pages = isSY ? [] : [
   { src: '/journal/page-01.webp', alt: 'Portada — Love Yourself Journal para ARMYS' },
   { src: '/journal/page-contenido.webp', alt: 'Tabla de contenido — 7 capítulos, 165 páginas' },
   { src: '/journal/page-02.webp', alt: 'Página Sé Tú — espacio de reflexión' },
@@ -20,43 +23,61 @@ const pages = [
   <div class="relative z-10 max-w-4xl mx-auto">
     <!-- Header -->
     <div class="text-center mb-8">
-      <p class="section-intro">
-        mira por dentro
-      </p>
+      <p class="section-intro">mira por dentro</p>
       <h2 class="section-title text-white-glow max-w-2xl mx-auto">
-        Preguntas que abren conversaciones contigo misma.
+        {isSY ? 'Preguntas que te ayudan a decir lo que callaste.' : 'Preguntas que abren conversaciones contigo misma.'}
       </h2>
-      <p class="section-desc text-soft-lilac max-w-xl mx-auto">
-        Desliza para hojear las primeras páginas del journal. <strong class="text-white-glow">Toca una página para verla en grande</strong>.
-      </p>
+      {!isSY && (
+        <p class="section-desc text-soft-lilac max-w-xl mx-auto">
+          Desliza para hojear las primeras páginas del journal. <strong class="text-white-glow">Toca una página para verla en grande</strong>.
+        </p>
+      )}
+      {isSY && (
+        <p class="section-desc text-soft-lilac max-w-xl mx-auto">
+          184 páginas para encontrar tu voz. Cada ejercicio tiene una canción del regreso de BTS como punto de partida.
+        </p>
+      )}
     </div>
 
-    <!-- Swiper carousel -->
-    <div class="swiper journal-swiper select-none" id="journal-preview">
-      <div class="swiper-wrapper">
-        {pages.map((page, i) => (
-          <div class="swiper-slide flex justify-center">
-            <img
-              src={page.src}
-              alt={page.alt}
-              class="journal-page-img"
-              loading="lazy"
-              draggable="false"
-              oncontextmenu="return false"
-              data-index={i}
-            />
-          </div>
-        ))}
+    {isSY && (
+      <div class="flex justify-center">
+        <img
+          src="/images/journal-sy.png"
+          alt="Speak Yourself Journal — portada"
+          class="h-[340px] md:h-[420px] w-auto rounded-2xl shadow-2xl shadow-purple-heart/30"
+          loading="lazy"
+        />
       </div>
+    )}
 
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-
-    <p class="text-center font-body text-sm text-soft-lilac/60 mt-4">
-      {pages.length} páginas de preview &middot; Desliza para explorar
-    </p>
+    <!-- Swiper carousel — solo LY -->
+    {!isSY && (
+      <>
+        <div class="swiper journal-swiper select-none" id="journal-preview">
+          <div class="swiper-wrapper">
+            {pages.map((page, i) => (
+              <div class="swiper-slide flex justify-center">
+                <img
+                  src={page.src}
+                  alt={page.alt}
+                  class="journal-page-img"
+                  loading="lazy"
+                  draggable="false"
+                  oncontextmenu="return false"
+                  data-index={i}
+                />
+              </div>
+            ))}
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <p class="text-center font-body text-sm text-soft-lilac/60 mt-4">
+          {pages.length} páginas de preview &middot; Desliza para explorar
+        </p>
+      </>
+    )}
   </div>
 
   <!-- Modal lightbox -->

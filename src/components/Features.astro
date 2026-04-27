@@ -1,97 +1,74 @@
 ---
+const { journal = 'ly' } = Astro.props;
+const isSY = journal === 'sy';
+
+const chapters = isSY ? [
+  { title: 'Empieza a hablar', desc: 'Tu primera voz en esta página. <strong class="text-text-deep">¿Con qué emoción abres esto hoy?</strong>' },
+  { title: '"Swim" — Tu voz real', desc: 'Nadar contra el silencio. <strong class="text-text-deep">Encontrar la voz que siempre estuvo ahí</strong>.' },
+  { title: '"Arirang" — Una canción que lleva siglos', desc: 'La canción que BTS eligió para volver. <strong class="text-text-deep">Lo que significa usar tu voz</strong>.' },
+  { title: 'Tu biograma de los silencios', desc: 'Las veces que callaste y las veces que hablaste. <strong class="text-text-deep">Lo que aprendiste de ambas</strong>.' },
+  { title: 'Soy ARMY', desc: 'Tu identidad en el fandom. Lo que significa <strong class="text-text-deep">pertenecer a algo más grande</strong>.' },
+  { title: 'El ritual de decirlo', desc: 'Prácticas para seguir hablando. <strong class="text-text-deep">Promesas a tu voz</strong>.' },
+  { title: 'Speak Art Space', desc: 'Espacios de creación libre para <strong class="text-text-deep">expresarte sin límites</strong>.' },
+] : [
+  { title: 'Empieza aquí', desc: 'Tu autorretrato, tu nombre, 20 cosas sobre ti. <strong class="text-text-deep">Quién eres hoy</strong>.' },
+  { title: '"Love Yourself" — Tu identidad individual', desc: 'Sueños, miedos, lo que escondes y lo que brilla. <strong class="text-text-deep">Mirarte a la cara y ser quien sos</strong>.' },
+  { title: '"You Never Walk Alone" — Tu identidad social', desc: 'Tu familia, tus amigos, el amor. <strong class="text-text-deep">Las cartas que necesitabas escribir</strong>.' },
+  { title: 'Tu biograma musical', desc: 'La huella de la música en tu historia personal. <strong class="text-text-deep">Las canciones que te sostuvieron</strong>.' },
+  { title: 'Soy parte de ARMY', desc: 'Tu conexión con el fandom. Lo que significa <strong class="text-text-deep">pertenecer a algo más grande que tú</strong>.' },
+  { title: 'La celebración de quien soy', desc: 'Promesas contigo misma, cartas al futuro. <strong class="text-text-deep">Celebrar todo lo que eres</strong>.' },
+  { title: 'Fandom Art Space', desc: 'Espacios de creación libre para <strong class="text-text-deep">expresarte sin límites</strong>.' },
+];
+
+const stats = isSY
+  ? { exercises: '80+', songs: '15+', pages: '184' }
+  : { exercises: '85+', songs: '35', pages: '165' };
+
+const subtitle = isSY
+  ? 'Empiezas callando. Terminas diciéndote todo lo que necesitabas escuchar.'
+  : 'Empiezas por quien eres hoy. Terminas celebrando todo lo que eres.';
+
+const subdesc = isSY
+  ? 'Cada capítulo te lleva un paso más cerca de tu voz. Del silencio al ritual de decirte la verdad.'
+  : 'Cada capítulo te lleva un paso más adentro. De conocerte a quererte, pasando por la música que te sostuvo y las personas que te marcaron.';
 ---
 
 <section class="bg-white-glow section-padding">
   <div class="max-w-4xl mx-auto">
     <div class="text-center mb-8">
-      <p class="section-intro">
-        un camino de 7 estaciones
-      </p>
-
-      <h2 class="section-title text-text-deep">
-        Empiezas por quien eres hoy. Terminas celebrando todo lo que eres.
-      </h2>
-
-      <p class="section-desc max-w-xl mx-auto">
-        Cada capítulo te lleva un paso más adentro. De conocerte a quererte, pasando por la música que te sostuvo y las personas que te marcaron.
-      </p>
+      <p class="section-intro">un camino de 7 estaciones</p>
+      <h2 class="section-title text-text-deep">{subtitle}</h2>
+      <p class="section-desc max-w-xl mx-auto">{subdesc}</p>
     </div>
 
-    <!-- Chapters - real names from journal -->
     <div class="space-y-3 max-w-2xl mx-auto">
-      <div class="flex items-start gap-4 card-chapter">
-        <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">1</span>
-        <div>
-          <h3 class="font-body font-bold text-text-deep text-base md:text-lg">Empieza aquí</h3>
-          <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">Tu autorretrato, tu nombre, 20 cosas sobre ti. <strong class="text-text-deep">Quién eres hoy</strong>.</p>
+      {chapters.map((ch, i) => (
+        <div class="flex items-start gap-4 card-chapter">
+          <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">{i + 1}</span>
+          <div>
+            <h3 class="font-body font-bold text-text-deep text-base md:text-lg">{ch.title}</h3>
+            <p class="font-body text-sm md:text-base text-text-muted leading-relaxed" set:html={ch.desc} />
+          </div>
         </div>
-      </div>
-
-      <div class="flex items-start gap-4 card-chapter">
-        <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">2</span>
-        <div>
-          <h3 class="font-body font-bold text-text-deep text-base md:text-lg">"Love Yourself" — Tu identidad individual</h3>
-          <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">Sueños, miedos, lo que escondes y lo que brilla. <strong class="text-text-deep">Mirarte a la cara y ser quien sos</strong>.</p>
-        </div>
-      </div>
-
-      <div class="flex items-start gap-4 card-chapter">
-        <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">3</span>
-        <div>
-          <h3 class="font-body font-bold text-text-deep text-base md:text-lg">"You Never Walk Alone" — Tu identidad social</h3>
-          <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">Tu familia, tus amigos, el amor. <strong class="text-text-deep">Las cartas que necesitabas escribir</strong>.</p>
-        </div>
-      </div>
-
-      <div class="flex items-start gap-4 card-chapter">
-        <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">4</span>
-        <div>
-          <h3 class="font-body font-bold text-text-deep text-base md:text-lg">Tu biograma musical</h3>
-          <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">La huella de la música en tu historia personal. <strong class="text-text-deep">Las canciones que te sostuvieron</strong>.</p>
-        </div>
-      </div>
-
-      <div class="flex items-start gap-4 card-chapter">
-        <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">5</span>
-        <div>
-          <h3 class="font-body font-bold text-text-deep text-base md:text-lg">Soy parte de ARMY</h3>
-          <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">Tu conexión con el fandom. Lo que significa <strong class="text-text-deep">pertenecer a algo más grande que tú</strong>.</p>
-        </div>
-      </div>
-
-      <div class="flex items-start gap-4 card-chapter">
-        <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">6</span>
-        <div>
-          <h3 class="font-body font-bold text-text-deep text-base md:text-lg">La celebración de quien soy</h3>
-          <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">Promesas contigo misma, cartas al futuro. <strong class="text-text-deep">Celebrar todo lo que eres</strong>.</p>
-        </div>
-      </div>
-
-      <div class="flex items-start gap-4 card-chapter">
-        <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">7</span>
-        <div>
-          <h3 class="font-body font-bold text-text-deep text-base md:text-lg">Fandom Art Space</h3>
-          <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">Espacios de creación libre para <strong class="text-text-deep">expresarte sin límites</strong>.</p>
-        </div>
-      </div>
+      ))}
     </div>
 
-    <!-- Stats bar — compact, secondary -->
+    <!-- Stats bar -->
     <div class="grid grid-cols-4 gap-3 md:gap-6 mt-10 bg-lavender-mist/60 rounded-2xl p-5 md:p-8">
       <div class="text-center">
         <span class="block font-heading text-3xl md:text-5xl text-purple-vibrant leading-none">7</span>
         <span class="font-body text-sm md:text-base text-text-muted mt-1 block">capítulos</span>
       </div>
       <div class="text-center">
-        <span class="block font-heading text-3xl md:text-5xl text-purple-vibrant leading-none">85+</span>
+        <span class="block font-heading text-3xl md:text-5xl text-purple-vibrant leading-none">{stats.exercises}</span>
         <span class="font-body text-sm md:text-base text-text-muted mt-1 block">ejercicios</span>
       </div>
       <div class="text-center">
-        <span class="block font-heading text-3xl md:text-5xl text-purple-vibrant leading-none">35</span>
+        <span class="block font-heading text-3xl md:text-5xl text-purple-vibrant leading-none">{stats.songs}</span>
         <span class="font-body text-sm md:text-base text-text-muted mt-1 block">canciones</span>
       </div>
       <div class="text-center">
-        <span class="block font-heading text-3xl md:text-5xl text-purple-vibrant leading-none">165</span>
+        <span class="block font-heading text-3xl md:text-5xl text-purple-vibrant leading-none">{stats.pages}</span>
         <span class="font-body text-sm md:text-base text-text-muted mt-1 block">páginas</span>
       </div>
     </div>

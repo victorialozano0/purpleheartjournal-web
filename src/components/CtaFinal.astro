@@ -1,5 +1,9 @@
 ---
-const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || 'https://pay.hotmart.com/P104306248S';
+const { journal = 'ly' } = Astro.props;
+const isSY = journal === 'sy';
+const hotmartUrl = isSY
+  ? (import.meta.env.PUBLIC_HOTMART_URL_SY || 'https://pay.hotmart.com/K105569601Q')
+  : (import.meta.env.PUBLIC_HOTMART_URL    || 'https://pay.hotmart.com/P104306248S');
 ---
 
 <section class="relative gradient-hero section-padding overflow-hidden">
@@ -18,13 +22,18 @@ const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || 'https://pay.hotmart.co
     </h2>
 
     <p class="font-body text-base md:text-lg text-soft-lilac max-w-lg mx-auto mb-5 leading-relaxed">
-      35 canciones. 85+ prompts. Un journal hecho <strong class="text-white-glow">por ARMY, para ARMY</strong>. Tu espacio para escribir lo que siempre quisiste decir.
+      {isSY
+        ? <span>15+ canciones del regreso. 80+ prompts. Un journal hecho <strong class="text-white-glow">por ARMY, para ARMY</strong>. Tu espacio para decir lo que siempre callaste.</span>
+        : <span>35 canciones. 85+ prompts. Un journal hecho <strong class="text-white-glow">por ARMY, para ARMY</strong>. Tu espacio para escribir lo que siempre quisiste decir.</span>
+      }
     </p>
 
-    <!-- Cita BTS — Namjoon -->
+    <!-- Cita BTS -->
     <p class="font-heading italic text-base md:text-lg text-white-glow/80 mb-8 max-w-md mx-auto">
-      "Maybe I made a mistake yesterday, but yesterday's me is still me. Today I am who I am with all of my faults and my mistakes."
-      <span class="block font-body not-italic text-sm text-soft-lilac/70 mt-2">— Kim Namjoon</span>
+      {isSY
+        ? <span>"Your presence can give happiness. I hope you remember that." <span class="block font-body not-italic text-sm text-soft-lilac/70 mt-2">— Kim Taehyung</span></span>
+        : <span>"Maybe I made a mistake yesterday, but yesterday's me is still me. Today I am who I am with all of my faults and my mistakes." <span class="block font-body not-italic text-sm text-soft-lilac/70 mt-2">— Kim Namjoon</span></span>
+      }
     </p>
 
     <!-- Price anchor -->
@@ -56,7 +65,7 @@ const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || 'https://pay.hotmart.co
         </p>
       </div>
       <p class="font-body text-xs text-soft-lilac/70">
-        Descarga inmediata &middot; PDF digital &middot; 165 páginas &middot; 7 capítulos
+        Descarga inmediata &middot; PDF digital &middot; {isSY ? '184' : '165'} páginas &middot; 7 capítulos
       </p>
     </div>
 

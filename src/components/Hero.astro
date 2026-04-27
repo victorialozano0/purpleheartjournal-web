@@ -1,4 +1,18 @@
 ---
+const { journal = 'ly' } = Astro.props;
+const isSY = journal === 'sy';
+
+const headline = isSY
+  ? 'Pones Arirang. Abres una página. Y lo que callabas empieza a salir.'
+  : 'Pones Spring Day. Abres una página. Y las palabras salen solas.';
+
+const desc = isSY
+  ? 'Un journal hecho por y para ARMY. 80+ prompts guiados por <strong class="text-white-glow">15+ canciones del regreso de BTS</strong> para encontrar tu voz y escribir desde ella.'
+  : 'Un journal hecho por y para ARMY. 85+ prompts guiados por <strong class="text-white-glow">35 canciones de BTS</strong> para escribir lo que siempre quisiste decir.';
+
+const imgAlt = isSY
+  ? 'Speak Yourself Journal para ARMY — portada del journal digital en iPad'
+  : 'Love Yourself Journal para ARMY — portada del journal digital en iPad';
 ---
 
 <section class="relative min-h-screen flex items-center gradient-hero overflow-hidden px-5 py-16 md:py-0">
@@ -15,12 +29,10 @@
       </p>
 
       <h1 class="font-heading italic text-4xl md:text-5xl lg:text-6xl text-white-glow leading-[1.15] mb-5 animate-fade-up" style="animation-delay: 0.1s">
-        Pones Spring Day. Abres una página. Y las palabras salen solas.
+        {headline}
       </h1>
 
-      <p class="font-body text-base md:text-lg text-soft-lilac/90 max-w-lg mx-auto md:mx-0 mb-8 leading-relaxed animate-fade-up" style="animation-delay: 0.2s">
-        Un journal hecho por y para ARMY. 85+ prompts guiados por <strong class="text-white-glow">35 canciones de BTS</strong> para escribir lo que siempre quisiste decir.
-      </p>
+      <p class="font-body text-base md:text-lg text-soft-lilac/90 max-w-lg mx-auto md:mx-0 mb-8 leading-relaxed animate-fade-up" style="animation-delay: 0.2s" set:html={desc} />
 
       <!-- CTA suave — scroll, no venta -->
       <div class="animate-fade-up" style="animation-delay: 0.3s">
@@ -42,7 +54,7 @@
       <div class="relative w-[300px] md:w-[420px]">
         <img
           src="/images/ipad-cover.png"
-          alt="Love Yourself Journal para ARMY — portada del journal digital en iPad"
+          alt={imgAlt}
           class="img-float"
           loading="eager"
         />
