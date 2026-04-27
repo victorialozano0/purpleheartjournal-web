@@ -29,7 +29,7 @@ const leadMagnet = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
         <p class="font-body text-base md:text-xl text-soft-lilac/80 max-w-xl mx-auto leading-relaxed mb-7">
           Journals guiados por la música de BTS para escribir lo que siempre quisiste decir.
         </p>
-        <a href="#coleccion" class="btn-primary-lg">
+        <a href="#coleccion" class="btn-hero-home">
           Ver la colección 💜
         </a>
       </div>
@@ -300,6 +300,25 @@ const leadMagnet = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
 </script>
 
 <style>
+  /* ── Hero button (home only) ── */
+  .btn-hero-home {
+    display: inline-block;
+    background: var(--color-white-glow, #FDFBFF);
+    color: var(--color-purple-vibrant, #9B4DCA);
+    font-family: var(--font-body, 'DM Sans', sans-serif);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.875rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 0 40px rgba(199,125,255,0.3);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .btn-hero-home:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2), 0 0 60px rgba(199,125,255,0.4);
+    transform: translateY(-2px);
+  }
+
   /* ── Journal cards ── */
   .journal-card {
     background: white;
