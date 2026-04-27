@@ -1,6 +1,4 @@
 ---
-const { journal = 'ly' } = Astro.props;
-const isSY = journal === 'sy';
 ---
 
 <section id="solucion" class="bg-lavender-mist section-padding">
@@ -16,10 +14,7 @@ const isSY = journal === 'sy';
       </h2>
 
       <p class="section-desc max-w-2xl mx-auto">
-        {isSY
-          ? <span>Pones Arirang y te preguntas si tu voz importa. Pones Swim y escribes lo que callaste. Cada ejercicio tiene una canción del regreso que abre la puerta. Eso es <strong class="text-text-deep">Speak Yourself Journal</strong>.</span>
-          : <span>Pones Reflection y escribes sobre quién eres. Pones Spring Day y sueltas lo que cargas. Cada ejercicio tiene una canción de BTS que abre la puerta. Eso es <strong class="text-text-deep">Love Yourself Journal</strong>.</span>
-        }
+        Pones Reflection y escribes sobre quién eres. Pones Spring Day y sueltas lo que cargas. Cada ejercicio tiene una canción de BTS que abre la puerta. Eso es <strong class="text-text-deep">Love Yourself Journal</strong>.
       </p>
     </div>
 
@@ -78,7 +73,7 @@ const isSY = journal === 'sy';
           </div>
           <div>
             <h3 class="font-body font-bold text-text-deep text-lg mb-1">Un viaje completo, de principio a fin</h3>
-            <p class="font-body text-text-muted text-base leading-relaxed">{isSY ? <span>7 capítulos, 184 páginas para <strong class="text-text-deep">decirte todo lo que callaste</strong>. Cada capítulo es una etapa hacia tu voz.</span> : <span>7 capítulos, 165 páginas para <strong class="text-text-deep">recorrerte entera</strong>. Cada capítulo es una etapa del proceso.</span>}</p>
+            <p class="font-body text-text-muted text-base leading-relaxed">7 capítulos, 165 páginas para <strong class="text-text-deep">recorrerte entera</strong>. Cada capítulo es una etapa del proceso.</p>
           </div>
         </div>
       </div>
@@ -93,7 +88,7 @@ const isSY = journal === 'sy';
           </svg>
         </div>
         <div>
-          <h3 class="font-body font-bold text-text-deep text-lg">{isSY ? '15+ canciones del regreso de BTS integradas en el journal' : '35 canciones de BTS integradas en el journal'}</h3>
+          <h3 class="font-body font-bold text-text-deep text-lg">35 canciones de BTS integradas en el journal</h3>
           <p class="font-body text-text-muted text-base leading-relaxed mt-1">A lo largo del recorrido encontrarás canciones seleccionadas para acompañar tu reflexión. Si imprimes el journal, <strong class="text-text-deep">escanea el código QR</strong> para escucharla. Si lo usas en tu iPad o tablet, toca el <strong class="text-text-deep">link directo a Spotify</strong>.</p>
         </div>
       </div>

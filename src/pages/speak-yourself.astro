@@ -1,44 +1,612 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Problem from '../components/Problem.astro';
-import Preview from '../components/Preview.astro';
-import Solution from '../components/Solution.astro';
-import Features from '../components/Features.astro';
-import Testimonials from '../components/Testimonials.astro';
 import Faq from '../components/Faq.astro';
-import CtaFinal from '../components/CtaFinal.astro';
 import Footer from '../components/Footer.astro';
+
+const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL_SY || 'https://pay.hotmart.com/K105569601Q';
 ---
 
 <Layout
-  title="Speak Yourself Journal — Para ARMY que encuentra su voz 💜"
-  description="Journal digital para ARMY. 80+ prompts guiados por 15+ canciones del regreso de BTS. Encuentra tu voz y escribe desde ella."
+  title="Speak Yourself Journal — Para ARMY que escribe entre canciones 💜"
+  description="El segundo journal de la colección Purple Heart. 15+ canciones del regreso de BTS, 8 capítulos, 184 páginas para encontrar tu voz y escribir desde ella. Hecho por ARMY, para ARMY."
 >
   <main>
-    <Hero journal="sy" />
-    <Problem journal="sy" />
-    <Preview journal="sy" />
-    <Solution journal="sy" />
-    <Features journal="sy" />
 
-    <!-- Visual divider: wordplay SY -->
-    <section class="bg-lavender-mist py-10 md:py-14">
-      <div class="max-w-lg mx-auto text-center px-6">
-        <p class="font-accent text-xs tracking-[0.3em] uppercase text-purple-heart/60 mb-3">Era ARIRANG</p>
-        <div class="wordplay-block">
-          <span class="wordplay-accent">UN</span><span class="wordplay-dark">SPOKEN.</span>
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center gradient-hero overflow-hidden px-5 py-16 md:py-0">
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-purple-heart/20 blur-[100px]"></div>
+      </div>
+
+      <div class="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <!-- Text column -->
+        <div class="text-center md:text-left order-2 md:order-1">
+          <p class="font-accent text-xl md:text-2xl text-white-glow/80 mb-4 animate-fade-up">
+            para ARMY que escribe entre canciones
+          </p>
+
+          <h1 class="font-heading italic text-4xl md:text-5xl lg:text-6xl text-white-glow leading-[1.15] mb-5 animate-fade-up" style="animation-delay: 0.1s">
+            Jin cantó Arirang frente al mundo. ¿Y tú, cuál es tu canción?
+          </h1>
+
+          <p class="font-body text-base md:text-lg text-soft-lilac/90 max-w-lg mx-auto md:mx-0 mb-8 leading-relaxed animate-fade-up" style="animation-delay: 0.2s">
+            El segundo journal de la colección. <strong class="text-white-glow">15+ canciones del regreso de BTS</strong> para ayudarte a encontrar tu voz y escribir desde ella.
+          </p>
+
+          <div class="animate-fade-up" style="animation-delay: 0.3s">
+            <a
+              href="#preview"
+              class="btn-primary-lg"
+              onclick="gtag && gtag('event', 'click_hero_cta', { button_location: 'hero_sy' })"
+            >
+              Conoce el journal por dentro 💜
+            </a>
+            <p class="font-body text-sm text-soft-lilac/70 mt-4">
+              Hecho por ARMY, para ARMY.
+            </p>
+          </div>
         </div>
-        <p class="font-heading italic text-base md:text-lg text-text-muted mt-2 mb-1">no more.</p>
-        <p class="font-heading italic text-base md:text-lg text-text-muted">
-          Tu voz ya está lista. Este journal te ayuda a soltarla.
+
+        <!-- Cover image -->
+        <div class="order-1 md:order-2 flex justify-center animate-fade-up" style="animation-delay: 0.15s">
+          <div class="book-frame">
+            <img
+              src="/images/journal-sy.png"
+              alt="Speak Yourself Journal para ARMY — portada del journal digital"
+              class="book-cover"
+              loading="eager"
+            />
+            <div class="book-spine"></div>
+            <div class="book-glow"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg class="w-5 h-5 text-soft-lilac/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="bg-white-glow section-padding">
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="section-intro mb-6">tal vez te ha pasado...</p>
+
+        <h2 class="section-title text-text-deep mb-8">
+          ¿Alguna vez sentiste que tenías algo importante que decir, pero <strong class="text-purple-vibrant">no encontrabas las palabras?</strong>
+        </h2>
+
+        <div class="space-y-5 font-body text-base md:text-lg text-text-muted leading-relaxed max-w-xl mx-auto">
+          <p>
+            Escuchaste Swim y <strong class="text-text-deep">sentiste que hablaba de algo tuyo</strong>.
+          </p>
+          <p>
+            Quisiste escribir desde ese lugar, pero <strong class="text-text-deep">no sabías cómo empezar</strong>.
+          </p>
+          <p>
+            Ya sabes quién eres. Pero <strong class="text-text-deep">todavía no has dicho lo que tienes para decir</strong>.
+          </p>
+        </div>
+
+        <div class="w-12 h-px bg-purple-heart/30 mx-auto my-8"></div>
+
+        <p class="font-body text-base md:text-lg text-text-deep leading-relaxed max-w-lg mx-auto">
+          No es que no tengas voz.<br />
+          Es que <strong class="text-purple-vibrant">necesitabas un espacio para encontrarla</strong>.
+        </p>
+
+        <div class="mt-10">
+          <img
+            src="/images/army-girl.png"
+            alt="ARMY escribiendo en su journal — ilustración Purple Heart Journal"
+            class="w-32 md:w-40 mx-auto rounded-full shadow-lg shadow-purple-heart/20"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- PREVIEW CAROUSEL -->
+    <section id="preview" class="relative gradient-hero section-padding overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-purple-heart/15 blur-[80px] pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="section-intro">mira por dentro</p>
+          <h2 class="section-title text-white-glow max-w-2xl mx-auto">
+            Preguntas que abren conversaciones contigo misma.
+          </h2>
+          <p class="section-desc text-soft-lilac max-w-xl mx-auto">
+            Desliza para hojear las páginas del journal. <strong class="text-white-glow">Toca una página para verla en grande</strong>.
+          </p>
+        </div>
+
+        <div class="swiper sy-swiper select-none" id="sy-preview">
+          <div class="swiper-wrapper">
+            {[
+              { src: '/sy-journal/page-01.webp', alt: 'Portada — Speak Yourself Journal para ARMY' },
+              { src: '/sy-journal/page-02.webp', alt: '¿Cuánto tiempo llevas guardando cosas que solo dices en tu cabeza?' },
+              { src: '/sy-journal/page-03.webp', alt: 'Arirang — la canción que existe en 3.600 versiones' },
+              { src: '/sy-journal/page-04.webp', alt: 'Las Versiones que Muestras — ejercicio de identidad' },
+              { src: '/sy-journal/page-05.webp', alt: 'El Reencuentro — honrar la espera y el regreso de BTS' },
+              { src: '/sy-journal/page-06.webp', alt: 'Capítulo 02 Swim — Tu Voz Real' },
+              { src: '/sy-journal/page-07.webp', alt: 'Esto No Es Mío — identificar qué voces son realmente tuyas' },
+              { src: '/sy-journal/page-08.webp', alt: 'Merry Go Round — Jin · ejercicio guiado por letra de BTS' },
+              { src: '/sy-journal/page-09.webp', alt: 'Lo Que Vivo en el Medio — Arirang · identidad entre mundos' },
+              { src: '/sy-journal/page-10.webp', alt: 'One More Night — Jin · todos los años que callaste' },
+              { src: '/sy-journal/page-11.webp', alt: 'El Inventario del Silencio — mapa honesto de lo no dicho' },
+            ].map((page, i) => (
+              <div class="swiper-slide flex justify-center">
+                <img
+                  src={page.src}
+                  alt={page.alt}
+                  class="sy-page-img"
+                  loading="lazy"
+                  draggable="false"
+                  oncontextmenu="return false"
+                  data-index={i}
+                />
+              </div>
+            ))}
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <p class="text-center font-body text-sm text-soft-lilac/60 mt-4">
+          11 páginas de preview &middot; Desliza para explorar
+        </p>
+      </div>
+
+      <!-- Modal lightbox -->
+      <div id="sy-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out">
+        <button id="sy-modal-close" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white-glow/20 flex items-center justify-center text-white-glow hover:bg-white-glow/40 transition-colors cursor-pointer z-10" aria-label="Cerrar">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <img id="sy-modal-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl select-none" draggable="false" oncontextmenu="return false" />
+      </div>
+    </section>
+
+    <script>
+      import Swiper from 'swiper';
+      import { Navigation, Pagination } from 'swiper/modules';
+      import 'swiper/css';
+      import 'swiper/css/navigation';
+      import 'swiper/css/pagination';
+
+      function initSYSwiper() {
+        new Swiper('#sy-preview', {
+          modules: [Navigation, Pagination],
+          slidesPerView: 1,
+          spaceBetween: 20,
+          centeredSlides: true,
+          grabCursor: true,
+          loop: false,
+          navigation: { nextEl: '.sy-swiper .swiper-button-next', prevEl: '.sy-swiper .swiper-button-prev' },
+          pagination: { el: '.sy-swiper .swiper-pagination', clickable: true },
+          breakpoints: {
+            768: { slidesPerView: 1.4, spaceBetween: 30 },
+            1024: { slidesPerView: 1.6, spaceBetween: 40 },
+          },
+        });
+
+        const modal = document.getElementById('sy-modal');
+        const modalImg = document.getElementById('sy-modal-img') as HTMLImageElement | null;
+        const modalClose = document.getElementById('sy-modal-close');
+
+        document.querySelectorAll('.sy-page-img').forEach((img) => {
+          (img as HTMLElement).style.cursor = 'zoom-in';
+          img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (modal && modalImg) {
+              modalImg.src = (img as HTMLImageElement).src;
+              modalImg.alt = (img as HTMLImageElement).alt;
+              modal.classList.remove('hidden');
+              modal.classList.add('flex');
+              document.body.style.overflow = 'hidden';
+            }
+          });
+        });
+
+        const closeModal = () => {
+          modal?.classList.add('hidden');
+          modal?.classList.remove('flex');
+          document.body.style.overflow = '';
+        };
+        modalClose?.addEventListener('click', closeModal);
+        modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSYSwiper);
+      } else {
+        initSYSwiper();
+      }
+    </script>
+
+    <style>
+      .sy-page-img {
+        width: auto;
+        max-width: 100%;
+        max-height: 75vh;
+        border-radius: 0.75rem;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba(199, 125, 255, 0.15);
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+      .sy-swiper .swiper-button-prev,
+      .sy-swiper .swiper-button-next {
+        color: rgba(253, 251, 255, 0.8);
+        background: rgba(91, 44, 142, 0.5);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        backdrop-filter: blur(8px);
+      }
+      .sy-swiper .swiper-button-prev:after,
+      .sy-swiper .swiper-button-next:after { font-size: 18px; font-weight: bold; }
+      .sy-swiper .swiper-button-prev:hover,
+      .sy-swiper .swiper-button-next:hover { background: rgba(91, 44, 142, 0.8); }
+      .sy-swiper .swiper-pagination-bullet { background: rgba(224, 208, 240, 0.5); opacity: 1; }
+      .sy-swiper .swiper-pagination-bullet-active { background: #C77DFF; }
+      .sy-swiper .swiper-slide:not(.swiper-slide-active) { opacity: 0.5; transition: opacity 0.3s ease; }
+      .sy-swiper .swiper-slide-active { opacity: 1; }
+    </style>
+
+    <!-- SOLUCIÓN -->
+    <section class="bg-lavender-mist section-padding">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-8 md:mb-12">
+          <p class="section-intro">por eso creé este journal para nosotras</p>
+
+          <h2 class="section-title text-text-deep max-w-3xl mx-auto">
+            Un journal anclado en ARIRANG. La canción que Jin cantó frente al mundo — y que existe en 3.600 versiones.
+          </h2>
+
+          <p class="section-desc max-w-2xl mx-auto">
+            Arirang es una canción tradicional coreana que cada persona interpreta a su manera. Jin la cantó con su voz, con su historia. Speak Yourself Journal te invita a escribir <strong class="text-text-deep">la tuya</strong>.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+          <div class="card-feature">
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-lg bg-purple-heart/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-purple-vibrant" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+              </div>
+              <div>
+                <h3 class="font-body font-bold text-text-deep text-lg mb-1">Tu voz como punto de partida</h3>
+                <p class="font-body text-text-muted text-base leading-relaxed">Ejercicios diseñados para ayudarte a <strong class="text-text-deep">identificar y confiar</strong> en tu forma de ver el mundo.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-feature">
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-lg bg-purple-heart/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-purple-vibrant" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+              </div>
+              <div>
+                <h3 class="font-body font-bold text-text-deep text-lg mb-1">Las canciones del regreso</h3>
+                <p class="font-body text-text-muted text-base leading-relaxed">ARIRANG, Swim, Into the Sun, No. 29 y más. <strong class="text-text-deep">La música como puerta</strong> a lo que necesitas decir.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-feature">
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-lg bg-purple-heart/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-purple-vibrant" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              </div>
+              <div>
+                <h3 class="font-body font-bold text-text-deep text-lg mb-1">El segundo paso del arco</h3>
+                <p class="font-body text-text-muted text-base leading-relaxed">Love Yourself te preguntó quién eres. Speak Yourself te pregunta <strong class="text-text-deep">qué tienes para decir</strong> desde ese lugar.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-feature">
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-lg bg-purple-heart/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-purple-vibrant" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              </div>
+              <div>
+                <h3 class="font-body font-bold text-text-deep text-lg mb-1">Arte y escritura integrados</h3>
+                <p class="font-body text-text-muted text-base leading-relaxed">Un capítulo entero de Speak Art Space para <strong class="text-text-deep">expresarte sin límites</strong> — trazo, color, forma o palabras.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPÍTULOS -->
+    <section id="capitulos" class="bg-white-glow section-padding">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="section-intro">un camino de 8 estaciones</p>
+
+          <h2 class="section-title text-text-deep">
+            Empiezas por tu canción. Terminas hablando desde tu versión.
+          </h2>
+
+          <p class="section-desc max-w-xl mx-auto">
+            Cada capítulo tiene una pregunta central y canciones de BTS que abren la puerta. No necesitas haberlos escuchado todos — solo los que ya están en tu corazón.
+          </p>
+        </div>
+
+        <div class="space-y-3 max-w-2xl mx-auto">
+          <div class="flex items-start gap-4 card-chapter">
+            <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">1</span>
+            <div>
+              <h3 class="font-body font-bold text-text-deep text-base md:text-lg">Empieza a Hablar</h3>
+              <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">¿Cuál es tu canción? El punto de partida: <strong class="text-text-deep">identificar la voz que ya tienes</strong>.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 card-chapter">
+            <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">2</span>
+            <div>
+              <h3 class="font-body font-bold text-text-deep text-base md:text-lg">Swim — Tu Voz Real</h3>
+              <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">Con Swim, Normal, Like Animals y más. <strong class="text-text-deep">Tu voz sin filtros ni comparaciones</strong>.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 card-chapter">
+            <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">3</span>
+            <div>
+              <h3 class="font-body font-bold text-text-deep text-base md:text-lg">Arirang — Una Canción Para Cada Persona</h3>
+              <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">Tu historia es una canción que solo tú puedes cantar. <strong class="text-text-deep">Hacerla tuya</strong>.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 card-chapter">
+            <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">4</span>
+            <div>
+              <h3 class="font-body font-bold text-text-deep text-base md:text-lg">Tu Biograma de Silencios</h3>
+              <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">Las pausas, los silencios, lo que guardaste. <strong class="text-text-deep">Mirarlo de frente</strong>.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 card-chapter">
+            <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">5</span>
+            <div>
+              <h3 class="font-body font-bold text-text-deep text-base md:text-lg">Soy ARMY y Lo Digo</h3>
+              <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">Con Hooligan y No. 29. <strong class="text-text-deep">Declarar en voz alta</strong> lo que eres como ARMY.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 card-chapter">
+            <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">6</span>
+            <div>
+              <h3 class="font-body font-bold text-text-deep text-base md:text-lg">El Ritual de Decirlo</h3>
+              <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">El hábito de decirte la verdad. <strong class="text-text-deep">Hablar desde lo que realmente sientes</strong>.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 card-chapter">
+            <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">7</span>
+            <div>
+              <h3 class="font-body font-bold text-text-deep text-base md:text-lg">Speak Art Space</h3>
+              <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">Espacios de creación libre para <strong class="text-text-deep">expresarte sin instrucciones</strong>.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 card-chapter">
+            <span class="font-heading text-2xl md:text-3xl text-purple-vibrant w-8 text-center shrink-0 leading-none mt-1">8</span>
+            <div>
+              <h3 class="font-body font-bold text-text-deep text-base md:text-lg">La 3.601ª Versión — Tu Arirang</h3>
+              <p class="font-body text-sm md:text-base text-text-muted leading-relaxed">El cierre. Arirang tiene 3.600 versiones. <strong class="text-text-deep">Acabas de crear la tuya</strong>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats bar -->
+        <div class="grid grid-cols-4 gap-3 md:gap-6 mt-10 bg-lavender-mist/60 rounded-2xl p-5 md:p-8">
+          <div class="text-center">
+            <span class="block font-heading text-3xl md:text-5xl text-purple-vibrant leading-none">8</span>
+            <span class="font-body text-sm md:text-base text-text-muted mt-1 block">capítulos</span>
+          </div>
+          <div class="text-center">
+            <span class="block font-heading text-3xl md:text-5xl text-purple-vibrant leading-none">80+</span>
+            <span class="font-body text-sm md:text-base text-text-muted mt-1 block">ejercicios</span>
+          </div>
+          <div class="text-center">
+            <span class="block font-heading text-3xl md:text-5xl text-purple-vibrant leading-none">15+</span>
+            <span class="font-body text-sm md:text-base text-text-muted mt-1 block">canciones</span>
+          </div>
+          <div class="text-center">
+            <span class="block font-heading text-3xl md:text-5xl text-purple-vibrant leading-none">184</span>
+            <span class="font-body text-sm md:text-base text-text-muted mt-1 block">páginas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual divider: SPEAK YOUR SELF FREE -->
+    <section class="bg-lavender-mist py-10 md:py-14 text-center px-5">
+      <div class="max-w-2xl mx-auto" style="line-height: 0.92; letter-spacing: 0.01em;">
+        <p class="speak-free-text">
+          <span style="color: #C77DFF;">SPEAK</span><span style="color: #1A0A2E;"> YOUR</span><br/>
+          <span style="color: #1A0A2E;">SELF </span><span style="color: #C77DFF;">FREE</span><span style="color: #1A0A2E;">.</span>
         </p>
       </div>
     </section>
 
-    <Testimonials />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+      .speak-free-text {
+        font-family: 'Anton', sans-serif;
+        font-size: clamp(3.5rem, 14vw, 7rem);
+        text-transform: uppercase;
+        line-height: 0.92;
+        letter-spacing: 0.01em;
+      }
+      .book-frame {
+        position: relative;
+        width: 260px;
+        height: 340px;
+      }
+      @media (min-width: 768px) {
+        .book-frame { width: 320px; height: 420px; }
+      }
+      .book-cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px 12px 12px 4px;
+        box-shadow: -6px 6px 20px rgba(0,0,0,0.35), 4px 0 12px rgba(0,0,0,0.2);
+        position: relative;
+        z-index: 2;
+      }
+      .book-spine {
+        position: absolute;
+        left: 0;
+        top: 4px;
+        bottom: 4px;
+        width: 18px;
+        background: linear-gradient(to right, #3D1A6E, #5B2C8E);
+        border-radius: 3px 0 0 3px;
+        z-index: 1;
+        box-shadow: -3px 0 8px rgba(0,0,0,0.3);
+      }
+      .book-glow {
+        position: absolute;
+        inset: -20px;
+        background: radial-gradient(ellipse at center, rgba(199,125,255,0.25) 0%, transparent 70%);
+        z-index: 0;
+        border-radius: 50%;
+      }
+    </style>
+
+    <!-- TESTIMONIOS SY -->
+    <section class="bg-lavender-mist section-padding">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="section-intro">lo que pasa cuando empiezas a hablar</p>
+          <h2 class="section-title text-text-deep">Esto pasa cuando encuentras tu voz.</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {[
+            {
+              text: "Llegué al capítulo de Arirang pensando que no iba a poder escribir nada. Terminé con tres páginas que nunca le había dicho a nadie. No sabía que tenía tanto guardado.",
+              name: "Daniela",
+              detail: "ARMY — Argentina",
+            },
+            {
+              text: "El ejercicio de 'tu voz sin filtros' con Swim me cambió el esquema. Siempre pensé que lo que yo sentía no valía tanto como lo que sentían otras. Este journal me demostró que sí vale.",
+              name: "Sofía",
+              detail: "ARMY desde 2020",
+            },
+            {
+              text: "La carta a mi yo futura del cierre me hizo llorar. Escribí cosas que ni sabía que pensaba. Sentí que Jin me acompañó en cada página — eso no lo esperaba de un journal.",
+              name: "Mariana",
+              detail: "ARMY — Chile",
+            },
+          ].map((t) => (
+            <div class="card-testimonial">
+              <div>
+                <svg class="w-7 h-7 text-purple-heart/25 mb-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zm-14.017 0v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H0z"/>
+                </svg>
+                <p class="font-body text-text-deep text-sm md:text-base leading-relaxed">{t.text}</p>
+              </div>
+              <div class="border-t border-soft-lilac/60 pt-3 mt-5">
+                <p class="font-body font-bold text-text-deep text-sm">{t.name}</p>
+                <p class="font-body text-text-muted text-xs">{t.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <Faq />
-    <CtaFinal journal="sy" />
+
+    <!-- CTA FINAL -->
+    <section class="relative gradient-hero section-padding overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-purple-heart/20 blur-[100px]"></div>
+      </div>
+
+      <div class="relative z-10 max-w-2xl mx-auto text-center">
+        <p class="section-intro mb-5">BTS ya te dio las palabras</p>
+
+        <h2 class="section-title text-white-glow mb-5">
+          Este journal te da el espacio para decirlas.
+        </h2>
+
+        <p class="font-body text-base md:text-lg text-soft-lilac max-w-lg mx-auto mb-5 leading-relaxed">
+          15+ canciones del regreso. 80+ ejercicios. Un journal hecho <strong class="text-white-glow">por ARMY, para ARMY</strong>. Tu espacio para encontrar tu voz y escribir desde ella.
+        </p>
+
+        <p class="font-heading italic text-base md:text-lg text-white-glow/80 mb-8 max-w-md mx-auto">
+          "When Jin sang Arirang in front of the world, he didn't sing a perfect version. He sang his own."
+          <span class="block font-body not-italic text-sm text-soft-lilac/70 mt-2">— Speak Yourself Journal</span>
+        </p>
+
+        <div class="mb-8">
+          <span class="font-body text-lg text-soft-lilac/70 line-through">$24.90</span>
+          <span class="font-body text-4xl md:text-5xl font-bold text-white-glow ml-3">$9.90 USD</span>
+          <p class="font-accent text-lg text-white-glow/80 mt-2">Precio especial de lanzamiento</p>
+        </div>
+
+        <a
+          href={hotmartUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary-lg"
+          onclick="gtag && gtag('event', 'click_cta_pagar', { button_location: 'cta_final_sy' })"
+        >
+          Quiero empezar mi journal 💜
+        </a>
+
+        <div class="mt-5 flex flex-col items-center gap-2">
+          <div class="flex items-center gap-2 bg-white-glow/15 border border-soft-lilac/30 rounded-full px-5 py-2.5">
+            <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <p class="font-body text-sm text-white-glow/95">
+              Compra segura con <strong class="text-white-glow">Hotmart</strong> — la plataforma #1 de productos digitales
+            </p>
+          </div>
+          <p class="font-body text-xs text-soft-lilac/70">
+            Descarga inmediata &middot; PDF digital &middot; 184 páginas &middot; 8 capítulos
+          </p>
+        </div>
+
+        <div class="mt-6 bg-white-glow/10 border border-soft-lilac/20 rounded-xl px-6 py-4 max-w-sm mx-auto">
+          <p class="font-body text-sm text-white-glow/90">
+            <strong>Garantía Hotmart de 15 días.</strong> Si no es lo que esperabas, Hotmart te devuelve tu dinero. Sin preguntas.
+          </p>
+        </div>
+
+        <div class="mt-8">
+          <a href="/coleccion" class="font-body text-sm text-soft-lilac/60 hover:text-white-glow transition-colors duration-200 underline underline-offset-4">
+            ¿Buscas los dos journals? Ver colección completa →
+          </a>
+        </div>
+
+        <div class="mt-8">
+          <img
+            src="/images/firma-purple-heart.png"
+            alt="Firma de Purple Heart"
+            class="h-10 md:h-12 mx-auto opacity-80"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+          />
+          <p class="hidden font-accent text-xl text-white-glow/60">Purple Heart</p>
+        </div>
+      </div>
+    </section>
+
   </main>
   <Footer />
 </Layout>
