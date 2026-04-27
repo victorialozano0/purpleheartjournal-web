@@ -56,7 +56,10 @@ const leadMagnet = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
           <!-- Card LY -->
           <div class="journal-card">
             <div class="journal-card-header">
-              <img src="/images/journal-ly.png" alt="Love Yourself Journal" class="journal-thumb" loading="lazy" />
+              <div class="wordplay-card">
+                <div class="wc-line"><span class="wc-accent">BE</span><span class="wc-light">LIEVE IN</span></div>
+                <div class="wc-line"><span class="wc-accent">YOU</span><span class="wc-light">RSELF.</span></div>
+              </div>
             </div>
             <div class="journal-card-body">
               <p class="font-accent text-xs tracking-widest uppercase text-purple-heart mb-2">Era Love Yourself</p>
@@ -88,8 +91,11 @@ const leadMagnet = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
 
           <!-- Card SY -->
           <div class="journal-card journal-card-dark">
-            <div class="journal-card-header journal-card-header-dark">
-              <img src="/images/journal-sy.png" alt="Speak Yourself Journal" class="journal-thumb" loading="lazy" />
+            <div class="journal-card-header journal-card-header-sy">
+              <div class="wordplay-card">
+                <div class="wc-line"><span class="wc-accent">SPEAK</span><span class="wc-dark"> YOUR</span></div>
+                <div class="wc-line"><span class="wc-dark">SELF </span><span class="wc-accent">FREE.</span></div>
+              </div>
             </div>
             <div class="journal-card-body">
               <p class="font-accent text-xs tracking-widest uppercase text-purple-heart mb-2">Era ARIRANG</p>
@@ -300,6 +306,32 @@ const leadMagnet = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
 </script>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+  /* ── Wordplay card headers ── */
+  .journal-card-header-sy {
+    background: #F3EAFA;
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+  .wordplay-card {
+    text-align: left;
+    line-height: 0.95;
+  }
+  .wc-line {
+    display: block;
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .wc-accent { color: #C77DFF; }
+  .wc-light  { color: rgba(253,251,255,0.92); }
+  .wc-dark   { color: #1A0A2E; }
+
   /* ── Hero button (home only) ── */
   .btn-hero-home {
     display: inline-block;
