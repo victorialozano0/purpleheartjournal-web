@@ -88,8 +88,8 @@ img {
 
 /* Section wrapper — consistent padding */
 @utility section-padding {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
@@ -266,8 +266,8 @@ img {
 
 @media (min-width: 768px) {
   .section-padding {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
   .section-intro {
     font-size: 1.875rem; /* 30px desktop */
