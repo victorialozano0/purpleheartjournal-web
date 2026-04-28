@@ -56,8 +56,6 @@ const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL_SY || 'https://pay.hotmart
               class="book-cover"
               loading="eager"
             />
-            <div class="book-spine"></div>
-            <div class="book-glow"></div>
           </div>
         </div>
       </div>
@@ -447,41 +445,6 @@ const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL_SY || 'https://pay.hotmart
         text-transform: uppercase;
         line-height: 0.92;
         letter-spacing: 0.01em;
-      }
-      .book-frame {
-        position: relative;
-        width: 260px;
-        height: 340px;
-      }
-      @media (min-width: 768px) {
-        .book-frame { width: 320px; height: 420px; }
-      }
-      .book-cover {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 4px 12px 12px 4px;
-        box-shadow: -6px 6px 20px rgba(0,0,0,0.35), 4px 0 12px rgba(0,0,0,0.2);
-        position: relative;
-        z-index: 2;
-      }
-      .book-spine {
-        position: absolute;
-        left: 0;
-        top: 4px;
-        bottom: 4px;
-        width: 18px;
-        background: linear-gradient(to right, #3D1A6E, #5B2C8E);
-        border-radius: 3px 0 0 3px;
-        z-index: 1;
-        box-shadow: -3px 0 8px rgba(0,0,0,0.3);
-      }
-      .book-glow {
-        position: absolute;
-        inset: -20px;
-        background: radial-gradient(ellipse at center, rgba(199,125,255,0.25) 0%, transparent 70%);
-        z-index: 0;
-        border-radius: 50%;
       }
     </style>
 
