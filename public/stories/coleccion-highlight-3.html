@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Story — Colección Purple Heart</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: linear-gradient(160deg, #1A0A2E 0%, #5B2C8E 35%, #9B4DCA 68%, #C77DFF 100%);
+      font-family: 'DM Sans', sans-serif;
+      color: #FDFBFF;
+      position: relative;
+    }
+
+    .glow-top {
+      position: absolute;
+      width: 900px; height: 900px;
+      background: radial-gradient(circle, rgba(199,125,255,0.18) 0%, transparent 65%);
+      top: -200px; right: -220px;
+      pointer-events: none;
+    }
+    .glow-mid {
+      position: absolute;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(91,44,142,0.28) 0%, transparent 65%);
+      top: 900px; left: -180px;
+      pointer-events: none;
+    }
+    .glow-bottom {
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(199,125,255,0.14) 0%, transparent 65%);
+      bottom: -80px; right: -120px;
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 90px 76px 88px;
+    }
+
+    /* ── Brand ── */
+    .brand-tag {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 56px;
+    }
+    .brand-dot { width: 7px; height: 7px; border-radius: 50%; background: #DDA0FF; }
+    .brand-name {
+      font-size: 27px;
+      font-weight: 300;
+      letter-spacing: 0.07em;
+      color: rgba(253,251,255,0.65);
+    }
+
+    /* ── Collection intro ── */
+    .collection-eyebrow {
+      font-family: 'Caveat', cursive;
+      font-size: 32px;
+      font-weight: 600;
+      color: #DDA0FF;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      text-shadow: 0 0 24px rgba(199,125,255,0.6);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .collection-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 82px;
+      line-height: 1.0;
+      text-align: center;
+      color: #FDFBFF;
+      text-shadow: 0 0 50px rgba(199,125,255,0.4);
+      margin-bottom: 16px;
+    }
+
+    .collection-sub {
+      font-size: 30px;
+      font-weight: 300;
+      color: rgba(253,251,255,0.6);
+      text-align: center;
+      letter-spacing: 0.02em;
+      margin-bottom: 64px;
+    }
+
+    /* ── Covers side by side ── */
+    .covers-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 40px;
+      width: 100%;
+      margin-bottom: 64px;
+    }
+
+    .cover-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .cover-block img {
+      filter:
+        drop-shadow(0 30px 60px rgba(0,0,0,0.6))
+        drop-shadow(0 0 50px rgba(199,125,255,0.28));
+    }
+
+    .cover-vol1 img {
+      width: 290px;
+      transform: rotate(-4deg);
+    }
+    .cover-vol2 img {
+      width: 290px;
+      transform: rotate(3deg);
+    }
+
+    .vol-label {
+      font-family: 'Caveat', cursive;
+      font-size: 26px;
+      font-weight: 600;
+      color: #DDA0FF;
+      text-shadow: 0 0 16px rgba(199,125,255,0.5);
+      letter-spacing: 0.04em;
+    }
+
+    .vol-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 34px;
+      font-weight: 600;
+      color: rgba(253,251,255,0.88);
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    /* ── Arc section ── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(221,160,255,0.5), transparent);
+      margin-bottom: 52px;
+    }
+
+    .arc-label {
+      font-family: 'Caveat', cursive;
+      font-size: 34px;
+      font-weight: 600;
+      color: #DDA0FF;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px rgba(199,125,255,0.55);
+      margin-bottom: 28px;
+      align-self: flex-start;
+    }
+
+    .arc-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      margin-bottom: 56px;
+    }
+
+    .arc-step {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      background: rgba(253,251,255,0.08);
+      border: 1px solid rgba(221,160,255,0.25);
+      border-radius: 16px;
+      padding: 24px 28px;
+    }
+
+    .arc-vol {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 24px;
+      color: #DDA0FF;
+      text-shadow: 0 0 14px rgba(199,125,255,0.5);
+      flex-shrink: 0;
+      width: 72px;
+    }
+
+    .arc-divider-v {
+      width: 1px;
+      height: 52px;
+      background: rgba(221,160,255,0.3);
+      flex-shrink: 0;
+    }
+
+    .arc-content { flex: 1; }
+
+    .arc-question {
+      font-family: 'Caveat', cursive;
+      font-size: 30px;
+      font-weight: 600;
+      color: rgba(253,251,255,0.95);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .arc-answer {
+      font-size: 23px;
+      font-weight: 300;
+      color: rgba(253,251,255,0.55);
+      letter-spacing: 0.01em;
+    }
+
+    /* ── Stats total ── */
+    .stats-total {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 56px;
+      background: rgba(253,251,255,0.06);
+      border: 1px solid rgba(221,160,255,0.2);
+      border-radius: 20px;
+      padding: 28px 20px;
+    }
+
+    .stat-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 52px;
+      font-weight: 600;
+      color: #DDA0FF;
+      text-shadow: 0 0 24px rgba(199,125,255,0.5);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 22px;
+      font-weight: 300;
+      color: rgba(253,251,255,0.6);
+      letter-spacing: 0.03em;
+    }
+
+    .stat-sep {
+      width: 1px;
+      background: rgba(221,160,255,0.25);
+      align-self: stretch;
+    }
+
+    /* ── CTA ── */
+    .cta-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-top: auto;
+    }
+    .cta-pill {
+      background: rgba(253,251,255,0.13);
+      border: 1.5px solid rgba(253,251,255,0.28);
+      border-radius: 100px;
+      padding: 22px 60px;
+      font-size: 30px;
+      font-weight: 400;
+      color: #FDFBFF;
+      letter-spacing: 0.03em;
+    }
+    .cta-hint {
+      font-size: 22px;
+      font-weight: 300;
+      color: rgba(253,251,255,0.35);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-top"></div>
+  <div class="glow-mid"></div>
+  <div class="glow-bottom"></div>
+
+  <div class="container">
+
+    <div class="brand-tag">
+      <div class="brand-dot"></div>
+      <span class="brand-name">@purpleheartjournal.bts</span>
+      <div class="brand-dot"></div>
+    </div>
+
+    <span class="collection-eyebrow">Colección Purple Heart</span>
+    <h1 class="collection-headline">Dos preguntas.<br>Un viaje.</h1>
+    <p class="collection-sub">Dos journals. Un arco completo.</p>
+
+    <div class="covers-row">
+      <div class="cover-block cover-vol1">
+        <img src="/images/journal-ly.png" alt="Love Yourself Journal">
+        <span class="vol-label">Vol. I</span>
+        <span class="vol-name">Love Yourself<br>Journal</span>
+      </div>
+      <div class="cover-block cover-vol2">
+        <img src="/images/journal-sy.png" alt="Speak Yourself Journal">
+        <span class="vol-label">Vol. II</span>
+        <span class="vol-name">Speak Yourself<br>Journal</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <span class="arc-label">el arco de la colección</span>
+    <div class="arc-steps">
+      <div class="arc-step">
+        <span class="arc-vol">Vol. I</span>
+        <div class="arc-divider-v"></div>
+        <div class="arc-content">
+          <p class="arc-question">¿Quién soy?</p>
+          <p class="arc-answer">Autoconocimiento · Era Love Yourself</p>
+        </div>
+      </div>
+      <div class="arc-step">
+        <span class="arc-vol">Vol. II</span>
+        <div class="arc-divider-v"></div>
+        <div class="arc-content">
+          <p class="arc-question">¿Qué tengo para decir?</p>
+          <p class="arc-answer">Identidad · Voz · Era ARIRANG</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-total">
+      <div class="stat-block">
+        <span class="stat-number">349</span>
+        <span class="stat-label">páginas</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-block">
+        <span class="stat-number">15</span>
+        <span class="stat-label">capítulos</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-block">
+        <span class="stat-number">165+</span>
+        <span class="stat-label">ejercicios</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-block">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">canciones</span>
+      </div>
+    </div>
+
+    <div class="cta-area">
+      <div class="cta-pill">Ver la colección completa →</div>
+      <span class="cta-hint">toca el enlace de arriba</span>
+    </div>
+
+  </div>
+
+</body>
+</html>

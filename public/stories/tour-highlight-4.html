@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Story — Tour ARIRANG</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: linear-gradient(160deg, #1A0A2E 0%, #5B2C8E 35%, #9B4DCA 68%, #C77DFF 100%);
+      font-family: 'DM Sans', sans-serif;
+      color: #FDFBFF;
+      position: relative;
+    }
+
+    .glow-top {
+      position: absolute;
+      width: 900px; height: 900px;
+      background: radial-gradient(circle, rgba(199,125,255,0.16) 0%, transparent 65%);
+      top: -200px; right: -220px;
+      pointer-events: none;
+    }
+    .glow-red {
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,19,64,0.10) 0%, transparent 65%);
+      top: 600px; left: -150px;
+      pointer-events: none;
+    }
+    .glow-bottom {
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(199,125,255,0.12) 0%, transparent 65%);
+      bottom: -80px; right: -120px;
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 90px 76px 88px;
+    }
+
+    /* ── Brand ── */
+    .brand-tag {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 52px;
+    }
+    .brand-dot { width: 7px; height: 7px; border-radius: 50%; background: #DDA0FF; }
+    .brand-name {
+      font-size: 27px;
+      font-weight: 300;
+      letter-spacing: 0.07em;
+      color: rgba(253,251,255,0.65);
+    }
+
+    /* ── Tour badge ── */
+    .tour-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,19,64,0.15);
+      border: 1px solid rgba(255,19,64,0.40);
+      border-radius: 100px;
+      padding: 10px 28px;
+      margin-bottom: 40px;
+    }
+    .tour-badge-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #FF1340;
+    }
+    .tour-badge-text {
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(253,251,255,0.80);
+    }
+
+    /* ── Main headline ── */
+    .headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 90px;
+      line-height: 1.0;
+      text-align: center;
+      color: #FDFBFF;
+      text-shadow: 0 0 50px rgba(199,125,255,0.4);
+      margin-bottom: 24px;
+    }
+
+    .sub {
+      font-size: 30px;
+      font-weight: 300;
+      color: rgba(253,251,255,0.58);
+      text-align: center;
+      line-height: 1.4;
+      margin-bottom: 64px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(221,160,255,0.45), transparent);
+      margin-bottom: 56px;
+    }
+
+    /* ── Diarios cards ── */
+    .diarios-col {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+      margin-bottom: 56px;
+    }
+
+    .diario-card {
+      background: rgba(253,251,255,0.07);
+      border: 1px solid rgba(221,160,255,0.25);
+      border-radius: 20px;
+      padding: 32px 32px;
+      border-left: 3px solid #FF1340;
+    }
+
+    .diario-label {
+      font-size: 22px;
+      font-weight: 400;
+      color: #FF1340;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      opacity: 0.85;
+    }
+
+    .diario-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 52px;
+      color: #FDFBFF;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .diario-items {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .diario-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .diario-item-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #DDA0FF;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+    .diario-item-text {
+      font-size: 26px;
+      font-weight: 300;
+      color: rgba(253,251,255,0.80);
+    }
+
+    /* ── Free pill ── */
+    .free-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      margin-bottom: 56px;
+    }
+    .free-tag {
+      background: rgba(255,19,64,0.12);
+      border: 1px solid rgba(255,19,64,0.30);
+      border-radius: 100px;
+      padding: 12px 30px;
+      font-size: 25px;
+      font-weight: 400;
+      color: rgba(253,251,255,0.75);
+      letter-spacing: 0.04em;
+    }
+    .free-sep {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: rgba(221,160,255,0.4);
+    }
+
+    /* ── CTA ── */
+    .cta-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-top: auto;
+    }
+    .cta-pill {
+      background: rgba(253,251,255,0.13);
+      border: 1.5px solid rgba(253,251,255,0.28);
+      border-radius: 100px;
+      padding: 22px 60px;
+      font-size: 30px;
+      font-weight: 400;
+      color: #FDFBFF;
+      letter-spacing: 0.03em;
+    }
+    .cta-hint {
+      font-size: 22px;
+      font-weight: 300;
+      color: rgba(253,251,255,0.35);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-top"></div>
+  <div class="glow-red"></div>
+  <div class="glow-bottom"></div>
+
+  <div class="container">
+
+    <div class="brand-tag">
+      <div class="brand-dot"></div>
+      <span class="brand-name">@purpleheartjournal.bts</span>
+      <div class="brand-dot"></div>
+    </div>
+
+    <div class="tour-badge">
+      <div class="tour-badge-dot"></div>
+      <span class="tour-badge-text">BTS World Tour · ARIRANG 2026</span>
+      <div class="tour-badge-dot"></div>
+    </div>
+
+    <h1 class="headline">¿Vas al<br>concierto?</h1>
+    <p class="sub">Tienes dos diarios<br>esperándote. Gratis.</p>
+
+    <div class="divider"></div>
+
+    <div class="diarios-col">
+
+      <div class="diario-card">
+        <div class="diario-label">Diario 1 · Antes de entrar</div>
+        <div class="diario-title">Antes de entrar</div>
+        <div class="diario-items">
+          <div class="diario-item"><div class="diario-item-dot"></div><span class="diario-item-text">El precio de llegar hasta aquí</span></div>
+          <div class="diario-item"><div class="diario-item-dot"></div><span class="diario-item-text">Quién eras vs. quién eres</span></div>
+          <div class="diario-item"><div class="diario-item-dot"></div><span class="diario-item-text">La carta que abres cuando vuelvas</span></div>
+        </div>
+      </div>
+
+      <div class="diario-card">
+        <div class="diario-label">Diario 2 · Después del concierto</div>
+        <div class="diario-title">Después de todo</div>
+        <div class="diario-items">
+          <div class="diario-item"><div class="diario-item-dot"></div><span class="diario-item-text">Todavía tiemblo</span></div>
+          <div class="diario-item"><div class="diario-item-dot"></div><span class="diario-item-text">El momento que fue solo tuyo</span></div>
+          <div class="diario-item"><div class="diario-item-dot"></div><span class="diario-item-text">¿Quién eres después de haberlos visto?</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="free-row">
+      <span class="free-tag">PDF gratuito</span>
+      <div class="free-sep"></div>
+      <span class="free-tag">Descarga directa</span>
+      <div class="free-sep"></div>
+      <span class="free-tag">Sin contraseña</span>
+    </div>
+
+    <div class="cta-area">
+      <div class="cta-pill">Quiero mis diarios →</div>
+      <span class="cta-hint">toca el enlace de arriba</span>
+    </div>
+
+  </div>
+
+</body>
+</html>
