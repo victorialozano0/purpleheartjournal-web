@@ -25,5 +25,7 @@ export default defineConfig({
     url: 'http://localhost:4321',
     reuseExistingServer: true,
     timeout: 30_000,
+    // Endpoint ficticio para el form de /escribe-conmigo; los tests lo interceptan con page.route.
+    env: { PUBLIC_LEAD_CAPTURE_URL: 'http://localhost/mock-lead-capture' },
   },
 });

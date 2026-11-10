@@ -24,7 +24,7 @@ test.describe('/escribe-conmigo — lead magnet page', () => {
   })
 
   test('shows the emotional headline', async ({ page }) => {
-    const h1 = page.locator('h1')
+    const h1 = page.locator('main h1')
     await expect(h1).toBeVisible()
     await expect(h1).toContainText('canciones')
   })
@@ -100,7 +100,7 @@ test.describe('/escribe-conmigo — lead magnet page', () => {
 
   test('shows success state after valid submission', async ({ page }) => {
     // Intercept the fetch to the lead capture worker and return 200
-    await page.route('**/lead-capture*', async (route) => {
+    await page.route('**/mock-lead-capture', async (route) => {
       await route.fulfill({
         status: 200,
         contentType: 'application/json',
@@ -118,7 +118,7 @@ test.describe('/escribe-conmigo — lead magnet page', () => {
   })
 
   test('hides form after successful submission', async ({ page }) => {
-    await page.route('**/lead-capture*', async (route) => {
+    await page.route('**/mock-lead-capture', async (route) => {
       await route.fulfill({ status: 200, body: JSON.stringify({ success: true }) })
     })
 
@@ -132,7 +132,7 @@ test.describe('/escribe-conmigo — lead magnet page', () => {
   // ── Error flow (worker failure) ───────────────────────────────────────────
 
   test('shows error state when worker returns 500', async ({ page }) => {
-    await page.route('**/lead-capture*', async (route) => {
+    await page.route('**/mock-lead-capture', async (route) => {
       await route.fulfill({
         status: 500,
         contentType: 'application/json',
@@ -148,7 +148,7 @@ test.describe('/escribe-conmigo — lead magnet page', () => {
   })
 
   test('re-enables submit button after error', async ({ page }) => {
-    await page.route('**/lead-capture*', async (route) => {
+    await page.route('**/mock-lead-capture', async (route) => {
       await route.fulfill({ status: 500, body: '{}' })
     })
 
@@ -163,7 +163,7 @@ test.describe('/escribe-conmigo — lead magnet page', () => {
 
   test('shows loading text during submission', async ({ page }) => {
     // Delay the worker response to observe loading state
-    await page.route('**/lead-capture*', async (route) => {
+    await page.route('**/mock-lead-capture', async (route) => {
       await new Promise(r => setTimeout(r, 200))
       await route.fulfill({ status: 200, body: JSON.stringify({ success: true }) })
     })
@@ -184,7 +184,7 @@ test.describe('/escribe-conmigo — mobile', () => {
 
   test('page renders on mobile', async ({ page }) => {
     await page.goto('/escribe-conmigo/')
-    await expect(page.locator('h1')).toBeVisible()
+    await expect(page.locator('main h1')).toBeVisible()
     await expect(page.locator('#submit-btn')).toBeVisible()
   })
 
@@ -197,10 +197,12 @@ test.describe('/escribe-conmigo — mobile', () => {
 
   test('form inputs are full width on mobile', async ({ page }) => {
     await page.goto('/escribe-conmigo/')
+    const formWidth = await page.locator('#lead-form').evaluate(el => el.getBoundingClientRect().width)
     const nombreWidth = await page.locator('#nombre').evaluate(el => el.getBoundingClientRect().width)
     const emailWidth = await page.locator('#email').evaluate(el => el.getBoundingClientRect().width)
-    // Both inputs should be nearly as wide as the viewport
-    expect(nombreWidth).toBeGreaterThan(300)
-    expect(emailWidth).toBeGreaterThan(300)
+    // Los inputs ocupan todo el ancho de la card (la card tiene gutter + padding, ~277px a 375px)
+    expect(nombreWidth).toBeGreaterThanOrEqual(formWidth - 1)
+    expect(emailWidth).toBeGreaterThanOrEqual(formWidth - 1)
+    expect(nombreWidth).toBeGreaterThan(250)
   })
 })

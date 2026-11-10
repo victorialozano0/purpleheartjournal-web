@@ -11,37 +11,39 @@ test.describe('Landing page', () => {
   });
 
   test('Hero section is visible with CTA', async ({ page }) => {
-    // Hero heading
-    const heroHeading = page.locator('h1');
+    // Hero heading (main h1: el dev toolbar de Astro también inyecta h1)
+    const heroHeading = page.locator('main h1');
     await expect(heroHeading).toBeVisible();
-    await expect(heroHeading).toContainText('página en blanco');
+    await expect(heroHeading).toContainText('entre canciones');
 
-    // Hero CTA button
-    const heroCta = page.locator('a', { hasText: 'Quiero mi journal' });
+    // Hero CTA lleva a la colección
+    const heroCta = page.locator('main a', { hasText: 'Ver la colección' });
     await expect(heroCta).toBeVisible();
-    await expect(heroCta).toHaveAttribute('target', '_blank');
+    await expect(heroCta).toHaveAttribute('href', '#coleccion');
   });
 
-  test('CTA buttons have Hotmart href or placeholder', async ({ page }) => {
-    // All CTA links should have href (either Hotmart URL or # placeholder)
-    const ctaLinks = page.locator('a[href]').filter({ hasText: /journal|escribir/i });
+  test('CTA buttons have Hotmart href', async ({ page }) => {
+    // 2 cards de la colección + 2 CTAs finales
+    const ctaLinks = page.locator('main a[href*="pay.hotmart.com"]');
     const count = await ctaLinks.count();
-    expect(count).toBeGreaterThanOrEqual(1);
+    expect(count).toBeGreaterThanOrEqual(4);
 
     for (let i = 0; i < count; i++) {
-      const href = await ctaLinks.nth(i).getAttribute('href');
-      expect(href).toBeTruthy();
-      // href should be either a hotmart URL or a # placeholder
-      expect(href === '#' || href!.includes('hotmart') || href!.startsWith('http')).toBe(true);
+      const link = ctaLinks.nth(i);
+      expect(await link.getAttribute('href')).toMatch(/^https:\/\/pay\.hotmart\.com\//);
+      await expect(link).toHaveAttribute('target', '_blank');
     }
+    await expect(page.locator('a', { hasText: 'Comprar Love Yourself' })).toHaveAttribute('href', /pay\.hotmart\.com/);
+    await expect(page.locator('a', { hasText: 'Comprar Speak Yourself' })).toHaveAttribute('href', /pay\.hotmart\.com/);
   });
 
   test('all landing sections render', async ({ page }) => {
-    // Each component corresponds to a <section> element
-    const sections = page.locator('section');
-    const sectionCount = await sections.count();
-    // Hero + Problem + Solution + Features + Preview + Testimonials + CtaFinal = 7
-    expect(sectionCount).toBeGreaterThanOrEqual(7);
+    // Hero + Colección + ARIRANG + Por qué + FAQ + CTA final = 6
+    expect(await page.locator('main section').count()).toBeGreaterThanOrEqual(6);
+    await expect(page.locator('#coleccion')).toContainText('Love Yourself Journal');
+    await expect(page.locator('#coleccion')).toContainText('Speak Yourself Journal');
+    await expect(page.locator('#arirang')).toContainText('Ya pasó el concierto');
+    await expect(page.locator('#home-arirang-form input[type="email"]')).toBeVisible();
   });
 
   test('Problem section is present', async ({ page }) => {
@@ -64,8 +66,11 @@ test.describe('Landing page', () => {
   });
 
   test('CtaFinal section has purchase CTA', async ({ page }) => {
-    const finalCta = page.locator('a', { hasText: 'Empieza a escribir hoy' });
-    await expect(finalCta).toBeVisible();
+    for (const label of ['Love Yourself — $9.90', 'Speak Yourself — $9.90']) {
+      const finalCta = page.locator('a', { hasText: label });
+      await expect(finalCta).toBeVisible();
+      await expect(finalCta).toHaveAttribute('href', /pay\.hotmart\.com/);
+    }
   });
 
   test('Footer is present', async ({ page }) => {
@@ -82,11 +87,11 @@ test.describe('Mobile viewport', () => {
     await expect(page.locator('main')).toBeVisible();
 
     // Hero heading visible on mobile
-    const heroHeading = page.locator('h1');
+    const heroHeading = page.locator('main h1');
     await expect(heroHeading).toBeVisible();
 
     // CTA visible on mobile
-    const cta = page.locator('a', { hasText: 'Quiero mi journal' });
+    const cta = page.locator('main a', { hasText: 'Ver la colección' });
     await expect(cta).toBeVisible();
   });
 

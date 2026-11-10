@@ -51,7 +51,7 @@ test.describe('Landing Page Integrations', () => {
   test.describe('Meta tags and SEO', () => {
     test('should have Open Graph meta tags', async ({ page }) => {
       const ogTitle = page.locator('meta[property="og:title"]')
-      await expect(ogTitle).toHaveAttribute('content', /Love Yourself Journal/)
+      await expect(ogTitle).toHaveAttribute('content', /Purple Heart Journal/)
     })
 
     test('should have Twitter card meta tags', async ({ page }) => {
