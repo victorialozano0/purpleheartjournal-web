@@ -10,7 +10,7 @@ const leadMagnet = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
 
 <Layout
   title="Purple Heart Journal — Para ARMY que escribe entre canciones"
-  description="Colección de journals para ARMY hispanohablante. Love Yourself Journal, Speak Yourself Journal y diarios gratuitos del Tour ARIRANG 2026. Hecho por ARMY, para ARMY."
+  description="Colección de journals para ARMY hispanohablante. Love Yourself Journal, Speak Yourself Journal y un diario gratuito para después del Tour ARIRANG 2026. Hecho por ARMY, para ARMY."
 >
   <main>
 
@@ -146,31 +146,26 @@ const leadMagnet = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
           </div>
           <p class="font-accent text-xs tracking-[0.25em] uppercase text-arirang mb-3">BTS World Tour ARIRANG 2026</p>
           <h2 class="font-heading italic text-3xl md:text-4xl text-hanji-text leading-tight mb-3">
-            ¿Vas al concierto?<br/>Tienes dos diarios esperándote.
+            Ya pasó el concierto.<br/>Escribe lo que te dejó.
           </h2>
           <p class="font-body text-sm text-hanji-soft max-w-lg mx-auto leading-relaxed">
-            Gratis. Uno para antes de entrar al estadio, otro para cuando vuelvas a casa.
+            Gratis. Para la que estuvo en el estadio y para la que lo vivió desde casa.
           </p>
         </div>
 
-        <!-- Two mini cards -->
-        <div class="grid sm:grid-cols-2 gap-4 mb-8">
+        <!-- Mini card -->
+        <div class="max-w-md mx-auto mb-8">
           <div class="arirang-mini-card">
-            <p class="font-accent text-xs tracking-widest uppercase text-arirang mb-1">Diario 1</p>
-            <h4 class="font-heading italic text-xl text-hanji-text mb-1">Antes de entrar</h4>
-            <p class="font-body text-xs text-hanji-soft leading-relaxed">El precio de llegar hasta aquí · Quién eras vs. quién eres · La carta que abres cuando vuelvas</p>
-          </div>
-          <div class="arirang-mini-card">
-            <p class="font-accent text-xs tracking-widest uppercase text-arirang mb-1">Diario 2</p>
+            <p class="font-accent text-xs tracking-widest uppercase text-arirang mb-1">Diario gratis</p>
             <h4 class="font-heading italic text-xl text-hanji-text mb-1">Después de todo</h4>
-            <p class="font-body text-xs text-hanji-soft leading-relaxed">Todavía tiemblo · El momento que fue solo tuyo · ¿Quién eres después de haberlos visto?</p>
+            <p class="font-body text-xs text-hanji-soft leading-relaxed">Lo que todavía guardas · El momento que fue solo tuyo · ¿Quién eres después de haberlos visto?</p>
           </div>
         </div>
 
         <!-- Email form -->
         <div class="arirang-form-box">
           <p class="font-heading italic text-lg text-hanji-text text-center mb-1">
-            Déjanos tu email y los enviamos ahora.
+            Déjanos tu email y te lo enviamos ahora.
           </p>
           <p class="font-body text-xs text-hanji-soft text-center mb-5">PDF · Descarga directa · Sin contraseña</p>
 
@@ -185,18 +180,18 @@ const leadMagnet = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
               aria-label="Tu dirección de email"
             />
             <button type="submit" id="home-arirang-btn" class="btn-arirang whitespace-nowrap">
-              Enviarme los PDFs →
+              Enviarme el PDF →
             </button>
           </form>
           <p id="home-arirang-error" class="text-red-600 text-xs text-center mt-2 hidden" role="alert"></p>
 
           <div id="home-arirang-success" class="hidden text-center mt-4">
-            <p class="font-body text-sm text-hanji-text font-semibold">¡Revisa tu email! Te los enviamos ahora mismo. 💜</p>
+            <p class="font-body text-sm text-hanji-text font-semibold">¡Revisa tu email! Te lo enviamos ahora mismo. 💜</p>
           </div>
 
           <p class="font-body text-xs text-hanji-soft/60 text-center mt-4">
             Sin spam · Puedes darte de baja cuando quieras ·
-            <a href="/concierto" class="underline underline-offset-2">Más sobre estos diarios →</a>
+            <a href="/concierto" class="underline underline-offset-2">Más sobre este diario →</a>
           </p>
         </div>
 
@@ -300,7 +295,7 @@ const leadMagnet = import.meta.env.PUBLIC_LEAD_MAGNET_URL || '';
     } catch {
       if (errorEl) { errorEl.textContent = 'Algo salió mal. Inténtalo de nuevo.'; errorEl.classList.remove('hidden'); }
       btn.disabled = false;
-      btn.textContent = 'Enviarme los PDFs →';
+      btn.textContent = 'Enviarme el PDF →';
     }
   });
 </script>

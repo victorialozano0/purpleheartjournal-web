@@ -7,8 +7,8 @@ const syUrl = '/speak-yourself';
 ---
 
 <Layout
-  title="Diario ARMY para el Tour ARIRANG 2026 · Antes y Después del Concierto"
-  description="Dos mini journals gratuitos para ARMY que va al Tour ARIRANG 2026 de BTS. Uno para prepararte antes de entrar al estadio, otro para procesar lo que sentiste cuando vuelvas a casa. PDF descarga directa."
+  title="Diario ARMY después del concierto · Tour ARIRANG 2026"
+  description="Diario gratuito para ARMY que vivió el Tour ARIRANG 2026 de BTS, en el estadio o desde casa. Para escribir lo que te dejó el concierto antes de que el tiempo lo vuelva genérico. PDF descarga directa."
 >
   <main>
 
@@ -16,8 +16,8 @@ const syUrl = '/speak-yourself';
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Product",
-      "name": "Diarios ARIRANG Tour — Antes de entrar + Después de todo",
-      "description": "Dos mini journals gratuitos de journaling para ARMY que asiste al BTS World Tour ARIRANG 2026. Uno pre-concierto y uno post-concierto.",
+      "name": "Después de todo — Diario post-concierto ARIRANG",
+      "description": "Mini journal gratuito para ARMY que vivió el BTS World Tour ARIRANG 2026, en el estadio o desde casa.",
       "brand": { "@type": "Brand", "name": "Purple Heart Journal" },
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
       "audience": { "@type": "Audience", "audienceType": "ARMY (fans de BTS)" },
@@ -38,18 +38,18 @@ const syUrl = '/speak-yourself';
         </div>
         <p class="font-accent text-sm tracking-[0.25em] uppercase text-arirang mb-3">BTS World Tour ARIRANG 2026</p>
         <h1 class="font-heading italic text-4xl md:text-5xl lg:text-6xl text-hanji-text leading-[1.1] mb-5">
-          Escribe el concierto.<br/>
-          <span class="text-arirang">Antes y después.</span>
+          Ya pasó el concierto.<br/>
+          <span class="text-arirang">Escribe lo que te dejó.</span>
         </h1>
         <p class="font-body text-base md:text-lg text-hanji-soft max-w-2xl mx-auto leading-relaxed mb-4">
-          Dos mini journals gratuitos para que el concierto no se quede solo en un recuerdo que se desvanece.
-          Uno para los días antes de entrar. Otro para cuando vuelvas a casa.
+          Un mini journal gratuito para que el concierto no se quede solo en un recuerdo que se desvanece.
+          Para la que estuvo en el estadio y para la que lo vivió desde casa.
         </p>
         <p class="font-body text-sm text-hanji-soft/80 mb-8">
           PDF · Descarga directa · Sin contraseña
         </p>
         <a href="#diarios" class="btn-arirang-primary">
-          Quiero los dos diarios gratis →
+          Quiero el diario gratis →
         </a>
       </div>
     </section>
@@ -59,23 +59,23 @@ const syUrl = '/speak-yourself';
       <div class="max-w-3xl mx-auto">
         <p class="font-accent text-xs tracking-[0.2em] uppercase text-arirang text-center mb-4">Por qué existen</p>
         <h2 class="font-heading italic text-3xl md:text-4xl text-hanji-text text-center leading-tight mb-10">
-          El concierto dura tres horas.<br/>Lo que sientes, semanas.
+          El concierto duró tres horas.<br/>Lo que sientes, mucho más.
         </h2>
         <div class="grid md:grid-cols-3 gap-6">
           <div class="arirang-reason-card">
             <div class="arirang-reason-number">01</div>
             <h3 class="font-body font-semibold text-hanji-text mb-2">La espera fue real</h3>
             <p class="font-body text-sm text-hanji-soft leading-relaxed">
-              Cuatro años. Servicio militar. Entradas agotadas en minutos. Sacrificio económico.
+              Cuatro años. Servicio militar. Entradas agotadas en minutos. Y por fin pasó.
               Todo eso merece un espacio donde nombrarse.
             </p>
           </div>
           <div class="arirang-reason-card">
             <div class="arirang-reason-number">02</div>
-            <h3 class="font-body font-semibold text-hanji-text mb-2">El concert high no dura</h3>
+            <h3 class="font-body font-semibold text-hanji-text mb-2">El concert high se apaga</h3>
             <p class="font-body text-sm text-hanji-soft leading-relaxed">
-              Lo que sientes justo después — esa mezcla de euforia, surrealismo y vacío —
-              desaparece si no lo escribes mientras todavía tiemblas.
+              Esa mezcla de euforia, surrealismo y vacío se va borrando.
+              Lo que no escribes, el tiempo lo vuelve genérico.
             </p>
           </div>
           <div class="arirang-reason-card">
@@ -83,48 +83,32 @@ const syUrl = '/speak-yourself';
             <h3 class="font-body font-semibold text-hanji-text mb-2">BTS pregunta. Tú respondes.</h3>
             <p class="font-body text-sm text-hanji-soft leading-relaxed">
               ARIRANG tiene 3.600 versiones porque cada persona la hizo suya.
-              Estos diarios son para que escribas la tuya.
+              Este diario es para que escribas la tuya.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── LOS DOS DIARIOS + FORMULARIO ──────────────────────────────── -->
+    <!-- ─── DIARIO + FORMULARIO ──────────────────────────────── -->
     <section id="diarios" class="bg-white-glow section-padding">
       <div class="max-w-4xl mx-auto">
         <p class="font-accent text-xs tracking-[0.2em] uppercase text-arirang text-center mb-4">Gratis · Descarga inmediata</p>
         <h2 class="font-heading italic text-3xl md:text-4xl text-hanji-text text-center leading-tight mb-3">
-          Dos diarios. Un solo email.
+          Un diario. Un solo email.
         </h2>
         <p class="font-body text-sm text-hanji-soft text-center mb-10">
-          Te los enviamos juntos. Los usas en el momento que necesites cada uno.
+          Te lo enviamos al momento. Lo usas cuando quieras volver a esa noche.
         </p>
 
-        <!-- Two journal cards -->
-        <div class="grid md:grid-cols-2 gap-6 mb-10">
-
-          <!-- Card 1: Pre-concert -->
-          <div class="arirang-journal-card border-arirang">
-            <div class="arirang-journal-badge bg-arirang text-white">Diario 1</div>
-            <h3 class="font-heading italic text-2xl text-hanji-text mb-2 mt-4">Antes de entrar</h3>
-            <p class="font-accent text-xs tracking-widest uppercase text-arirang mb-4">Para los días antes del show</p>
-            <ul class="arirang-feature-list mb-4">
-              <li>El precio real de llegar hasta aquí — sin suavizarlo</li>
-              <li>Quién eras cuando los descubriste vs. quién entra esta noche</li>
-              <li>Lo que no puedes explicarle a quien no es ARMY</li>
-              <li>Una carta que escribes ahora y abres cuando vuelvas a casa</li>
-            </ul>
-            <p class="font-body text-xs text-hanji-soft">20 páginas · Anclado en Swim, Normal, Please y Hooligan</p>
-          </div>
-
-          <!-- Card 2: Post-concert -->
+        <!-- Journal card -->
+        <div class="max-w-xl mx-auto mb-10">
           <div class="arirang-journal-card border-arirang-dark">
-            <div class="arirang-journal-badge bg-arirang-dark text-white">Diario 2</div>
+            <div class="arirang-journal-badge bg-arirang-dark text-white">Gratis</div>
             <h3 class="font-heading italic text-2xl text-hanji-text mb-2 mt-4">Después de todo</h3>
-            <p class="font-accent text-xs tracking-widest uppercase text-arirang-dark mb-4">Para cuando llegues a casa</p>
+            <p class="font-accent text-xs tracking-widest uppercase text-arirang-dark mb-4">Para después del concierto</p>
             <ul class="arirang-feature-list mb-4">
-              <li>Todavía tiemblo — las primeras horas sin que el cerebro lo organice</li>
+              <li>Lo que todavía guardas: los detalles que el tiempo aún no se llevó</li>
               <li>El momento exacto que fue solo tuyo, con todos los sentidos</li>
               <li>El océano púrpura: lo que se siente pertenecer con 80.000 personas</li>
               <li>¿Quién eres tú después de haberlos visto?</li>
@@ -136,7 +120,7 @@ const syUrl = '/speak-yourself';
         <!-- Email form -->
         <div class="arirang-form-wrapper">
           <p class="font-heading italic text-xl text-hanji-text text-center mb-2">
-            Déjanos tu email y te los enviamos ahora.
+            Déjanos tu email y te lo enviamos ahora.
           </p>
           <p class="font-body text-sm text-hanji-soft text-center mb-6">
             También te avisamos cuando haya contenido nuevo sobre la era ARIRANG.
@@ -153,7 +137,7 @@ const syUrl = '/speak-yourself';
               aria-label="Tu dirección de email"
             />
             <button type="submit" class="btn-arirang-primary whitespace-nowrap" id="arirang-submit">
-              Enviarme los PDFs →
+              Enviarme el PDF →
             </button>
           </form>
 
@@ -172,7 +156,7 @@ const syUrl = '/speak-yourself';
           </div>
           <h3 class="font-heading italic text-2xl text-hanji-text mb-2">¡Revisa tu email!</h3>
           <p class="font-body text-hanji-soft leading-relaxed">
-            Te enviamos los dos diarios ahora mismo.<br/>
+            Te enviamos el diario ahora mismo.<br/>
             En 3 días te escribimos de nuevo para ver cómo va el proceso.
           </p>
         </div>
@@ -184,21 +168,21 @@ const syUrl = '/speak-yourself';
       <div class="max-w-2xl mx-auto text-center">
         <p class="font-accent text-xs tracking-[0.2em] uppercase text-arirang mb-4">También para ti</p>
         <h2 class="font-heading italic text-2xl md:text-3xl text-hanji-text leading-tight mb-5">
-          ¿No vas al concierto<br/>pero sí vives la era?
+          ¿No fuiste al concierto<br/>pero sí viviste la era?
         </h2>
         <p class="font-body text-base text-hanji-soft leading-relaxed mb-6">
-          Estos diarios no son solo para quienes están en el estadio.
-          Si estás siguiendo el tour desde casa, desde un stream, desde el lado de las que
+          Este diario no es solo para quienes estuvieron en el estadio.
+          Si seguiste el tour desde casa, desde un stream, desde el lado de las que
           no pudieron conseguir entrada — tu experiencia también merece nombrarse.
         </p>
         <blockquote class="arirang-quote">
           <p class="font-heading italic text-lg text-hanji-text leading-relaxed mb-2">
-            "Si no tienes entrada pero estás siguiendo el tour desde casa: este espacio también es tuyo. La distancia no cancela lo que sientes."
+            "Para las que los siguieron desde un stream, desde casa, desde la otra orilla del mundo: esta experiencia también es tuya."
           </p>
-          <cite class="font-body text-sm text-arirang not-italic">— Del Diario 1, página de introducción</cite>
+          <cite class="font-body text-sm text-arirang not-italic">— Del diario, página de introducción</cite>
         </blockquote>
         <p class="font-body text-sm text-hanji-soft mt-6">
-          Ambos diarios hablan directamente a las ARMY que viven el tour desde casa o desde un stream.
+          El diario habla también a las ARMY que vivieron el tour desde casa o desde un stream.
         </p>
       </div>
     </section>
@@ -218,7 +202,7 @@ const syUrl = '/speak-yourself';
           Así describen las ARMY asistir a un concierto de BTS.
         </p>
         <p class="font-body text-sm text-hanji-soft">
-          Estos diarios son para que el viaje de vuelta a casa tenga su propio mapa.
+          Este diario es para que el viaje de vuelta tenga su propio mapa.
         </p>
       </div>
     </section>
@@ -231,23 +215,23 @@ const syUrl = '/speak-yourself';
           {[
             {
               q: '¿Es completamente gratis?',
-              a: 'Sí. Los dos PDFs son gratuitos. Solo necesitas dejar tu email y te los enviamos de inmediato.'
+              a: 'Sí. El PDF es gratuito. Solo necesitas dejar tu email y te lo enviamos de inmediato.'
             },
             {
-              q: '¿Cuándo debo usar cada diario?',
-              a: '"Antes de entrar" es para los días previos al concierto — puedes empezarlo hasta dos semanas antes. "Después de todo" es para cuando llegues a casa del show, preferiblemente en las primeras 24–48 horas.'
+              q: '¿Sirve si el concierto fue hace semanas?',
+              a: 'Sí. Está pensado para volver a esa noche cuando quieras: los ejercicios rescatan lo que todavía guardas, aunque haya pasado tiempo.'
             },
             {
-              q: '¿Puedo usarlos si no voy al concierto en persona?',
-              a: 'Completamente. Ambos diarios tienen ejercicios adaptados para ARMY que viven el tour desde casa, desde un stream, o desde la distancia. Tu experiencia también cuenta.'
+              q: '¿Puedo usarlo si no fui al concierto en persona?',
+              a: 'Completamente. El diario tiene ejercicios para ARMY que vivió el tour desde casa, desde un stream o desde la distancia. Tu experiencia también cuenta.'
             },
             {
-              q: '¿En qué formato están los PDFs?',
+              q: '¿En qué formato está el PDF?',
               a: 'PDF A5, optimizado para imprimir o llenar digitalmente en GoodNotes, Notability o cualquier app de notas. Sin contraseña, descarga directa.'
             },
             {
-              q: '¿Qué pasa después de descargarlos?',
-              a: 'En 3 días te enviamos un recordatorio para el Diario 2 (post-concierto). En 7 días te contamos sobre el Speak Yourself Journal — el journal completo de la era ARIRANG, con 184 páginas.'
+              q: '¿Qué pasa después de descargarlo?',
+              a: 'En 3 días te escribimos para ver cómo va. En 7 días te contamos sobre el Speak Yourself Journal — el journal completo de la era ARIRANG, con 184 páginas.'
             },
           ].map(({ q, a }) => (
             <div class="arirang-faq-item">
@@ -268,14 +252,14 @@ const syUrl = '/speak-yourself';
           <div class="arirang-circle-lg"></div>
         </div>
         <h2 class="font-heading italic text-3xl md:text-4xl text-hanji-cream leading-tight mb-4">
-          El concierto es una noche.<br/>
+          El concierto fue una noche.<br/>
           Lo que escribes dura para siempre.
         </h2>
         <p class="font-body text-hanji-cream/80 mb-8 leading-relaxed">
-          Dos mini journals. Descarga gratis. Para ARMY que escribe entre canciones.
+          Un mini journal. Descarga gratis. Para ARMY que escribe entre canciones.
         </p>
         <a href="#diarios" class="btn-arirang-white">
-          Quiero los diarios →
+          Quiero el diario →
         </a>
       </div>
     </section>
@@ -534,7 +518,7 @@ const syUrl = '/speak-yourself';
         errorEl.classList.remove('hidden');
       }
       btn.disabled = false;
-      btn.textContent = 'Enviarme los PDFs →';
+      btn.textContent = 'Enviarme el PDF →';
     }
   });
 </script>
