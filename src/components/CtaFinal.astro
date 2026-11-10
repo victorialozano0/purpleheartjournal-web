@@ -1,5 +1,6 @@
 ---
-const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL || 'https://pay.hotmart.com/P104306248S';
+import { withSrc, LY_CHECKOUT } from '../lib/hotmart';
+const hotmartUrl = withSrc(import.meta.env.PUBLIC_HOTMART_URL || LY_CHECKOUT, 'web_cta');
 ---
 
 <section class="relative gradient-hero section-padding overflow-hidden">

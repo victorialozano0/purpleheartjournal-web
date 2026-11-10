@@ -1,4 +1,5 @@
 ---
+import { withSrc, LY_CHECKOUT } from '../../lib/hotmart';
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import BlogNav from '../../components/BlogNav.astro';
@@ -81,7 +82,7 @@ const isARIRANG = post.data.tags.includes('ARIRANG');
             las palabras para decirlo en voz alta.
           </p>
           <a
-            href="https://pay.hotmart.com/P104306248S"
+            href={withSrc(LY_CHECKOUT, `blog_${post.id}`)}
             target="_blank"
             rel="noopener noreferrer"
             class="cta-btn"
@@ -97,7 +98,7 @@ const isARIRANG = post.data.tags.includes('ARIRANG');
             35 canciones de BTS. Para ARMY que procesa sus emociones escribiendo.
           </p>
           <a
-            href="https://pay.hotmart.com/P104306248S"
+            href={withSrc(LY_CHECKOUT, `blog_${post.id}`)}
             target="_blank"
             rel="noopener noreferrer"
             class="cta-btn"

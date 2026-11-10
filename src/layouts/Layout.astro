@@ -44,6 +44,10 @@ import '../styles/global.css';
     />
 
     <title>{title}</title>
+    <meta name="p:domain_verify" content="157688e757f09bd030db9d9db54c2951" />
+
+    <!-- src de entrada (ig_bio, pin_...) pasa al checkout de Hotmart -->
+    <script is:inline>(function(){var k='ph_src',s=new URLSearchParams(location.search).get('src');try{if(s)sessionStorage.setItem(k,s);else s=sessionStorage.getItem(k);}catch(e){}if(!s)return;s=s.toLowerCase().replace(/[^a-z0-9_-]+/g,'-').slice(0,50);document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(function(a){var u=new URL(a.href);u.searchParams.set('src',s);a.href=u.toString();});});})();</script>
 
     <!-- Google Analytics -->
     {import.meta.env.PUBLIC_GA_MEASUREMENT_ID && (

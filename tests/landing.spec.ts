@@ -98,3 +98,26 @@ test.describe('Mobile viewport', () => {
     expect(bodyWidth).toBeLessThanOrEqual(viewportWidth + 2);
   });
 });
+
+test.describe('Atribución src → Hotmart', () => {
+  test('cada página manda su src propio al checkout', async ({ page }) => {
+    await page.goto('/');
+    const href = await page.locator('a[href*="pay.hotmart.com"]').first().getAttribute('href');
+    expect(href).toContain('src=web_home');
+  });
+
+  test('el src de entrada pasa al checkout y se conserva al navegar', async ({ page }) => {
+    await page.goto('/?src=ig_bio');
+    const links = page.locator('a[href*="pay.hotmart.com"]');
+    for (const href of await links.evaluateAll(as => as.map(a => (a as HTMLAnchorElement).href))) {
+      expect(href).toContain('src=ig_bio');
+    }
+    await page.goto('/blog');
+    expect(await links.first().evaluate(a => (a as HTMLAnchorElement).href)).toContain('src=ig_bio');
+  });
+});
+
+test('meta de verificación de dominio de Pinterest', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('meta[name="p:domain_verify"]')).toHaveAttribute('content', '157688e757f09bd030db9d9db54c2951');
+});

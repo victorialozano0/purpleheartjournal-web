@@ -1,9 +1,10 @@
 ---
+import { withSrc, SY_CHECKOUT } from '../lib/hotmart';
 import Layout from '../layouts/Layout.astro';
 import Faq from '../components/Faq.astro';
 import Footer from '../components/Footer.astro';
 
-const hotmartUrl = import.meta.env.PUBLIC_HOTMART_URL_SY || 'https://pay.hotmart.com/K105569601Q';
+const hotmartUrl = withSrc(import.meta.env.PUBLIC_HOTMART_URL_SY || SY_CHECKOUT, 'web_sy');
 ---
 
 <Layout
