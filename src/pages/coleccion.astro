@@ -404,14 +404,13 @@ const syPages = [
     errorEl?.classList.add('hidden');
 
     try {
-      if (endpoint) {
-        const res = await fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, journal }),
-        });
-        if (!res.ok) throw new Error('error');
-      }
+      if (!endpoint) throw new Error('sin endpoint');
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, journal }),
+      });
+      if (!res.ok) throw new Error('error');
       form.classList.add('hidden');
       successEl?.classList.remove('hidden');
       (window as any).gtag?.('event', 'lead_magnet_submit', { journal });

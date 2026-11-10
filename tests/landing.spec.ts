@@ -126,3 +126,26 @@ test('meta de verificación de dominio de Pinterest', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('meta[name="p:domain_verify"]')).toHaveAttribute('content', '157688e757f09bd030db9d9db54c2951');
 });
+
+test.describe('Formulario ARIRANG de la home', () => {
+  test('envía email + journal arirang y muestra éxito', async ({ page }) => {
+    let body: any = null;
+    await page.route('**/mock-lead-magnet', async route => {
+      body = route.request().postDataJSON();
+      await route.fulfill({ status: 200, contentType: 'application/json', body: '{"success":true}' });
+    });
+    await page.goto('/');
+    await page.locator('#home-arirang-form input[name="email"]').fill('army@example.com');
+    await page.locator('#home-arirang-form button[type="submit"]').click();
+    await expect(page.locator('#home-arirang-success')).toBeVisible();
+    expect(body).toEqual({ email: 'army@example.com', journal: 'arirang' });
+  });
+
+  test('si el servidor falla muestra el error', async ({ page }) => {
+    await page.route('**/mock-lead-magnet', route => route.fulfill({ status: 500, body: '{}' }));
+    await page.goto('/');
+    await page.locator('#home-arirang-form input[name="email"]').fill('army@example.com');
+    await page.locator('#home-arirang-form button[type="submit"]').click();
+    await expect(page.locator('#home-arirang-error')).toBeVisible();
+  });
+});

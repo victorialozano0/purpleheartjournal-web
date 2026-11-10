@@ -486,7 +486,11 @@ const syUrl = '/speak-yourself';
     const email    = (form.querySelector('input[name="email"]') as HTMLInputElement)?.value?.trim();
     const endpoint = (form as HTMLFormElement & { dataset: { endpoint: string } }).dataset.endpoint;
 
-    if (!email || !endpoint) return;
+    if (!email) return;
+    if (!endpoint) {
+      if (errorEl) { errorEl.textContent = 'El formulario no está disponible ahora mismo. Escríbenos a hola@loveyourselfjournal.me.'; errorEl.classList.remove('hidden'); }
+      return;
+    }
 
     btn.disabled = true;
     btn.textContent = 'Enviando...';
